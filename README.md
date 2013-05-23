@@ -1,4 +1,4 @@
-See my ]One Page Resume](http://stnava.github.io/CV/ "1-Pg-Resume") inline link. 
+See my [One Page Resume](http://stnava.github.io/CV/ "1-Pg-Resume") inline link. 
 
   git branch -D gh-pages
 
