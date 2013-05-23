@@ -1,4 +1,6 @@
 
+  git push origin master
+
   git branch -D gh-pages
 
   git push origin --delete  gh-pages
