@@ -1,6 +1,9 @@
+
   git checkout master 
 
-  git commit -a -m 'WIP: minor edit'
+  cat avantsbib.html >> index.html 
+
+  git commit -a -m 'WIP: minor edit w/refs'
 
   git push origin master
 
