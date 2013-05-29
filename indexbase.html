@@ -327,2973 +327,991 @@
 
 	    <dt>Journal Publications</dt>
             <dd>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<script type="text/javascript">
-<!--
-// QuickSearch script for JabRef HTML export 
-// Version: 3.0
-//
-// Copyright (c) 2006-2011, Mark Schenk
-//
-// This software is distributed under a Creative Commons Attribution 3.0 License
-// http://creativecommons.org/licenses/by/3.0/
-//
-// Features:
-// - intuitive find-as-you-type searching
-//    ~ case insensitive
-//    ~ ignore diacritics (optional)
-//
-// - search with/without Regular Expressions
-// - match BibTeX key
-//
+<ol>
+<li value="">
+W. D. Hopkins &amp; B. B. <strong>Avants</strong>,<br>
+"Regional and Hemispheric Variation in Cortical Thickness in Chimpanzees (Pan troglodytes)",<br>
+<i>JOURNAL OF NEUROSCIENCE</i>
+<b>33</b>,
+5241-5248
+(2013)
 
-// Search settings
-var searchAbstract = true;	// search in abstract
-var searchReview = true;	// search in review
+</li>
+<br><li value="">
+J. Kim, B. <strong>Avants</strong>, J. Whyte &amp; J. C. Gee,<br>
+"Methodological considerations in longitudinal morphometry of traumatic brain injury",<br>
+<i>FRONTIERS IN HUMAN NEUROSCIENCE</i>
+<b>7</b>,
 
-var noSquiggles = true; 	// ignore diacritics when searching
-var searchRegExp = false; 	// enable RegExp searches
+(2013)
 
+</li>
+<br><li value="">
+C. T. McMillan, B. <strong>Avants</strong>, D. J. Irwin, J. B. Toledo, D. A. Wolk, V. M. Van Deerlin, L. M. Shaw, J. Q. Trojanoswki &amp; M. Grossman,<br>
+"Can MRI screen for CSF biomarkers in neurodegenerative disease?",<br>
+<i>NEUROLOGY</i>
+<b>80</b>,
+132-138
+(2013)
 
-if (window.addEventListener) {
-	window.addEventListener("load",initSearch,false); }
-else if (window.attachEvent) {
-	window.attachEvent("onload", initSearch); }
+</li>
+<br><li value="">
+C. T. McMillan, D. J. Irwin, B. B. <strong>Avants</strong>, J. Powers, P. A. Cook, J. B. Toledo, E. McCarty Wood, V. M. Van Deerlin, V. M.-Y. Lee, J. Q. Trojanowski &amp; M. Grossman,<br>
+"White matter imaging helps dissociate tau from TDP-43 in frontotemporal lobar degeneration.",<br>
+<i>J Neurol Neurosurg Psychiatry</i>
+,
 
-function initSearch() {
-	// check for quick search table and searchfield
-	if (!document.getElementById('qs_table')||!document.getElementById('quicksearch')) { return; }
+(2013)
+&nbsp;<a href="http://dx.doi.org/10.1136/jnnp-2012-304418">PDF</a>
+</li>
+<br><li value="">
+M. J. Weber, J. A. Detre, S. L. Thompson-Schill &amp; B. B. <strong>Avants</strong>,<br>
+"Reproducibility of functional network metrics and network structure: A comparison of task-related BOLD, resting ASL with BOLD contrast, and resting cerebral blood flow",<br>
+<i>Cognitive, Affective, &amp; Behavioral Neuroscience</i>
+<b>accepted</b>,
 
-	// load all the rows and sort into arrays
-	loadTableData();
-	
-	//find the query field
-	qsfield = document.getElementById('qs_field');
+(2013)
 
-	// previous search term; used for speed optimisation
-	prevSearch = '';
+</li>
+<br><li value="">
+A. Badea, S. Gewalt, B. B. <strong>Avants</strong>, J. J. Cook &amp; G. A. Johnson,<br>
+"Quantitative mouse brain phenotyping based on single and multispectral MR protocols",<br>
+<i>NEUROIMAGE</i>
+<b>63</b>,
+1633-1645
+(2012)
 
-	//find statistics location
-	stats = document.getElementById('stat');
-	setStatistics(-1);
-	
-	// set up preferences
-	initPreferences();
+</li>
+<br><li value="">
+S. R. Das, B. B. <strong>Avants</strong>, J. Pluta, H. Wang, J. W. Suh, M. W. Weiner, S. G. Mueller &amp; P. A. Yushkevich,<br>
+"Measuring longitudinal change in the hippocampal formation from in vivo high-resolution T2-weighted MRI",<br>
+<i>NEUROIMAGE</i>
+<b>60</b>,
+1266-1279
+(2012)
 
-	// shows the searchfield
-	document.getElementById('quicksearch').style.display = 'block';
-	document.getElementById('qs_field').onkeyup = quickSearch;
-}
+</li>
+<br><li value="">
+R. Datta, J. Lee, J. Duda, B. B. <strong>Avants</strong>, C. H. Vite, B. Tseng, J. C. Gee, G. D. Aguirre &amp; G. K. Aguirre,<br>
+"A Digital Atlas of the Dog Brain",<br>
+<i>PLOS ONE</i>
+<b>7</b>,
 
-function loadTableData() {
-	// find table and appropriate rows
-	searchTable = document.getElementById('qs_table');
-	var allRows = searchTable.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+(2012)
 
-	// split all rows into entryRows and infoRows (e.g. abstract, review, bibtex)
-	entryRows = new Array(); infoRows = new Array(); absRows = new Array(); revRows = new Array();
+</li>
+<br><li value="">
+S. S. Ghosh, A. Klein, B. <strong>Avants</strong> &amp; K. J. Millman,<br>
+"Learning from open source software projects to improve scientific review",<br>
+<i>FRONTIERS IN COMPUTATIONAL NEUROSCIENCE</i>
+<b>6</b>,
 
-	// get data from each row
-	entryRowsData = new Array(); absRowsData = new Array(); revRowsData = new Array(); 
-	
-	BibTeXKeys = new Array();
-	
-	for (var i=0, k=0, j=0; i<allRows.length;i++) {
-		if (allRows[i].className.match(/entry/)) {
-			entryRows[j] = allRows[i];
-			entryRowsData[j] = stripDiacritics(getTextContent(allRows[i]));
-			allRows[i].id ? BibTeXKeys[j] = allRows[i].id : allRows[i].id = 'autokey_'+j;
-			j ++;
-		} else {
-			infoRows[k++] = allRows[i];
-			// check for abstract/review
-			if (allRows[i].className.match(/abstract/)) {
-				absRows.push(allRows[i]);
-				absRowsData[j-1] = stripDiacritics(getTextContent(allRows[i]));
-			} else if (allRows[i].className.match(/review/)) {
-				revRows.push(allRows[i]);
-				revRowsData[j-1] = stripDiacritics(getTextContent(allRows[i]));
-			}
-		}
-	}
-	//number of entries and rows
-	numEntries = entryRows.length;
-	numInfo = infoRows.length;
-	numAbs = absRows.length;
-	numRev = revRows.length;
-}
+(2012)
 
-function quickSearch(){
-	
-	tInput = qsfield;
+</li>
+<br><li value="">
+R. G. Gross, C. T. McMillan, K. Chandrasekaran, M. Dreyfuss, S. Ash, B. <strong>Avants</strong>, P. Cook, P. Moore, D. J. Libon, A. Siderowf &amp; M. Grossman,<br>
+"Sentence processing in Lewy body spectrum disorder: The role of working memory",<br>
+<i>BRAIN AND COGNITION</i>
+<b>78</b>,
+85-93
+(2012)
 
-	if (tInput.value.length == 0) {
-		showAll();
-		setStatistics(-1);
-		qsfield.className = '';
-		return;
-	} else {
-		t = stripDiacritics(tInput.value);
+</li>
+<br><li value="">
+J. L. Hanson, M. K. Chung, B. B. <strong>Avants</strong>, K. D. Rudolph, E. A. Shirtcliff, J. C. Gee, R. J. Davidson &amp; S. D. Pollak,<br>
+"Structural Variations in Prefrontal Cortex Mediate the Relationship between Early Childhood Stress and Spatial Working Memory",<br>
+<i>JOURNAL OF NEUROSCIENCE</i>
+<b>32</b>,
+7917-7925
+(2012)
 
-		if(!searchRegExp) { t = escapeRegExp(t); }
-			
-		// only search for valid RegExp
-		try {
-			textRegExp = new RegExp(t,"i");
-			closeAllInfo();
-			qsfield.className = '';
-		}
-			catch(err) {
-			prevSearch = tInput.value;
-			qsfield.className = 'invalidsearch';
-			return;
-		}
-	}
-	
-	// count number of hits
-	var hits = 0;
+</li>
+<br><li value="">
+J. L. Hanson, J. W. Suh, B. M. Nacewicz, M. J. Sutterer, A. A. Cayo, D. E. Stodola, C. A. Burghy, H. Wang, B. B. <strong>Avants</strong>, P. A. Yushkevich, M. J. Essex, S. D. Pollak &amp; R. J. Davidson,<br>
+"Robust Automated Amygdala Segmentation via Multi-Atlas Diffeomorphic Registration.",<br>
+<i>Front Neurosci</i>
+<b>6</b>,
+166
+(2012)
+&nbsp;<a href="http://dx.doi.org/10.3389/fnins.2012.00166">PDF</a>
+</li>
+<br><li value="">
+D. R. Hurst, P. T. Schoenemann, M. M. Loyet, B. B. <strong>Avants</strong> &amp; J. C. Gee,<br>
+"How well does endocranial morphology predict behavioral differences in primates?",<br>
+<i>AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY</i>
+<b>147</b>,
+171
+(2012)
 
-	// start looping through all entry rows
-	for (var i = 0; cRow = entryRows[i]; i++){
+</li>
+<br><li value="">
+V. Jain, J. Duda, B. <strong>Avants</strong>, M. Giannetta, S. X. Xie, T. Roberts, J. A. Detre, H. Hurt, F. W. Wehrli &amp; D. J. J. Wang,<br>
+"Longitudinal Reproducibility and Accuracy of Pseudo-Continuous Arterial Spin-labeled Perfusion MR Imaging in Typically Developing Children",<br>
+<i>RADIOLOGY</i>
+<b>263</b>,
+527-536
+(2012)
 
-		// only show search the cells if it isn't already hidden OR if the search term is getting shorter, then search all
-		if(cRow.className.indexOf('noshow')==-1 || tInput.value.length <= prevSearch.length){
-			var found = false; 
+</li>
+<br><li value="">
+D. J. Libon, C. McMillan, B. <strong>Avants</strong>, A. Boller, B. Morgan, L. Burkholder, K. Chandrasekaran, L. Elman, L. McCluskey &amp; M. Grossman,<br>
+"Deficits in Concept Formation in Amyotrophic Lateral Sclerosis",<br>
+<i>NEUROPSYCHOLOGY</i>
+<b>26</b>,
+422-429
+(2012)
 
-			if (entryRowsData[i].search(textRegExp) != -1 || BibTeXKeys[i].search(textRegExp) != -1){ 
-				found = true;
-			} else {
-				if(searchAbstract && absRowsData[i]!=undefined) {
-					if (absRowsData[i].search(textRegExp) != -1){ found=true; } 
-				}
-				if(searchReview && revRowsData[i]!=undefined) {
-					if (revRowsData[i].search(textRegExp) != -1){ found=true; } 
-				}
-			}
-			
-			if (found){
-				cRow.className = 'entry show';
-				hits++;
-			} else {
-				cRow.className = 'entry noshow';
-			}
-		}
-	}
+</li>
+<br><li value="">
+M. M. Loyet, P. T. Schoenemann, B. B. <strong>Avants</strong> &amp; J. C. Gee,<br>
+"Associations between localized variation in brain anatomy and social behavior in healthy human subjects.",<br>
+<i>AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY</i>
+<b>147</b>,
+196
+(2012)
 
-	// update statistics
-	setStatistics(hits)
-	
-	// set previous search value
-	prevSearch = tInput.value;
-}
+</li>
+<br><li value="">
+T. Rohlfing &amp; B. <strong>Avants</strong>,<br>
+""Nonparametric Local Smoothing" is not image registration.",<br>
+<i>BMC Res Notes</i>
+<b>5</b>,
+610
+(2012)
+&nbsp;<a href="http://dx.doi.org/10.1186/1756-0500-5-610">PDF</a>
+</li>
+<br><li value="">
+N. J. Tustison, B. B. <strong>Avants</strong>, P. A. Cook, J. Kim, J. Whyte, J. C. Gee &amp; J. R. Stone,<br>
+"Logical circularity in voxel-based analysis: Normalization strategy may induce statistical bias.",<br>
+<i>Hum Brain Mapp</i>
+,
 
+(2012)
+&nbsp;<a href="http://dx.doi.org/10.1002/hbm.22211">PDF</a>
+</li>
+<br><li value="">
+M. Ashtari, B. <strong>Avants</strong>, L. Cyckowski, K. L. Cervellione, D. Roofeh, P. Cook, J. Gee, S. Sevy &amp; S. Kumra,<br>
+"Medial temporal structures and memory functions in adolescents with heavy cannabis use",<br>
+<i>JOURNAL OF PSYCHIATRIC RESEARCH</i>
+<b>45</b>,
+1055-1066
+(2011)
 
-// Strip Diacritics from text
-// http://stackoverflow.com/questions/990904/javascript-remove-accents-in-strings
+</li>
+<br><li value="">
+B. B. <strong>Avants</strong>, N. J. Tustison, J. Wu, P. A. Cook &amp; J. C. Gee,<br>
+"An Open Source Multivariate Framework for n-Tissue Segmentation with Evaluation on Public Data",<br>
+<i>NEUROINFORMATICS</i>
+<b>9</b>,
+381-400
+(2011)
 
-// String containing replacement characters for stripping accents 
-var stripstring = 
-    'AAAAAAACEEEEIIII'+
-    'DNOOOOO.OUUUUY..'+
-    'aaaaaaaceeeeiiii'+
-    'dnooooo.ouuuuy.y'+
-    'AaAaAaCcCcCcCcDd'+
-    'DdEeEeEeEeEeGgGg'+
-    'GgGgHhHhIiIiIiIi'+
-    'IiIiJjKkkLlLlLlL'+
-    'lJlNnNnNnnNnOoOo'+
-    'OoOoRrRrRrSsSsSs'+
-    'SsTtTtTtUuUuUuUu'+
-    'UuUuWwYyYZzZzZz.';
+</li>
+<br><li value="">
+B. B. <strong>Avants</strong>, N. J. Tustison, G. Song, P. A. Cook, A. Klein &amp; J. C. Gee,<br>
+"A reproducible evaluation of ANTs similarity metric performance in brain image registration",<br>
+<i>NEUROIMAGE</i>
+<b>54</b>,
+2033-2044
+(2011)
 
-function stripDiacritics(str){
+</li>
+<br><li value="">
+A. Boller, D. Libon, K. Rascovsky, R. G. Gross, M. Dreyfuss, B. <strong>Avants</strong>, L. Massimo, P. Moore, J. Kitain, H. Coslett, A. Chatterjee &amp; M. Grossman,<br>
+"Philadelphia Brief Assessment of Cognition (PBAC): A Validated Screening Measure for Dementia",<br>
+<i>NEUROLOGY</i>
+<b>76</b>,
+A511
+(2011)
 
-    if(noSquiggles==false){
-        return str;
-    }
+</li>
+<br><li value="">
+S. R. Das, D. Mechanic-Hamilton, J. Pluta, M. Korczykowski, J. A. Detre &amp; P. A. Yushkevich,<br>
+"Heterogeneity of functional activation during memory encoding across hippocampal subfields in temporal lobe epilepsy.",<br>
+<i>Neuroimage</i>
+<b>58</b>,
+1121-1130
+(2011)
+&nbsp;<a href="http://dx.doi.org/10.1016/j.neuroimage.2011.06.085">PDF</a>
+</li>
+<br><li value="">
+B. Morgan, R. G. Gross, R. Clark, M. Dreyfuss, A. Boller, E. Camp, T.-W. Liang, B. <strong>Avants</strong>, C. T. McMillan &amp; M. Grossman,<br>
+"Some is not enough: Quantifier comprehension in corticobasal syndrome and behavioral variant frontotemporal dementia",<br>
+<i>NEUROPSYCHOLOGIA</i>
+<b>49</b>,
+3532-3541
+(2011)
 
-    var answer='';
-    for(var i=0;i<str.length;i++){
-        var ch=str[i];
-        var chindex=ch.charCodeAt(0)-192;   // Index of character code in the strip string
-        if(chindex>=0 && chindex<stripstring.length){
-            // Character is within our table, so we can strip the accent...
-            var outch=stripstring.charAt(chindex);
-            // ...unless it was shown as a '.'
-            if(outch!='.')ch=outch;
-        }
-        answer+=ch;
-    }
-    return answer;
-}
+</li>
+<br><li value="">
+K. Murphy, B. van Ginneken, J. M. Reinhardt, S. Kabus, K. Ding, X. Deng, K. Cao, K. Du, G. E. Christensen, V. Garcia, T. Vercauteren, N. Ayache, O. Commowick, G. Malandain, B. Glocker, N. Paragios, N. Navab, V. Gorbunova, J. Sporring, M. de Bruijne, X. Han, M. P. Heinrich, J. A. Schnabel, M. Jenkinson, C. Lorenz, M. Modat, J. R. McClelland, S. Ourselin, S. E. A. Muenzing, M. A. Viergever, D. De Nigris, D. L. Collins, T. Arbel, M. Peroni, R. Li, G. C. Sharp, A. Schmidt-Richberg, J. Ehrhardt, R. Werner, D. Smeets, D. Loeckx, G. Song, N. Tustison, B. <strong>Avants</strong>, J. C. Gee, M. Staring, S. Klein, B. C. Stoel, M. Urschler, M. Werlberger, J. Vandemeulebroucke, S. Rit, D. Sarrut &amp; J. P. W. Pluim,<br>
+"Evaluation of Registration Methods on Thoracic CT: The EMPIRE10 Challenge",<br>
+<i>IEEE TRANSACTIONS ON MEDICAL IMAGING</i>
+<b>30</b>,
+1901-1920
+(2011)
 
-// http://stackoverflow.com/questions/3446170/escape-string-for-use-in-javascript-regex
-// NOTE: must escape every \ in the export code because of the JabRef Export...
-function escapeRegExp(str) {
-  return str.replace(/[-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
-}
+</li>
+<br><li value="">
+P. T. Schoenemann, R. Holloway, J. Monge, B. <strong>Avants</strong> &amp; J. Gee,<br>
+"Differences in endocranial shape between Homo and Pongids assessed through non-rigid deformation analysis of high-resolution CT images.",<br>
+<i>AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY</i>
+<b>144</b>,
+265-266
+(2011)
 
-function toggleInfo(articleid,info) {
+</li>
+<br><li value="">
+N. J. Tustison, B. B. <strong>Avants</strong>, L. Flors, T. A. Altes, E. E. de lange, J. P. Mugler, III &amp; J. C. Gee,<br>
+"Ventilation-Based Segmentation of the Lungs Using Hyperpolarized He-3 MRI",<br>
+<i>JOURNAL OF MAGNETIC RESONANCE IMAGING</i>
+<b>34</b>,
+831-841
+(2011)
 
-	var entry = document.getElementById(articleid);
-	var abs = document.getElementById('abs_'+articleid);
-	var rev = document.getElementById('rev_'+articleid);
-	var bib = document.getElementById('bib_'+articleid);
-	
-	if (abs && info == 'abstract') {
-		abs.className.indexOf('noshow') == -1?abs.className = 'abstract noshow':abs.className = 'abstract show';
-	} else if (rev && info == 'review') {
-		rev.className.indexOf('noshow') == -1?rev.className = 'review noshow':rev.className = 'review show';
-	} else if (bib && info == 'bibtex') {
-		bib.className.indexOf('noshow') == -1?bib.className = 'bibtex noshow':bib.className = 'bibtex show';
-	} else { 
-		return;
-	}
+</li>
+<br><li value="">
+N. Tustison, B. <strong>Avants</strong>, P. Cook, J. Kim, J. Whyte, J. Gee, S. Ahlers &amp; J. Stone,<br>
+"MULTIVARIATE ANALYSIS OF DIFFUSION TENSOR IMAGING AND CORTICAL THICKNESS MAPS IN A TRAUMATIC BRAIN INJURY (TBI) COHORT USING ADVANCED NORMALIZATION TOOLS (ANTS)",<br>
+<i>JOURNAL OF NEUROTRAUMA</i>
+<b>28</b>,
+A111
+(2011)
 
-	// check if one or the other is available
-	var revshow; var absshow; var bibshow;
-	(abs && abs.className.indexOf('noshow') == -1)? absshow = true: absshow = false;
-	(rev && rev.className.indexOf('noshow') == -1)? revshow = true: revshow = false;	
-	(bib && bib.className.indexOf('noshow') == -1)? bibshow = true: bibshow = false;
-	
-	// highlight original entry
-	if(entry) {
-		if (revshow || absshow || bibshow) {
-		entry.className = 'entry highlight show';
-		} else {
-		entry.className = 'entry show';
-		}
-	}
-	
-	// When there's a combination of abstract/review/bibtex showing, need to add class for correct styling
-	if(absshow) {
-		(revshow||bibshow)?abs.className = 'abstract nextshow':abs.className = 'abstract';
-	} 
-	if (revshow) {
-		bibshow?rev.className = 'review nextshow': rev.className = 'review';
-	}	
-	
-}
+</li>
+<br><li value="">
+N. J. Tustison, B. B. <strong>Avants</strong>, M. Siqueira &amp; J. C. Gee,<br>
+"Topological Well-Composedness and Glamorous Glue: A Digital Gluing Algorithm for Topologically Constrained Front Propagation",<br>
+<i>IEEE TRANSACTIONS ON IMAGE PROCESSING</i>
+<b>20</b>,
+1756-1761
+(2011)
 
-function setStatistics (hits) {
-	if(hits < 0) { hits=numEntries; }
-	if(stats) { stats.firstChild.data = hits + '/' + numEntries}
-}
+</li>
+<br><li value="">
+H. Wang, S. R. Das, J. W. Suh, M. Altinay, J. Pluta, C. Craige, B. <strong>Avants</strong>, P. A. Yushkevich &amp; A. D. N. Initia,<br>
+"A learning-based wrapper method to correct systematic errors in automatic image segmentation: Consistently improved performance in hippocampus, cortex and brain segmentation",<br>
+<i>NEUROIMAGE</i>
+<b>55</b>,
+968-985
+(2011)
 
-function getTextContent(node) {
-	// Function written by Arve Bersvendsen
-	// http://www.virtuelvis.com
-	
-	if (node.nodeType == 3) {
-	return node.nodeValue;
-	} // text node
-	if (node.nodeType == 1 && node.className != "infolinks") { // element node
-	var text = [];
-	for (var chld = node.firstChild;chld;chld=chld.nextSibling) {
-		text.push(getTextContent(chld));
-	}
-	return text.join("");
-	} return ""; // some other node, won't contain text nodes.
-}
+</li>
+<br><li value="">
+S. Ash, C. McMillan, D. Gunawardena, B. <strong>Avants</strong>, B. Morgan, A. Khan, P. Moore, J. Gee &amp; M. Grossman,<br>
+"Speech errors in progressive non-fluent aphasia",<br>
+<i>BRAIN AND LANGUAGE</i>
+<b>113</b>,
+13-20
+(2010)
 
-function showAll(){
-	closeAllInfo();
-	for (var i = 0; i < numEntries; i++){ entryRows[i].className = 'entry show'; }
-}
+</li>
+<br><li value="">
+B. B. <strong>Avants</strong>, P. A. Cook, L. Ungar, J. C. Gee &amp; M. Grossman,<br>
+"Dementia induces correlated reductions in white matter integrity and cortical thickness: A multivariate neuroimaging study with sparse canonical correlation analysis",<br>
+<i>NEUROIMAGE</i>
+<b>50</b>,
+1004-1016
+(2010)
 
-function closeAllInfo(){
-	for (var i=0; i < numInfo; i++){
-		if (infoRows[i].className.indexOf('noshow') ==-1) {
-			infoRows[i].className = infoRows[i].className + ' noshow';
-		}
-	}
-}
+</li>
+<br><li value="">
+B. B. <strong>Avants</strong>, P. Yushkevich, J. Pluta, D. Minkoff, M. Korczykowski, J. Detre &amp; J. C. Gee,<br>
+"The optimal template effect in hippocampus studies of diseased populations",<br>
+<i>NEUROIMAGE</i>
+<b>49</b>,
+2457-2466
+(2010)
 
-function clearQS() {
-	qsfield.value = '';
-	showAll();
-}
+</li>
+<br><li value="">
+C. Farag, V. Troiani, M. Bonner, C. Powers, B. <strong>Avants</strong>, J. Gee &amp; M. Grossman,<br>
+"Hierarchical Organization of Scripts: Converging Evidence from fMRI and Frontotemporal Degeneration",<br>
+<i>CEREBRAL CORTEX</i>
+<b>20</b>,
+2453-2463
+(2010)
 
-function redoQS(){
-	showAll();
-	quickSearch(qsfield);
-}
+</li>
+<br><li value="">
+M. Grossman, P. J. Eslinger, V. Troiani, C. Anderson, B. <strong>Avants</strong>, J. C. Gee, C. McMillan, L. Massimo, A. Khan &amp; S. Antani,<br>
+"The role of ventral medial prefrontal cortex in social decisions Converging evidence from fMRI and frontotemporal lobar degeneration",<br>
+<i>NEUROPSYCHOLOGIA</i>
+<b>48</b>,
+3505-3512
+(2010)
 
-function updateSetting(obj){
-	var option = obj.id;
-	var checked = obj.value;
+</li>
+<br><li value="">
+D. Gunawardena, S. Ash, C. McMillan, B. <strong>Avants</strong>, J. Gee &amp; M. Grossman,<br>
+"Why are patients with progressive nonfluent aphasia nonfluent?",<br>
+<i>NEUROLOGY</i>
+<b>75</b>,
+588-594
+(2010)
 
-	switch(option)
-	 {
-	 case "opt_searchAbs":
-	   searchAbstract=!searchAbstract;
-	   redoQS();
-	   break;
-	 case "opt_searchRev":
-	   searchReview=!searchReview;
-	   redoQS();
-	   break;
-	 case "opt_useRegExp":
-	   searchRegExp=!searchRegExp;
-	   redoQS();
-	   break;
-	 case "opt_noAccents":
-	   noSquiggles=!noSquiggles;
-	   loadTableData();
-	   redoQS();
-	   break;
-	 }
-}
+</li>
+<br><li value="">
+J. L. Hanson, M. K. Chung, B. B. <strong>Avants</strong>, E. A. Shirtcliff, J. C. Gee, R. J. Davidson &amp; S. D. Pollak,<br>
+"Early Stress Is Associated with Alterations in the Orbitofrontal Cortex: A Tensor-Based Morphometry Investigation of Brain Structure and Behavioral Risk",<br>
+<i>JOURNAL OF NEUROSCIENCE</i>
+<b>30</b>,
+7466-7472
+(2010)
 
-function initPreferences(){
-	if(searchAbstract){document.getElementById("opt_searchAbs").checked = true;}
-	if(searchReview){document.getElementById("opt_searchRev").checked = true;}
-	if(noSquiggles){document.getElementById("opt_noAccents").checked = true;}
-	if(searchRegExp){document.getElementById("opt_useRegExp").checked = true;}
-	
-	if(numAbs==0) {document.getElementById("opt_searchAbs").parentNode.style.display = 'none';}
-	if(numRev==0) {document.getElementById("opt_searchRev").parentNode.style.display = 'none';}	
-}
+</li>
+<br><li value="">
+J. Kim, J. Whyte, S. Patel, B. <strong>Avants</strong>, E. Europa, J. Wang, J. Slattery, J. C. Gee, H. B. Coslett &amp; J. A. Detre,<br>
+"Resting Cerebral Blood Flow Alterations in Chronic Traumatic Brain Injury: An Arterial Spin Labeling Perfusion fMRI Study",<br>
+<i>JOURNAL OF NEUROTRAUMA</i>
+<b>27</b>,
+1399-1411
+(2010)
 
-function toggleSettings(){
-	var togglebutton = document.getElementById('showsettings');
-	var settings = document.getElementById('settings');
-	
-	if(settings.className == "hidden"){
-		settings.className = "show";
-		togglebutton.innerText = "close settings";
-		togglebutton.textContent = "close settings";
-	}else{
-		settings.className = "hidden";
-		togglebutton.innerText = "settings...";		
-		togglebutton.textContent = "settings...";
-	}
-}
+</li>
+<br><li value="">
+A. Klein, S. S. Ghosh, B. <strong>Avants</strong>, B. T. T. Yeo, B. Fischl, B. Ardekani, J. C. Gee, J. J. Mann &amp; R. V. Parsey,<br>
+"Evaluation of volume-based and surface-based brain image registration methods",<br>
+<i>NEUROIMAGE</i>
+<b>51</b>,
+214-220
+(2010)
 
--->
-</script>
-<style type="text/css">
-body { background-color: white; font-family: Arial, sans-serif; font-size: 13px; line-height: 1.2; padding: 1em; color: #2E2E2E; width: 50em; margin: auto auto; }
+</li>
+<br><li value="">
+H. Rao, L. Betancourt, J. M. Giannetta, N. L. Brodsky, M. Korczykowski, B. B. <strong>Avants</strong>, J. C. Gee, J. Wang, H. Hurt, J. A. Detre &amp; M. J. Farah,<br>
+"Early parental care is important for hippocampal maturation: Evidence from brain morphology in humans",<br>
+<i>NEUROIMAGE</i>
+<b>49</b>,
+1144-1150
+(2010)
 
-form#quicksearch { width: auto; border-style: solid; border-color: gray; border-width: 1px 0px; padding: 0.7em 0.5em; display:none; position:relative; }
-span#searchstat {padding-left: 1em;}
+</li>
+<br><li value="">
+P. T. Schoenemann, J. Monge, R. L. Holloway, B. B. <strong>Avants</strong> &amp; J. C. Gee,<br>
+"Creating statistical atlases of modern primate endocranial morphology rising non-rigid deformation analysis of high-resolution CT images.",<br>
+<i>AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY</i>
+,
+208-209
+(2010)
 
-div#settings { margin-top:0.7em; /* border-bottom: 1px transparent solid; background-color: #efefef; border: 1px grey solid; */ }
-div#settings ul {margin: 0; padding: 0; }
-div#settings li {margin: 0; padding: 0 1em 0 0; display: inline; list-style: none; }
-div#settings li + li { border-left: 2px #efefef solid; padding-left: 0.5em;}
-div#settings input { margin-bottom: 0px;}
+</li>
+<br><li value="">
+N. J. Tustison, B. B. <strong>Avants</strong>, P. A. Cook, Y. Zheng, A. Egan, P. A. Yushkevich &amp; J. C. Gee,<br>
+"N4ITK: Improved N3 Bias Correction",<br>
+<i>IEEE TRANSACTIONS ON MEDICAL IMAGING</i>
+<b>29</b>,
+1310-1320
+(2010)
 
-div#settings.hidden {display:none;}
+</li>
+<br><li value="">
+D. J. J. Wang, X. Bi, B. B. <strong>Avants</strong>, T. Meng, S. Zuehlsdorff &amp; J. A. Detre,<br>
+"Estimation of Perfusion and Arterial Transit Time in Myocardium Using Free-Breathing Myocardial Arterial Spin Labeling With Navigator-Echo",<br>
+<i>MAGNETIC RESONANCE IN MEDICINE</i>
+<b>64</b>,
+1289-1295
+(2010)
 
-#showsettings { border: 1px grey solid; padding: 0 0.5em; float:right; line-height: 1.6em; text-align: right; }
-#showsettings:hover { cursor: pointer; }
+</li>
+<br><li value="">
+P. A. Yushkevich, H. Wang, J. Pluta, S. R. Das, C. Craige, B. B. <strong>Avants</strong>, M. W. Weiner &amp; S. Mueller,<br>
+"Nearly automatic segmentation of hippocampal subfields in in vivo focal T2-weighted MRI",<br>
+<i>NEUROIMAGE</i>
+<b>53</b>,
+1208-1224
+(2010)
 
-.invalidsearch { background-color: red; }
-input[type="button"] { background-color: #efefef; border: 1px #2E2E2E solid;}
+</li>
+<br><li value="">
+P. A. Yushkevich, B. B. <strong>Avants</strong>, S. R. Das, J. Pluta, M. Altinay, C. Craige &amp; A. D. N. Initi,<br>
+"Bias in estimation of hippocampal atrophy using deformation-based morphometry arises from asymmetric global normalization: An illustration in ADNI 3 T MRI data",<br>
+<i>NEUROIMAGE</i>
+<b>50</b>,
+434-445
+(2010)
 
-table { border: 1px gray none; width: 100%; empty-cells: show; border-spacing: 0em 0.1em; margin: 1em 0em; }
-th, td { border: none; padding: 0.5em; vertical-align: top; text-align: justify; }
+</li>
+<br><li value="">
+S. Ash, P. Moore, L. Vesely, D. Gunawardena, C. McMillan, C. Anderson, B. <strong>Avants</strong> &amp; M. Grossman,<br>
+"Non-fluent speech in frontotemporal lobar degeneration",<br>
+<i>JOURNAL OF NEUROLINGUISTICS</i>
+<b>22</b>,
+370-383
+(2009)
 
-td a { color: navy; text-decoration: none; }
-td a:hover  { text-decoration: underline; }
+</li>
+<br><li value="">
+B. <strong>Avants</strong>, A. Khan, L. McCluskey, L. Elman &amp; M. Grossman,<br>
+"Longitudinal Cortical Atrophy in Amyotrophic Lateral Sclerosis With Frontotemporal Dementia",<br>
+<i>ARCHIVES OF NEUROLOGY</i>
+<b>66</b>,
+138-139
+(2009)
 
-tr.noshow { display: none;}
-tr.highlight td { background-color: #EFEFEF; border-top: 2px #2E2E2E solid; font-weight: bold; }
-tr.abstract td, tr.review td, tr.bibtex td { background-color: #EFEFEF; text-align: justify; border-bottom: 2px #2E2E2E solid; }
-tr.nextshow td { border-bottom-style: none; }
+</li>
+<br><li value="">
+M. F. Bonner, L. Vesely, C. Price, C. Anderson, L. Richmond, C. Farag, B. <strong>Avants</strong> &amp; M. Grossman,<br>
+"Reversal of the concreteness effect in semantic dementia",<br>
+<i>COGNITIVE NEUROPSYCHOLOGY</i>
+<b>26</b>,
+568-579
+(2009)
 
-tr.bibtex pre { width: 100%; overflow: auto; white-space: pre-wrap;}
-p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
+</li>
+<br><li value="">
+S. R. Das, B. B. <strong>Avants</strong>, M. Grossman &amp; J. C. Gee,<br>
+"Registration based cortical thickness measurement",<br>
+<i>NEUROIMAGE</i>
+<b>45</b>,
+867-879
+(2009)
 
-@media print {
-	p.infolinks, #qs_settings, #quicksearch, t.bibtex { display: none !important; }
-	tr { page-break-inside: avoid; }
-}
-</style>
-</head>
-<body>
+</li>
+<br><li value="">
+S. R. Das, D. Mechanic-Hamilton, M. Korczykowski, J. Pluta, S. Glynn, B. B. <strong>Avants</strong>, J. A. Detre &amp; P. A. Yushkevich,<br>
+"Structure Specific Analysis of the Hippocampus in Temporal Lobe Epilepsy",<br>
+<i>HIPPOCAMPUS</i>
+<b>19</b>,
+517-525
+(2009)
 
-<form action="" id="quicksearch">
-<input type="text" id="qs_field" autocomplete="off" placeholder="Type to search..." /> <input type="button" onclick="clearQS()" value="clear" />
-<span id="searchstat">Matching entries: <span id="stat">0</span></span>
-<div id="showsettings" onclick="toggleSettings()">settings...</div>
-<div id="settings" class="hidden">
-<ul>
-<li><input type="checkbox" class="search_setting" id="opt_searchAbs" onchange="updateSetting(this)"><label for="opt_searchAbs"> include abstract</label></li>
-<li><input type="checkbox" class="search_setting" id="opt_searchRev" onchange="updateSetting(this)"><label for="opt_searchRev"> include review</label></li>
-<li><input type="checkbox" class="search_setting" id="opt_useRegExp" onchange="updateSetting(this)"><label for="opt_useRegExp"> use RegExp</label></li>
-<li><input type="checkbox" class="search_setting" id="opt_noAccents" onchange="updateSetting(this)"><label for="opt_noAccents"> ignore accents</label></li>
-</ul>
-</div>
-</form>
-<table id="qs_table" border="1">
-<tbody>
-<tr id="Hopkins2013" class="entry">
-	<td>Hopkins WD and Avants BB (2013), <i>"Regional and Hemispheric Variation in Cortical Thickness in Chimpanzees (Pan troglodytes)"</i>, JOURNAL OF NEUROSCIENCE., MAR 20, 2013.  Vol. 33(12), pp. 5241-5248.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Hopkins2013','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1523/JNEUROSCI.2996-12.2013" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Hopkins2013" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Hopkins2013,
-  author = {Hopkins, William D. and Avants, Brian B.},
-  title = {Regional and Hemispheric Variation in Cortical Thickness in Chimpanzees (Pan troglodytes)},
-  journal = {JOURNAL OF NEUROSCIENCE},
-  year = {2013},
-  volume = {33},
-  number = {12},
-  pages = {5241-5248},
-  doi = {10.1523/JNEUROSCI.2996-12.2013}
-}
-</pre></td>
-</tr>
-<tr id="Kim2013" class="entry">
-	<td>Kim J, Avants B, Whyte J and Gee JC (2013), <i>"Methodological considerations in longitudinal morphometry of traumatic brain injury"</i>, FRONTIERS IN HUMAN NEUROSCIENCE., FEB 26, 2013.  Vol. 7
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Kim2013','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.3389/fnhum.2013.00052" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Kim2013" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Kim2013,
-  author = {Kim, Junghoon and Avants, Brian and Whyte, John and Gee, James C.},
-  title = {Methodological considerations in longitudinal morphometry of traumatic brain injury},
-  journal = {FRONTIERS IN HUMAN NEUROSCIENCE},
-  year = {2013},
-  volume = {7},
-  doi = {10.3389/fnhum.2013.00052}
-}
-</pre></td>
-</tr>
-<tr id="McMillan2013" class="entry">
-	<td>McMillan CT, Avants B, Irwin DJ, Toledo JB, Wolk DA, Van Deerlin VM, Shaw LM, Trojanoswki JQ and Grossman M (2013), <i>"Can MRI screen for CSF biomarkers in neurodegenerative disease?"</i>, NEUROLOGY., JAN, 2013.  Vol. 80(2), pp. 132-138.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('McMillan2013','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1212/WNL.0b013e31827b9147" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_McMillan2013" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{McMillan2013,
-  author = {McMillan, Corey T. and Avants, Brian and Irwin, David J. and Toledo, Jon B. and Wolk, David A. and Van Deerlin, Vivianna M. and Shaw, Leslie M. and Trojanoswki, John Q. and Grossman, Murray},
-  title = {Can MRI screen for CSF biomarkers in neurodegenerative disease?},
-  journal = {NEUROLOGY},
-  year = {2013},
-  volume = {80},
-  number = {2},
-  pages = {132-138},
-  doi = {10.1212/WNL.0b013e31827b9147}
-}
-</pre></td>
-</tr>
-<tr id="McMillan2013a" class="entry">
-	<td>McMillan CT, Irwin DJ, Avants BB, Powers J, Cook PA, Toledo JB, McCarty Wood E, Van Deerlin VM, Lee VM-Y, Trojanowski JQ and Grossman M (2013), <i>"White matter imaging helps dissociate tau from TDP-43 in frontotemporal lobar degeneration."</i>, J Neurol Neurosurg Psychiatry., Mar, 2013. 
-	<p class="infolinks">[<a href="javascript:toggleInfo('McMillan2013a','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('McMillan2013a','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1136/jnnp-2012-304418" target="_blank">DOI</a>] [<a href="http://dx.doi.org/10.1136/jnnp-2012-304418" target="_blank">URL</a>]</p>
-	</td>
-</tr>
-<tr id="abs_McMillan2013a" class="abstract noshow">
-	<td><b>Abstract</b>: BACKGROUND: Frontotemporal lobar degeneration (FTLD) is most commonly associated with TAR-DNA binding protein (TDP-43) or tau pathology at autopsy, but there are no in vivo biomarkers reliably discriminating between sporadic cases. As disease-modifying treatments emerge, it is critical to accurately identify underlying pathology in living patients so that they can be entered into appropriate etiology-directed clinical trials. Patients with tau inclusions (FTLD-TAU) appear to have relatively greater white matter (WM) disease at autopsy than those patients with TDP-43 (FTLD-TDP). In this paper, we investigate the ability of white matter (WM) imaging to help discriminate between FTLD-TAU and FTLD-TDP during life using diffusion tensor imaging (DTI). METHODS: Patients with autopsy-confirmed disease or a genetic mutation consistent with FTLD-TDP or FTLD-TAU underwent multimodal T1 volumetric MRI and diffusion weighted imaging scans. We quantified cortical thickness in GM and fractional anisotropy (FA) in WM. We performed Eigenanatomy, a statistically robust dimensionality reduction algorithm, and used leave-one-out cross-validation to predict underlying pathology. Neuropathological assessment of GM and WM disease burden was performed in the autopsy-cases to confirm our findings of an ante-mortem GM and WM dissociation in the neuroimaging cohort. RESULTS: ROC curve analyses evaluated classification accuracy in individual patients and revealed 96% sensitivity and 100% specificity for WM analyses. FTLD-TAU had significantly more WM degeneration and inclusion severity at autopsy relative to FTLD-TDP. CONCLUSIONS: These neuroimaging and neuropathological investigations provide converging evidence for greater WM burden associated with FTLD-TAU, and emphasise the role of WM neuroimaging for in vivo discrimination between FTLD-TAU and FTLD-TDP.</td>
-</tr>
-<tr id="bib_McMillan2013a" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{McMillan2013a,
-  author = {McMillan, Corey T. and Irwin, David J. and Avants, Brian B. and Powers, John and Cook, Philip A. and Toledo, Jon B. and McCarty Wood, Elisabeth and Van Deerlin, Vivianna M. and Lee, Virginia M-Y. and Trojanowski, John Q. and Grossman, Murray},
-  title = {White matter imaging helps dissociate tau from TDP-43 in frontotemporal lobar degeneration.},
-  journal = {J Neurol Neurosurg Psychiatry},
-  year = {2013},
-  url = {http://dx.doi.org/10.1136/jnnp-2012-304418},
-  doi = {10.1136/jnnp-2012-304418}
-}
-</pre></td>
-</tr>
-<tr id="Weber2013" class="entry">
-	<td>Weber MJ, Detre JA, Thompson-Schill SL and Avants BB (2013), <i>"Reproducibility of functional network metrics and network structure: A comparison of task-related BOLD, resting ASL with BOLD contrast, and resting cerebral blood flow"</i>, Cognitive, Affective, &amp; Behavioral Neuroscience.  Vol. accepted
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Weber2013','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Weber2013" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Weber2013,
-  author = {Matthew J. Weber and John A. Detre and Sharon L. Thompson-Schill and Brian B. Avants},
-  title = {Reproducibility of functional network metrics and network structure: A comparison of task-related BOLD, resting ASL with BOLD contrast, and resting cerebral blood flow},
-  journal = {Cognitive, Affective, &amp; Behavioral Neuroscience},
-  year = {2013},
-  volume = {accepted}
-}
-</pre></td>
-</tr>
-<tr id="Badea2012" class="entry">
-	<td>Badea A, Gewalt S, Avants BB, Cook JJ and Johnson GA (2012), <i>"Quantitative mouse brain phenotyping based on single and multispectral MR protocols"</i>, NEUROIMAGE., NOV 15, 2012.  Vol. 63(3), pp. 1633-1645.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Badea2012','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1016/j.neuroimage.2012.07.021" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Badea2012" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Badea2012,
-  author = {Badea, Alexandra and Gewalt, Sally and Avants, Brian B. and Cook, James J. and Johnson, G. Allan},
-  title = {Quantitative mouse brain phenotyping based on single and multispectral MR protocols},
-  journal = {NEUROIMAGE},
-  year = {2012},
-  volume = {63},
-  number = {3},
-  pages = {1633-1645},
-  doi = {10.1016/j.neuroimage.2012.07.021}
-}
-</pre></td>
-</tr>
-<tr id="Das2012" class="entry">
-	<td>Das SR, Avants BB, Pluta J, Wang H, Suh JW, Weiner MW, Mueller SG and Yushkevich PA (2012), <i>"Measuring longitudinal change in the hippocampal formation from in vivo high-resolution T2-weighted MRI"</i>, NEUROIMAGE., APR 2, 2012.  Vol. 60(2), pp. 1266-1279.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Das2012','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1016/j.neuroimage.2012.01.098" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Das2012" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Das2012,
-  author = {Das, Sandhitsu R. and Avants, Brian B. and Pluta, John and Wang, Hongzhi and Suh, Jung W. and Weiner, Michael W. and Mueller, Susanne G. and Yushkevich, Paul A.},
-  title = {Measuring longitudinal change in the hippocampal formation from in vivo high-resolution T2-weighted MRI},
-  journal = {NEUROIMAGE},
-  year = {2012},
-  volume = {60},
-  number = {2},
-  pages = {1266-1279},
-  doi = {10.1016/j.neuroimage.2012.01.098}
-}
-</pre></td>
-</tr>
-<tr id="Datta2012" class="entry">
-	<td>Datta R, Lee J, Duda J, Avants BB, Vite CH, Tseng B, Gee JC, Aguirre GD and Aguirre GK (2012), <i>"A Digital Atlas of the Dog Brain"</i>, PLOS ONE., DEC 20, 2012.  Vol. 7(12)
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Datta2012','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1371/journal.pone.0052140" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Datta2012" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Datta2012,
-  author = {Datta, Ritobrato and Lee, Jongho and Duda, Jeffrey and Avants, Brian B. and Vite, Charles H. and Tseng, Ben and Gee, James C. and Aguirre, Gustavo D. and Aguirre, Geoffrey K.},
-  title = {A Digital Atlas of the Dog Brain},
-  journal = {PLOS ONE},
-  year = {2012},
-  volume = {7},
-  number = {12},
-  doi = {10.1371/journal.pone.0052140}
-}
-</pre></td>
-</tr>
-<tr id="Ghosh2012" class="entry">
-	<td>Ghosh SS, Klein A, Avants B and Millman KJ (2012), <i>"Learning from open source software projects to improve scientific review"</i>, FRONTIERS IN COMPUTATIONAL NEUROSCIENCE., APR 18, 2012.  Vol. 6
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Ghosh2012','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.3389/fncom.2012.00018" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Ghosh2012" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Ghosh2012,
-  author = {Ghosh, Satrajit S. and Klein, Arno and Avants, Brian and Millman, K. Jarrod},
-  title = {Learning from open source software projects to improve scientific review},
-  journal = {FRONTIERS IN COMPUTATIONAL NEUROSCIENCE},
-  year = {2012},
-  volume = {6},
-  doi = {10.3389/fncom.2012.00018}
-}
-</pre></td>
-</tr>
-<tr id="Gross2012" class="entry">
-	<td>Gross RG, McMillan CT, Chandrasekaran K, Dreyfuss M, Ash S, Avants B, Cook P, Moore P, Libon DJ, Siderowf A and Grossman M (2012), <i>"Sentence processing in Lewy body spectrum disorder: The role of working memory"</i>, BRAIN AND COGNITION., MAR, 2012.  Vol. 78(2), pp. 85-93.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Gross2012','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1016/j.bandc.2011.12.004" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Gross2012" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Gross2012,
-  author = {Gross, Rachel G. and McMillan, Corey T. and Chandrasekaran, Keerthi and Dreyfuss, Michael and Ash, Sharon and Avants, Brian and Cook, Philip and Moore, Peachie and Libon, David J. and Siderowf, Andrew and Grossman, Murray},
-  title = {Sentence processing in Lewy body spectrum disorder: The role of working memory},
-  journal = {BRAIN AND COGNITION},
-  year = {2012},
-  volume = {78},
-  number = {2},
-  pages = {85-93},
-  doi = {10.1016/j.bandc.2011.12.004}
-}
-</pre></td>
-</tr>
-<tr id="Hanson2012" class="entry">
-	<td>Hanson JL, Chung MK, Avants BB, Rudolph KD, Shirtcliff EA, Gee JC, Davidson RJ and Pollak SD (2012), <i>"Structural Variations in Prefrontal Cortex Mediate the Relationship between Early Childhood Stress and Spatial Working Memory"</i>, JOURNAL OF NEUROSCIENCE., JUN 6, 2012.  Vol. 32(23), pp. 7917-7925.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Hanson2012','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1523/JNEUROSCI.0307-12.2012" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Hanson2012" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Hanson2012,
-  author = {Hanson, Jamie L. and Chung, Moo K. and Avants, Brian B. and Rudolph, Karen D. and Shirtcliff, Elizabeth A. and Gee, James C. and Davidson, Richard J. and Pollak, Seth D.},
-  title = {Structural Variations in Prefrontal Cortex Mediate the Relationship between Early Childhood Stress and Spatial Working Memory},
-  journal = {JOURNAL OF NEUROSCIENCE},
-  year = {2012},
-  volume = {32},
-  number = {23},
-  pages = {7917-7925},
-  doi = {10.1523/JNEUROSCI.0307-12.2012}
-}
-</pre></td>
-</tr>
-<tr id="Hanson2012a" class="entry">
-	<td>Hanson JL, Suh JW, Nacewicz BM, Sutterer MJ, Cayo AA, Stodola DE, Burghy CA, Wang H, Avants BB, Yushkevich PA, Essex MJ, Pollak SD and Davidson RJ (2012), <i>"Robust Automated Amygdala Segmentation via Multi-Atlas Diffeomorphic Registration."</i>, Front Neurosci.  Vol. 6, pp. 166.
-	<p class="infolinks">[<a href="javascript:toggleInfo('Hanson2012a','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Hanson2012a','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.3389/fnins.2012.00166" target="_blank">DOI</a>] [<a href="http://dx.doi.org/10.3389/fnins.2012.00166" target="_blank">URL</a>]</p>
-	</td>
-</tr>
-<tr id="abs_Hanson2012a" class="abstract noshow">
-	<td><b>Abstract</b>: Here, we describe a novel method for volumetric segmentation of the amygdala from MRI images collected from 35 human subjects. This approach is adapted from open-source techniques employed previously with the hippocampus (Suh et al., 2011; Wang et al., 2011a,b). Using multi-atlas segmentation and machine learning-based correction, we were able to produce automated amygdala segments with high Dice (Mean?=?0.918 for the left amygdala; 0.916 for the right amygdala) and Jaccard coefficients (Mean?=?0.850 for the left; 0.846 for the right) compared to rigorously hand-traced volumes. This automated routine also produced amygdala segments with high intra-class correlations (consistency?=?0.830, absolute agreement?=?0.819 for the left; consistency?=?0.786, absolute agreement?=?0.783 for the right) and bivariate (r?=?0.831 for the left; r?=?0.797 for the right) compared to hand-drawn amygdala. Our results are discussed in relation to other cutting-edge segmentation techniques, as well as commonly available approaches to amygdala segmentation (e.g., Freesurfer). We believe this new technique has broad application to research with large sample sizes for which amygdala quantification might be needed.</td>
-</tr>
-<tr id="bib_Hanson2012a" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Hanson2012a,
-  author = {Hanson, Jamie L. and Suh, Jung W. and Nacewicz, Brendon M. and Sutterer, Matthew J. and Cayo, Amelia A. and Stodola, Diane E. and Burghy, Cory A. and Wang, Hongzhi and Avants, Brian B. and Yushkevich, Paul A. and Essex, Marilyn J. and Pollak, Seth D. and Davidson, Richard J.},
-  title = {Robust Automated Amygdala Segmentation via Multi-Atlas Diffeomorphic Registration.},
-  journal = {Front Neurosci},
-  year = {2012},
-  volume = {6},
-  pages = {166},
-  url = {http://dx.doi.org/10.3389/fnins.2012.00166},
-  doi = {10.3389/fnins.2012.00166}
-}
-</pre></td>
-</tr>
-<tr id="Hurst2012" class="entry">
-	<td>Hurst DR, Schoenemann PT, Loyet MM, Avants BB and Gee JC (2012), <i>"How well does endocranial morphology predict behavioral differences in primates?"</i>, AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY.  Vol. 147(54), pp. 171.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Hurst2012','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Hurst2012" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Hurst2012,
-  author = {Hurst, Delanie R. and Schoenemann, P. Thomas and Loyet, Mackenzie M. and Avants, Brian B. and Gee, James C.},
-  title = {How well does endocranial morphology predict behavioral differences in primates?},
-  journal = {AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY},
-  year = {2012},
-  volume = {147},
-  number = {54},
-  pages = {171},
-  note = {81st Annual Meeting of the American-Association-of-Physical-Anthropologists, Portland, OR, 2012}
-}
-</pre></td>
-</tr>
-<tr id="Jain2012" class="entry">
-	<td>Jain V, Duda J, Avants B, Giannetta M, Xie SX, Roberts T, Detre JA, Hurt H, Wehrli FW and Wang DJJ (2012), <i>"Longitudinal Reproducibility and Accuracy of Pseudo-Continuous Arterial Spin-labeled Perfusion MR Imaging in Typically Developing Children"</i>, RADIOLOGY., MAY, 2012.  Vol. 263(2), pp. 527-536.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Jain2012','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1148/radiol.12111509" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Jain2012" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Jain2012,
-  author = {Jain, Varsha and Duda, Jeffrey and Avants, Brian and Giannetta, Mariel and Xie, Sharon X. and Roberts, Timothy and Detre, John A. and Hurt, Hallam and Wehrli, Felix W. and Wang, Danny J. J.},
-  title = {Longitudinal Reproducibility and Accuracy of Pseudo-Continuous Arterial Spin-labeled Perfusion MR Imaging in Typically Developing Children},
-  journal = {RADIOLOGY},
-  year = {2012},
-  volume = {263},
-  number = {2},
-  pages = {527-536},
-  doi = {10.1148/radiol.12111509}
-}
-</pre></td>
-</tr>
-<tr id="Libon2012" class="entry">
-	<td>Libon DJ, McMillan C, Avants B, Boller A, Morgan B, Burkholder L, Chandrasekaran K, Elman L, McCluskey L and Grossman M (2012), <i>"Deficits in Concept Formation in Amyotrophic Lateral Sclerosis"</i>, NEUROPSYCHOLOGY., JUL, 2012.  Vol. 26(4), pp. 422-429.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Libon2012','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1037/a0028668" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Libon2012" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Libon2012,
-  author = {Libon, David J. and McMillan, Corey and Avants, Brian and Boller, Ashley and Morgan, Brianna and Burkholder, Lisa and Chandrasekaran, Keerthi and Elman, Lauren and McCluskey, Leo and Grossman, Murray},
-  title = {Deficits in Concept Formation in Amyotrophic Lateral Sclerosis},
-  journal = {NEUROPSYCHOLOGY},
-  year = {2012},
-  volume = {26},
-  number = {4},
-  pages = {422-429},
-  doi = {10.1037/a0028668}
-}
-</pre></td>
-</tr>
-<tr id="Loyet2012" class="entry">
-	<td>Loyet MM, Schoenemann PT, Avants BB and Gee JC (2012), <i>"Associations between localized variation in brain anatomy and social behavior in healthy human subjects."</i>, AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY.  Vol. 147(54), pp. 196.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Loyet2012','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Loyet2012" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Loyet2012,
-  author = {Loyet, Mackenzie M. and Schoenemann, P. Thomas and Avants, Brian B. and Gee, James C.},
-  title = {Associations between localized variation in brain anatomy and social behavior in healthy human subjects.},
-  journal = {AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY},
-  year = {2012},
-  volume = {147},
-  number = {54},
-  pages = {196},
-  note = {81st Annual Meeting of the American-Association-of-Physical-Anthropologists, Portland, OR, 2012}
-}
-</pre></td>
-</tr>
-<tr id="Rohlfing2012" class="entry">
-	<td>Rohlfing T and Avants B (2012), <i>""Nonparametric Local Smoothing" is not image registration."</i>, BMC Res Notes.  Vol. 5, pp. 610.
-	<p class="infolinks">[<a href="javascript:toggleInfo('Rohlfing2012','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Rohlfing2012','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1186/1756-0500-5-610" target="_blank">DOI</a>] [<a href="http://dx.doi.org/10.1186/1756-0500-5-610" target="_blank">URL</a>]</p>
-	</td>
-</tr>
-<tr id="abs_Rohlfing2012" class="abstract noshow">
-	<td><b>Abstract</b>: Image registration is one of the most important and universally useful computational tasks in biomedical image analysis. A recent article by Xing &amp; Qiu (IEEE Transactions on Pattern Analysis and Machine Intelligence, 33(10):2081-2092, 2011) is based on an inappropriately narrow conceptualization of the image registration problem as the task of making two images look alike, which disregards whether the established spatial correspondence is plausible. The authors propose a new algorithm, Nonparametric Local Smoothing (NLS) for image registration, but use image similarities alone as a measure of registration performance, although these measures do not relate reliably to the realism of the correspondence map.Using data obtained from its authors, we show experimentally that the method proposed by Xing &amp; Qiu is not an effective registration algorithm. While it optimizes image similarity, it does not compute accurate, interpretable transformations. Even judged by image similarity alone, the proposed method is consistently outperformed by a simple pixel permutation algorithm, which is known by design not to compute valid registrations.This study has demonstrated that the NLS algorithm proposed recently for image registration, and published in one of the most respected journals in computer science, is not, in fact, an effective registration method at all. Our results also emphasize the general need to apply registration evaluation criteria that are sensitive to whether correspondences are accurate and mappings between images are physically interpretable. These goals cannot be achieved by simply reporting image similarities.</td>
-</tr>
-<tr id="bib_Rohlfing2012" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Rohlfing2012,
-  author = {Rohlfing, Torsten and Avants, Brian},
-  title = {"Nonparametric Local Smoothing" is not image registration.},
-  journal = {BMC Res Notes},
-  year = {2012},
-  volume = {5},
-  pages = {610},
-  url = {http://dx.doi.org/10.1186/1756-0500-5-610},
-  doi = {10.1186/1756-0500-5-610}
-}
-</pre></td>
-</tr>
-<tr id="Tustison2012" class="entry">
-	<td>Tustison NJ, Avants BB, Cook PA, Kim J, Whyte J, Gee JC and Stone JR (2012), <i>"Logical circularity in voxel-based analysis: Normalization strategy may induce statistical bias."</i>, Hum Brain Mapp., Nov, 2012. 
-	<p class="infolinks">[<a href="javascript:toggleInfo('Tustison2012','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Tustison2012','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1002/hbm.22211" target="_blank">DOI</a>] [<a href="http://dx.doi.org/10.1002/hbm.22211" target="_blank">URL</a>]</p>
-	</td>
-</tr>
-<tr id="abs_Tustison2012" class="abstract noshow">
-	<td><b>Abstract</b>: Recent discussions within the neuroimaging community have highlighted the problematic presence of selection bias in experimental design. Although initially centering on the selection of voxels during the course of fMRI studies, we demonstrate how this bias can potentially corrupt voxel-based analyses. For such studies, template-based registration plays a critical role in which a representative template serves as the normalized space for group alignment. A standard approach maps each subject's image to a representative template before performing statistical comparisons between different groups. We analytically demonstrate that in these scenarios the popular sum of squared difference (SSD) intensity metric, implicitly surrogating as a quantification of anatomical alignment, instead explicitly maximizes effect size-an experimental design flaw referred to as "circularity bias." We illustrate how this selection bias varies in strength with the similarity metric used during registration under the hypothesis that while SSD-related metrics, such as Demons, will manifest similar effects, other metrics which are not formulated based on absolute intensity differences will produce less of an effect. Consequently, given the variability in voxel-based analysis outcomes with similarity metric choice, we caution researchers specifically in the use of SSD and SSD-related measures where normalization and statistical analysis involve the same image set. Instead, we advocate a more cautious approach where normalization of the individual subject images to the reference space occurs through corresponding image sets which are independent of statistical testing. Alternatively, one can use similarity terms that are less sensitive to this bias. Hum Brain Mapp, 2012. © 2012 Wiley Periodicals, Inc.</td>
-</tr>
-<tr id="bib_Tustison2012" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Tustison2012,
-  author = {Tustison, Nicholas J. and Avants, Brian B. and Cook, Philip A. and Kim, Junghoon and Whyte, John and Gee, James C. and Stone, James R.},
-  title = {Logical circularity in voxel-based analysis: Normalization strategy may induce statistical bias.},
-  journal = {Hum Brain Mapp},
-  year = {2012},
-  url = {http://dx.doi.org/10.1002/hbm.22211},
-  doi = {10.1002/hbm.22211}
-}
-</pre></td>
-</tr>
-<tr id="Ashtari2011" class="entry">
-	<td>Ashtari M, Avants B, Cyckowski L, Cervellione KL, Roofeh D, Cook P, Gee J, Sevy S and Kumra S (2011), <i>"Medial temporal structures and memory functions in adolescents with heavy cannabis use"</i>, JOURNAL OF PSYCHIATRIC RESEARCH., AUG, 2011.  Vol. 45(8), pp. 1055-1066.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Ashtari2011','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1016/j.jpsychires.2011.01.004" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Ashtari2011" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Ashtari2011,
-  author = {Ashtari, Manzar and Avants, Brian and Cyckowski, Laura and Cervellione, Kelly L. and Roofeh, David and Cook, Philip and Gee, James and Sevy, Serge and Kumra, Sanjiv},
-  title = {Medial temporal structures and memory functions in adolescents with heavy cannabis use},
-  journal = {JOURNAL OF PSYCHIATRIC RESEARCH},
-  year = {2011},
-  volume = {45},
-  number = {8},
-  pages = {1055-1066},
-  doi = {10.1016/j.jpsychires.2011.01.004}
-}
-</pre></td>
-</tr>
-<tr id="Avants2011" class="entry">
-	<td>Avants BB, Tustison NJ, Wu J, Cook PA and Gee JC (2011), <i>"An Open Source Multivariate Framework for n-Tissue Segmentation with Evaluation on Public Data"</i>, NEUROINFORMATICS., DEC, 2011.  Vol. 9(4), pp. 381-400.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Avants2011','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1007/s12021-011-9109-y" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Avants2011" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Avants2011,
-  author = {Avants, Brian B. and Tustison, Nicholas J. and Wu, Jue and Cook, Philip A. and Gee, James C.},
-  title = {An Open Source Multivariate Framework for n-Tissue Segmentation with Evaluation on Public Data},
-  journal = {NEUROINFORMATICS},
-  year = {2011},
-  volume = {9},
-  number = {4},
-  pages = {381-400},
-  doi = {10.1007/s12021-011-9109-y}
-}
-</pre></td>
-</tr>
-<tr id="Avants2011a" class="entry">
-	<td>Avants BB, Tustison NJ, Song G, Cook PA, Klein A and Gee JC (2011), <i>"A reproducible evaluation of ANTs similarity metric performance in brain image registration"</i>, NEUROIMAGE., FEB 1, 2011.  Vol. 54(3), pp. 2033-2044.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Avants2011a','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1016/j.neuroimage.2010.09.025" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Avants2011a" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Avants2011a,
-  author = {Avants, Brian B. and Tustison, Nicholas J. and Song, Gang and Cook, Philip A. and Klein, Arno and Gee, James C.},
-  title = {A reproducible evaluation of ANTs similarity metric performance in brain image registration},
-  journal = {NEUROIMAGE},
-  year = {2011},
-  volume = {54},
-  number = {3},
-  pages = {2033-2044},
-  doi = {10.1016/j.neuroimage.2010.09.025}
-}
-</pre></td>
-</tr>
-<tr id="Boller2011" class="entry">
-	<td>Boller A, Libon D, Rascovsky K, Gross RG, Dreyfuss M, Avants B, Massimo L, Moore P, Kitain J, Coslett H, Chatterjee A and Grossman M (2011), <i>"Philadelphia Brief Assessment of Cognition (PBAC): A Validated Screening Measure for Dementia"</i>, NEUROLOGY., MAR 1, 2011.  Vol. 76(9, 4), pp. A511.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Boller2011','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Boller2011" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Boller2011,
-  author = {Boller, Ashley and Libon, David and Rascovsky, Katya and Gross, Rachel Goldmann and Dreyfuss, Michael and Avants, Brian and Massimo, Lauren and Moore, Peachie and Kitain, Jessica and Coslett, H. and Chatterjee, Anjan and Grossman, Murray},
-  title = {Philadelphia Brief Assessment of Cognition (PBAC): A Validated Screening Measure for Dementia},
-  journal = {NEUROLOGY},
-  year = {2011},
-  volume = {76},
-  number = {9, 4},
-  pages = {A511},
-  note = {63rd AAN Annual Meeting, Honolulu, HI, APR 09-16, 2011}
-}
-</pre></td>
-</tr>
-<tr id="Das2011" class="entry">
-	<td>Das SR, Mechanic-Hamilton D, Pluta J, Korczykowski M, Detre JA and Yushkevich PA (2011), <i>"Heterogeneity of functional activation during memory encoding across hippocampal subfields in temporal lobe epilepsy."</i>, Neuroimage., Oct, 2011.  Vol. 58(4), pp. 1121-1130.
-	<p class="infolinks">[<a href="javascript:toggleInfo('Das2011','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Das2011','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1016/j.neuroimage.2011.06.085" target="_blank">DOI</a>] [<a href="http://dx.doi.org/10.1016/j.neuroimage.2011.06.085" target="_blank">URL</a>]</p>
-	</td>
-</tr>
-<tr id="abs_Das2011" class="abstract noshow">
-	<td><b>Abstract</b>: Pathology studies have shown that the anatomical subregions of the hippocampal formation are differentially affected in various neurological disorders, including temporal lobe epilepsy (TLE). Analysis of structure and function within these subregions using magnetic resonance imaging (MRI) has the potential to generate insights on disease associations as well as normative brain function. In this study, an atlas-based normalization method (Yushkevich, P.A., Avants, B.B., Pluta, J., Das, S., Minkoff, D., Mechanic-Hamilton, D., Glynn, S., Pickup, S., Liu, W., Gee, J.C., Grossman, M., Detre, J.A., 2009. A high-resolution computational atlas of the human hippocampus from postmortem magnetic resonance imaging at 9.4 T. NeuroImage 44 (2), 385-398) was used to label hippocampal subregions, making it possible to examine subfield-level functional activation during an episodic memory task in two different cohorts of healthy controls and subjects diagnosed with intractable unilateral TLE. We report, for the first time, functional activation patterns within hippocampal subfields in TLE. We detected group differences in subfield activation between patients and controls as well as inter-hemispheric activation asymmetry within subfields in patients, with dentate gyrus (DG) and the anterior hippocampus region showing the greatest effects. DG was also found to be more active than CA1 in controls, but not in patients' epileptogenic side. These preliminary results will encourage further research on the utility of subfield-based biomarkers in TLE.</td>
-</tr>
-<tr id="bib_Das2011" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Das2011,
-  author = {Das, Sandhitsu R. and Mechanic-Hamilton, Dawn and Pluta, John and Korczykowski, Marc and Detre, John A. and Yushkevich, Paul A.},
-  title = {Heterogeneity of functional activation during memory encoding across hippocampal subfields in temporal lobe epilepsy.},
-  journal = {Neuroimage},
-  year = {2011},
-  volume = {58},
-  number = {4},
-  pages = {1121--1130},
-  url = {http://dx.doi.org/10.1016/j.neuroimage.2011.06.085},
-  doi = {10.1016/j.neuroimage.2011.06.085}
-}
-</pre></td>
-</tr>
-<tr id="Morgan2011" class="entry">
-	<td>Morgan B, Gross RG, Clark R, Dreyfuss M, Boller A, Camp E, Liang T-W, Avants B, McMillan CT and Grossman M (2011), <i>"Some is not enough: Quantifier comprehension in corticobasal syndrome and behavioral variant frontotemporal dementia"</i>, NEUROPSYCHOLOGIA., NOV, 2011.  Vol. 49(13), pp. 3532-3541.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Morgan2011','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1016/j.neuropsychologia.2011.09.005" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Morgan2011" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Morgan2011,
-  author = {Morgan, Brianna and Gross, Rachel G. and Clark, Robin and Dreyfuss, Michael and Boller, Ashley and Camp, Emily and Liang, Tsao-Wei and Avants, Brian and McMillan, Corey T. and Grossman, Murray},
-  title = {Some is not enough: Quantifier comprehension in corticobasal syndrome and behavioral variant frontotemporal dementia},
-  journal = {NEUROPSYCHOLOGIA},
-  year = {2011},
-  volume = {49},
-  number = {13},
-  pages = {3532-3541},
-  doi = {10.1016/j.neuropsychologia.2011.09.005}
-}
-</pre></td>
-</tr>
-<tr id="Murphy2011" class="entry">
-	<td>Murphy K, van Ginneken B, Reinhardt JM, Kabus S, Ding K, Deng X, Cao K, Du K, Christensen GE, Garcia V, Vercauteren T, Ayache N, Commowick O, Malandain G, Glocker B, Paragios N, Navab N, Gorbunova V, Sporring J, de Bruijne M, Han X, Heinrich MP, Schnabel JA, Jenkinson M, Lorenz C, Modat M, McClelland JR, Ourselin S, Muenzing SEA, Viergever MA, De Nigris D, Collins DL, Arbel T, Peroni M, Li R, Sharp GC, Schmidt-Richberg A, Ehrhardt J, Werner R, Smeets D, Loeckx D, Song G, Tustison N, Avants B, Gee JC, Staring M, Klein S, Stoel BC, Urschler M, Werlberger M, Vandemeulebroucke J, Rit S, Sarrut D and Pluim JPW (2011), <i>"Evaluation of Registration Methods on Thoracic CT: The EMPIRE10 Challenge"</i>, IEEE TRANSACTIONS ON MEDICAL IMAGING., NOV, 2011.  Vol. 30(11), pp. 1901-1920.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Murphy2011','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1109/TMI.2011.2158349" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Murphy2011" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Murphy2011,
-  author = {Murphy, Keelin and van Ginneken, Bram and Reinhardt, Joseph M. and Kabus, Sven and Ding, Kai and Deng, Xiang and Cao, Kunlin and Du, Kaifang and Christensen, Gary E. and Garcia, Vincent and Vercauteren, Tom and Ayache, Nicholas and Commowick, Olivier and Malandain, Gregoire and Glocker, Ben and Paragios, Nikos and Navab, Nassir and Gorbunova, Vladlena and Sporring, Jon and de Bruijne, Marleen and Han, Xiao and Heinrich, Mattias P. and Schnabel, Julia A. and Jenkinson, Mark and Lorenz, Cristian and Modat, Marc and McClelland, Jamie R. and Ourselin, Sebastien and Muenzing, Sascha E. A. and Viergever, Max A. and De Nigris, Dante and Collins, D. Louis and Arbel, Tal and Peroni, Marta and Li, Rui and Sharp, Gregory C. and Schmidt-Richberg, Alexander and Ehrhardt, Jan and Werner, Rene and Smeets, Dirk and Loeckx, Dirk and Song, Gang and Tustison, Nicholas and Avants, Brian and Gee, James C. and Staring, Marius and Klein, Stefan and Stoel, Berend C. and Urschler, Martin and Werlberger, Manuel and Vandemeulebroucke, Jef and Rit, Simon and Sarrut, David and Pluim, Josien P. W.},
-  title = {Evaluation of Registration Methods on Thoracic CT: The EMPIRE10 Challenge},
-  journal = {IEEE TRANSACTIONS ON MEDICAL IMAGING},
-  year = {2011},
-  volume = {30},
-  number = {11},
-  pages = {1901-1920},
-  doi = {10.1109/TMI.2011.2158349}
-}
-</pre></td>
-</tr>
-<tr id="Schoenemann2011" class="entry">
-	<td>Schoenemann PT, Holloway R, Monge J, Avants B and Gee J (2011), <i>"Differences in endocranial shape between Homo and Pongids assessed through non-rigid deformation analysis of high-resolution CT images."</i>, AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY.  Vol. 144(52), pp. 265-266.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Schoenemann2011','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Schoenemann2011" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Schoenemann2011,
-  author = {Schoenemann, P. Thomas and Holloway, Ralph and Monge, Janet and Avants, Brian and Gee, James},
-  title = {Differences in endocranial shape between Homo and Pongids assessed through non-rigid deformation analysis of high-resolution CT images.},
-  journal = {AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY},
-  year = {2011},
-  volume = {144},
-  number = {52},
-  pages = {265-266},
-  note = {80th Annual Meeting of the American-Association-of-Physical-Anthropologists, Minneapolis, MN, APR 11-16, 2011}
-}
-</pre></td>
-</tr>
-<tr id="Tustison2011" class="entry">
-	<td>Tustison NJ, Avants BB, Flors L, Altes TA, de lange null EE, Mugler III JP and Gee JC (2011), <i>"Ventilation-Based Segmentation of the Lungs Using Hyperpolarized He-3 MRI"</i>, JOURNAL OF MAGNETIC RESONANCE IMAGING., OCT, 2011.  Vol. 34(4), pp. 831-841.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Tustison2011','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1002/jmri.22738" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Tustison2011" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Tustison2011,
-  author = {Tustison, Nicholas J. and Avants, Brian B. and Flors, Lucia and Altes, Talissa A. and de lange, Eduard E. and Mugler, III, John P. and Gee, James C.},
-  title = {Ventilation-Based Segmentation of the Lungs Using Hyperpolarized He-3 MRI},
-  journal = {JOURNAL OF MAGNETIC RESONANCE IMAGING},
-  year = {2011},
-  volume = {34},
-  number = {4},
-  pages = {831-841},
-  doi = {10.1002/jmri.22738}
-}
-</pre></td>
-</tr>
-<tr id="Tustison2011a" class="entry">
-	<td>Tustison N, Avants B, Cook P, Kim J, Whyte J, Gee J, Ahlers S and Stone J (2011), <i>"MULTIVARIATE ANALYSIS OF DIFFUSION TENSOR IMAGING AND CORTICAL THICKNESS MAPS IN A TRAUMATIC BRAIN INJURY (TBI) COHORT USING ADVANCED NORMALIZATION TOOLS (ANTS)"</i>, JOURNAL OF NEUROTRAUMA., JUN, 2011.  Vol. 28(6), pp. A111.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Tustison2011a','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Tustison2011a" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Tustison2011a,
-  author = {Tustison, Nicholas and Avants, Brian and Cook, Philip and Kim, Junghoon and Whyte, John and Gee, James and Ahlers, Stephen and Stone, James},
-  title = {MULTIVARIATE ANALYSIS OF DIFFUSION TENSOR IMAGING AND CORTICAL THICKNESS MAPS IN A TRAUMATIC BRAIN INJURY (TBI) COHORT USING ADVANCED NORMALIZATION TOOLS (ANTS)},
-  journal = {JOURNAL OF NEUROTRAUMA},
-  year = {2011},
-  volume = {28},
-  number = {6},
-  pages = {A111},
-  note = {29th Annual National Neurotrauma Symposium, Hollywood Beach, FL, JUL 10-13, 2011}
-}
-</pre></td>
-</tr>
-<tr id="Tustison2011b" class="entry">
-	<td>Tustison NJ, Avants BB, Siqueira M and Gee JC (2011), <i>"Topological Well-Composedness and Glamorous Glue: A Digital Gluing Algorithm for Topologically Constrained Front Propagation"</i>, IEEE TRANSACTIONS ON IMAGE PROCESSING., JUN, 2011.  Vol. 20(6), pp. 1756-1761.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Tustison2011b','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1109/TIP.2010.2095021" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Tustison2011b" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Tustison2011b,
-  author = {Tustison, Nicholas J. and Avants, Brian B. and Siqueira, Marcelo and Gee, James C.},
-  title = {Topological Well-Composedness and Glamorous Glue: A Digital Gluing Algorithm for Topologically Constrained Front Propagation},
-  journal = {IEEE TRANSACTIONS ON IMAGE PROCESSING},
-  year = {2011},
-  volume = {20},
-  number = {6},
-  pages = {1756-1761},
-  doi = {10.1109/TIP.2010.2095021}
-}
-</pre></td>
-</tr>
-<tr id="Wang2011" class="entry">
-	<td>Wang H, Das SR, Suh JW, Altinay M, Pluta J, Craige C, Avants B, Yushkevich PA and Initia ADN (2011), <i>"A learning-based wrapper method to correct systematic errors in automatic image segmentation: Consistently improved performance in hippocampus, cortex and brain segmentation"</i>, NEUROIMAGE., APR 1, 2011.  Vol. 55(3), pp. 968-985.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Wang2011','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1016/j.neuroimage.2011.01.006" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Wang2011" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Wang2011,
-  author = {Wang, Hongzhi and Das, Sandhitsu R. and Suh, Jung Wook and Altinay, Murat and Pluta, John and Craige, Caryne and Avants, Brian and Yushkevich, Paul A. and Alzheimers Dis Neuroimaging Initia},
-  title = {A learning-based wrapper method to correct systematic errors in automatic image segmentation: Consistently improved performance in hippocampus, cortex and brain segmentation},
-  journal = {NEUROIMAGE},
-  year = {2011},
-  volume = {55},
-  number = {3},
-  pages = {968-985},
-  doi = {10.1016/j.neuroimage.2011.01.006}
-}
-</pre></td>
-</tr>
-<tr id="Ash2010" class="entry">
-	<td>Ash S, McMillan C, Gunawardena D, Avants B, Morgan B, Khan A, Moore P, Gee J and Grossman M (2010), <i>"Speech errors in progressive non-fluent aphasia"</i>, BRAIN AND LANGUAGE., APR, 2010.  Vol. 113(1), pp. 13-20.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Ash2010','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1016/j.bandl.2009.12.001" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Ash2010" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Ash2010,
-  author = {Ash, Sharon and McMillan, Corey and Gunawardena, Delani and Avants, Brian and Morgan, Brianna and Khan, Alea and Moore, Peachie and Gee, James and Grossman, Murray},
-  title = {Speech errors in progressive non-fluent aphasia},
-  journal = {BRAIN AND LANGUAGE},
-  year = {2010},
-  volume = {113},
-  number = {1},
-  pages = {13-20},
-  doi = {10.1016/j.bandl.2009.12.001}
-}
-</pre></td>
-</tr>
-<tr id="Avants2010" class="entry">
-	<td>Avants BB, Cook PA, Ungar L, Gee JC and Grossman M (2010), <i>"Dementia induces correlated reductions in white matter integrity and cortical thickness: A multivariate neuroimaging study with sparse canonical correlation analysis"</i>, NEUROIMAGE., APR 15, 2010.  Vol. 50(3), pp. 1004-1016.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Avants2010','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1016/j.neuroimage.2010.01.041" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Avants2010" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Avants2010,
-  author = {Avants, Brian B. and Cook, Philip A. and Ungar, Lyle and Gee, James C. and Grossman, Murray},
-  title = {Dementia induces correlated reductions in white matter integrity and cortical thickness: A multivariate neuroimaging study with sparse canonical correlation analysis},
-  journal = {NEUROIMAGE},
-  year = {2010},
-  volume = {50},
-  number = {3},
-  pages = {1004-1016},
-  doi = {10.1016/j.neuroimage.2010.01.041}
-}
-</pre></td>
-</tr>
-<tr id="Avants2010a" class="entry">
-	<td>Avants BB, Yushkevich P, Pluta J, Minkoff D, Korczykowski M, Detre J and Gee JC (2010), <i>"The optimal template effect in hippocampus studies of diseased populations"</i>, NEUROIMAGE., FEB 1, 2010.  Vol. 49(3), pp. 2457-2466.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Avants2010a','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1016/j.neuroimage.2009.09.062" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Avants2010a" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Avants2010a,
-  author = {Avants, Brian B. and Yushkevich, Paul and Pluta, John and Minkoff, David and Korczykowski, Marc and Detre, John and Gee, James C.},
-  title = {The optimal template effect in hippocampus studies of diseased populations},
-  journal = {NEUROIMAGE},
-  year = {2010},
-  volume = {49},
-  number = {3},
-  pages = {2457-2466},
-  doi = {10.1016/j.neuroimage.2009.09.062}
-}
-</pre></td>
-</tr>
-<tr id="Farag2010" class="entry">
-	<td>Farag C, Troiani V, Bonner M, Powers C, Avants B, Gee J and Grossman M (2010), <i>"Hierarchical Organization of Scripts: Converging Evidence from fMRI and Frontotemporal Degeneration"</i>, CEREBRAL CORTEX., OCT, 2010.  Vol. 20(10), pp. 2453-2463.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Farag2010','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1093/cercor/bhp313" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Farag2010" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Farag2010,
-  author = {Farag, Christine and Troiani, Vanessa and Bonner, Michael and Powers, Chivon and Avants, Brian and Gee, James and Grossman, Murray},
-  title = {Hierarchical Organization of Scripts: Converging Evidence from fMRI and Frontotemporal Degeneration},
-  journal = {CEREBRAL CORTEX},
-  year = {2010},
-  volume = {20},
-  number = {10},
-  pages = {2453-2463},
-  doi = {10.1093/cercor/bhp313}
-}
-</pre></td>
-</tr>
-<tr id="Grossman2010" class="entry">
-	<td>Grossman M, Eslinger PJ, Troiani V, Anderson C, Avants B, Gee JC, McMillan C, Massimo L, Khan A and Antani S (2010), <i>"The role of ventral medial prefrontal cortex in social decisions Converging evidence from fMRI and frontotemporal lobar degeneration"</i>, NEUROPSYCHOLOGIA., OCT, 2010.  Vol. 48(12), pp. 3505-3512.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Grossman2010','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1016/j.neuropsychologia.2010.07.036" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Grossman2010" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Grossman2010,
-  author = {Grossman, Murray and Eslinger, Paul J. and Troiani, Vanessa and Anderson, Chivon and Avants, Brian and Gee, James C. and McMillan, Corey and Massimo, Lauren and Khan, Alea and Antani, Shweta},
-  title = {The role of ventral medial prefrontal cortex in social decisions Converging evidence from fMRI and frontotemporal lobar degeneration},
-  journal = {NEUROPSYCHOLOGIA},
-  year = {2010},
-  volume = {48},
-  number = {12},
-  pages = {3505-3512},
-  doi = {10.1016/j.neuropsychologia.2010.07.036}
-}
-</pre></td>
-</tr>
-<tr id="Gunawardena2010" class="entry">
-	<td>Gunawardena D, Ash S, McMillan C, Avants B, Gee J and Grossman M (2010), <i>"Why are patients with progressive nonfluent aphasia nonfluent?"</i>, NEUROLOGY., AUG 17, 2010.  Vol. 75(7), pp. 588-594.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Gunawardena2010','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Gunawardena2010" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Gunawardena2010,
-  author = {Gunawardena, D. and Ash, S. and McMillan, C. and Avants, B. and Gee, J. and Grossman, M.},
-  title = {Why are patients with progressive nonfluent aphasia nonfluent?},
-  journal = {NEUROLOGY},
-  year = {2010},
-  volume = {75},
-  number = {7},
-  pages = {588-594}
-}
-</pre></td>
-</tr>
-<tr id="Hanson2010" class="entry">
-	<td>Hanson JL, Chung MK, Avants BB, Shirtcliff EA, Gee JC, Davidson RJ and Pollak SD (2010), <i>"Early Stress Is Associated with Alterations in the Orbitofrontal Cortex: A Tensor-Based Morphometry Investigation of Brain Structure and Behavioral Risk"</i>, JOURNAL OF NEUROSCIENCE., JUN 2, 2010.  Vol. 30(22), pp. 7466-7472.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Hanson2010','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1523/JNEUROSCI.0859-10.2010" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Hanson2010" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Hanson2010,
-  author = {Hanson, Jamie L. and Chung, Moo K. and Avants, Brian B. and Shirtcliff, Elizabeth A. and Gee, James C. and Davidson, Richard J. and Pollak, Seth D.},
-  title = {Early Stress Is Associated with Alterations in the Orbitofrontal Cortex: A Tensor-Based Morphometry Investigation of Brain Structure and Behavioral Risk},
-  journal = {JOURNAL OF NEUROSCIENCE},
-  year = {2010},
-  volume = {30},
-  number = {22},
-  pages = {7466-7472},
-  doi = {10.1523/JNEUROSCI.0859-10.2010}
-}
-</pre></td>
-</tr>
-<tr id="Kim2010" class="entry">
-	<td>Kim J, Whyte J, Patel S, Avants B, Europa E, Wang J, Slattery J, Gee JC, Coslett HB and Detre JA (2010), <i>"Resting Cerebral Blood Flow Alterations in Chronic Traumatic Brain Injury: An Arterial Spin Labeling Perfusion fMRI Study"</i>, JOURNAL OF NEUROTRAUMA., AUG, 2010.  Vol. 27(8), pp. 1399-1411.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Kim2010','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1089/neu.2009.1215" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Kim2010" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Kim2010,
-  author = {Kim, Junghoon and Whyte, John and Patel, Sunil and Avants, Brian and Europa, Eduardo and Wang, Jiongjiong and Slattery, John and Gee, James C. and Coslett, H. Branch and Detre, John A.},
-  title = {Resting Cerebral Blood Flow Alterations in Chronic Traumatic Brain Injury: An Arterial Spin Labeling Perfusion fMRI Study},
-  journal = {JOURNAL OF NEUROTRAUMA},
-  year = {2010},
-  volume = {27},
-  number = {8},
-  pages = {1399-1411},
-  doi = {10.1089/neu.2009.1215}
-}
-</pre></td>
-</tr>
-<tr id="Klein2010" class="entry">
-	<td>Klein A, Ghosh SS, Avants B, Yeo BTT, Fischl B, Ardekani B, Gee JC, Mann JJ and Parsey RV (2010), <i>"Evaluation of volume-based and surface-based brain image registration methods"</i>, NEUROIMAGE., MAY 15, 2010.  Vol. 51(1), pp. 214-220.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Klein2010','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1016/j.neuroimage.2010.01.091" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Klein2010" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Klein2010,
-  author = {Klein, Arno and Ghosh, Satrajit S. and Avants, Brian and Yeo, B. T. T. and Fischl, Bruce and Ardekani, Babak and Gee, James C. and Mann, J. J. and Parsey, Ramin V.},
-  title = {Evaluation of volume-based and surface-based brain image registration methods},
-  journal = {NEUROIMAGE},
-  year = {2010},
-  volume = {51},
-  number = {1},
-  pages = {214-220},
-  doi = {10.1016/j.neuroimage.2010.01.091}
-}
-</pre></td>
-</tr>
-<tr id="Rao2010" class="entry">
-	<td>Rao H, Betancourt L, Giannetta JM, Brodsky NL, Korczykowski M, Avants BB, Gee JC, Wang J, Hurt H, Detre JA and Farah MJ (2010), <i>"Early parental care is important for hippocampal maturation: Evidence from brain morphology in humans"</i>, NEUROIMAGE., JAN 1, 2010.  Vol. 49(1), pp. 1144-1150.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Rao2010','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1016/j.neuroimage.2009.07.003" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Rao2010" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Rao2010,
-  author = {Rao, Hengyi and Betancourt, Laura and Giannetta, Joan M. and Brodsky, Nancy L. and Korczykowski, Marc and Avants, Brian B. and Gee, James C. and Wang, Jiongjiong and Hurt, Hallam and Detre, John A. and Farah, Martha J.},
-  title = {Early parental care is important for hippocampal maturation: Evidence from brain morphology in humans},
-  journal = {NEUROIMAGE},
-  year = {2010},
-  volume = {49},
-  number = {1},
-  pages = {1144-1150},
-  doi = {10.1016/j.neuroimage.2009.07.003}
-}
-</pre></td>
-</tr>
-<tr id="Schoenemann2010" class="entry">
-	<td>Schoenemann PT, Monge J, Holloway RL, Avants BB and Gee JC (2010), <i>"Creating statistical atlases of modern primate endocranial morphology rising non-rigid deformation analysis of high-resolution CT images."</i>, AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY. (50), pp. 208-209.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Schoenemann2010','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Schoenemann2010" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Schoenemann2010,
-  author = {Schoenemann, P. Thomas and Monge, Janet and Holloway, Ralph L. and Avants, Brian B. and Gee, James C.},
-  title = {Creating statistical atlases of modern primate endocranial morphology rising non-rigid deformation analysis of high-resolution CT images.},
-  journal = {AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY},
-  year = {2010},
-  number = {50},
-  pages = {208-209},
-  note = {79th Annual Meeting of the American-Association-of-Physical-Anthropologists, Albuquerque, NM, APR 14-17, 2010}
-}
-</pre></td>
-</tr>
-<tr id="Tustison2010" class="entry">
-	<td>Tustison NJ, Avants BB, Cook PA, Zheng Y, Egan A, Yushkevich PA and Gee JC (2010), <i>"N4ITK: Improved N3 Bias Correction"</i>, IEEE TRANSACTIONS ON MEDICAL IMAGING., JUN, 2010.  Vol. 29(6), pp. 1310-1320.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Tustison2010','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1109/TMI.2010.2046908" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Tustison2010" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Tustison2010,
-  author = {Tustison, Nicholas J. and Avants, Brian B. and Cook, Philip A. and Zheng, Yuanjie and Egan, Alexander and Yushkevich, Paul A. and Gee, James C.},
-  title = {N4ITK: Improved N3 Bias Correction},
-  journal = {IEEE TRANSACTIONS ON MEDICAL IMAGING},
-  year = {2010},
-  volume = {29},
-  number = {6},
-  pages = {1310-1320},
-  doi = {10.1109/TMI.2010.2046908}
-}
-</pre></td>
-</tr>
-<tr id="Wang2010" class="entry">
-	<td>Wang DJJ, Bi X, Avants BB, Meng T, Zuehlsdorff S and Detre JA (2010), <i>"Estimation of Perfusion and Arterial Transit Time in Myocardium Using Free-Breathing Myocardial Arterial Spin Labeling With Navigator-Echo"</i>, MAGNETIC RESONANCE IN MEDICINE., NOV, 2010.  Vol. 64(5), pp. 1289-1295.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Wang2010','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1002/mrm.22630" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Wang2010" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Wang2010,
-  author = {Wang, Danny J. J. and Bi, Xiaoming and Avants, Brian B. and Meng, Tongbai and Zuehlsdorff, Sven and Detre, John A.},
-  title = {Estimation of Perfusion and Arterial Transit Time in Myocardium Using Free-Breathing Myocardial Arterial Spin Labeling With Navigator-Echo},
-  journal = {MAGNETIC RESONANCE IN MEDICINE},
-  year = {2010},
-  volume = {64},
-  number = {5},
-  pages = {1289-1295},
-  doi = {10.1002/mrm.22630}
-}
-</pre></td>
-</tr>
-<tr id="Yushkevich2010" class="entry">
-	<td>Yushkevich PA, Wang H, Pluta J, Das SR, Craige C, Avants BB, Weiner MW and Mueller S (2010), <i>"Nearly automatic segmentation of hippocampal subfields in in vivo focal T2-weighted MRI"</i>, NEUROIMAGE., DEC, 2010.  Vol. 53(4), pp. 1208-1224.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Yushkevich2010','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1016/j.neuroimage.2010.06.040" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Yushkevich2010" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Yushkevich2010,
-  author = {Yushkevich, Paul A. and Wang, Hongzhi and Pluta, John and Das, Sandhitsu R. and Craige, Caryne and Avants, Brian B. and Weiner, Michael W. and Mueller, Susanne},
-  title = {Nearly automatic segmentation of hippocampal subfields in in vivo focal T2-weighted MRI},
-  journal = {NEUROIMAGE},
-  year = {2010},
-  volume = {53},
-  number = {4},
-  pages = {1208-1224},
-  doi = {10.1016/j.neuroimage.2010.06.040}
-}
-</pre></td>
-</tr>
-<tr id="Yushkevich2010a" class="entry">
-	<td>Yushkevich PA, Avants BB, Das SR, Pluta J, Altinay M, Craige C and Initi ADN (2010), <i>"Bias in estimation of hippocampal atrophy using deformation-based morphometry arises from asymmetric global normalization: An illustration in ADNI 3 T MRI data"</i>, NEUROIMAGE., APR 1, 2010.  Vol. 50(2), pp. 434-445.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Yushkevich2010a','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1016/j.neuroimage.2009.12.007" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Yushkevich2010a" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Yushkevich2010a,
-  author = {Yushkevich, Paul A. and Avants, Brian B. and Das, Sandhitsu R. and Pluta, John and Altinay, Murat and Craige, Caryne and Alzheimer's Dis Neuroimaging Initi},
-  title = {Bias in estimation of hippocampal atrophy using deformation-based morphometry arises from asymmetric global normalization: An illustration in ADNI 3 T MRI data},
-  journal = {NEUROIMAGE},
-  year = {2010},
-  volume = {50},
-  number = {2},
-  pages = {434-445},
-  doi = {10.1016/j.neuroimage.2009.12.007}
-}
-</pre></td>
-</tr>
-<tr id="Ash2009" class="entry">
-	<td>Ash S, Moore P, Vesely L, Gunawardena D, McMillan C, Anderson C, Avants B and Grossman M (2009), <i>"Non-fluent speech in frontotemporal lobar degeneration"</i>, JOURNAL OF NEUROLINGUISTICS., JUL, 2009.  Vol. 22(4), pp. 370-383.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Ash2009','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1016/j.jneuroling.2008.12.001" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Ash2009" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Ash2009,
-  author = {Ash, Sharon and Moore, Peachie and Vesely, Luisa and Gunawardena, Delani and McMillan, Corey and Anderson, Chivon and Avants, Brian and Grossman, Murray},
-  title = {Non-fluent speech in frontotemporal lobar degeneration},
-  journal = {JOURNAL OF NEUROLINGUISTICS},
-  year = {2009},
-  volume = {22},
-  number = {4},
-  pages = {370-383},
-  doi = {10.1016/j.jneuroling.2008.12.001}
-}
-</pre></td>
-</tr>
-<tr id="Avants2009" class="entry">
-	<td>Avants B, Khan A, McCluskey L, Elman L and Grossman M (2009), <i>"Longitudinal Cortical Atrophy in Amyotrophic Lateral Sclerosis With Frontotemporal Dementia"</i>, ARCHIVES OF NEUROLOGY., JAN, 2009.  Vol. 66(1), pp. 138-139.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Avants2009','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Avants2009" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Avants2009,
-  author = {Avants, Brian and Khan, Alea and McCluskey, Leo and Elman, Lauren and Grossman, Murray},
-  title = {Longitudinal Cortical Atrophy in Amyotrophic Lateral Sclerosis With Frontotemporal Dementia},
-  journal = {ARCHIVES OF NEUROLOGY},
-  year = {2009},
-  volume = {66},
-  number = {1},
-  pages = {138-139}
-}
-</pre></td>
-</tr>
-<tr id="Bonner2009" class="entry">
-	<td>Bonner MF, Vesely L, Price C, Anderson C, Richmond L, Farag C, Avants B and Grossman M (2009), <i>"Reversal of the concreteness effect in semantic dementia"</i>, COGNITIVE NEUROPSYCHOLOGY.  Vol. 26(6), pp. 568-579.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Bonner2009','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1080/02643290903512305" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Bonner2009" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Bonner2009,
-  author = {Bonner, Michael F. and Vesely, Luisa and Price, Catherine and Anderson, Chivon and Richmond, Lauren and Farag, Christine and Avants, Brian and Grossman, Murray},
-  title = {Reversal of the concreteness effect in semantic dementia},
-  journal = {COGNITIVE NEUROPSYCHOLOGY},
-  year = {2009},
-  volume = {26},
-  number = {6},
-  pages = {568-579},
-  doi = {10.1080/02643290903512305}
-}
-</pre></td>
-</tr>
-<tr id="Das2009" class="entry">
-	<td>Das SR, Avants BB, Grossman M and Gee JC (2009), <i>"Registration based cortical thickness measurement"</i>, NEUROIMAGE., APR 15, 2009.  Vol. 45(3), pp. 867-879.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Das2009','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1016/j.neuroimage.2008.12.016" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Das2009" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Das2009,
-  author = {Das, Sandhitsu R. and Avants, Brian B. and Grossman, Murray and Gee, James C.},
-  title = {Registration based cortical thickness measurement},
-  journal = {NEUROIMAGE},
-  year = {2009},
-  volume = {45},
-  number = {3},
-  pages = {867-879},
-  doi = {10.1016/j.neuroimage.2008.12.016}
-}
-</pre></td>
-</tr>
-<tr id="Das2009a" class="entry">
-	<td>Das SR, Mechanic-Hamilton D, Korczykowski M, Pluta J, Glynn S, Avants BB, Detre JA and Yushkevich PA (2009), <i>"Structure Specific Analysis of the Hippocampus in Temporal Lobe Epilepsy"</i>, HIPPOCAMPUS.  Vol. 19(6), pp. 517-525.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Das2009a','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1002/hipo.20620" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Das2009a" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Das2009a,
-  author = {Das, Sandhitsu R. and Mechanic-Hamilton, Dawn and Korczykowski, Marc and Pluta, John and Glynn, Simon and Avants, Brian B. and Detre, John A. and Yushkevich, Paul A.},
-  title = {Structure Specific Analysis of the Hippocampus in Temporal Lobe Epilepsy},
-  journal = {HIPPOCAMPUS},
-  year = {2009},
-  volume = {19},
-  number = {6},
-  pages = {517-525},
-  note = {1st Computational Hippocampal Anatomy and Physiology Workshop, New York Univ, New York, NY, SEP 06, 2008},
-  doi = {10.1002/hipo.20620}
-}
-</pre></td>
-</tr>
-<tr id="Klein2009" class="entry">
-	<td>Klein A, Andersson J, Ardekani BA, Ashburner J, Avants B, Chiang M-C, Christensen GE, Collins DL, Gee J, Hellier P, Song JH, Jenkinson M, Lepage C, Rueckert D, Thompson P, Vercauteren T, Woods RP, Mann JJ and Parsey RV (2009), <i>"Evaluation of 14 nonlinear deformation algorithms applied to human brain MRI registration"</i>, NEUROIMAGE., JUL 1, 2009.  Vol. 46(3), pp. 786-802.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Klein2009','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1016/j.neuroimage.2008.12.037" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Klein2009" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Klein2009,
-  author = {Klein, Arno and Andersson, Jesper and Ardekani, Babak A. and Ashburner, John and Avants, Brian and Chiang, Ming-Chang and Christensen, Gary E. and Collins, D. Louis and Gee, James and Hellier, Pierre and Song, Joo Hyun and Jenkinson, Mark and Lepage, Claude and Rueckert, Daniel and Thompson, Paul and Vercauteren, Tom and Woods, Roger P. and Mann, J. John and Parsey, Ramin V.},
-  title = {Evaluation of 14 nonlinear deformation algorithms applied to human brain MRI registration},
-  journal = {NEUROIMAGE},
-  year = {2009},
-  volume = {46},
-  number = {3},
-  pages = {786-802},
-  doi = {10.1016/j.neuroimage.2008.12.037}
-}
-</pre></td>
-</tr>
-<tr id="Massimo2009" class="entry">
-	<td>Massimo L, Powers C, Moore P, Vesely L, Avants B, Gee J, Libon DJ and Grossman M (2009), <i>"Neuroanatomy of Apathy and Disinhibition in Frontotemporal Lobar Degeneration"</i>, DEMENTIA AND GERIATRIC COGNITIVE DISORDERS.  Vol. 27(1), pp. 96-104.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Massimo2009','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1159/000194658" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Massimo2009" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Massimo2009,
-  author = {Massimo, Lauren and Powers, Chivon and Moore, Peachie and Vesely, Luisa and Avants, Brian and Gee, James and Libon, David J. and Grossman, Murray},
-  title = {Neuroanatomy of Apathy and Disinhibition in Frontotemporal Lobar Degeneration},
-  journal = {DEMENTIA AND GERIATRIC COGNITIVE DISORDERS},
-  year = {2009},
-  volume = {27},
-  number = {1},
-  pages = {96-104},
-  doi = {10.1159/000194658}
-}
-</pre></td>
-</tr>
-<tr id="Pluta2009" class="entry">
-	<td>Pluta J, Avants BB, Glynn S, Awate S, Gee JC and Detre JA (2009), <i>"Appearance and Incomplete Label Matching for Diffeomorphic Template Based Hippocampus Segmentation"</i>, HIPPOCAMPUS.  Vol. 19(6), pp. 565-571.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Pluta2009','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1002/hipo.20619" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Pluta2009" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Pluta2009,
-  author = {Pluta, John and Avants, Brian B. and Glynn, Simon and Awate, Sttyash and Gee, James C. and Detre, John A.},
-  title = {Appearance and Incomplete Label Matching for Diffeomorphic Template Based Hippocampus Segmentation},
-  journal = {HIPPOCAMPUS},
-  year = {2009},
-  volume = {19},
-  number = {6},
-  pages = {565-571},
-  note = {1st Computational Hippocampal Anatomy and Physiology Workshop, New York Univ, New York, NY, SEP 06, 2008},
-  doi = {10.1002/hipo.20619}
-}
-</pre></td>
-</tr>
-<tr id="Schoenemann2009" class="entry">
-	<td>Schoenemann PT, Monge J, Avants BB and Gee JC (2009), <i>"An atlas of modern human cranial morpbology constructed via non-rigid deformation analysis of high-resolution CT images."</i>, AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY. , pp. 231.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Schoenemann2009','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Schoenemann2009" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Schoenemann2009,
-  author = {Schoenemann, P. T. and Monge, J. and Avants, B. B. and Gee, J. C.},
-  title = {An atlas of modern human cranial morpbology constructed via non-rigid deformation analysis of high-resolution CT images.},
-  journal = {AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY},
-  year = {2009},
-  pages = {231},
-  note = {78th Annual Meeting of the American-Association-of-Physical-Anthropologists, Chicago, IL, MAR 31-APR 03, 2009}
-}
-</pre></td>
-</tr>
-<tr id="Tustison2009" class="entry">
-	<td>Tustison NJ, Avants BB and Gee JC (2009), <i>"Directly Manipulated Free-Form Deformation Image Registration"</i>, IEEE TRANSACTIONS ON IMAGE PROCESSING., MAR, 2009.  Vol. 18(3), pp. 624-635.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Tustison2009','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1109/TIP.2008.2010072" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Tustison2009" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Tustison2009,
-  author = {Tustison, Nicholas J. and Avants, Brian B. and Gee, James C.},
-  title = {Directly Manipulated Free-Form Deformation Image Registration},
-  journal = {IEEE TRANSACTIONS ON IMAGE PROCESSING},
-  year = {2009},
-  volume = {18},
-  number = {3},
-  pages = {624-635},
-  doi = {10.1109/TIP.2008.2010072}
-}
-</pre></td>
-</tr>
-<tr id="Yushkevich2009" class="entry">
-	<td>Yushkevich PA, Avants BB, Pluta J, Das S, Minkoff D, Mechanic-Hamilton D, Glynn S, Pickup S, Liu W, Gee JC, Grossman M and Detre JA (2009), <i>"A high-resolution computational atlas of the human hippocampus from postmortem magnetic resonance imaging at 9.4 T"</i>, NEUROIMAGE., JAN 15, 2009.  Vol. 44(2), pp. 385-398.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Yushkevich2009','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1016/j.neuroimage.2008.08.042" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Yushkevich2009" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Yushkevich2009,
-  author = {Yushkevich, Paul A. and Avants, Brian B. and Pluta, John and Das, Sandhitsu and Minkoff, David and Mechanic-Hamilton, Dawn and Glynn, Simon and Pickup, Stephen and Liu, Weixia and Gee, James C. and Grossman, Murray and Detre, John A.},
-  title = {A high-resolution computational atlas of the human hippocampus from postmortem magnetic resonance imaging at 9.4 T},
-  journal = {NEUROIMAGE},
-  year = {2009},
-  volume = {44},
-  number = {2},
-  pages = {385-398},
-  doi = {10.1016/j.neuroimage.2008.08.042}
-}
-</pre></td>
-</tr>
-<tr id="Avants2008" class="entry">
-	<td>Avants B, Duda JT, Kim J, Zhang H, Pluta J, Gee JC and Whyte J (2008), <i>"Multivariate Analysis of Structural and Diffusion Imaging in Traumatic Brain Injury"</i>, ACADEMIC RADIOLOGY., NOV, 2008.  Vol. 15(11), pp. 1360-1375.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Avants2008','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1016/j.acra.2008.07.007" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Avants2008" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Avants2008,
-  author = {Avants, Brian and Duda, Jeffrey T. and Kim, Junghoon and Zhang, Hui and Pluta, John and Gee, James C. and Whyte, John},
-  title = {Multivariate Analysis of Structural and Diffusion Imaging in Traumatic Brain Injury},
-  journal = {ACADEMIC RADIOLOGY},
-  year = {2008},
-  volume = {15},
-  number = {11},
-  pages = {1360-1375},
-  doi = {10.1016/j.acra.2008.07.007}
-}
-</pre></td>
-</tr>
-<tr id="Avants2008a" class="entry">
-	<td>Avants BB, Epstein CL, Grossman M and Gee JC (2008), <i>"Symmetric diffeomorphic image registration with cross-correlation: Evaluating automated labeling of elderly and neurodegenerative brain"</i>, MEDICAL IMAGE ANALYSIS., FEB, 2008.  Vol. 12(1), pp. 26-41.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Avants2008a','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1016/j.media.2007.06.004" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Avants2008a" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Avants2008a,
-  author = {Avants, B. B. and Epstein, C. L. and Grossman, M. and Gee, J. C.},
-  title = {Symmetric diffeomorphic image registration with cross-correlation: Evaluating automated labeling of elderly and neurodegenerative brain},
-  journal = {MEDICAL IMAGE ANALYSIS},
-  year = {2008},
-  volume = {12},
-  number = {1},
-  pages = {26-41},
-  note = {3rd International Workshop on Biomedical Image Registration, Utrecht Univ, Utrecht, NETHERLANDS, JUL 09-11, 2006},
-  doi = {10.1016/j.media.2007.06.004}
-}
-</pre></td>
-</tr>
-<tr id="Grossman2008" class="entry">
-	<td>Grossman M, Anderson C, Khan A, Avants B, Elman L and McCluskey L (2008), <i>"Impaired action knowledge in amyotrophic lateral sclerosis"</i>, NEUROLOGY., OCT 28, 2008.  Vol. 71(18), pp. 1396-1401.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Grossman2008','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1212/01.wnl.0000319701.50168.8c" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Grossman2008" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Grossman2008,
-  author = {Grossman, M. and Anderson, C. and Khan, A. and Avants, B. and Elman, L. and McCluskey, L.},
-  title = {Impaired action knowledge in amyotrophic lateral sclerosis},
-  journal = {NEUROLOGY},
-  year = {2008},
-  volume = {71},
-  number = {18},
-  pages = {1396-1401},
-  doi = {10.1212/01.wnl.0000319701.50168.8c}
-}
-</pre></td>
-</tr>
-<tr id="Grossman2008a" class="entry">
-	<td>Grossman M, Anderson C, Khan A, Avants B, Elman L and McCluskey L (2008), <i>"Neural basis for impaired action knowledge in amyotrophic lateral sclerosis"</i>, NEUROLOGY., MAR 11, 2008.  Vol. 70(11, 1), pp. A248.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Grossman2008a','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Grossman2008a" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Grossman2008a,
-  author = {Grossman, Murray and Anderson, Chivon and Khan, Alea and Avants, Brian and Elman, Lauren and McCluskey, Leo},
-  title = {Neural basis for impaired action knowledge in amyotrophic lateral sclerosis},
-  journal = {NEUROLOGY},
-  year = {2008},
-  volume = {70},
-  number = {11, 1},
-  pages = {A248},
-  note = {6th Annual Meeting of the American-Academy-of-Neurology, Chicago, IL, APR 12-19, 2008}
-}
-</pre></td>
-</tr>
-<tr id="Kim2008" class="entry">
-	<td>Kim J, Avants B, Patel S, Whyte J, Coslett BH, Pluta J, Detre JA and Gee JC (2008), <i>"Structural consequences of diffuse traumatic brain injury: A large deformation tensor-based morphometry study"</i>, NEUROIMAGE., FEB 1, 2008.  Vol. 39(3), pp. 1014-1026.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Kim2008','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1016/j.neuroimage.2007.10.005" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Kim2008" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Kim2008,
-  author = {Kim, Junghoon and Avants, Brian and Patel, Sunil and Whyte, John and Coslett, Branch H. and Pluta, John and Detre, John A. and Gee, James C.},
-  title = {Structural consequences of diffuse traumatic brain injury: A large deformation tensor-based morphometry study},
-  journal = {NEUROIMAGE},
-  year = {2008},
-  volume = {39},
-  number = {3},
-  pages = {1014-1026},
-  doi = {10.1016/j.neuroimage.2007.10.005}
-}
-</pre></td>
-</tr>
-<tr id="Massimo2008" class="entry">
-	<td>Massimo LM, Anderson C, Moore P, Avants B, Libon D, Cynwyd B and Grossman M (2008), <i>"Neuroanatomical correlates of apathy and disinhibition in frontotemporal dementia"</i>, NEUROLOGY., MAR 11, 2008.  Vol. 70(11, 1), pp. A443.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Massimo2008','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Massimo2008" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Massimo2008,
-  author = {Massimo, Lauren M. and Anderson, Chivon and Moore, Peachie and Avants, Brian and Libon, David and Cynwyd, Bala and Grossman, Murray},
-  title = {Neuroanatomical correlates of apathy and disinhibition in frontotemporal dementia},
-  journal = {NEUROLOGY},
-  year = {2008},
-  volume = {70},
-  number = {11, 1},
-  pages = {A443},
-  note = {6th Annual Meeting of the American-Academy-of-Neurology, Chicago, IL, APR 12-19, 2008}
-}
-</pre></td>
-</tr>
-<tr id="Schoenemann2008" class="entry">
-	<td>Schoenemann PT, Holloway RL, Avants BB and Gee JC (2008), <i>"Endocast asymmetry in pongids assessed via non-rigid deformation analysis of high-resolution CT images."</i>, AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY. (46), pp. 188.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Schoenemann2008','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Schoenemann2008" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Schoenemann2008,
-  author = {Schoenemann, P. T. and Holloway, R. L. and Avants, B. B. and Gee, J. C.},
-  title = {Endocast asymmetry in pongids assessed via non-rigid deformation analysis of high-resolution CT images.},
-  journal = {AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY},
-  year = {2008},
-  number = {46},
-  pages = {188},
-  note = {77th Annual Meeting of the American-Association-of-Physical-Anthropologists, Columbus, OH, APR 09-12, 2008}
-}
-</pre></td>
-</tr>
-<tr id="Schoenemann2008a" class="entry">
-	<td>Schoenemann PT, Holloway RL, AvantS BB and Gee JC (2008), <i>"The role of micro-morphological stress markers in the differential diagnosis of infectious bone diseases."</i>, AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY. (46), pp. 188-189.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Schoenemann2008a','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Schoenemann2008a" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Schoenemann2008a,
-  author = {Schoenemann, P. T. and Holloway, R. L. and AvantS, B. B. and Gee, J. C.},
-  title = {The role of micro-morphological stress markers in the differential diagnosis of infectious bone diseases.},
-  journal = {AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY},
-  year = {2008},
-  number = {46},
-  pages = {188-189},
-  note = {77th Annual Meeting of the American-Association-of-Physical-Anthropologists, Columbus, OH, APR 09-12, 2008}
-}
-</pre></td>
-</tr>
-<tr id="Simon2008" class="entry">
-	<td>Simon TJ, Wu Z, Avants B, Zhang H, Gee JC and Stebbins GT (2008), <i>"Atypical cortical connectivity and visuospatial cognitive impairments are related in children with chromosome 22q11.2 deletion syndrome"</i>, BEHAVIORAL AND BRAIN FUNCTIONS., JUN 17, 2008.  Vol. 4
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Simon2008','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1186/1744-9081-4-25" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Simon2008" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Simon2008,
-  author = {Simon, Tony J. and Wu, Zhongle and Avants, Brian and Zhang, Hui and Gee, James C. and Stebbins, Glenn T.},
-  title = {Atypical cortical connectivity and visuospatial cognitive impairments are related in children with chromosome 22q11.2 deletion syndrome},
-  journal = {BEHAVIORAL AND BRAIN FUNCTIONS},
-  year = {2008},
-  volume = {4},
-  doi = {10.1186/1744-9081-4-25}
-}
-</pre></td>
-</tr>
-<tr id="Simon2008a" class="entry">
-	<td>Simon TJ, Wu Z, Avants B, Zhang H, Gee JC and Stebbins GT (2008), <i>"Atypical cortical connectivity and visuospatial cognitive impairments are related in children with chromosome 22q11.2 deletion syndrome."</i>, Behav Brain Funct.  Vol. 4, pp. 25.
-	<p class="infolinks">[<a href="javascript:toggleInfo('Simon2008a','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Simon2008a','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1186/1744-9081-4-25" target="_blank">DOI</a>] [<a href="http://dx.doi.org/10.1186/1744-9081-4-25" target="_blank">URL</a>]</p>
-	</td>
-</tr>
-<tr id="abs_Simon2008a" class="abstract noshow">
-	<td><b>Abstract</b>: Chromosome 22q11.2 deletion syndrome is one of the most common genetic causes of cognitive impairment and developmental disability yet little is known about the neural bases of those challenges. Here we expand upon our previous neurocognitive studies by specifically investigating the hypothesis that changes in neural connectivity relate to cognitive impairment in children with the disorder.Whole brain analyses of multiple measures computed from diffusion tensor image data acquired from the brains of children with the disorder and typically developing controls. We also correlated diffusion tensor data with performance on a visuospatial cognitive task that taps spatial attention.Analyses revealed four common clusters, in the parietal and frontal lobes, that showed complementary patterns of connectivity in children with the deletion and typical controls. We interpreted these results as indicating differences in connective complexity to adjoining cortical regions that are critical to the cognitive functions in which affected children show impairments. Strong, and similarly opposing patterns of correlations between diffusion values in those clusters and spatial attention performance measures considerably strengthened that interpretation.Our results suggest that atypical development of connective patterns in the brains of children with chromosome 22q11.2 deletion syndrome indicate a neuropathology that is related to the visuospatial cognitive impairments that are commonly found in affected individuals.</td>
-</tr>
-<tr id="bib_Simon2008a" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Simon2008a,
-  author = {Simon, Tony J. and Wu, Zhongle and Avants, Brian and Zhang, Hui and Gee, James C. and Stebbins, Glenn T.},
-  title = {Atypical cortical connectivity and visuospatial cognitive impairments are related in children with chromosome 22q11.2 deletion syndrome.},
-  journal = {Behav Brain Funct},
-  year = {2008},
-  volume = {4},
-  pages = {25},
-  url = {http://dx.doi.org/10.1186/1744-9081-4-25},
-  doi = {10.1186/1744-9081-4-25}
-}
-</pre></td>
-</tr>
-<tr id="Aguirre2007" class="entry">
-	<td>Aguirre GK, Komaromy AM, Cideciyan AV, Brainard DH, Aleman TS, Roman AJ, Avants BB, Gee JC, Korczykowski M, Hauswirth WW, Acland GM, Aguirre GD and Jacobson SG (2007), <i>"Canine and human visual cortex intact and responsive despite early retinal blindness from RPE65 mutation"</i>, PLOS MEDICINE., JUN, 2007.  Vol. 4(6), pp. 1117-1128.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Aguirre2007','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1371/journal.pmed.0040230" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Aguirre2007" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Aguirre2007,
-  author = {Aguirre, Geoffrey K. and Komaromy, Andras M. and Cideciyan, Artur V. and Brainard, David H. and Aleman, Tomas S. and Roman, Alejandro J. and Avants, Brian B. and Gee, James C. and Korczykowski, Marc and Hauswirth, William W. and Acland, Gregory M. and Aguirre, Gustavo D. and Jacobson, Samuel G.},
-  title = {Canine and human visual cortex intact and responsive despite early retinal blindness from RPE65 mutation},
-  journal = {PLOS MEDICINE},
-  year = {2007},
-  volume = {4},
-  number = {6},
-  pages = {1117-1128},
-  doi = {10.1371/journal.pmed.0040230}
-}
-</pre></td>
-</tr>
-<tr id="Avants2007" class="entry">
-	<td>Avants BB, Hurt H, Giannetta JM, Epstein CL, Shera DM, Rao H, Wang J and Gee JC (2007), <i>"Effects of heavy in utero cocaine exposure on adolescent caudate morphology"</i>, PEDIATRIC NEUROLOGY., OCT, 2007.  Vol. 37(4), pp. 275-279.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Avants2007','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1016/j.pediatrneurol.2007.06.012" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Avants2007" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Avants2007,
-  author = {Avants, Brian B. and Hurt, Hallam and Giannetta, Joan M. and Epstein, Charles L. and Shera, David M. and Rao, Hengyi and Wang, Jiongjiong and Gee, James C.},
-  title = {Effects of heavy in utero cocaine exposure on adolescent caudate morphology},
-  journal = {PEDIATRIC NEUROLOGY},
-  year = {2007},
-  volume = {37},
-  number = {4},
-  pages = {275-279},
-  doi = {10.1016/j.pediatrneurol.2007.06.012}
-}
-</pre></td>
-</tr>
-<tr id="Avants2007a" class="entry">
-	<td>Avants B, Anderson C, Grossman M and Gee JC (2007), <i>"Spatiotemporal normalization for longitudinal analysis of gray matter atrophy in frontotemporal dementia."</i>, Med Image Comput Comput Assist Interv.  Vol. 10(Pt 2), pp. 303-310.
-	<p class="infolinks">[<a href="javascript:toggleInfo('Avants2007a','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Avants2007a','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="abs_Avants2007a" class="abstract noshow">
-	<td><b>Abstract</b>: We present a unified method, based on symmetric diffeomorphisms, for studying longitudinal neurodegeneration. Our method first uses symmetric diffeomorphic normalization to find a spatiotemporal parameterization of an individual's image time series. The second step involves mapping a representative image or set of images from the time series into an optimal template space. The template mapping is then combined with the intrasubject spatiotemporal map to enable pairwise statistical tests to be performed on a population of normalized time series images. Here, we apply this longitudinal analysis protocol to study the gray matter atrophy patterns induced by frontotemporal dementia (FTD). We sample our normalized spatiotemporal maps at baseline (time zero) and time one year to generate an annualized atrophy map (AAM) that estimates the annual effect of FTD. This spatiotemporal normalization enables us to locate neuroanatomical regions that consistently undergo significant annual gray matter atrophy across the population. We found the majority of annual atrophy to occur in the frontal and temporal lobes in our population of 20 subjects. We also found significant effects in the hippocampus, insula and cingulate gyrus. Our novel results, significant at p < 0.05 after false discovery rate correction, are represented in local template space but also assigned Talairach coordinates and Brodmann and Anatomical Automatic Labeling (AAL) labels. This paper shows the statistical power of symmetric diffeomorphic normalization for performing deformation-based studies of longitudinal atrophy.</td>
-</tr>
-<tr id="bib_Avants2007a" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Avants2007a,
-  author = {Avants, Brian and Anderson, Chivon and Grossman, Murray and Gee, James C.},
-  title = {Spatiotemporal normalization for longitudinal analysis of gray matter atrophy in frontotemporal dementia.},
-  journal = {Med Image Comput Comput Assist Interv},
-  year = {2007},
-  volume = {10},
-  number = {Pt 2},
-  pages = {303--310}
-}
-</pre></td>
-</tr>
-<tr id="Fan2007" class="entry">
-	<td>Fan Y, Rao H, Hurt H, Giannetta J, Korczykowski M, Shera D, Avants BB, Gee JC, Wang J and Shen D (2007), <i>"Multivariate examination of brain abnormality using both structural and functional MRI"</i>, NEUROIMAGE., JUL 15, 2007.  Vol. 36(4), pp. 1189-1199.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Fan2007','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1016/j.neuroimage.2007.04.009" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Fan2007" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Fan2007,
-  author = {Fan, Yong and Rao, Hengyi and Hurt, Hallam and Giannetta, Joan and Korczykowski, Marc and Shera, David and Avants, Brian B. and Gee, James C. and Wang, Jiongjiong and Shen, Dinggang},
-  title = {Multivariate examination of brain abnormality using both structural and functional MRI},
-  journal = {NEUROIMAGE},
-  year = {2007},
-  volume = {36},
-  number = {4},
-  pages = {1189-1199},
-  doi = {10.1016/j.neuroimage.2007.04.009}
-}
-</pre></td>
-</tr>
-<tr id="Ng2007" class="entry">
-	<td>Ng L, Pathak SD, Kuan C, Lau C, Dong H, Sodt A, Dang C, Avants B, Yushkevich P, Gee JC, Haynor D, Lein E, Jones A and Hawrylycz M (2007), <i>"Neuroinformatics for genome-wide 3D gene expression mapping in the mouse brain"</i>, IEEE-ACM TRANSACTIONS ON COMPUTATIONAL BIOLOGY AND BIOINFORMATICS., JUL-SEP, 2007.  Vol. 4(3), pp. 382-393.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Ng2007','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1109/TCBB.2007.1035" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Ng2007" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Ng2007,
-  author = {Ng, Lydia and Pathak, Sayan D. and Kuan, Chihchau and Lau, Christopher and Dong, Hongwei and Sodt, Andrew and Dang, Chinh and Avants, Brian and Yushkevich, Paul and Gee, James C. and Haynor, David and Lein, Ed and Jones, Allan and Hawrylycz, Mike},
-  title = {Neuroinformatics for genome-wide 3D gene expression mapping in the mouse brain},
-  journal = {IEEE-ACM TRANSACTIONS ON COMPUTATIONAL BIOLOGY AND BIOINFORMATICS},
-  year = {2007},
-  volume = {4},
-  number = {3},
-  pages = {382-393},
-  doi = {10.1109/TCBB.2007.1035}
-}
-</pre></td>
-</tr>
-<tr id="Rao2007" class="entry">
-	<td>Rao H, Wang J, Giannetta J, Korczykowski M, Shera D, Avants BB, Gee J, Detre JA and Hurt H (2007), <i>"Altered resting cerebral blood flow in adolescents with in utero cocaine exposure revealed by perfusion functional MRI"</i>, PEDIATRICS., NOV, 2007.  Vol. 120(5), pp. E1245-E1254.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Rao2007','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1542/peds.2006-2596" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Rao2007" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Rao2007,
-  author = {Rao, Hengyi and Wang, Jiongjiong and Giannetta, Joan and Korczykowski, Marc and Shera, David and Avants, Brian B. and Gee, James and Detre, John A. and Hurt, Hallam},
-  title = {Altered resting cerebral blood flow in adolescents with in utero cocaine exposure revealed by perfusion functional MRI},
-  journal = {PEDIATRICS},
-  year = {2007},
-  volume = {120},
-  number = {5},
-  pages = {E1245-E1254},
-  doi = {10.1542/peds.2006-2596}
-}
-</pre></td>
-</tr>
-<tr id="Schoenemann2007" class="entry">
-	<td>Schoenemann PT, Gee J, Avants B, Holloway RL, Monge J and Lewis J (2007), <i>"Validation of plaster endocast morphology through 3D CT image analysis"</i>, AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY., FEB, 2007.  Vol. 132(2), pp. 183-192.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Schoenemann2007','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1002/ajpa.20499" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Schoenemann2007" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Schoenemann2007,
-  author = {Schoenemann, P. Thomas and Gee, James and Avants, Brian and Holloway, Ralph L. and Monge, Janet and Lewis, Jason},
-  title = {Validation of plaster endocast morphology through 3D CT image analysis},
-  journal = {AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY},
-  year = {2007},
-  volume = {132},
-  number = {2},
-  pages = {183-192},
-  doi = {10.1002/ajpa.20499}
-}
-</pre></td>
-</tr>
-<tr id="Schoenemann2007a" class="entry">
-	<td>Schoenemann PT, Monge J, Avants BB, Glotzer D and Gee JC (2007), <i>"Sex differences in cranial form assessed via non-rigid deformation analysis of high-resolution CT images."</i>, AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY. (44), pp. 209.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Schoenemann2007a','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Schoenemann2007a" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Schoenemann2007a,
-  author = {Schoenemann, P. T. and Monge, J. and Avants, B. B. and Glotzer, D. and Gee, J. C.},
-  title = {Sex differences in cranial form assessed via non-rigid deformation analysis of high-resolution CT images.},
-  journal = {AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY},
-  year = {2007},
-  number = {44},
-  pages = {209}
-}
-</pre></td>
-</tr>
-<tr id="Zhang2007" class="entry">
-	<td>Zhang H, Avants BB, Yushkevich PA, Woo JH, Wang S, McCluskey LF, Elman LB, Melhem ER and Gee JC (2007), <i>"Differences: An example study using amyotrophic lateral sclerosis"</i>, IEEE TRANSACTIONS ON MEDICAL IMAGING., NOV, 2007.  Vol. 26(11), pp. 1585-1597.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Zhang2007','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1109/TMI.2007.906784" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Zhang2007" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Zhang2007,
-  author = {Zhang, Hui and Avants, Brian B. and Yushkevich, Paul A. and Woo, John H. and Wang, Sumei and McCluskey, Leo F. and Elman, Lauren B. and Melhem, Elias R. and Gee, James C.},
-  title = {Differences: An example study using amyotrophic lateral sclerosis},
-  journal = {IEEE TRANSACTIONS ON MEDICAL IMAGING},
-  year = {2007},
-  volume = {26},
-  number = {11},
-  pages = {1585-1597},
-  doi = {10.1109/TMI.2007.906784}
-}
-</pre></td>
-</tr>
-<tr id="Zhang2007a" class="entry">
-	<td>Zhang H, Avants BB, Yushkevich PA, Woo JH, Wang S, McCluskey LF, Elman LB, Melhem ER and Gee JC (2007), <i>"High-dimensional spatial normalization of diffusion tensor images improves the detection of white matter differences: an example study using amyotrophic lateral sclerosis."</i>, IEEE Trans Med Imaging., Nov, 2007.  Vol. 26(11), pp. 1585-1597.
-	<p class="infolinks">[<a href="javascript:toggleInfo('Zhang2007a','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Zhang2007a','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1109/TMI.2007.906784" target="_blank">DOI</a>] [<a href="http://dx.doi.org/10.1109/TMI.2007.906784" target="_blank">URL</a>]</p>
-	</td>
-</tr>
-<tr id="abs_Zhang2007a" class="abstract noshow">
-	<td><b>Abstract</b>: Spatial normalization of diffusion tensor images plays a key role in voxel-based analysis of white matter (WM) group differences. Currently, it has been achieved using low-dimensional registration methods in the large majority of clinical studies. This paper aims to motivate the use of high-dimensional normalization approaches by generating evidence of their impact on the findings of such studies. Using an ongoing amyotrophic lateral sclerosis (ALS) study, we evaluated three normalization methods representing the current range of available approaches: low-dimensional normalization using the fractional anisotropy (FA), high-dimensional normalization using the FA, and high-dimensional normalization using full tensor information. Each method was assessed in terms of its ability to detect significant differences between ALS patients and controls. Our findings suggest that inadequate normalization with low-dimensional approaches can result in insufficient removal of shape differences which in turn can confound FA differences in a complex manner, and that utilizing high-dimensional normalization can both significantly minimize the confounding effect of shape differences to FA differences and provide a more complete description of WM differences in terms of both size and tissue architecture differences. We also found that high-dimensional approaches, by leveraging full tensor features instead of tensor-derived indices, can further improve the alignment of WM tracts.</td>
-</tr>
-<tr id="bib_Zhang2007a" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Zhang2007a,
-  author = {Zhang, Hui and Avants, Brian B. and Yushkevich, Paul A. and Woo, John H. and Wang, Sumei and McCluskey, Leo F. and Elman, Lauren B. and Melhem, Elias R. and Gee, James C.},
-  title = {High-dimensional spatial normalization of diffusion tensor images improves the detection of white matter differences: an example study using amyotrophic lateral sclerosis.},
-  journal = {IEEE Trans Med Imaging},
-  year = {2007},
-  volume = {26},
-  number = {11},
-  pages = {1585--1597},
-  url = {http://dx.doi.org/10.1109/TMI.2007.906784},
-  doi = {10.1109/TMI.2007.906784}
-}
-</pre></td>
-</tr>
-<tr id="Avants2006" class="entry">
-	<td>Avants BB, Schoenemann PT and Gee JC (2006), <i>"Lagrangian frame diffeomorphic image registration: Morphometric comparison of human and chimpanzee cortex"</i>, MEDICAL IMAGE ANALYSIS., JUN, 2006.  Vol. 10(3), pp. 397-412.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Avants2006','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1016/j.media.2005.03.005" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Avants2006" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Avants2006,
-  author = {Avants, Brian B. and Schoenemann, P. Thomas and Gee, James C.},
-  title = {Lagrangian frame diffeomorphic image registration: Morphometric comparison of human and chimpanzee cortex},
-  journal = {MEDICAL IMAGE ANALYSIS},
-  year = {2006},
-  volume = {10},
-  number = {3},
-  pages = {397-412},
-  note = {2nd International Workshop on Biomedical Image Registration, Univ Penn, PHILADELPHIA, PA, JUN 23-24, 2003},
-  doi = {10.1016/j.media.2005.03.005}
-}
-</pre></td>
-</tr>
-<tr id="Avants2005" class="entry">
-	<td>Avants B, Grossman M and Gee J (2005), <i>"The correlation of cognitive decline with frontotemporal dementia induced annualized gray matter loss using diffeomorphic morphometry"</i>, ALZHEIMER DISEASE &amp; ASSOCIATED DISORDERS., OCT-DEC, 2005.  Vol. 19(1), pp. S25-S28.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Avants2005','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1097/01.wad.0000183083.14939.82" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Avants2005" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Avants2005,
-  author = {Avants, B and Grossman, MR and Gee, JC},
-  title = {The correlation of cognitive decline with frontotemporal dementia induced annualized gray matter loss using diffeomorphic morphometry},
-  journal = {ALZHEIMER DISEASE &amp; ASSOCIATED DISORDERS},
-  year = {2005},
-  volume = {19},
-  number = {1},
-  pages = {S25-S28},
-  note = {Satellite Meeting on Frontotemporal Dementia, Univ Penn, Philadelphia, PA, JUL 15-16, 2004},
-  doi = {10.1097/01.wad.0000183083.14939.82}
-}
-</pre></td>
-</tr>
-<tr id="Avants2005a" class="entry">
-	<td>Avants B, Gee J, Schoenemann P, Monge J, Lewis J and Holloway R (2005), <i>"A new method for assessing endbcast morphology: calculating local curvature from 3D CT images."</i>, AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY. (40), pp. 67.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Avants2005a','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Avants2005a" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Avants2005a,
-  author = {Avants, B and Gee, J and Schoenemann, PT and Monge, J and Lewis, JE and Holloway, RL},
-  title = {A new method for assessing endbcast morphology: calculating local curvature from 3D CT images.},
-  journal = {AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY},
-  year = {2005},
-  number = {40},
-  pages = {67}
-}
-</pre></td>
-</tr>
-<tr id="Avants2004" class="entry">
-	<td>Avants B, Gee J, Schoenemann PT, Monge J, Lewis JE and Holloway RL (2004), <i>"Validation of plaster endocast morphology through 3D CT image analysis"</i>, AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY. (38), pp. 56.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Avants2004','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Avants2004" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Avants2004,
-  author = {Avants, B. and Gee, J. and Schoenemann, P. T. and Monge, J. and Lewis, J. E. and Holloway, R. L.},
-  title = {Validation of plaster endocast morphology through 3D CT image analysis},
-  journal = {AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY},
-  year = {2004},
-  number = {38},
-  pages = {56}
-}
-</pre></td>
-</tr>
-<tr id="Avants2004b" class="entry">
-	<td>Avants B and Gee J (2004), <i>"Geodesic estimation for large deformation anatomical shape averaging and interpolation"</i>, NEUROIMAGE.  Vol. 23(1), pp. S139-S150.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Avants2004b','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1016/j.neuroimage.2004.07.010" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Avants2004b" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Avants2004b,
-  author = {Avants, B and Gee, JC},
-  title = {Geodesic estimation for large deformation anatomical shape averaging and interpolation},
-  journal = {NEUROIMAGE},
-  year = {2004},
-  volume = {23},
-  number = {1},
-  pages = {S139-S150},
-  note = {Conference on Mathermatics in Brain Imaging, Univ Calif Los Angeles, Inst Pure &amp; Appl Math, Los Angeles, CA, JUL 12-23, 2004},
-  doi = {10.1016/j.neuroimage.2004.07.010}
-}
-</pre></td>
-</tr>
-<tr id="Schoenemann2004" class="entry">
-	<td>Schoenemann PT, Avants BB, Gee JC, Glotzer LD and Sheehan MJ (2004), <i>"Analysis of chimp-human brain differences via non-rigid deformation of 3D MR images"</i>, AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY. (38), pp. 174-175.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Schoenemann2004','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Schoenemann2004" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Schoenemann2004,
-  author = {Schoenemann, P. T. and Avants, B. B. and Gee, J. C. and Glotzer, L. D. and Sheehan, M. J.},
-  title = {Analysis of chimp-human brain differences via non-rigid deformation of 3D MR images},
-  journal = {AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY},
-  year = {2004},
-  number = {38},
-  pages = {174-175}
-}
-</pre></td>
-</tr>
-<tr id="Dubb2003" class="entry">
-	<td>Dubb A, Gur R, Avants B and Gee J (2003), <i>"Characterization of sexual dimorphism in the human corpus callosum"</i>, NEUROIMAGE., SEP, 2003.  Vol. 20(1), pp. 512-519.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Dubb2003','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1016/S1053-8119(03)00313-6" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Dubb2003" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Dubb2003,
-  author = {Dubb, A and Gur, R and Avants, B and Gee, J},
-  title = {Characterization of sexual dimorphism in the human corpus callosum},
-  journal = {NEUROIMAGE},
-  year = {2003},
-  volume = {20},
-  number = {1},
-  pages = {512-519},
-  doi = {10.1016/S1053-8119(03)00313-6}
-}
-</pre></td>
-</tr>
-<tr id="Avants1999" class="entry">
-	<td>Avants B, Soodak D and Ruppeiner G (1999), <i>"Measuring the electrical conductivity of the earth"</i>, AMERICAN JOURNAL OF PHYSICS., JUL, 1999.  Vol. 67(7), pp. 593-598.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Avants1999','bibtex')">BibTeX</a>] [<a href="http://dx.doi.org/10.1119/1.19329" target="_blank">DOI</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Avants1999" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Avants1999,
-  author = {Avants, B and Soodak, D and Ruppeiner, G},
-  title = {Measuring the electrical conductivity of the earth},
-  journal = {AMERICAN JOURNAL OF PHYSICS},
-  year = {1999},
-  volume = {67},
-  number = {7},
-  pages = {593-598},
-  doi = {10.1119/1.19329}
-}
-</pre></td>
-</tr>
-</tbody>
-</table>
-	      
+</li>
+<br><li value="">
+A. Klein, J. Andersson, B. A. Ardekani, J. Ashburner, B. <strong>Avants</strong>, M.-C. Chiang, G. E. Christensen, D. L. Collins, J. Gee, P. Hellier, J. H. Song, M. Jenkinson, C. Lepage, D. Rueckert, P. Thompson, T. Vercauteren, R. P. Woods, J. J. Mann &amp; R. V. Parsey,<br>
+"Evaluation of 14 nonlinear deformation algorithms applied to human brain MRI registration",<br>
+<i>NEUROIMAGE</i>
+<b>46</b>,
+786-802
+(2009)
+
+</li>
+<br><li value="">
+L. Massimo, C. Powers, P. Moore, L. Vesely, B. <strong>Avants</strong>, J. Gee, D. J. Libon &amp; M. Grossman,<br>
+"Neuroanatomy of Apathy and Disinhibition in Frontotemporal Lobar Degeneration",<br>
+<i>DEMENTIA AND GERIATRIC COGNITIVE DISORDERS</i>
+<b>27</b>,
+96-104
+(2009)
+
+</li>
+<br><li value="">
+J. Pluta, B. B. <strong>Avants</strong>, S. Glynn, S. Awate, J. C. Gee &amp; J. A. Detre,<br>
+"Appearance and Incomplete Label Matching for Diffeomorphic Template Based Hippocampus Segmentation",<br>
+<i>HIPPOCAMPUS</i>
+<b>19</b>,
+565-571
+(2009)
+
+</li>
+<br><li value="">
+P. T. Schoenemann, J. Monge, B. B. <strong>Avants</strong> &amp; J. C. Gee,<br>
+"An atlas of modern human cranial morpbology constructed via non-rigid deformation analysis of high-resolution CT images.",<br>
+<i>AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY</i>
+,
+231
+(2009)
+
+</li>
+<br><li value="">
+N. J. Tustison, B. B. <strong>Avants</strong> &amp; J. C. Gee,<br>
+"Directly Manipulated Free-Form Deformation Image Registration",<br>
+<i>IEEE TRANSACTIONS ON IMAGE PROCESSING</i>
+<b>18</b>,
+624-635
+(2009)
+
+</li>
+<br><li value="">
+P. A. Yushkevich, B. B. <strong>Avants</strong>, J. Pluta, S. Das, D. Minkoff, D. Mechanic-Hamilton, S. Glynn, S. Pickup, W. Liu, J. C. Gee, M. Grossman &amp; J. A. Detre,<br>
+"A high-resolution computational atlas of the human hippocampus from postmortem magnetic resonance imaging at 9.4 T",<br>
+<i>NEUROIMAGE</i>
+<b>44</b>,
+385-398
+(2009)
+
+</li>
+<br><li value="">
+B. <strong>Avants</strong>, J. T. Duda, J. Kim, H. Zhang, J. Pluta, J. C. Gee &amp; J. Whyte,<br>
+"Multivariate Analysis of Structural and Diffusion Imaging in Traumatic Brain Injury",<br>
+<i>ACADEMIC RADIOLOGY</i>
+<b>15</b>,
+1360-1375
+(2008)
+
+</li>
+<br><li value="">
+B. B. <strong>Avants</strong>, C. L. Epstein, M. Grossman &amp; J. C. Gee,<br>
+"Symmetric diffeomorphic image registration with cross-correlation: Evaluating automated labeling of elderly and neurodegenerative brain",<br>
+<i>MEDICAL IMAGE ANALYSIS</i>
+<b>12</b>,
+26-41
+(2008)
+
+</li>
+<br><li value="">
+M. Grossman, C. Anderson, A. Khan, B. <strong>Avants</strong>, L. Elman &amp; L. McCluskey,<br>
+"Impaired action knowledge in amyotrophic lateral sclerosis",<br>
+<i>NEUROLOGY</i>
+<b>71</b>,
+1396-1401
+(2008)
+
+</li>
+<br><li value="">
+M. Grossman, C. Anderson, A. Khan, B. <strong>Avants</strong>, L. Elman &amp; L. McCluskey,<br>
+"Neural basis for impaired action knowledge in amyotrophic lateral sclerosis",<br>
+<i>NEUROLOGY</i>
+<b>70</b>,
+A248
+(2008)
+
+</li>
+<br><li value="">
+J. Kim, B. <strong>Avants</strong>, S. Patel, J. Whyte, B. H. Coslett, J. Pluta, J. A. Detre &amp; J. C. Gee,<br>
+"Structural consequences of diffuse traumatic brain injury: A large deformation tensor-based morphometry study",<br>
+<i>NEUROIMAGE</i>
+<b>39</b>,
+1014-1026
+(2008)
+
+</li>
+<br><li value="">
+L. M. Massimo, C. Anderson, P. Moore, B. <strong>Avants</strong>, D. Libon, B. Cynwyd &amp; M. Grossman,<br>
+"Neuroanatomical correlates of apathy and disinhibition in frontotemporal dementia",<br>
+<i>NEUROLOGY</i>
+<b>70</b>,
+A443
+(2008)
+
+</li>
+<br><li value="">
+P. T. Schoenemann, R. L. Holloway, B. B. <strong>Avants</strong> &amp; J. C. Gee,<br>
+"Endocast asymmetry in pongids assessed via non-rigid deformation analysis of high-resolution CT images.",<br>
+<i>AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY</i>
+,
+188
+(2008)
+
+</li>
+<br><li value="">
+P. T. Schoenemann, R. L. Holloway, B. B. AvantS &amp; J. C. Gee,<br>
+"The role of micro-morphological stress markers in the differential diagnosis of infectious bone diseases.",<br>
+<i>AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY</i>
+,
+188-189
+(2008)
+
+</li>
+<br><li value="">
+T. J. Simon, Z. Wu, B. <strong>Avants</strong>, H. Zhang, J. C. Gee &amp; G. T. Stebbins,<br>
+"Atypical cortical connectivity and visuospatial cognitive impairments are related in children with chromosome 22q11.2 deletion syndrome",<br>
+<i>BEHAVIORAL AND BRAIN FUNCTIONS</i>
+<b>4</b>,
+
+(2008)
+
+</li>
+<br><li value="">
+T. J. Simon, Z. Wu, B. <strong>Avants</strong>, H. Zhang, J. C. Gee &amp; G. T. Stebbins,<br>
+"Atypical cortical connectivity and visuospatial cognitive impairments are related in children with chromosome 22q11.2 deletion syndrome.",<br>
+<i>Behav Brain Funct</i>
+<b>4</b>,
+25
+(2008)
+&nbsp;<a href="http://dx.doi.org/10.1186/1744-9081-4-25">PDF</a>
+</li>
+<br><li value="">
+G. K. Aguirre, A. M. Komaromy, A. V. Cideciyan, D. H. Brainard, T. S. Aleman, A. J. Roman, B. B. <strong>Avants</strong>, J. C. Gee, M. Korczykowski, W. W. Hauswirth, G. M. Acland, G. D. Aguirre &amp; S. G. Jacobson,<br>
+"Canine and human visual cortex intact and responsive despite early retinal blindness from RPE65 mutation",<br>
+<i>PLOS MEDICINE</i>
+<b>4</b>,
+1117-1128
+(2007)
+
+</li>
+<br><li value="">
+B. B. <strong>Avants</strong>, H. Hurt, J. M. Giannetta, C. L. Epstein, D. M. Shera, H. Rao, J. Wang &amp; J. C. Gee,<br>
+"Effects of heavy in utero cocaine exposure on adolescent caudate morphology",<br>
+<i>PEDIATRIC NEUROLOGY</i>
+<b>37</b>,
+275-279
+(2007)
+
+</li>
+<br><li value="">
+B. <strong>Avants</strong>, C. Anderson, M. Grossman &amp; J. C. Gee,<br>
+"Spatiotemporal normalization for longitudinal analysis of gray matter atrophy in frontotemporal dementia.",<br>
+<i>Med Image Comput Comput Assist Interv</i>
+<b>10</b>,
+303-310
+(2007)
+
+</li>
+<br><li value="">
+Y. Fan, H. Rao, H. Hurt, J. Giannetta, M. Korczykowski, D. Shera, B. B. <strong>Avants</strong>, J. C. Gee, J. Wang &amp; D. Shen,<br>
+"Multivariate examination of brain abnormality using both structural and functional MRI",<br>
+<i>NEUROIMAGE</i>
+<b>36</b>,
+1189-1199
+(2007)
+
+</li>
+<br><li value="">
+L. Ng, S. D. Pathak, C. Kuan, C. Lau, H. Dong, A. Sodt, C. Dang, B. <strong>Avants</strong>, P. Yushkevich, J. C. Gee, D. Haynor, E. Lein, A. Jones &amp; M. Hawrylycz,<br>
+"Neuroinformatics for genome-wide 3D gene expression mapping in the mouse brain",<br>
+<i>IEEE-ACM TRANSACTIONS ON COMPUTATIONAL BIOLOGY AND BIOINFORMATICS</i>
+<b>4</b>,
+382-393
+(2007)
+
+</li>
+<br><li value="">
+H. Rao, J. Wang, J. Giannetta, M. Korczykowski, D. Shera, B. B. <strong>Avants</strong>, J. Gee, J. A. Detre &amp; H. Hurt,<br>
+"Altered resting cerebral blood flow in adolescents with in utero cocaine exposure revealed by perfusion functional MRI",<br>
+<i>PEDIATRICS</i>
+<b>120</b>,
+E1245-E1254
+(2007)
+
+</li>
+<br><li value="">
+P. T. Schoenemann, J. Gee, B. <strong>Avants</strong>, R. L. Holloway, J. Monge &amp; J. Lewis,<br>
+"Validation of plaster endocast morphology through 3D CT image analysis",<br>
+<i>AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY</i>
+<b>132</b>,
+183-192
+(2007)
+
+</li>
+<br><li value="">
+P. T. Schoenemann, J. Monge, B. B. <strong>Avants</strong>, D. Glotzer &amp; J. C. Gee,<br>
+"Sex differences in cranial form assessed via non-rigid deformation analysis of high-resolution CT images.",<br>
+<i>AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY</i>
+,
+209
+(2007)
+
+</li>
+<br><li value="">
+H. Zhang, B. B. <strong>Avants</strong>, P. A. Yushkevich, J. H. Woo, S. Wang, L. F. McCluskey, L. B. Elman, E. R. Melhem &amp; J. C. Gee,<br>
+"Differences: An example study using amyotrophic lateral sclerosis",<br>
+<i>IEEE TRANSACTIONS ON MEDICAL IMAGING</i>
+<b>26</b>,
+1585-1597
+(2007)
+
+</li>
+<br><li value="">
+H. Zhang, B. B. <strong>Avants</strong>, P. A. Yushkevich, J. H. Woo, S. Wang, L. F. McCluskey, L. B. Elman, E. R. Melhem &amp; J. C. Gee,<br>
+"High-dimensional spatial normalization of diffusion tensor images improves the detection of white matter differences: an example study using amyotrophic lateral sclerosis.",<br>
+<i>IEEE Trans Med Imaging</i>
+<b>26</b>,
+1585-1597
+(2007)
+&nbsp;<a href="http://dx.doi.org/10.1109/TMI.2007.906784">PDF</a>
+</li>
+<br><li value="">
+B. B. <strong>Avants</strong>, P. T. Schoenemann &amp; J. C. Gee,<br>
+"Lagrangian frame diffeomorphic image registration: Morphometric comparison of human and chimpanzee cortex",<br>
+<i>MEDICAL IMAGE ANALYSIS</i>
+<b>10</b>,
+397-412
+(2006)
+
+</li>
+<br><li value="">
+B. <strong>Avants</strong>, M. Grossman &amp; J. Gee,<br>
+"The correlation of cognitive decline with frontotemporal dementia induced annualized gray matter loss using diffeomorphic morphometry",<br>
+<i>ALZHEIMER DISEASE &amp; ASSOCIATED DISORDERS</i>
+<b>19</b>,
+S25-S28
+(2005)
+
+</li>
+<br><li value="">
+B. <strong>Avants</strong>, J. Gee, P. Schoenemann, J. Monge, J. Lewis &amp; R. Holloway,<br>
+"A new method for assessing endbcast morphology: calculating local curvature from 3D CT images.",<br>
+<i>AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY</i>
+,
+67
+(2005)
+
+</li>
+<br><li value="">
+B. <strong>Avants</strong>, J. Gee, P. T. Schoenemann, J. Monge, J. E. Lewis &amp; R. L. Holloway,<br>
+"Validation of plaster endocast morphology through 3D CT image analysis",<br>
+<i>AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY</i>
+,
+56
+(2004)
+
+</li>
+<br><li value="">
+B. <strong>Avants</strong> &amp; J. Gee,<br>
+"Geodesic estimation for large deformation anatomical shape averaging and interpolation",<br>
+<i>NEUROIMAGE</i>
+<b>23</b>,
+S139-S150
+(2004)
+
+</li>
+<br><li value="">
+P. T. Schoenemann, B. B. <strong>Avants</strong>, J. C. Gee, L. D. Glotzer &amp; M. J. Sheehan,<br>
+"Analysis of chimp-human brain differences via non-rigid deformation of 3D MR images",<br>
+<i>AMERICAN JOURNAL OF PHYSICAL ANTHROPOLOGY</i>
+,
+174-175
+(2004)
+
+</li>
+<br><li value="">
+A. Dubb, R. Gur, B. <strong>Avants</strong> &amp; J. Gee,<br>
+"Characterization of sexual dimorphism in the human corpus callosum",<br>
+<i>NEUROIMAGE</i>
+<b>20</b>,
+512-519
+(2003)
+
+</li>
+<br><li value="">
+B. <strong>Avants</strong>, D. Soodak &amp; G. Ruppeiner,<br>
+"Measuring the electrical conductivity of the earth",<br>
+<i>AMERICAN JOURNAL OF PHYSICS</i>
+<b>67</b>,
+593-598
+(1999)
+
+</li>
+<br></ol>
+</body>
+</html>
+
 	    </dd>
 	    <dd class="clear"></dd>
 
 	    <dt>Conference Publications</dt>
             <dd>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<script type="text/javascript">
-<!--
-// QuickSearch script for JabRef HTML export 
-// Version: 3.0
-//
-// Copyright (c) 2006-2011, Mark Schenk
-//
-// This software is distributed under a Creative Commons Attribution 3.0 License
-// http://creativecommons.org/licenses/by/3.0/
-//
-// Features:
-// - intuitive find-as-you-type searching
-//    ~ case insensitive
-//    ~ ignore diacritics (optional)
-//
-// - search with/without Regular Expressions
-// - match BibTeX key
-//
+<ol>
+<li value="">
+P. Dhillon, B. M. Kandel, D. Wolk, J. C. Gee &amp; B. <strong>Avants</strong>,<br>
+"Prior-based Eigenanatomy for Classification of Autism Spectrum Disorder",<br>
+<i>PRNI</i>
+,
 
-// Search settings
-var searchAbstract = true;	// search in abstract
-var searchReview = true;	// search in review
+(2013)
 
-var noSquiggles = true; 	// ignore diacritics when searching
-var searchRegExp = false; 	// enable RegExp searches
+</li>
+<br><li value="">
+B. M. Kandel, D. Wolk, J. C. Gee &amp; B. <strong>Avants</strong>,<br>
+"Predicting Cognitive Data From Medical Images Using Sparse Linear Regression ",<br>
+<i>Inf. Process. Med. Imaging</i>
+,
 
+(2013)
 
-if (window.addEventListener) {
-	window.addEventListener("load",initSearch,false); }
-else if (window.attachEvent) {
-	window.attachEvent("onload", initSearch); }
+</li>
+<br><li value="">
+B. <strong>Avants</strong>, P. Dhillon, B. M. Kandel, P. A. Cook, C. T. McMillan, M. Grossman &amp; J. C. Gee,<br>
+"Eigenanatomy improves detection power for longitudinal cortical change.",<br>
+<i>Med Image Comput Comput Assist Interv</i>
+<b>15</b>,
+206-213
+(2012)
 
-function initSearch() {
-	// check for quick search table and searchfield
-	if (!document.getElementById('qs_table')||!document.getElementById('quicksearch')) { return; }
+</li>
+<br><li value="">
+P. A. Cook, B. B. <strong>Avants</strong>, C. T. McMillan, J. Powers, J. C. Gee &amp; M. Grossman,<br>
+"Multimodal neuroimaging reveals gray and white matter associations with verbal fluency in frontotemporal degeneration",<br>
+<i>DEMENTIA AND GERIATRIC COGNITIVE DISORDERS</i>
+<b>33</b>,
+154-155
+(2012)
 
-	// load all the rows and sort into arrays
-	loadTableData();
-	
-	//find the query field
-	qsfield = document.getElementById('qs_field');
+</li>
+<br><li value="">
+B. <strong>Avants</strong>, P. A. Cook, C. McMillan, M. Grossman, N. J. Tustison, Y. Zheng &amp; J. C. Gee,<br>
+"Sparse unbiased analysis of anatomical variance in longitudinal imaging.",<br>
+<i>Med Image Comput Comput Assist Interv</i>
+<b>13</b>,
+324-331
+(2010)
 
-	// previous search term; used for speed optimisation
-	prevSearch = '';
+</li>
+<br><li value="">
+H. Wang, S. Das, J. Pluta, C. Craige, M. Altinay, B. <strong>Avants</strong>, M. Weiner, S. Mueller &amp; P. Yushkevich,<br>
+"Standing on the shoulders of giants: improving medical image segmentation via bias correction.",<br>
+<i>Med Image Comput Comput Assist Interv</i>
+<b>13</b>,
+105-112
+(2010)
 
-	//find statistics location
-	stats = document.getElementById('stat');
-	setStatistics(-1);
-	
-	// set up preferences
-	initPreferences();
+</li>
+<br><li value="">
+H. Sun, B. B. <strong>Avants</strong>, A. F. Frangi, F. Sukno, J. C. Geel &amp; P. A. Yushkevich,<br>
+"Cardiac medial modeling and time-course heart wall thickness analysis.",<br>
+<i>Med Image Comput Comput Assist Interv</i>
+<b>11</b>,
+766-773
+(2008)
 
-	// shows the searchfield
-	document.getElementById('quicksearch').style.display = 'block';
-	document.getElementById('qs_field').onkeyup = quickSearch;
-}
+</li>
+<br><li value="">
+P. A. Yushkevich, B. B. <strong>Avants</strong>, J. Pluta, D. Minkoff, J. A. Detre, M. Grossman &amp; J. C. Gee,<br>
+"Shape-based alignment of hippocampal subfields: evaluation in postmortem MRI.",<br>
+<i>Med Image Comput Comput Assist Interv</i>
+<b>11</b>,
+510-517
+(2008)
 
-function loadTableData() {
-	// find table and appropriate rows
-	searchTable = document.getElementById('qs_table');
-	var allRows = searchTable.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+</li>
+<br><li value="">
+B. B. <strong>Avants</strong>, M. Grossman &amp; J. C. Gee,<br>
+"Symmetric diffeomorphic image registration: Evaluating automated labeling of elderly and neurodegenerative cortex and frontal lobe",<br>
 
-	// split all rows into entryRows and infoRows (e.g. abstract, review, bibtex)
-	entryRows = new Array(); infoRows = new Array(); absRows = new Array(); revRows = new Array();
+<b>4057</b>,
+50-57
+(2006)
 
-	// get data from each row
-	entryRowsData = new Array(); absRowsData = new Array(); revRowsData = new Array(); 
-	
-	BibTeXKeys = new Array();
-	
-	for (var i=0, k=0, j=0; i<allRows.length;i++) {
-		if (allRows[i].className.match(/entry/)) {
-			entryRows[j] = allRows[i];
-			entryRowsData[j] = stripDiacritics(getTextContent(allRows[i]));
-			allRows[i].id ? BibTeXKeys[j] = allRows[i].id : allRows[i].id = 'autokey_'+j;
-			j ++;
-		} else {
-			infoRows[k++] = allRows[i];
-			// check for abstract/review
-			if (allRows[i].className.match(/abstract/)) {
-				absRows.push(allRows[i]);
-				absRowsData[j-1] = stripDiacritics(getTextContent(allRows[i]));
-			} else if (allRows[i].className.match(/review/)) {
-				revRows.push(allRows[i]);
-				revRowsData[j-1] = stripDiacritics(getTextContent(allRows[i]));
-			}
-		}
-	}
-	//number of entries and rows
-	numEntries = entryRows.length;
-	numInfo = infoRows.length;
-	numAbs = absRows.length;
-	numRev = revRows.length;
-}
+</li>
+<br><li value="">
+B. B. <strong>Avants</strong>, C. L. Epstein &amp; J. C. Gee,<br>
+"Geodesic image normalization and temporal parameterization in the space of diffeomorphisms",<br>
 
-function quickSearch(){
-	
-	tInput = qsfield;
+<b>4091</b>,
+9-16
+(2006)
 
-	if (tInput.value.length == 0) {
-		showAll();
-		setStatistics(-1);
-		qsfield.className = '';
-		return;
-	} else {
-		t = stripDiacritics(tInput.value);
+</li>
+<br><li value="">
+Z. Song, N. Tustison, B. <strong>Avants</strong> &amp; J. C. Gee,<br>
+"Integrated graph cuts for brain MRI segmentation",<br>
 
-		if(!searchRegExp) { t = escapeRegExp(t); }
-			
-		// only search for valid RegExp
-		try {
-			textRegExp = new RegExp(t,"i");
-			closeAllInfo();
-			qsfield.className = '';
-		}
-			catch(err) {
-			prevSearch = tInput.value;
-			qsfield.className = 'invalidsearch';
-			return;
-		}
-	}
-	
-	// count number of hits
-	var hits = 0;
+<b>4191</b>,
+831-838
+(2006)
 
-	// start looping through all entry rows
-	for (var i = 0; cRow = entryRows[i]; i++){
+</li>
+<br><li value="">
+Z. Song, N. Tustison, B. <strong>Avants</strong> &amp; J. C. Gee,<br>
+"Integrated graph cuts for brain MRI segmentation.",<br>
+<i>Med Image Comput Comput Assist Interv</i>
+<b>9</b>,
+831-838
+(2006)
 
-		// only show search the cells if it isn't already hidden OR if the search term is getting shorter, then search all
-		if(cRow.className.indexOf('noshow')==-1 || tInput.value.length <= prevSearch.length){
-			var found = false; 
+</li>
+<br><li value="">
+N. J. Tustison, B. B. <strong>Avants</strong>, T. A. Sundaram, J. T. Duda &amp; J. C. Gee,<br>
+"A generalization of Free-Form Deformation image registration within the ITK finite element framework",<br>
 
-			if (entryRowsData[i].search(textRegExp) != -1 || BibTeXKeys[i].search(textRegExp) != -1){ 
-				found = true;
-			} else {
-				if(searchAbstract && absRowsData[i]!=undefined) {
-					if (absRowsData[i].search(textRegExp) != -1){ found=true; } 
-				}
-				if(searchReview && revRowsData[i]!=undefined) {
-					if (revRowsData[i].search(textRegExp) != -1){ found=true; } 
-				}
-			}
-			
-			if (found){
-				cRow.className = 'entry show';
-				hits++;
-			} else {
-				cRow.className = 'entry noshow';
-			}
-		}
-	}
+<b>4057</b>,
+238-246
+(2006)
 
-	// update statistics
-	setStatistics(hits)
-	
-	// set previous search value
-	prevSearch = tInput.value;
-}
+</li>
+<br><li value="">
+P. A. Yushkevich, B. B. <strong>Avants</strong>, L. Ng, M. Hawrylycz, P. D. Burstein, H. Zhang &amp; J. C. Gee,<br>
+"3D mouse brain reconstruction from histology using a coarse-to-fine approach",<br>
 
+<b>4057</b>,
+230-237
+(2006)
 
-// Strip Diacritics from text
-// http://stackoverflow.com/questions/990904/javascript-remove-accents-in-strings
+</li>
+<br><li value="">
+B. <strong>Avants</strong>, C. Epstein &amp; J. Gee,<br>
+"Geodesic image interpolation: Parameterizing and interpolating spatiotemporal images",<br>
 
-// String containing replacement characters for stripping accents 
-var stripstring = 
-    'AAAAAAACEEEEIIII'+
-    'DNOOOOO.OUUUUY..'+
-    'aaaaaaaceeeeiiii'+
-    'dnooooo.ouuuuy.y'+
-    'AaAaAaCcCcCcCcDd'+
-    'DdEeEeEeEeEeGgGg'+
-    'GgGgHhHhIiIiIiIi'+
-    'IiIiJjKkkLlLlLlL'+
-    'lJlNnNnNnnNnOoOo'+
-    'OoOoRrRrRrSsSsSs'+
-    'SsTtTtTtUuUuUuUu'+
-    'UuUuWwYyYZzZzZz.';
+<b>3752</b>,
+247-258
+(2005)
 
-function stripDiacritics(str){
+</li>
+<br><li value="">
+P. Cook, H. Zhang, B. <strong>Avants</strong>, P. Yushkevich, D. Alexander, J. Gee, O. Ciccarelli &amp; A. Thompson,<br>
+"An automated approach to connectivity-based partitioning of brain structures",<br>
 
-    if(noSquiggles==false){
-        return str;
-    }
+<b>3749</b>,
+164-171
+(2005)
 
-    var answer='';
-    for(var i=0;i<str.length;i++){
-        var ch=str[i];
-        var chindex=ch.charCodeAt(0)-192;   // Index of character code in the strip string
-        if(chindex>=0 && chindex<stripstring.length){
-            // Character is within our table, so we can strip the accent...
-            var outch=stripstring.charAt(chindex);
-            // ...unless it was shown as a '.'
-            if(outch!='.')ch=outch;
-        }
-        answer+=ch;
-    }
-    return answer;
-}
+</li>
+<br><li value="">
+T. Sundaram, B. <strong>Avants</strong> &amp; J. Gee,<br>
+"Towards a dynamic model of pulmonary parenchymal deformation: Evaluation of methods for temporal reparameterization of lung data",<br>
 
-// http://stackoverflow.com/questions/3446170/escape-string-for-use-in-javascript-regex
-// NOTE: must escape every \ in the export code because of the JabRef Export...
-function escapeRegExp(str) {
-  return str.replace(/[-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
-}
+<b>3750</b>,
+328-335
+(2005)
 
-function toggleInfo(articleid,info) {
+</li>
+<br><li value="">
+T. A. Sundaram, B. B. <strong>Avants</strong> &amp; J. C. Gee,<br>
+"Towards a dynamic model of pulmonary parenchymal deformation: evaluation of methods for temporal reparameterization of lung data.",<br>
+<i>Med Image Comput Comput Assist Interv</i>
+<b>8</b>,
+328-335
+(2005)
 
-	var entry = document.getElementById(articleid);
-	var abs = document.getElementById('abs_'+articleid);
-	var rev = document.getElementById('rev_'+articleid);
-	var bib = document.getElementById('bib_'+articleid);
-	
-	if (abs && info == 'abstract') {
-		abs.className.indexOf('noshow') == -1?abs.className = 'abstract noshow':abs.className = 'abstract show';
-	} else if (rev && info == 'review') {
-		rev.className.indexOf('noshow') == -1?rev.className = 'review noshow':rev.className = 'review show';
-	} else if (bib && info == 'bibtex') {
-		bib.className.indexOf('noshow') == -1?bib.className = 'bibtex noshow':bib.className = 'bibtex show';
-	} else { 
-		return;
-	}
+</li>
+<br><li value="">
+B. <strong>Avants</strong> &amp; J. Gee,<br>
+"Symmetric geodesic shape averaging and shape interpolation",<br>
 
-	// check if one or the other is available
-	var revshow; var absshow; var bibshow;
-	(abs && abs.className.indexOf('noshow') == -1)? absshow = true: absshow = false;
-	(rev && rev.className.indexOf('noshow') == -1)? revshow = true: revshow = false;	
-	(bib && bib.className.indexOf('noshow') == -1)? bibshow = true: bibshow = false;
-	
-	// highlight original entry
-	if(entry) {
-		if (revshow || absshow || bibshow) {
-		entry.className = 'entry highlight show';
-		} else {
-		entry.className = 'entry show';
-		}
-	}
-	
-	// When there's a combination of abstract/review/bibtex showing, need to add class for correct styling
-	if(absshow) {
-		(revshow||bibshow)?abs.className = 'abstract nextshow':abs.className = 'abstract';
-	} 
-	if (revshow) {
-		bibshow?rev.className = 'review nextshow': rev.className = 'review';
-	}	
-	
-}
+<b>3117</b>,
+99-110
+(2004)
 
-function setStatistics (hits) {
-	if(hits < 0) { hits=numEntries; }
-	if(stats) { stats.firstChild.data = hits + '/' + numEntries}
-}
+</li>
+<br><li value="">
+T. Sundaram, B. <strong>Avants</strong> &amp; J. Gee,<br>
+"A dynamic model of average lung deformation using capacity-based reparameterization and shape averaging of lung MR images",<br>
 
-function getTextContent(node) {
-	// Function written by Arve Bersvendsen
-	// http://www.virtuelvis.com
-	
-	if (node.nodeType == 3) {
-	return node.nodeValue;
-	} // text node
-	if (node.nodeType == 1 && node.className != "infolinks") { // element node
-	var text = [];
-	for (var chld = node.firstChild;chld;chld=chld.nextSibling) {
-		text.push(getTextContent(chld));
-	}
-	return text.join("");
-	} return ""; // some other node, won't contain text nodes.
-}
+<b>3217</b>,
+1000-1007
+(2004)
 
-function showAll(){
-	closeAllInfo();
-	for (var i = 0; i < numEntries; i++){ entryRows[i].className = 'entry show'; }
-}
+</li>
+<br><li value="">
+B. <strong>Avants</strong> &amp; J. Gee,<br>
+"Formulation and evaluation of variational curve matching with prior constraints",<br>
 
-function closeAllInfo(){
-	for (var i=0; i < numInfo; i++){
-		if (infoRows[i].className.indexOf('noshow') ==-1) {
-			infoRows[i].className = infoRows[i].className + ' noshow';
-		}
-	}
-}
+<b>2717</b>,
+21-30
+(2003)
 
-function clearQS() {
-	qsfield.value = '';
-	showAll();
-}
+</li>
+<br><li value="">
+B. <strong>Avants</strong> &amp; J. Gee,<br>
+"The shape operator for differential analysis of images",<br>
 
-function redoQS(){
-	showAll();
-	quickSearch(qsfield);
-}
+<b>2732</b>,
+101-113
+(2003)
 
-function updateSetting(obj){
-	var option = obj.id;
-	var checked = obj.value;
+</li>
+<br><li value="">
+B. <strong>Avants</strong> &amp; J. Gee,<br>
+"Continuous curve matching with scale-space curvature and extrema-based scale selection",<br>
 
-	switch(option)
-	 {
-	 case "opt_searchAbs":
-	   searchAbstract=!searchAbstract;
-	   redoQS();
-	   break;
-	 case "opt_searchRev":
-	   searchReview=!searchReview;
-	   redoQS();
-	   break;
-	 case "opt_useRegExp":
-	   searchRegExp=!searchRegExp;
-	   redoQS();
-	   break;
-	 case "opt_noAccents":
-	   noSquiggles=!noSquiggles;
-	   loadTableData();
-	   redoQS();
-	   break;
-	 }
-}
+<b>2695</b>,
+798-813
+(2003)
 
-function initPreferences(){
-	if(searchAbstract){document.getElementById("opt_searchAbs").checked = true;}
-	if(searchReview){document.getElementById("opt_searchRev").checked = true;}
-	if(noSquiggles){document.getElementById("opt_noAccents").checked = true;}
-	if(searchRegExp){document.getElementById("opt_useRegExp").checked = true;}
-	
-	if(numAbs==0) {document.getElementById("opt_searchAbs").parentNode.style.display = 'none';}
-	if(numRev==0) {document.getElementById("opt_searchRev").parentNode.style.display = 'none';}	
-}
+</li>
+<br><li value="">
+B. <strong>Avants</strong> &amp; J. Williams,<br>
+"An adaptive minimal path generation technique for vessel tracking in CTA/CE-MRA volume images",<br>
 
-function toggleSettings(){
-	var togglebutton = document.getElementById('showsettings');
-	var settings = document.getElementById('settings');
-	
-	if(settings.className == "hidden"){
-		settings.className = "show";
-		togglebutton.innerText = "close settings";
-		togglebutton.textContent = "close settings";
-	}else{
-		settings.className = "hidden";
-		togglebutton.innerText = "settings...";		
-		togglebutton.textContent = "settings...";
-	}
-}
+<b>1935</b>,
+707-716
+(2000)
 
--->
-</script>
-<style type="text/css">
-body { background-color: white; font-family: Arial, sans-serif; font-size: 13px; line-height: 1.2; padding: 1em; color: #2E2E2E; width: 50em; margin: auto auto; }
+</li>
+<br></ol>
 
-form#quicksearch { width: auto; border-style: solid; border-color: gray; border-width: 1px 0px; padding: 0.7em 0.5em; display:none; position:relative; }
-span#searchstat {padding-left: 1em;}
-
-div#settings { margin-top:0.7em; /* border-bottom: 1px transparent solid; background-color: #efefef; border: 1px grey solid; */ }
-div#settings ul {margin: 0; padding: 0; }
-div#settings li {margin: 0; padding: 0 1em 0 0; display: inline; list-style: none; }
-div#settings li + li { border-left: 2px #efefef solid; padding-left: 0.5em;}
-div#settings input { margin-bottom: 0px;}
-
-div#settings.hidden {display:none;}
-
-#showsettings { border: 1px grey solid; padding: 0 0.5em; float:right; line-height: 1.6em; text-align: right; }
-#showsettings:hover { cursor: pointer; }
-
-.invalidsearch { background-color: red; }
-input[type="button"] { background-color: #efefef; border: 1px #2E2E2E solid;}
-
-table { border: 1px gray none; width: 100%; empty-cells: show; border-spacing: 0em 0.1em; margin: 1em 0em; }
-th, td { border: none; padding: 0.5em; vertical-align: top; text-align: justify; }
-
-td a { color: navy; text-decoration: none; }
-td a:hover  { text-decoration: underline; }
-
-tr.noshow { display: none;}
-tr.highlight td { background-color: #EFEFEF; border-top: 2px #2E2E2E solid; font-weight: bold; }
-tr.abstract td, tr.review td, tr.bibtex td { background-color: #EFEFEF; text-align: justify; border-bottom: 2px #2E2E2E solid; }
-tr.nextshow td { border-bottom-style: none; }
-
-tr.bibtex pre { width: 100%; overflow: auto; white-space: pre-wrap;}
-p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
-
-@media print {
-	p.infolinks, #qs_settings, #quicksearch, t.bibtex { display: none !important; }
-	tr { page-break-inside: avoid; }
-}
-</style>
-</head>
-<body>
-
-<form action="" id="quicksearch">
-<input type="text" id="qs_field" autocomplete="off" placeholder="Type to search..." /> <input type="button" onclick="clearQS()" value="clear" />
-<span id="searchstat">Matching entries: <span id="stat">0</span></span>
-<div id="showsettings" onclick="toggleSettings()">settings...</div>
-<div id="settings" class="hidden">
-<ul>
-<li><input type="checkbox" class="search_setting" id="opt_searchAbs" onchange="updateSetting(this)"><label for="opt_searchAbs"> include abstract</label></li>
-<li><input type="checkbox" class="search_setting" id="opt_searchRev" onchange="updateSetting(this)"><label for="opt_searchRev"> include review</label></li>
-<li><input type="checkbox" class="search_setting" id="opt_useRegExp" onchange="updateSetting(this)"><label for="opt_useRegExp"> use RegExp</label></li>
-<li><input type="checkbox" class="search_setting" id="opt_noAccents" onchange="updateSetting(this)"><label for="opt_noAccents"> ignore accents</label></li>
-</ul>
-</div>
-</form>
-<table id="qs_table" border="1">
-<tbody>
-  <tr id="kandel_ipmi_2013" class="entry">
-	<td>Kandel BM, Wolk D, Gee JC and Avants B (2013), <i>"Predicting Cognitive Data From Medical Images Using Sparse Linear Regression "</i>, Inf. Process. Med. Imaging. 
-	<p class="infolinks"> [<a href="javascript:toggleInfo('kandel_ipmi_2013','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_kandel_ipmi_2013" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{kandel_ipmi_2013,
-  author = {Benjamin M. Kandel and David Wolk and James C. Gee and Brian Avants},
-  title = {Predicting Cognitive Data From Medical Images Using Sparse Linear Regression },
-  journal = {Inf. Process. Med. Imaging},
-  year = {2013}
-}
-</pre></td>
-</tr>
-<tr id="Avants2012" class="entry">
-	<td>Avants B, Dhillon P, Kandel BM, Cook PA, McMillan CT, Grossman M and Gee JC (2012), <i>"Eigenanatomy improves detection power for longitudinal cortical change."</i>, Med Image Comput Comput Assist Interv.  Vol. 15(Pt 3), pp. 206-213.
-	<p class="infolinks">[<a href="javascript:toggleInfo('Avants2012','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Avants2012','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="abs_Avants2012" class="abstract noshow">
-	<td><b>Abstract</b>: We contribute a novel and interpretable dimensionality reduction strategy, eigenanatomy, that is tuned for neuroimaging data. The method approximates the eigendecomposition of an image set with basis functions (the eigenanatomy vectors) that are sparse, unsigned and are anatomically clustered. We employ the eigenanatomy vectors as anatomical predictors to improve detection power in morphometry. Standard voxel-based morphometry (VBM) analyzes imaging data voxel-by-voxel--and follows this with cluster-based or voxel-wise multiple comparisons correction methods to determine significance. Eigenanatomy reverses the standard order of operations by first clustering the voxel data and then using standard linear regression in this reduced dimensionality space. As with traditional region-of-interest (ROI) analysis, this strategy can greatly improve detection power. Our results show that eigenanatomy provides a principled objective function that leads to localized, data-driven regions of interest. These regions improve our ability to quantify biologically plausible rates of cortical change in two distinct forms of neurodegeneration. We detail the algorithm and show experimental evidence of its efficacy.</td>
-</tr>
-<tr id="bib_Avants2012" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Avants2012,
-  author = {Avants, Brian and Dhillon, Paramveer and Kandel, Benjamin M. and Cook, Philip A. and McMillan, Corey T. and Grossman, Murray and Gee, James C.},
-  title = {Eigenanatomy improves detection power for longitudinal cortical change.},
-  journal = {Med Image Comput Comput Assist Interv},
-  year = {2012},
-  volume = {15},
-  number = {Pt 3},
-  pages = {206--213}
-}
-</pre></td>
-</tr>
-<tr id="Cook2012" class="entry">
-	<td>Cook PA, Avants BB, McMillan CT, Powers J, Gee JC and Grossman M (2012), <i>"Multimodal neuroimaging reveals gray and white matter associations with verbal fluency in frontotemporal degeneration"</i>, DEMENTIA AND GERIATRIC COGNITIVE DISORDERS.  Vol. 33(1), pp. 154-155.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Cook2012','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Cook2012" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Cook2012,
-  author = {Cook, P. A. and Avants, B. B. and McMillan, C. T. and Powers, J. and Gee, J. C. and Grossman, M.},
-  title = {Multimodal neuroimaging reveals gray and white matter associations with verbal fluency in frontotemporal degeneration},
-  journal = {DEMENTIA AND GERIATRIC COGNITIVE DISORDERS},
-  year = {2012},
-  volume = {33},
-  number = {1},
-  pages = {154-155},
-  note = {8th International Conference on Frontotemporal Dementias, Manchester, ENGLAND, SEP 05-07, 2012}
-}
-</pre></td>
-</tr>
-<tr id="Avants2010b" class="entry">
-	<td>Avants B, Cook PA, McMillan C, Grossman M, Tustison NJ, Zheng Y and Gee JC (2010), <i>"Sparse unbiased analysis of anatomical variance in longitudinal imaging."</i>, Med Image Comput Comput Assist Interv.  Vol. 13(Pt 1), pp. 324-331.
-	<p class="infolinks">[<a href="javascript:toggleInfo('Avants2010b','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Avants2010b','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="abs_Avants2010b" class="abstract noshow">
-	<td><b>Abstract</b>: We present a new algorithm for reliable, unbiased, multivariate longitudinal analysis of cortical and white matter atrophy rates with penalized statistical methods. The pipeline uses a step-wise approach to transform and personalize template information first to a single-subject template (SST) and then to the individual's time series data. The first stream of information flows from group template to the SST; the second flows from the SST to the individual time-points and provides unbiased, prior-based segmentation and measurement of cortical thickness. MRI-bias correction, consistent longitudinal segmentation, cortical parcellation and cortical thickness estimation are all based on strong use of the subject-specific priors built from initial diffeomorphic mapping between the SST and optimal group template. We evaluate our approach with both test-retest data and with application to a driving biological problem. We use test-retest data to show that this approach produces (a) zero change when the retest data contains the same image content as the test data and (b) produces normally distributed, low variance estimates of thickness change centered at zero when test-retest data is collected near in time to test data. We also show that our approach--when combined with sparse canonical correlation analysis--reveals plausible, significant, annualized decline in cortical thickness and white matter volume when contrasting frontotemporal dementia and normal aging.</td>
-</tr>
-<tr id="bib_Avants2010b" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Avants2010b,
-  author = {Avants, Brian and Cook, Philip A. and McMillan, Corey and Grossman, Murray and Tustison, Nicholas J. and Zheng, Yuanjie and Gee, James C.},
-  title = {Sparse unbiased analysis of anatomical variance in longitudinal imaging.},
-  journal = {Med Image Comput Comput Assist Interv},
-  year = {2010},
-  volume = {13},
-  number = {Pt 1},
-  pages = {324--331}
-}
-</pre></td>
-</tr>
-<tr id="Wang2010a" class="entry">
-	<td>Wang H, Das S, Pluta J, Craige C, Altinay M, Avants B, Weiner M, Mueller S and Yushkevich P (2010), <i>"Standing on the shoulders of giants: improving medical image segmentation via bias correction."</i>, Med Image Comput Comput Assist Interv.  Vol. 13(Pt 3), pp. 105-112.
-	<p class="infolinks">[<a href="javascript:toggleInfo('Wang2010a','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Wang2010a','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="abs_Wang2010a" class="abstract noshow">
-	<td><b>Abstract</b>: We propose a simple strategy to improve automatic medical image segmentation. The key idea is that without deep understanding of a segmentation method, we can still improve its performance by directly calibrating its results with respect to manual segmentation. We formulate the calibration process as a bias correction problem, which is addressed by machine learning using training data. We apply this methodology on three segmentation problems/methods and show significant improvements for all of them.</td>
-</tr>
-<tr id="bib_Wang2010a" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Wang2010a,
-  author = {Wang, Hongzhi and Das, Sandhitsu and Pluta, John and Craige, Caryne and Altinay, Murat and Avants, Brian and Weiner, Michael and Mueller, Susanne and Yushkevich, Paul},
-  title = {Standing on the shoulders of giants: improving medical image segmentation via bias correction.},
-  journal = {Med Image Comput Comput Assist Interv},
-  year = {2010},
-  volume = {13},
-  number = {Pt 3},
-  pages = {105--112}
-}
-</pre></td>
-</tr>
-<tr id="Sun2008" class="entry">
-	<td>Sun H, Avants BB, Frangi AF, Sukno F, Geel JC and Yushkevich PA (2008), <i>"Cardiac medial modeling and time-course heart wall thickness analysis."</i>, Med Image Comput Comput Assist Interv.  Vol. 11(Pt 2), pp. 766-773.
-	<p class="infolinks">[<a href="javascript:toggleInfo('Sun2008','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Sun2008','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="abs_Sun2008" class="abstract noshow">
-	<td><b>Abstract</b>: The medial model is a powerful shape representation method that models a 3D object by explicitly defining its skeleton (medial axis) and deriving the boundary geometry according to medial geometry. It has been recently extended to model complex shapes with multi-figures, i.e., shapes whose skeletons can not be described by a single sheet in 3D. This paper applied the medial model to a 2-chamber heart data set consisting of 428 cardiac shapes from 90 subjects. The results show that the medial model can capture the heart shape accurately. To demonstrate the usage of the medial model, the changes of the heart wall thickness over time are analyzed. We calculated the mean heart wall thickness map of 90 subjects for different phases of the cardiac cycle, as well as the mean thickness change between phases.</td>
-</tr>
-<tr id="bib_Sun2008" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Sun2008,
-  author = {Sun, Hui and Avants, Brian B. and Frangi, Alejandro F. and Sukno, Federico and Geel, James C. and Yushkevich, Paul A.},
-  title = {Cardiac medial modeling and time-course heart wall thickness analysis.},
-  journal = {Med Image Comput Comput Assist Interv},
-  year = {2008},
-  volume = {11},
-  number = {Pt 2},
-  pages = {766--773}
-}
-</pre></td>
-</tr>
-<tr id="Yushkevich2008" class="entry">
-	<td>Yushkevich PA, Avants BB, Pluta J, Minkoff D, Detre JA, Grossman M and Gee JC (2008), <i>"Shape-based alignment of hippocampal subfields: evaluation in postmortem MRI."</i>, Med Image Comput Comput Assist Interv.  Vol. 11(Pt 1), pp. 510-517.
-	<p class="infolinks">[<a href="javascript:toggleInfo('Yushkevich2008','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Yushkevich2008','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="abs_Yushkevich2008" class="abstract noshow">
-	<td><b>Abstract</b>: This paper estimates the accuracy of hippocampal subfield alignment via shape-based normalization. Evaluation takes place in postmortem MRI dataset acquired at 9.4 Tesla with many averages and approximately 0.01 mm3 voxel resolution. Continuous medial representations (cm-reps) are used to establish geometrical correspondences between hippocampal formations in different images; the extent to which these correspondences match up subfields is evaluated and compared to normalization driven by image forces. Shape-based normalization is shown to perform only slightly worse than image-based normalization; this is encouraging because the former is more applicable to in vivo MRI, which typically lacks features that distinguish hippocampal subfields.</td>
-</tr>
-<tr id="bib_Yushkevich2008" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Yushkevich2008,
-  author = {Yushkevich, Paul A. and Avants, Brian B. and Pluta, John and Minkoff, David and Detre, John A. and Grossman, Murray and Gee, James C.},
-  title = {Shape-based alignment of hippocampal subfields: evaluation in postmortem MRI.},
-  journal = {Med Image Comput Comput Assist Interv},
-  year = {2008},
-  volume = {11},
-  number = {Pt 1},
-  pages = {510--517}
-}
-</pre></td>
-</tr>
-<tr id="Avants2006a" class="entry">
-	<td>Avants BB, Grossman M and Gee JC (2006), <i>"Symmetric diffeomorphic image registration: Evaluating automated labeling of elderly and neurodegenerative cortex and frontal lobe"</i>, In BIOMEDICAL IMAGE REGISTRATION, PROCEEDINGS.  Vol. 4057, pp. 50-57.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Avants2006a','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Avants2006a" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@inproceedings{Avants2006a,
-  author = {Avants, Brian B. and Grossman, Murray and Gee, James C.},
-  editor = {Pluim, JPW and Likar, B and Gerritsen, FA},
-  title = {Symmetric diffeomorphic image registration: Evaluating automated labeling of elderly and neurodegenerative cortex and frontal lobe},
-  booktitle = {BIOMEDICAL IMAGE REGISTRATION, PROCEEDINGS},
-  year = {2006},
-  volume = {4057},
-  pages = {50-57},
-  note = {3rd International Workshop on Biomedical Image Registration, Utrecht Univ, Utrecht, NETHERLANDS, JUL 09-11, 2006}
-}
-</pre></td>
-</tr>
-<tr id="Avants2006b" class="entry">
-	<td>Avants BB, Epstein CL and Gee JC (2006), <i>"Geodesic image normalization and temporal parameterization in the space of diffeomorphisms"</i>, In MEDICAL IMAGING AND AUGMENTED REALITY.  Vol. 4091, pp. 9-16.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Avants2006b','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Avants2006b" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@inproceedings{Avants2006b,
-  author = {Avants, Brian B. and Epstein, C. L. and Gee, J. C.},
-  editor = {Yang, GZ and Jiang, T and Shen, DG and Gu, L and Yang, J},
-  title = {Geodesic image normalization and temporal parameterization in the space of diffeomorphisms},
-  booktitle = {MEDICAL IMAGING AND AUGMENTED REALITY},
-  year = {2006},
-  volume = {4091},
-  pages = {9-16},
-  note = {3rd International Workshop on Medical Imaging and Augmented Reality (MIAR 2006), Shanghai, PEOPLES R CHINA, AUG 17-18, 2006}
-}
-</pre></td>
-</tr>
-<tr id="Song2006" class="entry">
-	<td>Song Z, Tustison N, Avants B and Gee JC (2006), <i>"Integrated graph cuts for brain MRI segmentation"</i>, In MEDICAL IMAGE COMPUTING AND COMPUTER-ASSISTED INTERVENTION - MICCAI 2006, PT 2.  Vol. 4191, pp. 831-838.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Song2006','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Song2006" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@inproceedings{Song2006,
-  author = {Song, Zhuang and Tustison, Nicholas and Avants, Brian and Gee, James C.},
-  editor = {Larsen, R and Nielsen, M and Sporring, J},
-  title = {Integrated graph cuts for brain MRI segmentation},
-  booktitle = {MEDICAL IMAGE COMPUTING AND COMPUTER-ASSISTED INTERVENTION - MICCAI 2006, PT 2},
-  year = {2006},
-  volume = {4191},
-  pages = {831-838},
-  note = {9th International Conference on Computing and Computer-Assisted Intervention, Copenhagen, DENMARK, OCT 01-06, 2006}
-}
-</pre></td>
-</tr>
-<tr id="Song2006a" class="entry">
-	<td>Song Z, Tustison N, Avants B and Gee JC (2006), <i>"Integrated graph cuts for brain MRI segmentation."</i>, Med Image Comput Comput Assist Interv.  Vol. 9(Pt 2), pp. 831-838.
-	<p class="infolinks">[<a href="javascript:toggleInfo('Song2006a','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Song2006a','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="abs_Song2006a" class="abstract noshow">
-	<td><b>Abstract</b>: Brain MRI segmentation remains a challenging problem in spite of numerous existing techniques. To overcome the inherent difficulties associated with this segmentation problem, we present a new method of information integration in a graph based framework. In addition to image intensity, tissue priors and local boundary information are integrated into the edge weight metrics in the graph. Furthermore, inhomogeneity correction is incorporated by adaptively adjusting the edge weights according to the intermediate inhomogeneity estimation. In the validation experiments of simulated brain MRIs, the proposed method outperformed a segmentation method based on iterated conditional modes (ICM), which is a commonly used optimization method in medical image segmentation. In the experiments of real neonatal brain MRIs, the results of the proposed method have good overlap with the manual segmentations by human experts.</td>
-</tr>
-<tr id="bib_Song2006a" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Song2006a,
-  author = {Song, Zhuang and Tustison, Nicholas and Avants, Brian and Gee, James C.},
-  title = {Integrated graph cuts for brain MRI segmentation.},
-  journal = {Med Image Comput Comput Assist Interv},
-  year = {2006},
-  volume = {9},
-  number = {Pt 2},
-  pages = {831--838}
-}
-</pre></td>
-</tr>
-<tr id="Tustison2006" class="entry">
-	<td>Tustison NJ, Avants BB, Sundaram TA, Duda JT and Gee JC (2006), <i>"A generalization of Free-Form Deformation image registration within the ITK finite element framework"</i>, In BIOMEDICAL IMAGE REGISTRATION, PROCEEDINGS.  Vol. 4057, pp. 238-246.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Tustison2006','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Tustison2006" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@inproceedings{Tustison2006,
-  author = {Tustison, Nicholas J. and Avants, Brian B. and Sundaram, Tessa A. and Duda, Jeffrey T. and Gee, James C.},
-  editor = {Pluim, JPW and Likar, B and Gerritsen, FA},
-  title = {A generalization of Free-Form Deformation image registration within the ITK finite element framework},
-  booktitle = {BIOMEDICAL IMAGE REGISTRATION, PROCEEDINGS},
-  year = {2006},
-  volume = {4057},
-  pages = {238-246},
-  note = {3rd International Workshop on Biomedical Image Registration, Utrecht Univ, Utrecht, NETHERLANDS, JUL 09-11, 2006}
-}
-</pre></td>
-</tr>
-<tr id="Yushkevich2006" class="entry">
-	<td>Yushkevich PA, Avants BB, Ng L, Hawrylycz M, Burstein PD, Zhang H and Gee JC (2006), <i>"3D mouse brain reconstruction from histology using a coarse-to-fine approach"</i>, In BIOMEDICAL IMAGE REGISTRATION, PROCEEDINGS.  Vol. 4057, pp. 230-237.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Yushkevich2006','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Yushkevich2006" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@inproceedings{Yushkevich2006,
-  author = {Yushkevich, Paul A. and Avants, Brian B. and Ng, Lydia and Hawrylycz, Michael and Burstein, Pablo D. and Zhang, Hui and Gee, James C.},
-  editor = {Pluim, JPW and Likar, B and Gerritsen, FA},
-  title = {3D mouse brain reconstruction from histology using a coarse-to-fine approach},
-  booktitle = {BIOMEDICAL IMAGE REGISTRATION, PROCEEDINGS},
-  year = {2006},
-  volume = {4057},
-  pages = {230-237},
-  note = {3rd International Workshop on Biomedical Image Registration, Utrecht Univ, Utrecht, NETHERLANDS, JUL 09-11, 2006}
-}
-</pre></td>
-</tr>
-<tr id="Avants2005b" class="entry">
-	<td>Avants B, Epstein C and Gee J (2005), <i>"Geodesic image interpolation: Parameterizing and interpolating spatiotemporal images"</i>, In VARIATIONAL, GEOMETRIC, AND LEVEL SET METHODS IN COMPUTER VISION, PROCEEDINGS.  Vol. 3752, pp. 247-258.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Avants2005b','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Avants2005b" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@inproceedings{Avants2005b,
-  author = {Avants, BB and Epstein, CL and Gee, JC},
-  editor = {Paragios, N and Faugeras, O and Chan, T and Schnorr, C},
-  title = {Geodesic image interpolation: Parameterizing and interpolating spatiotemporal images},
-  booktitle = {VARIATIONAL, GEOMETRIC, AND LEVEL SET METHODS IN COMPUTER VISION, PROCEEDINGS},
-  year = {2005},
-  volume = {3752},
-  pages = {247-258},
-  note = {3rd International Workshop on Variational, Geometric, and Level Set Methods in Computer Vision, Beijing, PEOPLES R CHINA, OCT 16, 2005}
-}
-</pre></td>
-</tr>
-<tr id="Cook2005" class="entry">
-	<td>Cook P, Zhang H, Avants B, Yushkevich P, Alexander D, Gee J, Ciccarelli O and Thompson A (2005), <i>"An automated approach to connectivity-based partitioning of brain structures"</i>, In MEDICAL IMAGE COMPUTING AND COMPUTER-ASSISTED INTERVENTION - MICCAI 2005, PT 1.  Vol. 3749, pp. 164-171.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Cook2005','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Cook2005" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@inproceedings{Cook2005,
-  author = {Cook, PA and Zhang, H and Avants, BB and Yushkevich, P and Alexander, DC and Gee, JC and Ciccarelli, O and Thompson, AJ},
-  editor = {Duncan, JS and Gerig, G},
-  title = {An automated approach to connectivity-based partitioning of brain structures},
-  booktitle = {MEDICAL IMAGE COMPUTING AND COMPUTER-ASSISTED INTERVENTION - MICCAI 2005, PT 1},
-  year = {2005},
-  volume = {3749},
-  pages = {164-171},
-  note = {8th International Conference on Medical Image Computing and Computer-Assisted Intervention, Palm Springs, CA, OCT 26-29, 2005}
-}
-</pre></td>
-</tr>
-<tr id="Sundaram2005" class="entry">
-	<td>Sundaram T, Avants B and Gee J (2005), <i>"Towards a dynamic model of pulmonary parenchymal deformation: Evaluation of methods for temporal reparameterization of lung data"</i>, In MEDICAL IMAGE COMPUTING AND COMPUTER-ASSISTED INTERVENTION - MICCAI 2005, PT 2.  Vol. 3750, pp. 328-335.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Sundaram2005','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Sundaram2005" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@inproceedings{Sundaram2005,
-  author = {Sundaram, TA and Avants, BB and Gee, JC},
-  editor = {Duncan, JS and Gerig, G},
-  title = {Towards a dynamic model of pulmonary parenchymal deformation: Evaluation of methods for temporal reparameterization of lung data},
-  booktitle = {MEDICAL IMAGE COMPUTING AND COMPUTER-ASSISTED INTERVENTION - MICCAI 2005, PT 2},
-  year = {2005},
-  volume = {3750},
-  pages = {328-335},
-  note = {8th International Conference on Medical Image Computing and Computer-Assisted Intervention, Palm Springs, CA, OCT 26-29, 2005}
-}
-</pre></td>
-</tr>
-<tr id="Sundaram2005a" class="entry">
-	<td>Sundaram TA, Avants BB and Gee JC (2005), <i>"Towards a dynamic model of pulmonary parenchymal deformation: evaluation of methods for temporal reparameterization of lung data."</i>, Med Image Comput Comput Assist Interv.  Vol. 8(Pt 2), pp. 328-335.
-	<p class="infolinks">[<a href="javascript:toggleInfo('Sundaram2005a','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Sundaram2005a','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="abs_Sundaram2005a" class="abstract noshow">
-	<td><b>Abstract</b>: We approach the problem of temporal reparameterization of dynamic sequences of lung MR images. In earlier work, we employed capacity-based reparameterization to co-register temporal sequences of 2-D coronal images of the human lungs. Here, we extend that work to the evaluation of a ventilator-acquired 3-D dataset from a normal mouse. Reparameterization according to both deformation and lung volume is evaluated. Both measures provide results that closely approximate normal physiological behavior, as judged from the original data. Our ultimate goal is to be able to characterize normal parenchymal biomechanics over a population of healthy individuals, and to use this statistical model to evaluate lung deformation under various pathological states.</td>
-</tr>
-<tr id="bib_Sundaram2005a" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{Sundaram2005a,
-  author = {Sundaram, Tessa A. and Avants, Brian B. and Gee, James C.},
-  title = {Towards a dynamic model of pulmonary parenchymal deformation: evaluation of methods for temporal reparameterization of lung data.},
-  journal = {Med Image Comput Comput Assist Interv},
-  year = {2005},
-  volume = {8},
-  number = {Pt 2},
-  pages = {328--335}
-}
-</pre></td>
-</tr>
-<tr id="Avants2004a" class="entry">
-	<td>Avants B and Gee J (2004), <i>"Symmetric geodesic shape averaging and shape interpolation"</i>, In COMPUTER VISION AND MATHEMATICAL METHODS IN MEDICAL AND BIOMEDICAL IMAGE ANALYSIS.  Vol. 3117, pp. 99-110.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Avants2004a','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Avants2004a" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@inproceedings{Avants2004a,
-  author = {Avants, B and Gee, J},
-  editor = {Sonka, M and Kakadiaris, IA and Kybic, J},
-  title = {Symmetric geodesic shape averaging and shape interpolation},
-  booktitle = {COMPUTER VISION AND MATHEMATICAL METHODS IN MEDICAL AND BIOMEDICAL IMAGE ANALYSIS},
-  year = {2004},
-  volume = {3117},
-  pages = {99-110},
-  note = {Workshop on Computer Vision Approaches to Medical Image Analysis (CVAMIA)/Mathematical Methods in Biomedical Image Analysis (MMBIA) held in conjunction with the 8th ECCV, Prague, CZECH REPUBLIC, MAY 15, 2004}
-}
-</pre></td>
-</tr>
-<tr id="Sundaram2004" class="entry">
-	<td>Sundaram T, Avants B and Gee J (2004), <i>"A dynamic model of average lung deformation using capacity-based reparameterization and shape averaging of lung MR images"</i>, In MEDICAL IMAGE COMPUTING AND COMPUTER-ASSISTED INTERVENTION - MICCAI 2004, PT 2, PROCEEDINGS.  Vol. 3217(2), pp. 1000-1007.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Sundaram2004','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Sundaram2004" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@inproceedings{Sundaram2004,
-  author = {Sundaram, TA and Avants, BB and Gee, JC},
-  editor = {Barillot, C and Haynor, DR and Hellier, P},
-  title = {A dynamic model of average lung deformation using capacity-based reparameterization and shape averaging of lung MR images},
-  booktitle = {MEDICAL IMAGE COMPUTING AND COMPUTER-ASSISTED INTERVENTION - MICCAI 2004, PT 2, PROCEEDINGS},
-  year = {2004},
-  volume = {3217},
-  number = {2},
-  pages = {1000-1007},
-  note = {7th International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI 2004), St Malo, FRANCE, SEP 26-29, 2004}
-}
-</pre></td>
-</tr>
-<tr id="Avants2003" class="entry">
-	<td>Avants B and Gee J (2003), <i>"Formulation and evaluation of variational curve matching with prior constraints"</i>, In BIOMEDICAL IMAGE REGISTRATION.  Vol. 2717, pp. 21-30.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Avants2003','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Avants2003" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@inproceedings{Avants2003,
-  author = {Avants, B and Gee, J},
-  editor = {Gee, JC and Maintz, JBA and Vannier, MW},
-  title = {Formulation and evaluation of variational curve matching with prior constraints},
-  booktitle = {BIOMEDICAL IMAGE REGISTRATION},
-  year = {2003},
-  volume = {2717},
-  pages = {21-30},
-  note = {2nd International Workshop on Biomedical Image Registration, PHILADELPHIA, PENNSYLVANIA, JUN 23-24, 2003}
-}
-</pre></td>
-</tr>
-<tr id="Avants2003a" class="entry">
-	<td>Avants B and Gee J (2003), <i>"The shape operator for differential analysis of images"</i>, In INFORMATION PROCESSING IN MEDICAL IMAGING, PROCEEDINGS.  Vol. 2732, pp. 101-113.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Avants2003a','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Avants2003a" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@inproceedings{Avants2003a,
-  author = {Avants, B and Gee, J},
-  editor = {Taylor, C and Noble, JA},
-  title = {The shape operator for differential analysis of images},
-  booktitle = {INFORMATION PROCESSING IN MEDICAL IMAGING, PROCEEDINGS},
-  year = {2003},
-  volume = {2732},
-  pages = {101-113},
-  note = {18th International Conference on Information Processing in Medical Imaging, ST MARTINS COLL, AMBLESIDE, ENGLAND, JUL 20-25, 2003}
-}
-</pre></td>
-</tr>
-<tr id="Avants2003b" class="entry">
-	<td>Avants B and Gee J (2003), <i>"Continuous curve matching with scale-space curvature and extrema-based scale selection"</i>, In SCALE SPACE METHODS IN COMPUTER VISION, PROCEEDINGS.  Vol. 2695, pp. 798-813.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Avants2003b','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Avants2003b" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@inproceedings{Avants2003b,
-  author = {Avants, B and Gee, J},
-  editor = {Griffin, LD and Lillholm, M},
-  title = {Continuous curve matching with scale-space curvature and extrema-based scale selection},
-  booktitle = {SCALE SPACE METHODS IN COMPUTER VISION, PROCEEDINGS},
-  year = {2003},
-  volume = {2695},
-  pages = {798-813},
-  note = {4th International Conference on Scale Space Methods in Computer Vision, ISLE SKYE, SCOTLAND, JUN 10-12, 2003}
-}
-</pre></td>
-</tr>
-<tr id="Avants2000" class="entry">
-	<td>Avants B and Williams J (2000), <i>"An adaptive minimal path generation technique for vessel tracking in CTA/CE-MRA volume images"</i>, In MEDICAL IMAGE COMPUTING AND COMPUTER-ASSISTED INTERVENTION - MICCAI 2000.  Vol. 1935, pp. 707-716.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('Avants2000','bibtex')">BibTeX</a>]</p>
-	</td>
-</tr>
-<tr id="bib_Avants2000" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@inproceedings{Avants2000,
-  author = {Avants, BB and Williams, JP},
-  editor = {Delp, S and DiGioia, AM and Jaramaz, B},
-  title = {An adaptive minimal path generation technique for vessel tracking in CTA/CE-MRA volume images},
-  booktitle = {MEDICAL IMAGE COMPUTING AND COMPUTER-ASSISTED INTERVENTION - MICCAI 2000},
-  year = {2000},
-  volume = {1935},
-  pages = {707-716},
-  note = {3rd International Conference on Medical Image Computing and Computer-Assisted Intervention, PITTSBURGH, PA, OCT 11-14, 2000}
-}
-</pre></td>
-</tr>
-</tbody>
-</table>
 	    </dd>
 	    <dd class="clear"></dd>
 
