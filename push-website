@@ -3,7 +3,7 @@
 
   cp indexbase.html index.html 
 
-  cat avantsbib.html >> index.html 
+#  cat avantsbib.html >> index.html 
 
   git commit -a -m 'WIP: minor edit w/refs'
 
