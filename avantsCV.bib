@@ -72,6 +72,145 @@
   unique-id = {ISI:000293938900009}
 }
 
+@ARTICLE{Avants2007a,
+  author = {Avants, Brian and Anderson, Chivon and Grossman, Murray and Gee,
+	James C.},
+  title = {Spatiotemporal normalization for longitudinal analysis of gray matter
+	atrophy in frontotemporal dementia.},
+  journal = {Med Image Comput Comput Assist Interv},
+  year = {2007},
+  volume = {10},
+  pages = {303--310},
+  number = {Pt 2},
+  __markedentry = {[stnava:]},
+  abstract = {We present a unified method, based on symmetric diffeomorphisms,
+	for studying longitudinal neurodegeneration. Our method first uses
+	symmetric diffeomorphic normalization to find a spatiotemporal parameterization
+	of an individual's image time series. The second step involves mapping
+	a representative image or set of images from the time series into
+	an optimal template space. The template mapping is then combined
+	with the intrasubject spatiotemporal map to enable pairwise statistical
+	tests to be performed on a population of normalized time series images.
+	Here, we apply this longitudinal analysis protocol to study the gray
+	matter atrophy patterns induced by frontotemporal dementia (FTD).
+	We sample our normalized spatiotemporal maps at baseline (time zero)
+	and time one year to generate an annualized atrophy map (AAM) that
+	estimates the annual effect of FTD. This spatiotemporal normalization
+	enables us to locate neuroanatomical regions that consistently undergo
+	significant annual gray matter atrophy across the population. We
+	found the majority of annual atrophy to occur in the frontal and
+	temporal lobes in our population of 20 subjects. We also found significant
+	effects in the hippocampus, insula and cingulate gyrus. Our novel
+	results, significant at p < 0.05 after false discovery rate correction,
+	are represented in local template space but also assigned Talairach
+	coordinates and Brodmann and Anatomical Automatic Labeling (AAL)
+	labels. This paper shows the statistical power of symmetric diffeomorphic
+	normalization for performing deformation-based studies of longitudinal
+	atrophy.},
+  institution = {Dept. of Radiology, University of Pennsylvania, Philadelphia, PA
+	19104-6389, USA. avants@grasp.cis.upenn.edu},
+  keywords = {Algorithms; Atrophy, pathology; Cerebral Cortex, pathology; Dementia,
+	pathology; Humans; Image Enhancement, methods; Image Interpretation,
+	Computer-Assisted, methods; Imaging, Three-Dimensional, methods;
+	Longitudinal Studies; Magnetic Resonance Imaging, methods; Neurons,
+	pathology; Reproducibility of Results; Sensitivity and Specificity},
+  language = {eng},
+  medline-pst = {ppublish},
+  owner = {stnava},
+  pmid = {18044582},
+  timestamp = {2013.05.29}
+}
+
+@ARTICLE{Avants2010b,
+  author = {Avants, Brian and Cook, Philip A. and McMillan, Corey and Grossman,
+	Murray and Tustison, Nicholas J. and Zheng, Yuanjie and Gee, James
+	C.},
+  title = {Sparse unbiased analysis of anatomical variance in longitudinal imaging.},
+  journal = {Med Image Comput Comput Assist Interv},
+  year = {2010},
+  volume = {13},
+  pages = {324--331},
+  number = {Pt 1},
+  __markedentry = {[stnava:1]},
+  abstract = {We present a new algorithm for reliable, unbiased, multivariate longitudinal
+	analysis of cortical and white matter atrophy rates with penalized
+	statistical methods. The pipeline uses a step-wise approach to transform
+	and personalize template information first to a single-subject template
+	(SST) and then to the individual's time series data. The first stream
+	of information flows from group template to the SST; the second flows
+	from the SST to the individual time-points and provides unbiased,
+	prior-based segmentation and measurement of cortical thickness. MRI-bias
+	correction, consistent longitudinal segmentation, cortical parcellation
+	and cortical thickness estimation are all based on strong use of
+	the subject-specific priors built from initial diffeomorphic mapping
+	between the SST and optimal group template. We evaluate our approach
+	with both test-retest data and with application to a driving biological
+	problem. We use test-retest data to show that this approach produces
+	(a) zero change when the retest data contains the same image content
+	as the test data and (b) produces normally distributed, low variance
+	estimates of thickness change centered at zero when test-retest data
+	is collected near in time to test data. We also show that our approach--when
+	combined with sparse canonical correlation analysis--reveals plausible,
+	significant, annualized decline in cortical thickness and white matter
+	volume when contrasting frontotemporal dementia and normal aging.},
+  institution = {Dept. of Radiology, University of Pennsylvania, Philadelphia, PA
+	19104-6389 USA. avants@grasp.cis.upenn.edu},
+  keywords = {Algorithms; Analysis of Variance; Brain Diseases, pathology; Brain,
+	pathology; Humans; Image Enhancement, methods; Image Interpretation,
+	Computer-Assisted, methods; Longitudinal Studies; Magnetic Resonance
+	Imaging, methods; Pattern Recognition, Automated, methods; Prognosis;
+	Reproducibility of Results; Sensitivity and Specificity; Subtraction
+	Technique},
+  language = {eng},
+  medline-pst = {ppublish},
+  owner = {stnava},
+  pmid = {20879247},
+  timestamp = {2013.05.29}
+}
+
+@ARTICLE{Avants2012,
+  author = {Avants, Brian and Dhillon, Paramveer and Kandel, Benjamin M. and
+	Cook, Philip A. and McMillan, Corey T. and Grossman, Murray and Gee,
+	James C.},
+  title = {Eigenanatomy improves detection power for longitudinal cortical change.},
+  journal = {Med Image Comput Comput Assist Interv},
+  year = {2012},
+  volume = {15},
+  pages = {206--213},
+  number = {Pt 3},
+  __markedentry = {[stnava:1]},
+  abstract = {We contribute a novel and interpretable dimensionality reduction
+	strategy, eigenanatomy, that is tuned for neuroimaging data. The
+	method approximates the eigendecomposition of an image set with basis
+	functions (the eigenanatomy vectors) that are sparse, unsigned and
+	are anatomically clustered. We employ the eigenanatomy vectors as
+	anatomical predictors to improve detection power in morphometry.
+	Standard voxel-based morphometry (VBM) analyzes imaging data voxel-by-voxel--and
+	follows this with cluster-based or voxel-wise multiple comparisons
+	correction methods to determine significance. Eigenanatomy reverses
+	the standard order of operations by first clustering the voxel data
+	and then using standard linear regression in this reduced dimensionality
+	space. As with traditional region-of-interest (ROI) analysis, this
+	strategy can greatly improve detection power. Our results show that
+	eigenanatomy provides a principled objective function that leads
+	to localized, data-driven regions of interest. These regions improve
+	our ability to quantify biologically plausible rates of cortical
+	change in two distinct forms of neurodegeneration. We detail the
+	algorithm and show experimental evidence of its efficacy.},
+  institution = {Department of Radiology, University of Pennsylvania, Philadelphia,
+	PA 19104, USA.},
+  keywords = {Aging, physiology; Algorithms; Brain, anatomy /\&/ histology/physiology;
+	Humans; Image Enhancement, methods; Image Interpretation, Computer-Assisted,
+	methods; Information Storage and Retrieval, methods; Longitudinal
+	Studies; Magnetic Resonance Imaging, methods; Pattern Recognition,
+	Automated, methods; Reproducibility of Results; Sensitivity and Specificity},
+  language = {eng},
+  medline-pst = {ppublish},
+  owner = {stnava},
+  pmid = {23286132},
+  timestamp = {2013.05.29}
+}
+
 @ARTICLE{Avants2008,
   author = {Avants, Brian and Duda, Jeffrey T. and Kim, Junghoon and Zhang, Hui
 	and Pluta, John and Gee, James C. and Whyte, John},
@@ -101,6 +240,7 @@
   pages = {247-258},
   note = {3rd International Workshop on Variational, Geometric, and Level Set
 	Methods in Computer Vision, Beijing, PEOPLES R CHINA, OCT 16, 2005},
+  __markedentry = {[stnava:1]},
   isbn = {3-540-29348-5},
   issn = {0302-9743},
   unique-id = {ISI:000233133600021}
@@ -120,6 +260,7 @@
 	Provost Res},
   note = {2nd International Workshop on Biomedical Image Registration, PHILADELPHIA,
 	PENNSYLVANIA, JUN 23-24, 2003},
+  __markedentry = {[stnava:1]},
   isbn = {3-540-20343-5},
   issn = {0302-9743},
   unique-id = {ISI:000187954800003}
@@ -138,6 +279,7 @@
   organization = {British Machine Vis Assoc; Kings Coll London; IT Univ Copenhagen},
   note = {4th International Conference on Scale Space Methods in Computer Vision,
 	ISLE SKYE, SCOTLAND, JUN 10-12, 2003},
+  __markedentry = {[stnava:1]},
   isbn = {3-540-40368-X},
   issn = {0302-9743},
   unique-id = {ISI:000185043200056}
@@ -157,6 +299,7 @@
 	(CVAMIA)/Mathematical Methods in Biomedical Image Analysis (MMBIA)
 	held in conjunction with the 8th ECCV, Prague, CZECH REPUBLIC, MAY
 	15, 2004},
+  __markedentry = {[stnava:1]},
   isbn = {3-540-22675-3},
   issn = {0302-9743},
   unique-id = {ISI:000224372600009}
@@ -174,6 +317,7 @@
   organization = {Philips Med Syst; Image Metr; iMorphics; Mirada Solut},
   note = {18th International Conference on Information Processing in Medical
 	Imaging, ST MARTINS COLL, AMBLESIDE, ENGLAND, JUL 20-25, 2003},
+  __markedentry = {[stnava:1]},
   isbn = {3-540-40560-7},
   issn = {0302-9743},
   unique-id = {ISI:000185604900009}
@@ -279,6 +423,7 @@
   pages = {707-716},
   note = {3rd International Conference on Medical Image Computing and Computer-Assisted
 	Intervention, PITTSBURGH, PA, OCT 11-14, 2000},
+  __markedentry = {[stnava:1]},
   isbn = {3-540-41189-5},
   issn = {0302-9743},
   unique-id = {ISI:000171938700073}
@@ -313,6 +458,7 @@
   pages = {9-16},
   note = {3rd International Workshop on Medical Imaging and Augmented Reality
 	(MIAR 2006), Shanghai, PEOPLES R CHINA, AUG 17-18, 2006},
+  __markedentry = {[stnava:1]},
   isbn = {3-540-37220-2},
   issn = {0302-9743},
   unique-id = {ISI:000240079500002}
@@ -349,6 +495,7 @@
   organization = {Philips Med Syst},
   note = {3rd International Workshop on Biomedical Image Registration, Utrecht
 	Univ, Utrecht, NETHERLANDS, JUL 09-11, 2006},
+  __markedentry = {[stnava:1]},
   isbn = {3-540-35648-7},
   issn = {0302-9743},
   unique-id = {ISI:000239485200007}
@@ -499,6 +646,7 @@
   number = {1},
   note = {8th International Conference on Frontotemporal Dementias, Manchester,
 	ENGLAND, SEP 05-07, 2012},
+  __markedentry = {[stnava:1]},
   issn = {1420-8008},
   unique-id = {ISI:000308612400222}
 }
@@ -519,6 +667,7 @@
 	Medtron Navigat; Siemens Corp Res; NIBIB},
   note = {8th International Conference on Medical Image Computing and Computer-Assisted
 	Intervention, Palm Springs, CA, OCT 26-29, 2005},
+  __markedentry = {[stnava:1]},
   isbn = {3-540-29327-2},
   issn = {0302-9743},
   researcherid-numbers = {Thompson, Alan/C-2654-2008},
@@ -572,6 +721,56 @@
   doi = {10.1002/hipo.20620},
   issn = {1050-9631},
   unique-id = {ISI:000266824000003}
+}
+
+@ARTICLE{Das2011,
+  author = {Das, Sandhitsu R. and Mechanic-Hamilton, Dawn and Pluta, John and
+	Korczykowski, Marc and Detre, John A. and Yushkevich, Paul A.},
+  title = {Heterogeneity of functional activation during memory encoding across
+	hippocampal subfields in temporal lobe epilepsy.},
+  journal = {Neuroimage},
+  year = {2011},
+  volume = {58},
+  pages = {1121--1130},
+  number = {4},
+  month = {Oct},
+  __markedentry = {[stnava:]},
+  abstract = {Pathology studies have shown that the anatomical subregions of the
+	hippocampal formation are differentially affected in various neurological
+	disorders, including temporal lobe epilepsy (TLE). Analysis of structure
+	and function within these subregions using magnetic resonance imaging
+	(MRI) has the potential to generate insights on disease associations
+	as well as normative brain function. In this study, an atlas-based
+	normalization method (Yushkevich, P.A., Avants, B.B., Pluta, J.,
+	Das, S., Minkoff, D., Mechanic-Hamilton, D., Glynn, S., Pickup, S.,
+	Liu, W., Gee, J.C., Grossman, M., Detre, J.A., 2009. A high-resolution
+	computational atlas of the human hippocampus from postmortem magnetic
+	resonance imaging at 9.4 T. NeuroImage 44 (2), 385-398) was used
+	to label hippocampal subregions, making it possible to examine subfield-level
+	functional activation during an episodic memory task in two different
+	cohorts of healthy controls and subjects diagnosed with intractable
+	unilateral TLE. We report, for the first time, functional activation
+	patterns within hippocampal subfields in TLE. We detected group differences
+	in subfield activation between patients and controls as well as inter-hemispheric
+	activation asymmetry within subfields in patients, with dentate gyrus
+	(DG) and the anterior hippocampus region showing the greatest effects.
+	DG was also found to be more active than CA1 in controls, but not
+	in patients' epileptogenic side. These preliminary results will encourage
+	further research on the utility of subfield-based biomarkers in TLE.},
+  doi = {10.1016/j.neuroimage.2011.06.085},
+  institution = {Penn Image Computing and Science Laboratory (PICSL), Department of
+	Radiology, University of Pennsylvania, PA, USA. sudas@seas.upenn.edu},
+  keywords = {Algorithms; Atlases as Topic; CA1 Region, Hippocampal, physiology;
+	Cadaver; Cohort Studies; Epilepsy, Temporal Lobe, physiopathology/psychology/surgery;
+	Hippocampus, physiology; Humans; Image Processing, Computer-Assisted;
+	Linear Models; Magnetic Resonance Imaging; Memory, physiology},
+  language = {eng},
+  medline-pst = {ppublish},
+  owner = {stnava},
+  pii = {S1053-8119(11)00750-6},
+  pmid = {21763431},
+  timestamp = {2013.05.29},
+  url = {http://dx.doi.org/10.1016/j.neuroimage.2011.06.085}
 }
 
 @ARTICLE{Datta2012,
@@ -771,6 +970,49 @@
   unique-id = {ISI:000278288200004}
 }
 
+@ARTICLE{Hanson2012a,
+  author = {Hanson, Jamie L. and Suh, Jung W. and Nacewicz, Brendon M. and Sutterer,
+	Matthew J. and Cayo, Amelia A. and Stodola, Diane E. and Burghy,
+	Cory A. and Wang, Hongzhi and Avants, Brian B. and Yushkevich, Paul
+	A. and Essex, Marilyn J. and Pollak, Seth D. and Davidson, Richard
+	J.},
+  title = {Robust Automated Amygdala Segmentation via Multi-Atlas Diffeomorphic
+	Registration.},
+  journal = {Front Neurosci},
+  year = {2012},
+  volume = {6},
+  pages = {166},
+  __markedentry = {[stnava:]},
+  abstract = {Here, we describe a novel method for volumetric segmentation of the
+	amygdala from MRI images collected from 35 human subjects. This approach
+	is adapted from open-source techniques employed previously with the
+	hippocampus (Suh et al., 2011; Wang et al., 2011a,b). Using multi-atlas
+	segmentation and machine learning-based correction, we were able
+	to produce automated amygdala segments with high Dice (Mean?=?0.918
+	for the left amygdala; 0.916 for the right amygdala) and Jaccard
+	coefficients (Mean?=?0.850 for the left; 0.846 for the right) compared
+	to rigorously hand-traced volumes. This automated routine also produced
+	amygdala segments with high intra-class correlations (consistency?=?0.830,
+	absolute agreement?=?0.819 for the left; consistency?=?0.786, absolute
+	agreement?=?0.783 for the right) and bivariate (r?=?0.831 for the
+	left; r?=?0.797 for the right) compared to hand-drawn amygdala. Our
+	results are discussed in relation to other cutting-edge segmentation
+	techniques, as well as commonly available approaches to amygdala
+	segmentation (e.g., Freesurfer). We believe this new technique has
+	broad application to research with large sample sizes for which amygdala
+	quantification might be needed.},
+  doi = {10.3389/fnins.2012.00166},
+  institution = {Department of Psychology, University of Wisconsin-Madison Madison,
+	WI, USA ; Waisman Center, University of Wisconsin-Madison Madison,
+	WI, USA.},
+  language = {eng},
+  medline-pst = {ppublish},
+  owner = {stnava},
+  pmid = {23226114},
+  timestamp = {2013.05.29},
+  url = {http://dx.doi.org/10.3389/fnins.2012.00166}
+}
+
 @ARTICLE{Hopkins2013,
   author = {Hopkins, William D. and Avants, Brian B.},
   title = {Regional and Hemispheric Variation in Cortical Thickness in Chimpanzees
@@ -818,6 +1060,18 @@
   doi = {10.1148/radiol.12111509},
   issn = {0033-8419},
   unique-id = {ISI:000303104300025}
+}
+
+@ARTICLE{kandel_ipmi_2013,
+  author = {Benjamin M. Kandel and David Wolk and James C. Gee and Brian Avants},
+  title = {Predicting Cognitive Data From Medical Images Using Sparse Linear
+	Regression },
+  journal = {Inf. Process. Med. Imaging},
+  year = {2013},
+  __markedentry = {[stnava:1]},
+  confidential = {n},
+  owner = {stnava},
+  timestamp = {2013.05.29}
 }
 
 @ARTICLE{Kim2008,
@@ -922,22 +1176,6 @@
   unique-id = {ISI:000306036300003}
 }
 
-@ARTICLE{Libon2011,
-  author = {Libon, David J. and McMillan, Corey and Boller, Ashley and Elman,
-	Lauren and McCluskey, Leo and Avants, Brian and Morgan, Brianna and
-	Grossman, Murray},
-  title = {Deficits in Concept Formation in Amyotrophic Lateral Sclerosis},
-  journal = {NEUROLOGY},
-  year = {2011},
-  volume = {76},
-  pages = {A45},
-  number = {9, 4},
-  month = {MAR 1},
-  note = {63rd AAN Annual Meeting, Honolulu, HI, APR 09-16, 2011},
-  issn = {0028-3878},
-  unique-id = {ISI:000288149300168}
-}
-
 @ARTICLE{Loyet2012,
   author = {Loyet, Mackenzie M. and Schoenemann, P. Thomas and Avants, Brian
 	B. and Gee, James C.},
@@ -1003,6 +1241,58 @@
   doi = {10.1212/WNL.0b013e31827b9147},
   issn = {0028-3878},
   unique-id = {ISI:000313344700008}
+}
+
+@ARTICLE{McMillan2013a,
+  author = {McMillan, Corey T. and Irwin, David J. and Avants, Brian B. and Powers,
+	John and Cook, Philip A. and Toledo, Jon B. and {McCarty Wood}, Elisabeth
+	and {Van Deerlin}, Vivianna M. and Lee, Virginia M-Y. and Trojanowski,
+	John Q. and Grossman, Murray},
+  title = {White matter imaging helps dissociate tau from TDP-43 in frontotemporal
+	lobar degeneration.},
+  journal = {J Neurol Neurosurg Psychiatry},
+  year = {2013},
+  month = {Mar},
+  __markedentry = {[stnava:]},
+  abstract = {BACKGROUND: Frontotemporal lobar degeneration (FTLD) is most commonly
+	associated with TAR-DNA binding protein (TDP-43) or tau pathology
+	at autopsy, but there are no in vivo biomarkers reliably discriminating
+	between sporadic cases. As disease-modifying treatments emerge, it
+	is critical to accurately identify underlying pathology in living
+	patients so that they can be entered into appropriate etiology-directed
+	clinical trials. Patients with tau inclusions (FTLD-TAU) appear to
+	have relatively greater white matter (WM) disease at autopsy than
+	those patients with TDP-43 (FTLD-TDP). In this paper, we investigate
+	the ability of white matter (WM) imaging to help discriminate between
+	FTLD-TAU and FTLD-TDP during life using diffusion tensor imaging
+	(DTI). METHODS: Patients with autopsy-confirmed disease or a genetic
+	mutation consistent with FTLD-TDP or FTLD-TAU underwent multimodal
+	T1 volumetric MRI and diffusion weighted imaging scans. We quantified
+	cortical thickness in GM and fractional anisotropy (FA) in WM. We
+	performed Eigenanatomy, a statistically robust dimensionality reduction
+	algorithm, and used leave-one-out cross-validation to predict underlying
+	pathology. Neuropathological assessment of GM and WM disease burden
+	was performed in the autopsy-cases to confirm our findings of an
+	ante-mortem GM and WM dissociation in the neuroimaging cohort. RESULTS:
+	ROC curve analyses evaluated classification accuracy in individual
+	patients and revealed 96\% sensitivity and 100\% specificity for
+	WM analyses. FTLD-TAU had significantly more WM degeneration and
+	inclusion severity at autopsy relative to FTLD-TDP. CONCLUSIONS:
+	These neuroimaging and neuropathological investigations provide converging
+	evidence for greater WM burden associated with FTLD-TAU, and emphasise
+	the role of WM neuroimaging for in vivo discrimination between FTLD-TAU
+	and FTLD-TDP.},
+  doi = {10.1136/jnnp-2012-304418},
+  institution = {Department of Neurology, Perelman School of Medicine, Frontotemporal
+	Degeneration Center, University of Pennsylvania, , Philadelphia,
+	Pennsylvania, USA.},
+  language = {eng},
+  medline-pst = {aheadofprint},
+  owner = {stnava},
+  pii = {jnnp-2012-304418},
+  pmid = {23475817},
+  timestamp = {2013.05.29},
+  url = {http://dx.doi.org/10.1136/jnnp-2012-304418}
 }
 
 @ARTICLE{Morgan2011,
@@ -1124,6 +1414,50 @@
   issn = {0031-4005},
   researcherid-numbers = {Rao, Hengyi/A-7064-2009},
   unique-id = {ISI:000250618900059}
+}
+
+@ARTICLE{Rohlfing2012,
+  author = {Rohlfing, Torsten and Avants, Brian},
+  title = {"Nonparametric Local Smoothing" is not image registration.},
+  journal = {BMC Res Notes},
+  year = {2012},
+  volume = {5},
+  pages = {610},
+  __markedentry = {[stnava:]},
+  abstract = {Image registration is one of the most important and universally useful
+	computational tasks in biomedical image analysis. A recent article
+	by Xing \& Qiu (IEEE Transactions on Pattern Analysis and Machine
+	Intelligence, 33(10):2081-2092, 2011) is based on an inappropriately
+	narrow conceptualization of the image registration problem as the
+	task of making two images look alike, which disregards whether the
+	established spatial correspondence is plausible. The authors propose
+	a new algorithm, Nonparametric Local Smoothing (NLS) for image registration,
+	but use image similarities alone as a measure of registration performance,
+	although these measures do not relate reliably to the realism of
+	the correspondence map.Using data obtained from its authors, we show
+	experimentally that the method proposed by Xing \& Qiu is not an
+	effective registration algorithm. While it optimizes image similarity,
+	it does not compute accurate, interpretable transformations. Even
+	judged by image similarity alone, the proposed method is consistently
+	outperformed by a simple pixel permutation algorithm, which is known
+	by design not to compute valid registrations.This study has demonstrated
+	that the NLS algorithm proposed recently for image registration,
+	and published in one of the most respected journals in computer science,
+	is not, in fact, an effective registration method at all. Our results
+	also emphasize the general need to apply registration evaluation
+	criteria that are sensitive to whether correspondences are accurate
+	and mappings between images are physically interpretable. These goals
+	cannot be achieved by simply reporting image similarities.},
+  doi = {10.1186/1756-0500-5-610},
+  institution = {Neuroscience Program, SRI International, 333 Ravenswood Avenue, Menlo
+	Park, CA 94025, USA. rohlfing@ieee.org},
+  language = {eng},
+  medline-pst = {epublish},
+  owner = {stnava},
+  pii = {1756-0500-5-610},
+  pmid = {23116330},
+  timestamp = {2013.05.29},
+  url = {http://dx.doi.org/10.1186/1756-0500-5-610}
 }
 
 @ARTICLE{Schoenemann2004,
@@ -1261,6 +1595,50 @@
   unique-id = {ISI:000257805100001}
 }
 
+@ARTICLE{Simon2008a,
+  author = {Simon, Tony J. and Wu, Zhongle and Avants, Brian and Zhang, Hui and
+	Gee, James C. and Stebbins, Glenn T.},
+  title = {Atypical cortical connectivity and visuospatial cognitive impairments
+	are related in children with chromosome 22q11.2 deletion syndrome.},
+  journal = {Behav Brain Funct},
+  year = {2008},
+  volume = {4},
+  pages = {25},
+  __markedentry = {[stnava:]},
+  abstract = {Chromosome 22q11.2 deletion syndrome is one of the most common genetic
+	causes of cognitive impairment and developmental disability yet little
+	is known about the neural bases of those challenges. Here we expand
+	upon our previous neurocognitive studies by specifically investigating
+	the hypothesis that changes in neural connectivity relate to cognitive
+	impairment in children with the disorder.Whole brain analyses of
+	multiple measures computed from diffusion tensor image data acquired
+	from the brains of children with the disorder and typically developing
+	controls. We also correlated diffusion tensor data with performance
+	on a visuospatial cognitive task that taps spatial attention.Analyses
+	revealed four common clusters, in the parietal and frontal lobes,
+	that showed complementary patterns of connectivity in children with
+	the deletion and typical controls. We interpreted these results as
+	indicating differences in connective complexity to adjoining cortical
+	regions that are critical to the cognitive functions in which affected
+	children show impairments. Strong, and similarly opposing patterns
+	of correlations between diffusion values in those clusters and spatial
+	attention performance measures considerably strengthened that interpretation.Our
+	results suggest that atypical development of connective patterns
+	in the brains of children with chromosome 22q11.2 deletion syndrome
+	indicate a neuropathology that is related to the visuospatial cognitive
+	impairments that are commonly found in affected individuals.},
+  doi = {10.1186/1744-9081-4-25},
+  institution = {M,I,N,D, Institute, University of California, Davis, 2825 50th Street,
+	Sacramento, CA 95817, USA. tjsimon@ucdavis.edu.},
+  language = {eng},
+  medline-pst = {epublish},
+  owner = {stnava},
+  pii = {1744-9081-4-25},
+  pmid = {18559106},
+  timestamp = {2013.05.29},
+  url = {http://dx.doi.org/10.1186/1744-9081-4-25}
+}
+
 @INPROCEEDINGS{Song2006,
   author = {Song, Zhuang and Tustison, Nicholas and Avants, Brian and Gee, James
 	C.},
@@ -1276,9 +1654,119 @@
 	No Digital Inc; Siemens Corp Res; Springer; Visiopharm},
   note = {9th International Conference on Computing and Computer-Assisted Intervention,
 	Copenhagen, DENMARK, OCT 01-06, 2006},
+  __markedentry = {[stnava:1]},
   isbn = {3-540-44727-X},
   issn = {0302-9743},
   unique-id = {ISI:000241556700102}
+}
+
+@ARTICLE{Song2006a,
+  author = {Song, Zhuang and Tustison, Nicholas and Avants, Brian and Gee, James
+	C.},
+  title = {Integrated graph cuts for brain MRI segmentation.},
+  journal = {Med Image Comput Comput Assist Interv},
+  year = {2006},
+  volume = {9},
+  pages = {831--838},
+  number = {Pt 2},
+  __markedentry = {[stnava:1]},
+  abstract = {Brain MRI segmentation remains a challenging problem in spite of
+	numerous existing techniques. To overcome the inherent difficulties
+	associated with this segmentation problem, we present a new method
+	of information integration in a graph based framework. In addition
+	to image intensity, tissue priors and local boundary information
+	are integrated into the edge weight metrics in the graph. Furthermore,
+	inhomogeneity correction is incorporated by adaptively adjusting
+	the edge weights according to the intermediate inhomogeneity estimation.
+	In the validation experiments of simulated brain MRIs, the proposed
+	method outperformed a segmentation method based on iterated conditional
+	modes (ICM), which is a commonly used optimization method in medical
+	image segmentation. In the experiments of real neonatal brain MRIs,
+	the results of the proposed method have good overlap with the manual
+	segmentations by human experts.},
+  institution = {Penn Image Computing and Science Lab, University of Pennsylvania,
+	USA. songz@seas.upenn.edu},
+  keywords = {Algorithms; Artificial Intelligence; Brain, anatomy /\&/ histology;
+	Humans; Image Enhancement, methods; Image Interpretation, Computer-Assisted,
+	methods; Imaging, Three-Dimensional, methods; Magnetic Resonance
+	Imaging, methods; Pattern Recognition, Automated, methods; Reproducibility
+	of Results; Sensitivity and Specificity},
+  language = {eng},
+  medline-pst = {ppublish},
+  owner = {stnava},
+  pmid = {17354850},
+  timestamp = {2013.05.29}
+}
+
+@ARTICLE{Sun2008,
+  author = {Sun, Hui and Avants, Brian B. and Frangi, Alejandro F. and Sukno,
+	Federico and Geel, James C. and Yushkevich, Paul A.},
+  title = {Cardiac medial modeling and time-course heart wall thickness analysis.},
+  journal = {Med Image Comput Comput Assist Interv},
+  year = {2008},
+  volume = {11},
+  pages = {766--773},
+  number = {Pt 2},
+  __markedentry = {[stnava:1]},
+  abstract = {The medial model is a powerful shape representation method that models
+	a 3D object by explicitly defining its skeleton (medial axis) and
+	deriving the boundary geometry according to medial geometry. It has
+	been recently extended to model complex shapes with multi-figures,
+	i.e., shapes whose skeletons can not be described by a single sheet
+	in 3D. This paper applied the medial model to a 2-chamber heart data
+	set consisting of 428 cardiac shapes from 90 subjects. The results
+	show that the medial model can capture the heart shape accurately.
+	To demonstrate the usage of the medial model, the changes of the
+	heart wall thickness over time are analyzed. We calculated the mean
+	heart wall thickness map of 90 subjects for different phases of the
+	cardiac cycle, as well as the mean thickness change between phases.},
+  institution = {Department of Radiology, University of Pennsylvania, Philadelphia,
+	PA, USA.},
+  keywords = {Algorithms; Computer Simulation; Humans; Image Enhancement, methods;
+	Image Interpretation, Computer-Assisted, methods; Imaging, Three-Dimensional,
+	methods; Magnetic Resonance Imaging, methods; Models, Cardiovascular;
+	Myocardium, pathology; Reproducibility of Results; Sensitivity and
+	Specificity; Subtraction Technique},
+  language = {eng},
+  medline-pst = {ppublish},
+  owner = {stnava},
+  pmid = {18982674},
+  timestamp = {2013.05.29}
+}
+
+@ARTICLE{Sundaram2005a,
+  author = {Sundaram, Tessa A. and Avants, Brian B. and Gee, James C.},
+  title = {Towards a dynamic model of pulmonary parenchymal deformation: evaluation
+	of methods for temporal reparameterization of lung data.},
+  journal = {Med Image Comput Comput Assist Interv},
+  year = {2005},
+  volume = {8},
+  pages = {328--335},
+  number = {Pt 2},
+  __markedentry = {[stnava:1]},
+  abstract = {We approach the problem of temporal reparameterization of dynamic
+	sequences of lung MR images. In earlier work, we employed capacity-based
+	reparameterization to co-register temporal sequences of 2-D coronal
+	images of the human lungs. Here, we extend that work to the evaluation
+	of a ventilator-acquired 3-D dataset from a normal mouse. Reparameterization
+	according to both deformation and lung volume is evaluated. Both
+	measures provide results that closely approximate normal physiological
+	behavior, as judged from the original data. Our ultimate goal is
+	to be able to characterize normal parenchymal biomechanics over a
+	population of healthy individuals, and to use this statistical model
+	to evaluate lung deformation under various pathological states.},
+  institution = {University of Pennsylvania, Philadelphia PA 19104, USA.},
+  keywords = {Algorithms; Animals; Computer Simulation; Databases, Factual; Elasticity;
+	Image Enhancement, methods; Image Interpretation, Computer-Assisted,
+	methods; Imaging, Three-Dimensional, methods; Lung, anatomy /\&/
+	histology/physiology; Magnetic Resonance Imaging, methods; Mice;
+	Models, Biological; Reproducibility of Results; Respiratory Mechanics;
+	Sensitivity and Specificity; Subtraction Technique},
+  language = {eng},
+  medline-pst = {ppublish},
+  owner = {stnava},
+  pmid = {16685976},
+  timestamp = {2013.05.29}
 }
 
 @INPROCEEDINGS{Sundaram2004,
@@ -1296,6 +1784,7 @@
   organization = {IRISA; CNRS; Univ Rennes},
   note = {7th International Conference on Medical Image Computing and Computer-Assisted
 	Intervention (MICCAI 2004), St Malo, FRANCE, SEP 26-29, 2004},
+  __markedentry = {[stnava:1]},
   isbn = {3-540-22977-9},
   issn = {0302-9743},
   unique-id = {ISI:000224322400121}
@@ -1316,6 +1805,7 @@
 	Medtron Navigat; Siemens Corp Res; NIBIB},
   note = {8th International Conference on Medical Image Computing and Computer-Assisted
 	Intervention, Palm Springs, CA, OCT 26-29, 2005},
+  __markedentry = {[stnava:1]},
   isbn = {3-540-29326-4},
   issn = {0302-9743},
   unique-id = {ISI:000233356900041}
@@ -1337,6 +1827,54 @@
 	JUL 10-13, 2011},
   issn = {0897-7151},
   unique-id = {ISI:000292457600346}
+}
+
+@ARTICLE{Tustison2012,
+  author = {Tustison, Nicholas J. and Avants, Brian B. and Cook, Philip A. and
+	Kim, Junghoon and Whyte, John and Gee, James C. and Stone, James
+	R.},
+  title = {Logical circularity in voxel-based analysis: Normalization strategy
+	may induce statistical bias.},
+  journal = {Hum Brain Mapp},
+  year = {2012},
+  month = {Nov},
+  __markedentry = {[stnava:]},
+  abstract = {Recent discussions within the neuroimaging community have highlighted
+	the problematic presence of selection bias in experimental design.
+	Although initially centering on the selection of voxels during the
+	course of fMRI studies, we demonstrate how this bias can potentially
+	corrupt voxel-based analyses. For such studies, template-based registration
+	plays a critical role in which a representative template serves as
+	the normalized space for group alignment. A standard approach maps
+	each subject's image to a representative template before performing
+	statistical comparisons between different groups. We analytically
+	demonstrate that in these scenarios the popular sum of squared difference
+	(SSD) intensity metric, implicitly surrogating as a quantification
+	of anatomical alignment, instead explicitly maximizes effect size-an
+	experimental design flaw referred to as "circularity bias." We illustrate
+	how this selection bias varies in strength with the similarity metric
+	used during registration under the hypothesis that while SSD-related
+	metrics, such as Demons, will manifest similar effects, other metrics
+	which are not formulated based on absolute intensity differences
+	will produce less of an effect. Consequently, given the variability
+	in voxel-based analysis outcomes with similarity metric choice, we
+	caution researchers specifically in the use of SSD and SSD-related
+	measures where normalization and statistical analysis involve the
+	same image set. Instead, we advocate a more cautious approach where
+	normalization of the individual subject images to the reference space
+	occurs through corresponding image sets which are independent of
+	statistical testing. Alternatively, one can use similarity terms
+	that are less sensitive to this bias. Hum Brain Mapp, 2012. © 2012
+	Wiley Periodicals, Inc.},
+  doi = {10.1002/hbm.22211},
+  institution = {Department of Radiology and Medical Imaging, University of Virginia,
+	Charlottesville, Virginia. ntustison@virginia.edu.},
+  language = {eng},
+  medline-pst = {aheadofprint},
+  owner = {stnava},
+  pmid = {23151955},
+  timestamp = {2013.05.29},
+  url = {http://dx.doi.org/10.1002/hbm.22211}
 }
 
 @ARTICLE{Tustison2010,
@@ -1418,6 +1956,7 @@
   organization = {Philips Med Syst},
   note = {3rd International Workshop on Biomedical Image Registration, Utrecht
 	Univ, Utrecht, NETHERLANDS, JUL 09-11, 2006},
+  __markedentry = {[stnava:1]},
   isbn = {3-540-35648-7},
   issn = {0302-9743},
   unique-id = {ISI:000239485200029}
@@ -1437,6 +1976,38 @@
   doi = {10.1002/mrm.22630},
   issn = {0740-3194},
   unique-id = {ISI:000283616900008}
+}
+
+@ARTICLE{Wang2010a,
+  author = {Wang, Hongzhi and Das, Sandhitsu and Pluta, John and Craige, Caryne
+	and Altinay, Murat and Avants, Brian and Weiner, Michael and Mueller,
+	Susanne and Yushkevich, Paul},
+  title = {Standing on the shoulders of giants: improving medical image segmentation
+	via bias correction.},
+  journal = {Med Image Comput Comput Assist Interv},
+  year = {2010},
+  volume = {13},
+  pages = {105--112},
+  number = {Pt 3},
+  __markedentry = {[stnava:1]},
+  abstract = {We propose a simple strategy to improve automatic medical image segmentation.
+	The key idea is that without deep understanding of a segmentation
+	method, we can still improve its performance by directly calibrating
+	its results with respect to manual segmentation. We formulate the
+	calibration process as a bias correction problem, which is addressed
+	by machine learning using training data. We apply this methodology
+	on three segmentation problems/methods and show significant improvements
+	for all of them.},
+  institution = {Department of Radiology, University of Pennsylvania, USA.},
+  keywords = {Algorithms; Artifacts; Brain, anatomy /\&/ histology; Humans; Image
+	Enhancement, methods; Image Interpretation, Computer-Assisted, methods;
+	Magnetic Resonance Imaging, methods; Pattern Recognition, Automated,
+	methods; Reproducibility of Results; Sensitivity and Specificity},
+  language = {eng},
+  medline-pst = {ppublish},
+  owner = {stnava},
+  pmid = {20879389},
+  timestamp = {2013.05.29}
 }
 
 @ARTICLE{Wang2011,
@@ -1465,7 +2036,7 @@
 	and resting cerebral blood flow},
   journal = {Cognitive, Affective, \& Behavioral Neuroscience},
   year = {2013},
-  volume = {in minor revision},
+  volume = {accepted},
   owner = {stnava},
   timestamp = {2013.05.26}
 }
@@ -1502,6 +2073,7 @@
   organization = {Philips Med Syst},
   note = {3rd International Workshop on Biomedical Image Registration, Utrecht
 	Univ, Utrecht, NETHERLANDS, JUL 09-11, 2006},
+  __markedentry = {[stnava:1]},
   isbn = {3-540-35648-7},
   issn = {0302-9743},
   unique-id = {ISI:000239485200028}
@@ -1523,6 +2095,43 @@
   doi = {10.1016/j.neuroimage.2008.08.042},
   issn = {1053-8119},
   unique-id = {ISI:000262301100010}
+}
+
+@ARTICLE{Yushkevich2008,
+  author = {Yushkevich, Paul A. and Avants, Brian B. and Pluta, John and Minkoff,
+	David and Detre, John A. and Grossman, Murray and Gee, James C.},
+  title = {Shape-based alignment of hippocampal subfields: evaluation in postmortem
+	MRI.},
+  journal = {Med Image Comput Comput Assist Interv},
+  year = {2008},
+  volume = {11},
+  pages = {510--517},
+  number = {Pt 1},
+  __markedentry = {[stnava:1]},
+  abstract = {This paper estimates the accuracy of hippocampal subfield alignment
+	via shape-based normalization. Evaluation takes place in postmortem
+	MRI dataset acquired at 9.4 Tesla with many averages and approximately
+	0.01 mm3 voxel resolution. Continuous medial representations (cm-reps)
+	are used to establish geometrical correspondences between hippocampal
+	formations in different images; the extent to which these correspondences
+	match up subfields is evaluated and compared to normalization driven
+	by image forces. Shape-based normalization is shown to perform only
+	slightly worse than image-based normalization; this is encouraging
+	because the former is more applicable to in vivo MRI, which typically
+	lacks features that distinguish hippocampal subfields.},
+  institution = {Department of Radiology, University of Pennsylvania, USA.},
+  keywords = {Algorithms; Artificial Intelligence; Cadaver; Computer Simulation;
+	Hippocampus, anatomy /\&/ histology; Humans; Image Enhancement, methods;
+	Image Interpretation, Computer-Assisted, methods; Information Storage
+	and Retrieval, methods; Magnetic Resonance Imaging, methods; Models,
+	Biological; Models, Statistical; Pattern Recognition, Automated,
+	methods; Reproducibility of Results; Sensitivity and Specificity;
+	Subtraction Technique},
+  language = {eng},
+  medline-pst = {ppublish},
+  owner = {stnava},
+  pmid = {18979785},
+  timestamp = {2013.05.29}
 }
 
 @ARTICLE{Yushkevich2010,
@@ -1557,5 +2166,59 @@
   issn = {0278-0062},
   researcherid-numbers = {Melhem, Elias/E-5205-2013},
   unique-id = {ISI:000250897700017}
+}
+
+@ARTICLE{Zhang2007a,
+  author = {Zhang, Hui and Avants, Brian B. and Yushkevich, Paul A. and Woo,
+	John H. and Wang, Sumei and McCluskey, Leo F. and Elman, Lauren B.
+	and Melhem, Elias R. and Gee, James C.},
+  title = {High-dimensional spatial normalization of diffusion tensor images
+	improves the detection of white matter differences: an example study
+	using amyotrophic lateral sclerosis.},
+  journal = {IEEE Trans Med Imaging},
+  year = {2007},
+  volume = {26},
+  pages = {1585--1597},
+  number = {11},
+  month = {Nov},
+  __markedentry = {[stnava:]},
+  abstract = {Spatial normalization of diffusion tensor images plays a key role
+	in voxel-based analysis of white matter (WM) group differences. Currently,
+	it has been achieved using low-dimensional registration methods in
+	the large majority of clinical studies. This paper aims to motivate
+	the use of high-dimensional normalization approaches by generating
+	evidence of their impact on the findings of such studies. Using an
+	ongoing amyotrophic lateral sclerosis (ALS) study, we evaluated three
+	normalization methods representing the current range of available
+	approaches: low-dimensional normalization using the fractional anisotropy
+	(FA), high-dimensional normalization using the FA, and high-dimensional
+	normalization using full tensor information. Each method was assessed
+	in terms of its ability to detect significant differences between
+	ALS patients and controls. Our findings suggest that inadequate normalization
+	with low-dimensional approaches can result in insufficient removal
+	of shape differences which in turn can confound FA differences in
+	a complex manner, and that utilizing high-dimensional normalization
+	can both significantly minimize the confounding effect of shape differences
+	to FA differences and provide a more complete description of WM differences
+	in terms of both size and tissue architecture differences. We also
+	found that high-dimensional approaches, by leveraging full tensor
+	features instead of tensor-derived indices, can further improve the
+	alignment of WM tracts.},
+  doi = {10.1109/TMI.2007.906784},
+  institution = {Penn Image Computing and Science Laboratory, University of Pennsylvania,
+	Philadelphia, PA 19104, USA.},
+  keywords = {Adult; Aged; Algorithms; Amyotrophic Lateral Sclerosis, pathology;
+	Artificial Intelligence; Brain, pathology; Diffusion Magnetic Resonance
+	Imaging, methods; Female; Humans; Image Enhancement, methods; Image
+	Interpretation, Computer-Assisted, methods; Imaging, Three-Dimensional,
+	methods; Male; Middle Aged; Nerve Fibers, Myelinated, pathology;
+	Pattern Recognition, Automated, methods; Reproducibility of Results;
+	Sensitivity and Specificity},
+  language = {eng},
+  medline-pst = {ppublish},
+  owner = {stnava},
+  pmid = {18041273},
+  timestamp = {2013.05.29},
+  url = {http://dx.doi.org/10.1109/TMI.2007.906784}
 }
 
