@@ -23,7 +23,11 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[11pt,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+\documentclass[11pt]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+% \renewcommand{\sfdefault}{\rmdefault}
+% \usepackage{mathpazo}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{helvet}
 \makeatletter
 \renewcommand*\bibliographyitemlabel{\@biblabel{\arabic{enumiv}}}
 \makeatother
@@ -39,7 +43,7 @@
 %	NAME AND CONTACT INFORMATION SECTION
 %----------------------------------------------------------------------------------------
 
-\firstname{Brian B.} % Your first name
+\firstname{Brian} % Your first name
 \familyname{Avants} % Your last name
 
 % All information in this block is optional, comment out any lines you don't need
@@ -99,7 +103,11 @@
 \cvitem{2008--2013}{Human Subjects Research Training University of Pennsylvania}
 
 \section{Major Academic and Clinical Teaching Responsibilities}
-\cvitem{2008--2013}{Human Subjects Research Training University of Pennsylvania}
+	      \cvitem{2010--Present}{Advising Ben Kandel, Doctoral student, Bioengineering}
+	      \cvitem{2010--Present}{Co-advising Paramveer Dhillon, Doctoral student,
+            Computer Science with Professor Lyle Ungar}
+	      \cvitem{2012--Present}{Doctoral committee member for Efstathios D Gennatas}
+
 
 \section{Lectures by Invitation}
 \cvitem{2012}{"Multi-Modality Analysis", CMROI Workshop, University of Pennsylvania, Philadelphia, PA 	 Mar 	 2013}  
@@ -140,11 +148,49 @@
 
 \section{Grants}
 \subsection{Pending}
-\cvitem{2008--2013}{Human Subjects Research Training University of Pennsylvania}
+\cvitem{}{Neuroscience Neuroimaging Center, NIH, P30-NS045839-07, 9/2013-8/2018 (Detre, John, M.D., PI), \$499,727/annual direct costs, 10\% effort (Role in grant: Collaborator, To provide support for technical aspects of neuroimaging using MRI.)}
 \subsection{Current}
-\cvitem{2008--2013}{Human Subjects Research Training University of Pennsylvania}
+\cvitem{}{Age, Hearing Loss, And Sentence Comprehension: Neural Correlates, National Institute On Aging/Nih/Dhhs, 5-R01-AG-038490-05, 9/2012-7/2013 (Murray Grossman, PI), \$291,978/annual direct costs (Role in grant: Co-PI)}
+
+\cvitem{}{Continued Development and Maintenance of ITK-SNAP 3D Image Segmentation Software, NIH, R01-EB014346-01, 9/2011-8/2015 (Yushkevich, Paul A., Ph.D., PI), \$350,824/annual direct costs (Role in grant: Collaborator)}
+
+\cvitem{}{TDP-43 Proteinopathies in ALS-Dementia, NIH, P01-AG032953-02, 9/2010-8/2015 (Lee, Virginia/Grossman, Murray, PI), \$729,272/annual direct costs (Role in grant: Collaborator)}
+
+\cvitem{}{Fundamental Refactoring Of Deformable Image Registration In Itk With Distributed Computing And Gpu Acceleration, National Library Of Medicine, HHSN276201000492P, 6/2010-6/2013 (JAMES C GEE, PI), \$472,861/annual direct costs (Role in grant: Co-PI)}
+
+\cvitem{}{In Utero Cocaine Exposure: Adolescent \& Young Adult Neurocognitive Outcome, Children's Hospital of Philadelphia, R01-DA14129-08, 8/2007-4/2013 (Gee, James C., Ph.D., PI), \$102,515/annual direct costs (Role in grant: Collaborator, To explore the effects of gestational cocaine exposure on neurocognitive outcome of adolescents and young adults)}
+
 \subsection{Past}
-\cvitem{2008--2013}{Human Subjects Research Training University of Pennsylvania}
+
+\cvitem{}{Longitudinal Multi-model Neuroimaging of Natural Recovery after Traumatic Brain Injury: A Pilot Study, Moss Rehab Research Institute/NIH, 2/2011-1/2012 (Avants, Brian Ph.D., PI), \$7,764/annual direct costs (Role in grant: PI)}
+
+
+\cvitem{}{Parkinsons Disease \& Dementia, NIH, P50-NS053488-04S1, 6/2010-5/2012 (Trojanowski/Grossman, PI), \$132,641/annual direct costs (Role in grant: Collaborator)}
+
+
+\cvitem{}{Pediatric Template Of Brain Perfusion, National Institute Of Mental Health/Nih/Dhhs, 3-R01-MH-080892-01A2S1, 9/2009-5/2010 (JiongJiong Wang, PI) \$0/annual direct costs, (Role in grant: Co-PI)}
+
+\cvitem{}{Tract-Specific Analysis of Brain White Matter, NIH, R01-NS065347-02, 9/2009-8/2012 (Gee, James C., Ph.D., PI), \$370,667/annual direct costs, (Role in grant: Collaborator)}
+
+
+\cvitem{}{Advanced Neuroimages Registration Methods: Effects of Prenatal Cocaine Exposure, NIH, 9/2008-9/2011 (James C. Gee, PI: Brian Avants, Co-Investigator), \$354,375/annual direct costs, (Role in grant: Co-PI)}
+
+
+\cvitem{}{The Longitudinal Effect of Neurodegeneration onLanguage-Network Neuroanatomy and Cognition, University of Pennsylvania, Institute of Aging, 6/2008-1/2011 (James C. Gee, PI: Brian Avants, Co-Investigator), (Role in grant: Co-PI)}
+
+
+\cvitem{}{Long Term Effects of Prenatal Cocaine Exposure, NIH , 4/2007-1/2011 (Hallam Hurt, PI), (Role in grant: Research Scientist)}
+
+
+\cvitem{}{Shape Optimizing Diffeomorphisms for Computational Biology, NIH - UCLA Center for Computational Biology, R01-EB006266, 4/2006-3/2010 (James C. Gee, PI) (Role in grant: Research Scientist)}
+
+
+\cvitem{}{Surface-based Cortical Analysis in ITK: Segmentation,
+  Conformal Flattening and Statistics, NLM-NIH ITK Development Grant,
+  8/2004-6/2009 (James C. Gee, PI, Role in grant: Co-PI, Open source development)}
+
+
+\cvitem{}{Bioengineering Training in Cardiovascular Pathophysiology, Institute for Medicine and Engineering Training GrantUniversity of Pennsylvania, Philadelphia, PA, 9/2002-6/2010 (Peter Davies, PI), (Role in grant: Trainee )}
 
 \section{Languages}
 
