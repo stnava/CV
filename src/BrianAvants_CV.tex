@@ -28,6 +28,9 @@
 % \usepackage{mathpazo}
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage{helvet}
+\AtBeginDocument{
+    \hypersetup{colorlinks,urlcolor=blue}
+}
 \makeatletter
 \renewcommand*\bibliographyitemlabel{\@biblabel{\arabic{enumiv}}}
 \makeatother
@@ -55,7 +58,7 @@
 \email{avants@grasp.cis.upenn.edu}
 \homepage{www.picsl.upenn.edu/People/Avants}{homepage} % The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
 \extrainfo{My H-index: \href{http://scholar.google.com/citations?hl=en\&user=t4kkowgAAAAJ}{29
-    (link)} }
+    (link)}, Pubmed: \href{http://www.ncbi.nlm.nih.gov/pubmed?term=(\%22Avants\%20B\%22)\%20}{(papers)} }
 \photo[70pt][0.4pt]{BA} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
 %\quote{"A witty and playful quotation" - John Smith}
 %
@@ -86,68 +89,108 @@
 
 \section{Awards and Honors}
 
-	      \cvitem{2012}{Advanced Normalization Tools (ANTs) Software Determined as "Standard Setting" Registration for MICCAI 2013 Multi-Atlas Segmentation Challenge}
-            \cvitem{2012}{ANTs finished 1st overall in an unbiased <a href="http://www.ncbi.nlm.nih.gov/pubmed/21632295">
-	         EMPIRE10 intl. lung mapping competition}
-	      \cvitem{2012}{ANTs finished in 1st rank in an unbiased <a href="http://www.ncbi.nlm.nih.gov/pubmed/19195496">Klein
-	         2009 intl. brain mapping competition}
+	      \cvitem{2012}{Advanced Normalization Tools \href{http://stnava.github.io/ANTs/}{(ANTs)}
+                Software Selected to provide "Standard Setting" image
+                registration results for MICCAI 2013 Multi-Atlas
+                Segmentation Challenge: 4D cardiac, brain and
+                multimodality canine leg MR images}
+            \cvitem{2012}{All \href{http://brianavants.wordpress.com/2013/03/04/ants-in-the-world/}{top finishers} in 2012 MICCAI multi-atlas
+            segmentation used ANTs}
+            \cvitem{2010}{ANTs finished {\em 1st overall} in an unbiased \href{http://www.ncbi.nlm.nih.gov/pubmed/21632295}{EMPIRE10} international lung mapping competition}
+	      \cvitem{2009}{ANTs finished in {\em 1st rank} in an
+                unbiased
+                \href{http://www.ncbi.nlm.nih.gov/pubmed/19195496}{Klein
+                  2009} international brain mapping competition}
 	      \cvitem{2007}{Young Investigator Award, General Medical Computing, MICCAI}
 	      \cvitem{2003}{Best Poster Award SPIE Medical Imaging}
 	      \cvitem{1995}{Future Healthcare Researcher Scholarship, Humana Health Care}
 	      \cvitem{1994}{National Merit Scholarship, New College of Florida, Sarasota, FL}
 
 \section{Editorial Positions}
-\cvitem{2008--2013}{Human Subjects Research Training University of Pennsylvania}
+\cvitem{}{Topic Editor - Frontiers in
+            Neuroinformatics: \href{http://www.frontiersin.org/neuroinformatics/researchtopics/neuroinformatics_with_the_insi/1580}{ITK topic}}
+	      \cvitem{}{Ad hoc Reviewer - Nature Neuroscience}
+	      \cvitem{}{Ad hoc Reviewer - Neuroimage}
+	      \cvitem{}{Ad hoc Reviewer - IEEE Transaction on Medical Imaging}
+	      \cvitem{}{Ad hoc Reviewer - Pediatrics}
+	      \cvitem{}{Ad hoc Reviewer - Medical Physics}
+	      \cvitem{}{Ad hoc Reviewer - Human Brain Mapping}
+	      \cvitem{}{Ad hoc Reviewer - IEEE Pattern Analysis Machine Intelligence}
+          \cvitem{}{Ad hoc Reviewer - Medical Image Analysis}
 
 \section{Academic and Institutional Committees}
-\cvitem{2008--2013}{Human Subjects Research Training University of Pennsylvania}
+\cvitem{2013}{Grant Reviewer - Alzheimer's Association}
+\cvitem{2013}{Consultant, American College of Radiology Head Injury
+  Institute Information Technology Committee}
+\cvitem{2010--present}{\href{http://www.itk.org}{Insight ToolKit} Version 4 Development Leader
+  and regular contributor to this large-scale industry-academic collaborative effort sponsored by NLM}
+	      \cvitem{2011--present}{International Neuroinformatics Coordinating Facility
+            Registration and Atlasing Task Force Member \href{http://www.youtube.com/watch?v=DOqIJRIB5Q4\&noredirect=1}{(youtube video)}}
+	      \cvitem{2006--present}{Spatial Transformations Informatics Technology
+            Initiative (SIFTI) member}
+	      \cvitem{2006--present}{Neuroimaging Informatics Tools
+                and Resources Clearinghouse member}
+
 
 \section{Major Academic and Clinical Teaching Responsibilities}
-	      \cvitem{2010--Present}{Advising Ben Kandel, Doctoral student, Bioengineering}
-	      \cvitem{2010--Present}{Co-advising Paramveer Dhillon, Doctoral student,
-            Computer Science with Professor Lyle Ungar}
-	      \cvitem{2012--Present}{Doctoral committee member for Efstathios D Gennatas}
+	     \cvitem{2012--present}{Organizer of Provost-sponsored Penn
+            Interdisciplinary Seminar Series on multi-modality brain
+            mapping: See \href{http://brainomics.wordpress.com}{brainomics
+            link} for full list of activities}
+	     \cvitem{2013}{Hosted Moriah Thomason for talk on Fetal Connectome}
+	     \cvitem{2013}{Hosted Mert Sabuncu for talk on Relevance Vector Machines}
+	     \cvitem{2012}{Hosted David Van Essen for talk on Human Connectome
+            Project}
+	      \cvitem{2012--present}{Doctoral committee member for Efstathios D Gennatas}
+	      \cvitem{2010--present}{Advising Ben Kandel, Doctoral
+                student, Bioengineering;  Ben's work was awarded an
+                oral presentation at IPMI-2013}
+	      \cvitem{2010--present}{Co-advising Paramveer Dhillon, Doctoral student,
+            Computer Science with Professor Lyle Ungar;  Paramveer's
+            recent work was an awarded an oral presentation at PRNI-2013}
 
 
 \section{Lectures by Invitation}
-\cvitem{2012}{"Multi-Modality Analysis", CMROI Workshop, University of Pennsylvania, Philadelphia, PA 	 Mar 	 2013}  
-\cvitem{2012}{"Multivariate Medical Imaging Analysis with R", MICCAI 2013, Nagoya, Japan 	 Sep 	 2013}  
+\cvitem{2013}{"Multivariate Medical Imaging Analysis with R", MICCAI 2013, Nagoya, Japan 	 Sep 	 2013}  
+\cvitem{2013}{"Multi-Modality Analysis", CMROI Workshop, University of Pennsylvania, Philadelphia, PA 	 Mar 	 2013}  
 \cvitem{2012}{"Early Home Environment Impacts Cortical Thickness in Young Adulthood", Chinese Academy of Sciences, Beijing, China 	 May 	 2012}  
 \cvitem{2012}{"A Unified Image Registration Framework for ITKv4", National Library of Medicine, Bethesda, MD 	 Oct 	 2012}  
 \cvitem{2012}{"A Unified Registration Framework for ITKv4," WBIR 2012, Nashville, TN 	 Jul 	 2012}  
 \cvitem{2012}{"Early Home Environment Impacts Cortical Thickness in Young Adulthood," Society for Neuroscience Press Conference, New Orleans, LA 	 Oct 	 2012}  
 \cvitem{2012}{"Multivariate Methods for Integrating Multiple Modalities in Brain Mapping", Incheon National University, Incheon, South Korea 	 May 	 2012}  
 \cvitem{2012}{"Eigenanatomy Methods for Multivariate Brain Mapping", University of California, San Francisco 	 Jun 	 2012}  
-\cvitem{2012}{"Open Source Neonatal Brain Mapping," Washington University at St. Louis, St. Louis, MO 	 Jan 	 2011}  
-\cvitem{2012}{"Multivariate analyses improve detection power for cortical longitudinal change in dementia", Society for Neuroscience Meeting, Washington D.C. 	 Nov 	 2011}  
-\cvitem{2012}{"Modern analytics for neuroimaging," University of California, Los Angeles 	 Dec 	 2011}  
-\cvitem{2012}{"Multivariate methods in neuroimaging", Washington Univ. at St. Louis 	 Feb 	 2011}  
-\cvitem{2012}{"ITKv4 Image Registration Tutorial", MICCAI 2011, Toronto, Canada 	 Sep 	 2011}  
-\cvitem{2012}{"Open Source in Medical Imaging" Inst. of Automation, Chinese Academy of Sciences, Beijing, China. 	 Sep 	 2010}  
-\cvitem{2010}{Open Source Image Registration, National Library of Medicine, Bethesda, MD 	 Jun 	 2010}  
+\cvitem{2011}{"Open Source Neonatal Brain Mapping," Washington University at St. Louis, St. Louis, MO 	 Jan 	 2011}  
+\cvitem{2011}{"Multivariate analyses improve detection power for cortical longitudinal change in dementia", Society for Neuroscience Meeting, Washington D.C. 	 Nov 	 2011}  
+\cvitem{2011}{"Modern analytics for neuroimaging," University of California, Los Angeles 	 Dec 	 2011}  
+\cvitem{2011}{"Multivariate methods in neuroimaging", Washington Univ. at St. Louis 	 Feb 	 2011}  
+\cvitem{2011}{"ITKv4 Image Registration Tutorial", MICCAI 2011, Toronto, Canada 	 Sep 	 2011}  
+\cvitem{2010}{"Open Source in Medical Imaging" Inst. of Automation, Chinese Academy of Sciences, Beijing, China. 	 Sep 	 2010}  
+\cvitem{2010}{``Open Source Image Registration'', National Library of Medicine, Bethesda, MD 	 Jun 	 2010}  
 \cvitem{2010}{"Multivariate Longitudinal Correlation of Atrophy in White Matter and Gray Matter" MICCAI, Beijing, China. 	 Sep 	 2010}  
-\cvitem{2010}{"Multivariate Longitudinal Correlation of Atrophy in White Matter and Gray Matter" MICCAI, Beijing, China. 	 Sep 	 2010}  
-\cvitem{2010}{"Advanced ITK-Based Image Registration, NLM, Bethesda, MD. 	 Jul 	 2010}  
-\cvitem{2010}{ Sparse Unbiased Analysis of Anatomical Variance in Longitudinal Neuroimaging, MICCAI 2010, Beijing China. (45 of 786 submissions accepted for oral presentation). 	 Sep 	 2010}  
-\cvitem{2009}{ Grammatical comprehension and longitudinal adolescent brain development: a multivariate DTI and T1 analysis, Human Brain Mapping 2009, San Francisco, CA. 	 Jun 	 2009}  
-\cvitem{2009}{Democratizing Hippocampus Labeling, Columbia University, NY, NY. 	 Jul 	 2009}  
-\cvitem{2009}{Multivariate Analysis of the Adolescent Brain and its Association with Language Development, Columbia University, NY, NY. 	 Jul 	 2009}  
-\cvitem{2009}{Follow-Up on Effects of Prenatal Cocaine Exposure on the Young Adult Brain, Eastern SPR, Philadelphia, PA.  	 Mar 	 2009}  
-\cvitem{2009}{ Multivariate Methods and Applications for Neuroimaging, SRI, Menlo Park, CA. 	 Jul 	 2009}  
-\cvitem{2008}{The Longitudinal Effect of Neurodegeneration of Language Network Neuroanatomy and Cognition, Pendergrass Symposium, Univ. of Penn. Philadelphia, PA 	 Jun 	 2008}  
-\cvitem{2008}{Template-based Brain Mapping with Diffeomorphisms, Janelia Farm, Ashburn, Virginia. 	 Sep 	 2008}  
-\cvitem{2008}{Multivariate Template-based Retinotopic Mapping, Stanford Vision Science Group, Stanford University, Palo Alto, CA. 	 Oct 	 2008}  
-\cvitem{2007}{"Symmetric Shape Averaging in the Diffeomorphic Space", International Symposium Biomedical Imaging, Washington DC. 	 Apr 	 2007}  
+\cvitem{2010}{"Advanced ITK-Based Image Registration,'' NLM, Bethesda, MD. 	 Jul 	 2010}  
+\cvitem{2010}{``Sparse Unbiased Analysis of Anatomical Variance in Longitudinal Neuroimaging,'' MICCAI 2010, Beijing China. (45 of 786 submissions accepted for oral presentation). 	 Sep 	 2010}  
+\cvitem{2009}{``Grammatical comprehension and longitudinal adolescent brain development: a multivariate DTI and T1 analysis,'' Human Brain Mapping 2009, San Francisco, CA. 	 Jun 	 2009}  
+\cvitem{2009}{``Democratizing Hippocampus Labeling,'' Columbia University, NY, NY. 	 Jul 	 2009}  
+\cvitem{2009}{``Multivariate Analysis of the Adolescent Brain and its Association with Language Development,'' Columbia University, NY, NY. 	 Jul 	 2009}  
+\cvitem{2009}{``Follow-Up on Effects of Prenatal Cocaine Exposure on the Young Adult Brain,'' Eastern SPR, Philadelphia, PA.  	 Mar 	 2009}  
+\cvitem{2009}{``Multivariate Methods and Applications for Neuroimaging,'' SRI, Menlo Park, CA. 	 Jul 	 2009}  
+\cvitem{2008}{``The Longitudinal Effect of Neurodegeneration of Language Network Neuroanatomy and Cognition,'' Pendergrass Symposium, Univ. of Penn. Philadelphia, PA 	 Jun 	 2008}  
+\cvitem{2008}{``Template-based Brain Mapping with Diffeomorphisms,'' Janelia Farm, Ashburn, Virginia. 	 Sep 	 2008}  
+\cvitem{2008}{``Multivariate Template-based Retinotopic Mapping,'' Stanford Vision Science Group, Stanford University, Palo Alto, CA. 	 Oct 	 2008}  
+\cvitem{2007}{``Symmetric Shape Averaging in the Diffeomorphic Space", International Symposium Biomedical Imaging, Washington DC. 	 Apr 	 2007}  
 \cvitem{2007}{``Spatiotemporal Normalization for Longitudinal Analysis of Gray Matter Atrophy in Frontotemporal Dementia,'' MICCAI 2007, Brisbane, Australia. 	 Oct 	 2007}  
-\cvitem{2007}{``Tutorial on Neuromorphometry, MICCAI 2006, Copenhagen, Denmark. 	 Oct 	 2006}  
-\cvitem{2007}{``IEEE International Symposium on Biomedical Imaging
+\cvitem{2007}{Tutorial on Neuromorphometry, MICCAI 2006, Copenhagen, Denmark. 	 Oct 	 2006}  
+\cvitem{2007}{``Geodesic shape averaging,'' IEEE International Symposium on Biomedical Imaging
   2006, Alexandria, VA 	 Apr 	 2006}   
-\cvitem{2007}{``Mapping Statistical Patterns in Medical Images via Diffeomorphisms, Univ. of Pennsylvania, CIS 520 lecture, Philadelphia, PA. 	 Nov 	 2005}
+\cvitem{2007}{``Mapping Statistical Patterns in Medical Images via Diffeomorphisms,'' Univ. of Pennsylvania, CIS 520 lecture, Philadelphia, PA. 	 Nov 	 2005}
 \cvitem{2005}{``Shape Optimizing Diffeomorphisms in Medical Imaging,'' ISI, Utrecht, NL 	 Jul 	 2005}
 
 
 \section{Grants}
 \subsection{Pending}
+\cvitem{}{IARPA-sponsored Knowledge Representation in Neural Systems
+  (KRNS), IARPA-BAA-12-05, 50\% effort (Role in grant: Image
+  Analysis Lead)}
 \cvitem{}{Neuroscience Neuroimaging Center, NIH, P30-NS045839-07, 9/2013-8/2018 (Detre, John, M.D., PI), \$499,727/annual direct costs, 10\% effort (Role in grant: Collaborator, To provide support for technical aspects of neuroimaging using MRI.)}
 \subsection{Current}
 \cvitem{}{Age, Hearing Loss, And Sentence Comprehension: Neural Correlates, National Institute On Aging/Nih/Dhhs, 5-R01-AG-038490-05, 9/2012-7/2013 (Murray Grossman, PI), \$291,978/annual direct costs (Role in grant: Co-PI)}
@@ -191,6 +234,34 @@
 
 
 \cvitem{}{Bioengineering Training in Cardiovascular Pathophysiology, Institute for Medicine and Engineering Training GrantUniversity of Pennsylvania, Philadelphia, PA, 9/2002-6/2010 (Peter Davies, PI), (Role in grant: Trainee )}
+
+
+\section{Media Coverage}
+	      \cvitem{2012}{Daily
+            Mail UK \href{http://www.dailymail.co.uk/news/article-2217722/Reading-How-books-age-helps-boost-brain-Reading-young-age-helps-organ-mature-quicker-later-life.html}{article}
+            on SFN 2012 presentation}
+	     \cvitem{2012}{Washington post \href{http://www.washingtonpost.com/blogs/on-parenting/post/childhood-environment-affects-brain-growth-and-function-new-studies-find/2012/10/16/1c226baa-17ba-11e2-a55c-39408fbe6a4b_blog.html}{article} on SFN 2012 presentation}
+	    \cvitem{2012}{PENN medicine press publicity for our MICCAI 2012
+            segmentation competition win: \href{http://news.pennmedicine.org/blog/2012/10/image-wizardry-penn-meds-prize-winning-algorithm-speeds-radiologic-testing-process.html}{article}}
+
+
+
+\section{Professional Skills}
+	    \cvitem{2000--present}{Software Engineering \&
+              Programming - C++, CMake, R, Bash, Rst, LaTeX, Git,
+              Gerrit, others as needed}
+	      \cvitem{}{Visualization: e.g. \href{http://vimeo.com/66781467}{a gource of ANTs development}}
+	      \cvitem{}{Presentations:
+                e.g. \href{http://prezi.com/mwrmcm-h9-w4/ants/?kw=view-mwrmcm-h9-w4\&rc=ref-40024395}{a
+                  Prezi about ANTs (WIP)}}
+	      \cvitem{}{Reproducible science as a teaching tool: e.g. \href{https://github.com/stnava/ANTS_MultiModality}{ANTs tutorial}}
+	      \cvitem{}{Other examples: \href{http://brianavants.wordpress.com}{slideshow}}
+
+
+\section{Professional Memberships}
+	      \cvitem{2011--present}{The Organization for Human Brain Mapping (OHBM)}
+	      \cvitem{2011--present}{The International Society for
+                Magnetic Resonance in Medicine (ISMRM)}
 
 \section{Languages}
 
