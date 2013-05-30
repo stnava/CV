@@ -1,0 +1,181 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "ModernCV" CV and Cover Letter
+% LaTeX Template
+% Version 1.1 (9/12/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Xavier Danaux (xdanaux@gmail.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template requires the moderncv.cls and .sty files to be in the same 
+% directory as this .tex file. These files provide the resume style and themes 
+% used for structuring the document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+\makeatletter
+\renewcommand*\bibliographyitemlabel{\@biblabel{\arabic{enumiv}}}
+\makeatother
+\moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{black} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+\usepackage{comment}
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage[scale=0.75]{geometry} % Reduce document margins
+%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
+%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\firstname{Brian B.} % Your first name
+\familyname{Avants} % Your last name
+
+% All information in this block is optional, comment out any lines you don't need
+\title{Curriculum Vitae}
+\address{3600 Market St, Suite 370}{Philadelphia, PA 19104}
+\mobile{(215) 870 0787}
+%\phone{(215) 662 7696}
+\fax{(215) 615 3681}
+\email{avants@grasp.cis.upenn.edu}
+\homepage{www.picsl.upenn.edu/People/Avants}{homepage} % The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
+\extrainfo{My H-index: \href{http://scholar.google.com/citations?hl=en\&user=t4kkowgAAAAJ}{29
+    (link)} }
+\photo[70pt][0.4pt]{BA} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
+%\quote{"A witty and playful quotation" - John Smith}
+%
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\makecvtitle % Print the CV title
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+\cventry{2005}{Ph.D.}{The University of Pennsylvania}{Philadelphia, PA}{\textit{Bioengineering}}{}% Arguments not required can be left empty
+\cventry{2002}{M.S.}{The University of Pennsylvania}{Philadelphia, PA}{\textit{Computer Science}}{}
+\cventry{1998}{B.A.}{New College of Florida}{Sarasota, FL}{\textit{Physics}}{}
+
+\section{Postgraduate Training and Fellowships}
+\cvitem{2006}{Research Fellow, Radiology, University of Pennsylvania}
+
+\section{Professional Appointments}
+\cvitem{2012}{Assistant Professor of Radiology, University of Pennsylvania}
+\cvitem{2010}{Research Associate, Radiology, University of Pennsylvania}
+
+\section{Specialty Certification}
+\cvitem{2008--2013}{Human Subjects Research Training University of Pennsylvania}
+
+\section{Awards and Honors}
+
+	      \cvitem{2012}{Advanced Normalization Tools (ANTs) Software Determined as "Standard Setting" Registration for MICCAI 2013 Multi-Atlas Segmentation Challenge}
+            \cvitem{2012}{ANTs finished 1st overall in an unbiased <a href="http://www.ncbi.nlm.nih.gov/pubmed/21632295">
+	         EMPIRE10 intl. lung mapping competition}
+	      \cvitem{2012}{ANTs finished in 1st rank in an unbiased <a href="http://www.ncbi.nlm.nih.gov/pubmed/19195496">Klein
+	         2009 intl. brain mapping competition}
+	      \cvitem{2007}{Young Investigator Award, General Medical Computing, MICCAI}
+	      \cvitem{2003}{Best Poster Award SPIE Medical Imaging}
+	      \cvitem{1995}{Future Healthcare Researcher Scholarship, Humana Health Care}
+	      \cvitem{1994}{National Merit Scholarship, New College of Florida, Sarasota, FL}
+
+\section{Editorial Positions}
+\cvitem{2008--2013}{Human Subjects Research Training University of Pennsylvania}
+
+\section{Academic and Institutional Committees}
+\cvitem{2008--2013}{Human Subjects Research Training University of Pennsylvania}
+
+\section{Major Academic and Clinical Teaching Responsibilities}
+\cvitem{2008--2013}{Human Subjects Research Training University of Pennsylvania}
+
+\section{Lectures by Invitation}
+\cvitem{2012}{"Multi-Modality Analysis", CMROI Workshop, University of Pennsylvania, Philadelphia, PA 	 Mar 	 2013}  
+\cvitem{2012}{"Multivariate Medical Imaging Analysis with R", MICCAI 2013, Nagoya, Japan 	 Sep 	 2013}  
+\cvitem{2012}{"Early Home Environment Impacts Cortical Thickness in Young Adulthood", Chinese Academy of Sciences, Beijing, China 	 May 	 2012}  
+\cvitem{2012}{"A Unified Image Registration Framework for ITKv4", National Library of Medicine, Bethesda, MD 	 Oct 	 2012}  
+\cvitem{2012}{"A Unified Registration Framework for ITKv4," WBIR 2012, Nashville, TN 	 Jul 	 2012}  
+\cvitem{2012}{"Early Home Environment Impacts Cortical Thickness in Young Adulthood," Society for Neuroscience Press Conference, New Orleans, LA 	 Oct 	 2012}  
+\cvitem{2012}{"Multivariate Methods for Integrating Multiple Modalities in Brain Mapping", Incheon National University, Incheon, South Korea 	 May 	 2012}  
+\cvitem{2012}{"Eigenanatomy Methods for Multivariate Brain Mapping", University of California, San Francisco 	 Jun 	 2012}  
+\cvitem{2012}{"Open Source Neonatal Brain Mapping," Washington University at St. Louis, St. Louis, MO 	 Jan 	 2011}  
+\cvitem{2012}{"Multivariate analyses improve detection power for cortical longitudinal change in dementia", Society for Neuroscience Meeting, Washington D.C. 	 Nov 	 2011}  
+\cvitem{2012}{"Modern analytics for neuroimaging," University of California, Los Angeles 	 Dec 	 2011}  
+\cvitem{2012}{"Multivariate methods in neuroimaging", Washington Univ. at St. Louis 	 Feb 	 2011}  
+\cvitem{2012}{"ITKv4 Image Registration Tutorial", MICCAI 2011, Toronto, Canada 	 Sep 	 2011}  
+\cvitem{2012}{"Open Source in Medical Imaging" Inst. of Automation, Chinese Academy of Sciences, Beijing, China. 	 Sep 	 2010}  
+\cvitem{2010}{Open Source Image Registration, National Library of Medicine, Bethesda, MD 	 Jun 	 2010}  
+\cvitem{2010}{"Multivariate Longitudinal Correlation of Atrophy in White Matter and Gray Matter" MICCAI, Beijing, China. 	 Sep 	 2010}  
+\cvitem{2010}{"Multivariate Longitudinal Correlation of Atrophy in White Matter and Gray Matter" MICCAI, Beijing, China. 	 Sep 	 2010}  
+\cvitem{2010}{"Advanced ITK-Based Image Registration, NLM, Bethesda, MD. 	 Jul 	 2010}  
+\cvitem{2010}{ Sparse Unbiased Analysis of Anatomical Variance in Longitudinal Neuroimaging, MICCAI 2010, Beijing China. (45 of 786 submissions accepted for oral presentation). 	 Sep 	 2010}  
+\cvitem{2009}{ Grammatical comprehension and longitudinal adolescent brain development: a multivariate DTI and T1 analysis, Human Brain Mapping 2009, San Francisco, CA. 	 Jun 	 2009}  
+\cvitem{2009}{Democratizing Hippocampus Labeling, Columbia University, NY, NY. 	 Jul 	 2009}  
+\cvitem{2009}{Multivariate Analysis of the Adolescent Brain and its Association with Language Development, Columbia University, NY, NY. 	 Jul 	 2009}  
+\cvitem{2009}{Follow-Up on Effects of Prenatal Cocaine Exposure on the Young Adult Brain, Eastern SPR, Philadelphia, PA.  	 Mar 	 2009}  
+\cvitem{2009}{ Multivariate Methods and Applications for Neuroimaging, SRI, Menlo Park, CA. 	 Jul 	 2009}  
+\cvitem{2008}{The Longitudinal Effect of Neurodegeneration of Language Network Neuroanatomy and Cognition, Pendergrass Symposium, Univ. of Penn. Philadelphia, PA 	 Jun 	 2008}  
+\cvitem{2008}{Template-based Brain Mapping with Diffeomorphisms, Janelia Farm, Ashburn, Virginia. 	 Sep 	 2008}  
+\cvitem{2008}{Multivariate Template-based Retinotopic Mapping, Stanford Vision Science Group, Stanford University, Palo Alto, CA. 	 Oct 	 2008}  
+\cvitem{2007}{"Symmetric Shape Averaging in the Diffeomorphic Space", International Symposium Biomedical Imaging, Washington DC. 	 Apr 	 2007}  
+\cvitem{2007}{``Spatiotemporal Normalization for Longitudinal Analysis of Gray Matter Atrophy in Frontotemporal Dementia,'' MICCAI 2007, Brisbane, Australia. 	 Oct 	 2007}  
+\cvitem{2007}{``Tutorial on Neuromorphometry, MICCAI 2006, Copenhagen, Denmark. 	 Oct 	 2006}  
+\cvitem{2007}{``IEEE International Symposium on Biomedical Imaging
+  2006, Alexandria, VA 	 Apr 	 2006}   
+\cvitem{2007}{``Mapping Statistical Patterns in Medical Images via Diffeomorphisms, Univ. of Pennsylvania, CIS 520 lecture, Philadelphia, PA. 	 Nov 	 2005}
+\cvitem{2005}{``Shape Optimizing Diffeomorphisms in Medical Imaging,'' ISI, Utrecht, NL 	 Jul 	 2005}
+
+
+\section{Grants}
+\subsection{Pending}
+\cvitem{2008--2013}{Human Subjects Research Training University of Pennsylvania}
+\subsection{Current}
+\cvitem{2008--2013}{Human Subjects Research Training University of Pennsylvania}
+\subsection{Past}
+\cvitem{2008--2013}{Human Subjects Research Training University of Pennsylvania}
+
+\section{Languages}
+
+\cvitemwithcomment{English}{Mothertongue}{}
+\cvitemwithcomment{Spanish}{Intermediate}{Conversational}
+
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{../avantsCV}
+
+
+%----------------------------------------------------------------------------------------
+%	COVER LETTER
+%----------------------------------------------------------------------------------------
+\begin{comment}
+% To remove the cover letter, comment out this entire block
+
+\clearpage
+
+\recipient{HR Departmnet}{Corporation\\123 Pleasant Lane\\12345 City, State} % Letter recipient
+\date{\today} % Letter date
+\opening{Dear Sir or Madam,} % Opening greeting
+\closing{Sincerely yours,} % Closing phrase
+\enclosure[Attached]{curriculum vit\ae{}} % List of enclosed documents
+
+\makelettertitle % Print letter title
+
+\lipsum[1-3] % Dummy text
+
+\makeletterclosing % Print letter signature
+\end{comment}
+%----------------------------------------------------------------------------------------
+
+\end{document}
