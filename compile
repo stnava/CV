@@ -5,4 +5,4 @@ for x in 1 2 3 ; do
   pdflatex $nm
   bibtex $nm
 done
-rm ${nm}.out ${nm}.aux ${nm}.bbl ${nm}.log ${nm}.blg
+ rm ${nm}.out ${nm}.aux ${nm}.bbl ${nm}.log ${nm}.blg

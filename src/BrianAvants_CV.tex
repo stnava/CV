@@ -30,7 +30,7 @@
 \usepackage{helvet}
 % \usepackage{apacite,multibib}
 % \newcites{articles,conferences}{{},{}}
-\usepackage[english]{babel}
+\usepackage[american]{babel}
 \usepackage[sorting=none]{biblatex}
 \bibliography{../avantsCV} % Where journals.bib and phd-references.bib are BibTeX databases
 \addto\captionsenglish{\renewcommand\refname{Publications}}
@@ -62,7 +62,7 @@
 %\phone{(215) 662 7696}
 \fax{(215) 615 3681}
 \email{avants@grasp.cis.upenn.edu}
-\homepage{www.picsl.upenn.edu/People/Avants}{homepage} % The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
+\homepage{http://stnava.github.io}{homepage} % The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
 \extrainfo{My H-index: \href{http://scholar.google.com/citations?hl=en\&user=t4kkowgAAAAJ}{35
     (link)}, Pubmed: \href{http://www.ncbi.nlm.nih.gov/pubmed?term=(\%22Avants\%20B\%22)\%20}{(papers)} }
 \photo[70pt][0.4pt]{BA} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
@@ -94,7 +94,14 @@
 \cvitem{2008--2013}{Human Subjects Research Training University of Pennsylvania}
 
 \section{Awards and Honors}
-        \cvitem{2013}{BRATS 2013 Winner: ANTs and ANTsR}
+	      \cvitem{2013}{Advanced Normalization Tools with R
+                \href{http://stnava.github.io/ANTsR/}{(ANTsR)}
+                wins BRATS 2013 Tumor Segmentation Challenge at
+                MICCAI, Nagoya, Japan (with Nick Tustison).}
+	      \cvitem{2013}{Advanced Normalization Tools
+                \href{http://stnava.github.io/ANTS/}{(ANTs)}
+                finishes first in two of three segmentation categories
+                at SATA challenge, MICCAI, Nagoya, Japan (with Nick Tustison).}
 	      \cvitem{2012}{Advanced Normalization Tools \href{http://stnava.github.io/ANTs/}{(ANTs)}
                 Software Selected to provide "Standard Setting" image
                 registration results for MICCAI 2013 Multi-Atlas
@@ -163,6 +170,11 @@
 
 \section{Lectures by Invitation}
 \cvitem{2014}{"Functional Imaging Analysis with R", University of South Carolina, Nov 	 2014}
+\cvitem{2014}{"Eigenwords \& Eigenanatomy for Decoding Neural
+  Representations of Semantics,''
+  HRL, Malibu, CA, 	 April 	 2014}
+\cvitem{2014}{"ANTs \& Eigenanatomy for Integrative Brain Mapping ",
+  University of Calgary, Calgary, Alberta 	 Feb 	 2014}
 \cvitem{2013}{"Multivariate Medical Imaging Analysis with R", MICCAI 2013, Nagoya, Japan 	 Sep 	 2013}
 \cvitem{2013}{"ANTs \& Eigenanatomy", Neuroimaging Training Program, UCLA, Los Angeles, CA 	 July 	 2013}
 \cvitem{2013}{"Multi-Modality Analysis", CMROI Workshop, University of Pennsylvania, Philadelphia, PA 	 Mar 	 2013}
@@ -193,6 +205,7 @@
 \cvitem{2007}{``Symmetric Shape Averaging in the Diffeomorphic Space", International Symposium Biomedical Imaging, Washington DC. 	 Apr 	 2007}
 \cvitem{2007}{``Spatiotemporal Normalization for Longitudinal Analysis of Gray Matter Atrophy in Frontotemporal Dementia,'' MICCAI 2007, Brisbane, Australia. 	 Oct 	 2007}
 \cvitem{2007}{Tutorial on Neuromorphometry, MICCAI 2006, Copenhagen, Denmark. 	 Oct 	 2006}
+>>>>>>> a38df8ed8ec24cc7876bcc496c1f0964a95c2951
 \cvitem{2007}{``Geodesic shape averaging,'' IEEE International Symposium on Biomedical Imaging
   2006, Alexandria, VA 	 Apr 	 2006}
 \cvitem{2007}{``Mapping Statistical Patterns in Medical Images via Diffeomorphisms,'' Univ. of Pennsylvania, CIS 520 lecture, Philadelphia, PA. 	 Nov 	 2005}
@@ -201,11 +214,16 @@
 
 \section{Grants}
 \subsection{Current}
-\cvitem{}{Big Data to Knowledge K01, K01ES025432-01, 10/2014-9/2019, 80\% effort (Role in grant, PI)}
+\cvitem{}{The Imaging Genomics of Pediatric Executive Function, NIH,
+  K01ES025432-01, 10/2014-9/2019 (Avants, Brian, PI), \$275,000/annual direct
+  costs, 80\% effort (Big data training grant.)}
+\subsection{Current}
+\cvitem{}{Neuroscience Neuroimaging Center, NIH, P30-NS045839-07, 9/2013-8/2018 (Detre, John, M.D., PI), \$499,727/annual direct costs, 10\% effort (Role in grant: Collaborator, To provide support for technical aspects of neuroimaging using MRI.)}
+
 \cvitem{}{IARPA-sponsored Knowledge Representation in Neural Systems
   (KRNS), IARPA-BAA-12-05, 50\% effort (Role in grant: Image
   Analysis Lead)}
-\cvitem{}{Neuroscience Neuroimaging Center, NIH, P30-NS045839-07, 9/2013-8/2018 (Detre, John, M.D., PI), \$499,727/annual direct costs, 10\% effort (Role in grant: Collaborator, To provide support for technical aspects of neuroimaging using MRI.)}
+
 \cvitem{}{Age, Hearing Loss, And Sentence Comprehension: Neural Correlates, National Institute On Aging/Nih/Dhhs, 5-R01-AG-038490-05, 9/2012-7/2013 (Murray Grossman, PI), \$291,978/annual direct costs (Role in grant: Co-PI)}
 
 \cvitem{}{Continued Development and Maintenance of ITK-SNAP 3D Image Segmentation Software, NIH, R01-EB014346-01, 9/2011-8/2015 (Yushkevich, Paul A., Ph.D., PI), \$350,824/annual direct costs (Role in grant: Collaborator)}
@@ -285,29 +303,23 @@
 \cvitemwithcomment{Spanish}{Intermediate}{Conversational}
 
 
-\section{Articles in Preparation}
+\section{Articles Under Review}
 
 \begin{enumerate}
 \item Longitudinal eigenanatomy reveals white matter and gray matter
   measurements that relate to clinical decline in behavioral variant
   frontotemporal lobar degeneration
+\item Novelty across imaging modalities: Application to partial volume correction
 \item A multimodality pediatric template of brain perfusion
 \item Relation of childhood home environment to cortical thickness in late
 adolescence: Specificity of experience and timing
 \item Morphometry with Eigenanatomy
-\item ANTs-based reference results for MICCAI 2013 challenge
-\item A large-scale and reproducible cortical thickness study of normal development and
-  aging with Advanced Normalization Tools
-\item A reproducible analysis pipeline for population studies of
-  ASL-based cerebral blood flow
-\item Predicting pathology status from MRI: An MCI study
-\item Prior-based eigenanatomy for network analysis
-\item Instrumentation bias in the use and evaluation of scientific software
-\item Sparse Canonical Correlation Analysis Relates Network-level Atrophy to Multivariate Cognitive Measures in Neurodegenerative Diseases
+\item A reproducible analysis pipeline for population studies of ASL-based cerebral blood flow
 \end{enumerate}
 
-\section{Journal Publications}
-
+\section{Journal Publications} % see https://github.com/agrede/biblatex-moderncv
+% \nocite{*}
+% \printbibliography[title={Publications}]
 \begin{enumerate}
 \item Adler, D. H.; Pluta, J.; Kadivar, S.; Craige, C.; Gee, J. C.; \textbf{Avants}, B. B. \&  Yushkevich, P. A. (2014), 'Histology-derived volumetric annotation of the human hippocampal subfields in postmortem MRI.', Neuroimage 84, 505--523.
 
@@ -506,13 +518,20 @@ adolescence: Specificity of experience and timing
 
 \item Xie, L.; Pluta, J.; Wang, H.; Das, S. R.; Mancuso, L.; Kliot, D.; \textbf{Avants}, B. B.; Ding, S.-L.; Wolk, D. A. \& Yushkevich, P. A. (2014), 'Automatic clustering and thickness measurement of anatomical variants of the human perirhinal cortex.', Med Image Comput Comput Assist Interv 17(Pt 3), 81--88.
 
+\item % [article (Duda2013a)]
+Duda, J. T., Detre, J. A., Kim, J., Gee, J. C. and \textbf{Avants}, B. B.
+``Fusing functional signals by sparse canonical correlation analysis
+improves network reproducibility.''  {\em MICCAI}, Vol. 16(Pt 3), pp. 635-642, (2013)
+
 \item P. Dhillon, B. M. Kandel, D. Wolk, J. C. Gee \&  B. \textbf{Avants},
 "Prior-based Eigenanatomy for Classification of Autism Spectrum Disorder",
 {\em PRNI}, (2013)
+
 \item B. M. Kandel, D. Wolk, J. C. Gee \&  B. \textbf{Avants},
 "Predicting Cognitive Data From Medical Images Using Sparse Linear Regression ",
 {\em Inf. Process. Med. Imaging}
 , (2013)
+
 \item B. \textbf{Avants}, P. Dhillon, B. M. Kandel, P. A. Cook, C. T. McMillan, M. Grossman \&  J. C. Gee,
 "Eigenanatomy improves detection power for longitudinal cortical change.",
 {\em Med Image Comput Comput Assist Interv}, 15, 206-213 (2012)
