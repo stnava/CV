@@ -1,0 +1,43 @@
+name: Automated Instagram Visual CV Publisher
+
+on:
+  workflow_dispatch:
+    inputs:
+      post_id:
+        description: "Post ID from posts_manifest.json (e.g. post_01_visual_cv or all)"
+        required: true
+        default: "post_01_visual_cv"
+      dry_run:
+        description: "Dry run only (true/false)"
+        required: false
+        default: "false"
+  schedule:
+    # Optional weekly post every Tuesday at 14:00 UTC (10:00 AM EDT)
+    - cron: "0 14 * * 2"
+
+jobs:
+  publish-instagram:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout CV Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Generate / Refresh Instagram Slides & Manifest
+        run: python3 instagram/generate_posts.py instagram/posts
+
+      - name: Publish to Instagram via Official Meta Graph API
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_PUBLIC_BASE_URL: "https://stnava.github.io/CV/instagram/"
+        run: |
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            python3 instagram/publish_instagram.py --post-id "${{ github.event.inputs.post_id || 'post_01_visual_cv' }}" --dry-run
+          else
+            python3 instagram/publish_instagram.py --post-id "${{ github.event.inputs.post_id || 'post_01_visual_cv' }}"
+          fi

@@ -1,8 +1,22 @@
 #!/bin/bash
-cd src
-nm=BrianAvants_CV
-for x in 1 2 3 ; do 
-  pdflatex $nm
-  bibtex $nm
+set -e
+
+cd "$(dirname "$0")/src"
+
+for nm in BrianAvants_CV avants_resume; do
+  pdflatex -interaction=nonstopmode "${nm}.tex"
+  pdflatex -interaction=nonstopmode "${nm}.tex"
+  rm -f "${nm}.out" "${nm}.aux" "${nm}.bbl" "${nm}.log" "${nm}.blg"
 done
- rm ${nm}.out ${nm}.aux ${nm}.bbl ${nm}.log ${nm}.blg
+
+cp BrianAvants_CV.pdf ../BrianAvants_CV.pdf
+cp avants_resume.pdf ../BrianAvants_Resume.pdf
+cd ..
+
+if command -v pandoc >/dev/null 2>&1; then
+  pandoc BrianAvants_Resume.md -o BrianAvants_Resume.docx
+  pandoc BrianAvants_CV.md -o BrianAvants_CV.docx
+fi
+
+cp index.html indexbase.html
+echo "Build complete: PDF, DOCX, Markdown, and HTML editions updated."

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <radialGradient id="glow" cx="85%" cy="15%" r="55%">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.28" />
+      <stop offset="100%" stop-color="#064e3b" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1080" height="1080" fill="url(#bg)" />
+  <rect width="1080" height="1080" fill="url(#glow)" />
+
+  <!-- Subtle Diffeomorphic Grid / Mesh Lines -->
+  <g stroke="#ffffff" stroke-opacity="0.06" stroke-width="1.5" fill="none">
+    <path d="M 0 180 Q 540 120 1080 200" />
+    <path d="M 0 360 Q 540 300 1080 380" />
+    <path d="M 0 540 Q 540 480 1080 560" />
+    <path d="M 0 720 Q 540 660 1080 740" />
+    <path d="M 0 900 Q 540 840 1080 920" />
+    <path d="M 180 0 Q 120 540 200 1080" />
+    <path d="M 540 0 Q 480 540 560 1080" />
+    <path d="M 900 0 Q 840 540 920 1080" />
+  </g>
+
+  <!-- Outer Card Frame -->
+  <rect x="44" y="44" width="992" height="992" rx="28" fill="#090d16" fill-opacity="0.48" stroke="#ffffff" stroke-opacity="0.16" stroke-width="2" />
+
+  <!-- Top Badge -->
+  <rect x="84" y="92" width="520" height="46" rx="23" fill="#34d399" fill-opacity="0.18" stroke="#34d399" stroke-opacity="0.6" stroke-width="1.5" />
+  <text x="112" y="122" fill="#34d399" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="bold">PINNED · OPEN-SOURCE ECOSYSTEM</text>
+
+  <!-- Main Title -->
+  <text x="84" y="242" fill="#ffffff" font-family="Helvetica, Arial, sans-serif" font-size="56" font-weight="bold">THE ANTsX ECOSYSTEM</text>
+
+  <!-- Subtitle -->
+  <text x="84" y="330" fill="#cbd5e1" font-family="Helvetica, Arial, sans-serif" font-size="33" font-weight="600">Quantitative Biological &amp;</text><text x="84" y="374" fill="#cbd5e1" font-family="Helvetica, Arial, sans-serif" font-size="33" font-weight="600">Medical Imaging at Global Scale</text>
+
+  <!-- Metric Pill -->
+  <rect x="84" y="420" width="912" height="68" rx="14" fill="#ffffff" fill-opacity="0.08" stroke="#34d399" stroke-opacity="0.5" stroke-width="1.5" />
+  <text x="114" y="463" fill="#34d399" font-family="Helvetica, Arial, sans-serif" font-size="27" font-weight="bold">Scientific Reports (2021, 2024)</text>
+
+  <!-- Bullets -->
+  <rect x="88" y="542" width="12" height="12" rx="3" fill="#34d399" /><text x="118" y="560" fill="#e2e8f0" font-family="Helvetica, Arial, sans-serif" font-size="25" font-weight="500">ANTs (C++): SyN diffeomorphic registration, N4 bias</text><text x="118" y="594" fill="#e2e8f0" font-family="Helvetica, Arial, sans-serif" font-size="25" font-weight="500">correction, Atropos, DiReCT</text><rect x="88" y="626" width="12" height="12" rx="3" fill="#34d399" /><text x="118" y="644" fill="#e2e8f0" font-family="Helvetica, Arial, sans-serif" font-size="25" font-weight="500">ANTsPy &amp; ANTsPyNet: Pre-trained 2D/3D CNNs, Deep</text><text x="118" y="678" fill="#e2e8f0" font-family="Helvetica, Arial, sans-serif" font-size="25" font-weight="500">Atropos, HippMapp3r, Brain Age</text><rect x="88" y="710" width="12" height="12" rx="3" fill="#34d399" /><text x="118" y="728" fill="#e2e8f0" font-family="Helvetica, Arial, sans-serif" font-size="25" font-weight="500">ANTsPyMM: Automated multi-modal MRI phenotyping &amp; QC</text><text x="118" y="762" fill="#e2e8f0" font-family="Helvetica, Arial, sans-serif" font-size="25" font-weight="500">for clinical trials</text><rect x="88" y="794" width="12" height="12" rx="3" fill="#34d399" /><text x="118" y="812" fill="#e2e8f0" font-family="Helvetica, Arial, sans-serif" font-size="25" font-weight="500">ANTsR &amp; subtyper: Statistical imaging, SCCAN, SiMLR</text><text x="118" y="846" fill="#e2e8f0" font-family="Helvetica, Arial, sans-serif" font-size="25" font-weight="500">&amp; longitudinal staging</text>
+
+  <!-- Divider & Footer -->
+  <line x1="84" y1="935" x2="996" y2="935" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1.5" />
+  <text x="84" y="982" fill="#94a3b8" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="bold">github.com/ANTsX · C++ · Python · R · Deep Learning</text>
+  <text x="996" y="982" text-anchor="end" fill="#34d399" font-family="Courier, monospace" font-size="22" font-weight="bold">@antsx.ai</text>
+</svg>

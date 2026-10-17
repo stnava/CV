@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instagram Visual CV & Automation Suite — Brian B. Avants, Ph.D.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card: #111827;
+      --card-hover: #1e293b;
+      --border: #1f2937;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #3b82f6;
+      --ig-grad: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding-bottom: 4rem;
+    }
+    .topbar {
+      background: rgba(17, 24, 39, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .topbar-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .topbar-title {
+      font-weight: 800;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .ig-badge {
+      background: var(--ig-grad);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 99px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .nav-links a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 0.84rem;
+      font-weight: 600;
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      margin-left: 0.4rem;
+    }
+    .nav-links a:hover {
+      background: var(--card-hover);
+      color: #fff;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 440px;
+      gap: 2rem;
+      align-items: start;
+    }
+    .full-width {
+      max-width: 1180px;
+      margin: 0 auto 2rem;
+      padding: 0 1.5rem;
+    }
+
+    @media (max-width: 960px) {
+      .container { grid-template-columns: 1fr; }
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .panel h2 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin-bottom: 0.35rem;
+      color: #fff;
+    }
+    .panel p.sub {
+      font-size: 0.86rem;
+      color: var(--muted);
+      margin-bottom: 1.1rem;
+    }
+
+    /* Handle Selector Cards */
+    .handle-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .handle-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.9rem 1rem;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .handle-card:hover, .handle-card.active {
+      border-color: var(--accent);
+      background: rgba(59, 130, 246, 0.1);
+    }
+    .handle-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #60a5fa;
+    }
+    .handle-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.15rem 0.55rem;
+      border-radius: 99px;
+      background: rgba(16, 185, 129, 0.18);
+      color: #34d399;
+      white-space: nowrap;
+    }
+    .handle-desc {
+      font-size: 0.82rem;
+      color: #cbd5e1;
+      margin-top: 0.2rem;
+    }
+
+    /* Bio Options */
+    .bio-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 0.75rem;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .bio-card:hover, .bio-card.active {
+      border-color: #ec4899;
+      background: rgba(236, 72, 153, 0.08);
+    }
+    .bio-card-head {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #f472b6;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+    .bio-pre {
+      font-size: 0.84rem;
+      white-space: pre-line;
+      color: #f1f5f9;
+      line-height: 1.45;
+    }
+
+    /* Instagram Phone Mockup */
+    .ig-phone {
+      background: #000;
+      border: 2px solid #262626;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
+      position: sticky;
+      top: 4.5rem;
+    }
+    .ig-Screen-top {
+      padding: 0.9rem 1.1rem 0.6rem;
+      border-bottom: 1px solid #1f1f1f;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .ig-verified {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 15px;
+      height: 15px;
+      background: #3897f0;
+      color: #fff;
+      border-radius: 50%;
+      font-size: 9px;
+      margin-left: 4px;
+    }
+    .ig-profile-row {
+      padding: 1rem 1.1rem 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .ig-avatar-ring {
+      width: 78px;
+      height: 78px;
+      border-radius: 50%;
+      padding: 3px;
+      background: var(--ig-grad);
+      flex-shrink: 0;
+    }
+    .ig-avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #0f172a url('images/BA.jpg') center/cover no-repeat;
+      border: 2px solid #000;
+    }
+    .ig-stats {
+      display: flex;
+      flex: 1;
+      justify-content: space-around;
+      text-align: center;
+    }
+    .ig-stat-num {
+      font-weight: 800;
+      font-size: 0.98rem;
+      color: #fff;
+    }
+    .ig-stat-lbl {
+      font-size: 0.72rem;
+      color: #a8a8a8;
+    }
+    .ig-bio-area {
+      padding: 0 1.1rem 0.9rem;
+      font-size: 0.8rem;
+      line-height: 1.42;
+    }
+    .ig-fullname {
+      font-weight: 700;
+      color: #fff;
+      font-size: 0.86rem;
+    }
+    .ig-category {
+      color: #a8a8a8;
+      font-size: 0.76rem;
+      margin-bottom: 0.25rem;
+    }
+    .ig-bio-text {
+      white-space: pre-line;
+      color: #f5f5f5;
+      margin-bottom: 0.35rem;
+    }
+    .ig-link {
+      color: #e0f1ff;
+      font-weight: 600;
+      font-size: 0.78rem;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .ig-action-btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.4rem;
+      padding: 0 1.1rem 0.9rem;
+    }
+    .ig-btn {
+      background: #262626;
+      color: #fff;
+      border: none;
+      border-radius: 7px;
+      padding: 0.38rem 0;
+      font-size: 0.76rem;
+      font-weight: 600;
+      text-align: center;
+    }
+    .ig-btn.primary { background: #0095f6; }
+
+    /* Story Highlights */
+    .ig-highlights {
+      display: flex;
+      gap: 0.75rem;
+      padding: 0.2rem 1.1rem 0.9rem;
+      overflow-x: auto;
+      border-bottom: 1px solid #1f1f1f;
+    }
+    .ig-hl-item {
+      text-align: center;
+      font-size: 0.68rem;
+      color: #e5e5e5;
+      flex-shrink: 0;
+    }
+    .ig-hl-circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 1.5px solid #363636;
+      background: #121826;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      margin: 0 auto 0.25rem;
+      color: #60a5fa;
+      font-weight: 800;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* 9-Grid with Actual Rendered 1080x1080 PNGs */
+    .ig-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: #000;
+    }
+    .ig-tile {
+      aspect-ratio: 1 / 1;
+      cursor: pointer;
+      overflow: hidden;
+      position: relative;
+    }
+    .ig-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.2s ease;
+    }
+    .ig-tile:hover img {
+      transform: scale(1.04);
+    }
+
+    /* Post Inspector Modal / Box */
+    .inspector {
+      background: #182235;
+      border: 1px solid #3b82f6;
+      border-radius: 12px;
+      padding: 1.15rem;
+      margin-top: 0.5rem;
+    }
+    .inspector-head {
+      font-size: 0.75rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: #60a5fa;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+      font-weight: 700;
+    }
+    .inspector-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 0.45rem;
+    }
+    .inspector-body {
+      font-size: 0.84rem;
+      color: #e2e8f0;
+      white-space: pre-line;
+    }
+
+    /* Rendered 1080x1080 Gallery */
+    .slide-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.25rem;
+    }
+    .slide-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .slide-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-bottom: 1px solid var(--border);
+    }
+    .slide-card-body {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      flex: 1;
+    }
+    .slide-card-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .slide-card-caption {
+      font-size: 0.78rem;
+      color: #cbd5e1;
+      white-space: pre-line;
+      max-height: 120px;
+      overflow-y: auto;
+      background: rgba(0, 0, 0, 0.35);
+      padding: 0.6rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .slide-actions {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: auto;
+      padding-top: 0.4rem;
+    }
+    .btn-sm {
+      flex: 1;
+      text-align: center;
+      padding: 0.4rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--card-hover);
+      color: #fff;
+    }
+    .btn-sm.primary {
+      background: #2563eb;
+      border-color: #3b82f6;
+    }
+    pre.codeblock {
+      background: #060911;
+      border: 1px solid var(--border);
+      padding: 0.9rem 1rem;
+      border-radius: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: #93c5fd;
+      overflow-x: auto;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-title">
+        <span>Brian B. Avants, Ph.D.</span>
+        <span class="ig-badge">Instagram Visual CV &amp; Automation Suite</span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">&larr; Back to Main CV Portfolio</a>
+        <a href="resume.html">2-Page Resume</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Left Column: Strategy, Handles, Bios, Content Pillars -->
+    <div>
+      <div class="panel">
+        <h2>1. Recommended Instagram Handles (Click to Preview Live &rarr;)</h2>
+        <p class="sub">Select any handle below to test how it looks in the live Instagram mobile mockup on the right.</p>
+        <div class="handle-list">
+          <div class="handle-card active" onclick="setHandle('antsx.ai', 'Executive & Open-Source Ecosystem Flagship', this)">
+            <div>
+              <div class="handle-name">@antsx.ai</div>
+              <div class="handle-desc">Aligns with your email (<code>antsx@antsx.com</code>) and global ANTsX brand while signaling modern AI/ML leadership.</div>
+            </div>
+            <span class="handle-tag">★ Top Pick</span>
+          </div>
+
+          <div class="handle-card" onclick="setHandle('cingulate.ai', 'Venture & Boutique AI Consultancy Brand', this)">
+            <div>
+              <div class="handle-name">@cingulate.ai</div>
+              <div class="handle-desc">Positions Cingulate LLC as a high-end biotech/pharma AI consultancy and computational anatomy lab.</div>
+            </div>
+            <span class="handle-tag">Entrepreneurial</span>
+          </div>
+
+          <div class="handle-card" onclick="setHandle('brianavants.ai', 'Executive Personal Brand', this)">
+            <div>
+              <div class="handle-name">@brianavants.ai</div>
+              <div class="handle-desc">Direct, personal executive thought-leadership handle ideal for speaking, advisory boards, and media.</div>
+            </div>
+            <span class="handle-tag">Personal Brand</span>
+          </div>
+
+          <div class="handle-card" onclick="setHandle('diffeomorphic', 'Mathematical & Visual Brain Mapping Aesthetic', this)">
+            <div>
+              <div class="handle-name">@diffeomorphic</div>
+              <div class="handle-desc">Category-owning scientific handle celebrating SyN diffeomorphisms, Stiefel manifold flows, and brain art.</div>
+            </div>
+            <span class="handle-tag">Sci-Art Authority</span>
+          </div>
+
+          <div class="handle-card" onclick="setHandle('stnava.ai', 'Unified Developer Identity', this)">
+            <div>
+              <div class="handle-name">@stnava.ai</div>
+              <div class="handle-desc">Matches your iconic GitHub handle (<code>github.com/stnava</code>) and web domain (<code>stnava.github.io</code>).</div>
+            </div>
+            <span class="handle-tag">GitHub Sync</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>2. Curated 150-Character Bio Options (Click to Preview &rarr;)</h2>
+        <p class="sub">Instagram bios have a strict 150-character limit. Click any bio below to preview it on the mockup.</p>
+
+        <div class="bio-card active" onclick="setBio(0, this)">
+          <div class="bio-card-head"><span>Option A: Entrepreneurial &amp; Executive (Recommended)</span><span>146 chars</span></div>
+          <div class="bio-pre">AI &amp; Neuroimaging Executive | Founder @ Cingulate LLC 🧠
+Creator of ANTsX &amp; SyN (57K+ citations · h-index 71)
+Translating math &amp; ML into biomarkers</div>
+        </div>
+
+        <div class="bio-card" onclick="setBio(1, this)">
+          <div class="bio-card-head"><span>Option B: Founder &amp; Pharma AI Strategist</span><span>144 chars</span></div>
+          <div class="bio-pre">Founder, Cingulate LLC | Co-Creator of ANTsX ⚡
+Ex-Invicro ML Director &amp; Biogen Biomarkers Lead
+57,000+ citations in Computational Anatomy &amp; AI</div>
+        </div>
+
+        <div class="bio-card" onclick="setBio(2, this)">
+          <div class="bio-card-head"><span>Option C: Visual Science &amp; Open-Source Pioneer</span><span>139 chars</span></div>
+          <div class="bio-pre">Mapping the human brain with math &amp; deep learning 🌐
+Creator: ANTsX · SyN · SiMLR · NSA-Flow
+57K+ Citations | Principal @ Cingulate LLC</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>3. Selected Grid Tile Inspector (Click Any Tile on Phone &rarr;)</h2>
+        <div class="inspector" id="post-inspector">
+          <div class="inspector-head" id="insp-tag">PINNED POST #1 &middot; VISUAL CV</div>
+          <div class="inspector-title" id="insp-title">Brian B. Avants, Ph.D. — Visual Executive CV</div>
+          <div class="inspector-body" id="insp-body">Click any of the 9 rendered tiles in the phone mockup on the right to inspect its full caption and hashtags, or scroll down to view all 9 high-resolution 1080×1080 PNG cards and the automated Graph API publisher.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Live Mobile Mockup with Real 1080x1080 PNG Tiles -->
+    <div class="ig-phone">
+      <div class="ig-Screen-top">
+        <div><span id="mock-handle">antsx.ai</span> <span class="ig-verified">✓</span></div>
+        <div style="color:#a8a8a8; font-size:0.8rem;">•••</div>
+      </div>
+
+      <div class="ig-profile-row">
+        <div class="ig-avatar-ring">
+          <div class="ig-avatar" title="Brian B. Avants, Ph.D."></div>
+        </div>
+        <div class="ig-stats">
+          <div>
+            <div class="ig-stat-num">180+</div>
+            <div class="ig-stat-lbl">Papers</div>
+          </div>
+          <div>
+            <div class="ig-stat-num">57.4K</div>
+            <div class="ig-stat-lbl">Citations</div>
+          </div>
+          <div>
+            <div class="ig-stat-num">71</div>
+            <div class="ig-stat-lbl">h-index</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ig-bio-area">
+        <div class="ig-fullname">Brian B. Avants, Ph.D.</div>
+        <div class="ig-category" id="mock-category">Scientist &middot; Entrepreneur &middot; AI Executive</div>
+        <div class="ig-bio-text" id="mock-bio">AI &amp; Neuroimaging Executive | Founder @ Cingulate LLC 🧠
+Creator of ANTsX &amp; SyN (57K+ citations · h-index 71)
+Translating math &amp; ML into biomarkers</div>
+        <a class="ig-link" href="https://stnava.github.io/CV" target="_blank">🔗 stnava.github.io/CV &middot; Portsmouth, NH</a>
+      </div>
+
+      <div class="ig-action-btns">
+        <div class="ig-btn primary">Follow</div>
+        <div class="ig-btn">Message</div>
+        <div class="ig-btn">Email</div>
+      </div>
+
+      <div class="ig-highlights">
+        <div class="ig-hl-item"><div class="ig-hl-circle">CV</div>Resume</div>
+        <div class="ig-hl-item"><div class="ig-hl-circle">ANTs</div>ANTsX</div>
+        <div class="ig-hl-item"><div class="ig-hl-circle">SyN</div>Math/ML</div>
+        <div class="ig-hl-item"><div class="ig-hl-circle">NSA</div>NSA-Flow</div>
+        <div class="ig-hl-item"><div class="ig-hl-circle">PET</div>Trials</div>
+        <div class="ig-hl-item"><div class="ig-hl-circle">TBI</div>Blast/DoD</div>
+      </div>
+
+      <!-- 9-Grid Visual CV using Generated 1080x1080 PNGs -->
+      <div class="ig-grid">
+        <div class="ig-tile" onclick="inspectPost(0)"><img src="instagram/posts/post_01_visual_cv.png" alt="Post 1" /></div>
+        <div class="ig-tile" onclick="inspectPost(1)"><img src="instagram/posts/post_02_nature_cover.png" alt="Post 2" /></div>
+        <div class="ig-tile" onclick="inspectPost(2)"><img src="instagram/posts/post_03_antsx_ecosystem.png" alt="Post 3" /></div>
+        <div class="ig-tile" onclick="inspectPost(3)"><img src="instagram/posts/post_04_nsa_flow.png" alt="Post 4" /></div>
+        <div class="ig-tile" onclick="inspectPost(4)"><img src="instagram/posts/post_05_simlr.png" alt="Post 5" /></div>
+        <div class="ig-tile" onclick="inspectPost(5)"><img src="instagram/posts/post_06_blast_tbi.png" alt="Post 6" /></div>
+        <div class="ig-tile" onclick="inspectPost(6)"><img src="instagram/posts/post_07_biobank_scale.png" alt="Post 7" /></div>
+        <div class="ig-tile" onclick="inspectPost(7)"><img src="instagram/posts/post_08_syn_n4.png" alt="Post 8" /></div>
+        <div class="ig-tile" onclick="inspectPost(8)"><img src="instagram/posts/post_09_cingulate_llc.png" alt="Post 9" /></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Full-Width Automation Pipeline & Generated 1080x1080 Gallery -->
+  <div class="full-width">
+    <div class="panel">
+      <h2>4. Automated Publishing Pipeline (Meta Graph API + GitHub Actions)</h2>
+      <p class="sub">
+        Meta requires the initial account creation to be done once in the Instagram app (due to SMS/CAPTCHA verification), after which switching to a free <strong>Creator</strong> or <strong>Business</strong> account unlocks 100% automated publishing via the official <strong>Instagram Graph API</strong>.
+      </p>
+      <pre class="codeblock"># 1. Re-generate all 1080x1080 PNG slides & parse avantsCV.bib for new papers:
+python3 instagram/generate_posts.py instagram/posts
+
+# 2. Preview API payloads in dry-run mode:
+python3 instagram/publish_instagram.py --post-id post_01_visual_cv --dry-run
+
+# 3. Publish live to Instagram (or run automatically via .github/workflows/instagram_publish.yml):
+export IG_USER_ID="YOUR_IG_BUSINESS_OR_CREATOR_ID"
+export IG_ACCESS_TOKEN="YOUR_META_GRAPH_TOKEN"
+python3 instagram/publish_instagram.py --post-id post_01_visual_cv</pre>
+    </div>
+
+    <div class="panel">
+      <h2>5. Ready-to-Publish 1080&times;1080 Launch Grid (Generated PNGs &amp; Captions)</h2>
+      <p class="sub">All 9 high-resolution 1080&times;1080 PNG cards below are already generated in <code>instagram/posts/</code>.</p>
+      <div class="slide-gallery" id="slide-gallery"></div>
+    </div>
+  </div>
+
+  <script>
+    const bios = [
+      `AI & Neuroimaging Executive | Founder @ Cingulate LLC 🧠\nCreator of ANTsX & SyN (57K+ citations · h-index 71)\nTranslating math & ML into biomarkers`,
+      `Founder, Cingulate LLC | Co-Creator of ANTsX ⚡\nEx-Invicro ML Director & Biogen Biomarkers Lead\n57,000+ citations in Computational Anatomy & AI`,
+      `Mapping the human brain with math & deep learning 🌐\nCreator: ANTsX · SyN · SiMLR · NSA-Flow\n57K+ Citations | Principal @ Cingulate LLC`
+    ];
+
+    const posts = [
+      {
+        id: "post_01_visual_cv",
+        tag: "PINNED POST #1 · VISUAL CV",
+        title: "BRIAN B. AVANTS, Ph.D. — Visual Executive CV",
+        img: "instagram/posts/post_01_visual_cv.png",
+        body: "Brian B. Avants, Ph.D. — Visual Executive CV 🧠⚡\n\nFor 20+ years, my focus has been translating rigorous mathematical foundations (diffeomorphisms, manifold optimization, multi-view representation learning) into open-source software and clinical trial biomarkers.\n\n🔹 57,000+ Citations · h-index: 71 · 180+ Peer-Reviewed Papers\n🔹 Co-Creator of the ANTsX Ecosystem (ANTs, ANTsPy, ANTsR, ANTsPyNet, ANTsPyMM)\n🔹 6x #1 Ranked in International Medical Imaging Benchmarks (Klein, EMPIRE10, BRATS, SATA)\n🔹 Founder & Principal @ Cingulate LLC (Portsmouth, NH)\n\nFull interactive CV & Resume at link in bio (stnava.github.io/CV).\n\n#Neuroimaging #MachineLearning #ComputationalAnatomy #ANTsX #MedicalAI #Biomarkers #PyTorch #DataScience"
+      },
+      {
+        id: "post_02_nature_cover",
+        tag: "PINNED POST #2 · CLINICAL TRIAL IMPACT",
+        title: "Behind the 2016 Nature Cover: Amyloid PET in PRIME",
+        img: "instagram/posts/post_02_nature_cover.png",
+        body: "How rigorous reference-region math and quantitative PET analytics helped shape a landmark Nature cover story (Sevigny et al., Nature 2016; Chiao et al., J Nucl Med 2018).\n\nDuring my time leading Translational & Advanced Analytics (Biomarkers) at Biogen, we demonstrated how reference/target region selection in Amyloid PET SUVR directly impacts longitudinal treatment effect detection in Alzheimer's disease clinical trials.\n\n#Alzheimers #ClinicalTrials #AmyloidPET #Neuroimaging #Biotech #Biomarkers #NatureJournal #ANTsX"
+      },
+      {
+        id: "post_03_antsx_ecosystem",
+        tag: "PINNED POST #3 · OPEN-SOURCE ECOSYSTEM",
+        title: "The ANTsX Ecosystem at Global Scale",
+        img: "instagram/posts/post_03_antsx_ecosystem.png",
+        body: "The ANTsX Ecosystem: 18+ years of open-source medical image registration, morphometry, and deep learning (Tustison et al., Scientific Reports 2021 & 2024).\n\nFrom foundational C++ diffeomorphisms (SyN) and bias correction (N4ITK) to pre-trained PyTorch/TensorFlow networks in ANTsPyNet and automated multi-modal trial QC in ANTsPyMM.\n\nExplore the code: github.com/ANTsX\n\n#OpenSource #ANTsX #ANTsPy #MedicalImaging #DeepLearning #Neuroscience #Python #RStats #ITK"
+      },
+      {
+        id: "post_04_nsa_flow",
+        tag: "POST #4 · PYTORCH REPRESENTATION LEARNING",
+        title: "Introducing NSA-Flow (Non-Negative Stiefel Approximating Flow)",
+        img: "instagram/posts/post_04_nsa_flow.png",
+        body: "Introducing NSA-Flow (Non-Negative Stiefel Approximating Flow): Orthogonalish Matrix Optimization for Interpretable Embeddings (arXiv:2511.06425).\n\nHigh-dimensional biomedical data (MRI, genomics, multi-omics) demands latent features that are both sparse and non-redundant. NSA-Flow operates as a smooth flow near the Stiefel manifold with proximal updates—delivering interpretable representations that generalize across cohorts.\n\nCode: github.com/stnava/nsa_flow\n\n#PyTorch #MachineLearning #ManifoldLearning #MatrixFactorization #InterpretableAI #Genomics #Neuroimaging"
+      },
+      {
+        id: "post_05_simlr",
+        tag: "POST #5 · NATURE COMPUTATIONAL SCIENCE",
+        title: "SiMLR: Similarity-Driven Multi-View Embeddings",
+        img: "instagram/posts/post_05_simlr.png",
+        body: "How do you fuse structural MRI, functional connectivity, diffusion tensors, and genetics when every modality has thousands of dimensions?\n\nDeveloped during my Visiting Scholar fellowship at Brown University's ICERM and published in Nature Computational Science (Avants, Tustison & Stone, 2021), SiMLR projects multi-modal biomedical data into joint, biologically interpretable low-dimensional spaces.\n\n#NatureComputationalScience #MultiModalAI #BrainMapping #DataScience #Mathematics #ICERM #ANTsX"
+      },
+      {
+        id: "post_06_blast_tbi",
+        tag: "POST #6 · DEFENSE & NEUROTRAUMA",
+        title: "Mapping Invisible Wounds: Blast Overpressure & Neuroinflammation",
+        img: "instagram/posts/post_06_blast_tbi.png",
+        body: "Quantifying the neurological effects of repetitive low-level blast overpressure in career breachers and Special Operations personnel (Stone, Avants, Tustison et al., Journal of Neurotrauma 2020, 2022, 2024).\n\nBy combining multi-view machine learning (SiMLR) with TSPO PET neuroinflammation imaging and the Normative Neuroimaging Library, we can detect subtle, network-level brain changes invisible to conventional clinical reads.\n\n#TraumaticBrainInjury #Neurotrauma #Neuroimaging #PETImaging #MilitaryHealth #Biomarkers #UVA"
+      },
+      {
+        id: "post_07_biobank_scale",
+        tag: "POST #7 · POPULATION NEUROSCIENCE",
+        title: "49,000+ Brains Mapped Across UK Biobank, PPMI & ADNI",
+        img: "instagram/posts/post_07_biobank_scale.png",
+        body: "Scaling precision neuroimaging from single-subject diffeomorphisms to 49,000+ individuals (Scientific Reports 2024; Nature Medicine 2024; ICLR 2023; Patterns 2023).\n\nStandardized, reproducible Image Derived Phenotypes (IDPs) and longitudinal manifold embeddings allow us to chart brain aging trajectories and subtype Parkinson's & Alzheimer's progression years before symptom onset.\n\n#UKBiobank #PPMI #Parkinsons #Alzheimers #PrecisionMedicine #ICLR #NatureMedicine #BigData"
+      },
+      {
+        id: "post_08_syn_n4",
+        tag: "POST #8 · FOUNDATIONAL ALGORITHMS",
+        title: "SyN & N4ITK: The Math Behind 13,500+ Citations",
+        img: "instagram/posts/post_08_syn_n4.png",
+        body: "Why physical coordinate invariance and diffeomorphic symmetry still matter in the era of deep learning.\n\nWhen we introduced SyN (Avants et al., Medical Image Analysis 2008) and N4ITK (Tustison, Avants et al., IEEE TMI 2010), our goal was invertible, symmetric, physically grounded mappings across anatomy. In 2026, those same principles power Deep Computational Anatomy via Latent-Aligned Multiview Normalizing Flows.\n\n#Diffeomorphisms #ComputationalAnatomy #IEEE #MedicalImageAnalysis #ComputerVision #Math"
+      },
+      {
+        id: "post_09_cingulate_llc",
+        tag: "POST #9 · VENTURE & ADVISORY",
+        title: "Cingulate LLC: Boutique AI & Clinical Trial Biomarker Consultancy",
+        img: "instagram/posts/post_09_cingulate_llc.png",
+        body: "Through Cingulate LLC (Portsmouth, NH), I partner with biotech, pharmaceutical, defense, and academic teams to design high-sensitivity imaging biomarkers, automated multi-modal QC pipelines, and interpretable AI architectures.\n\n📩 Reach out at antsx@antsx.com or explore my updated Executive Resume & CV at stnava.github.io/CV.\n\n#CingulateLLC #BiotechConsulting #PharmaAI #ClinicalTrials #PortsmouthNH #Neuroimaging #AIExecutive"
+      }
+    ];
+
+    function setHandle(handle, cat, el) {
+      document.querySelectorAll('.handle-card').forEach(c => c.classList.remove('active'));
+      el.classList.add('active');
+      document.getElementById('mock-handle').textContent = handle;
+      document.getElementById('mock-category').textContent = cat;
+    }
+
+    function setBio(idx, el) {
+      document.querySelectorAll('.bio-card').forEach(c => c.classList.remove('active'));
+      el.classList.add('active');
+      document.getElementById('mock-bio').textContent = bios[idx];
+    }
+
+    function inspectPost(idx) {
+      const p = posts[idx];
+      document.getElementById('insp-tag').textContent = p.tag;
+      document.getElementById('insp-title').textContent = p.title;
+      document.getElementById('insp-body').textContent = p.body;
+    }
+
+    function copyText(idx, btn) {
+      navigator.clipboard.writeText(posts[idx].body);
+      const orig = btn.textContent;
+      btn.textContent = "✓ Copied Caption!";
+      setTimeout(() => { btn.textContent = orig; }, 1800);
+    }
+
+    const gal = document.getElementById('slide-gallery');
+    posts.forEach((p, idx) => {
+      const div = document.createElement('div');
+      div.className = 'slide-card';
+      div.innerHTML = `
+        <img src="${p.img}" alt="${p.title}" />
+        <div class="slide-card-body">
+          <div class="slide-card-title">${idx + 1}. ${p.title}</div>
+          <div class="slide-card-caption">${p.body}</div>
+          <div class="slide-actions">
+            <a class="btn-sm primary" href="${p.img}" download>⬇ Download 1080×1080 PNG</a>
+            <button class="btn-sm" onclick="copyText(${idx}, this)">📋 Copy Caption</button>
+          </div>
+        </div>
+      `;
+      gal.appendChild(div);
+    });
+  </script>
+</body>
+</html>

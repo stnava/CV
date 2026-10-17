@@ -1,745 +1,562 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% "ModernCV" CV and Cover Letter
-% LaTeX Template
-% Version 1.1 (9/12/12)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% Original author:
-% Xavier Danaux (xdanaux@gmail.com)
-%
-% License:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-%
-% Important note:
-% This template requires the moderncv.cls and .sty files to be in the same
-% directory as this .tex file. These files provide the resume style and themes
-% used for structuring the document.
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Brian B. Avants, Ph.D. — Comprehensive Executive & Academic Curriculum Vitae
+% Modern, Entrepreneurial & Scholarly Edition (pdflatex / xelatex compatible)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[10pt,letterpaper]{article}
 
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
-
-\documentclass[11pt]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
-% \renewcommand{\sfdefault}{\rmdefault}
-% \usepackage{mathpazo}
-\renewcommand{\familydefault}{\sfdefault}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{helvet}
-% \usepackage{apacite,multibib}
-% \newcites{articles,conferences}{{},{}}
-\usepackage[american]{babel}
-\usepackage[sorting=none]{biblatex}
-\bibliography{../avantsCV} % Where journals.bib and phd-references.bib are BibTeX databases
-\addto\captionsenglish{\renewcommand\refname{Publications}}
-\AtBeginDocument{
-    \hypersetup{colorlinks,urlcolor=blue}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[top=0.55in, bottom=0.6in, left=0.55in, right=0.55in]{geometry}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{fontawesome5}
+\usepackage[colorlinks=true,urlcolor=accent,linkcolor=accent]{hyperref}
+
+% Color Palette: Executive Navy & Slate
+\definecolor{primary}{HTML}{0F172A}   % Deep Slate Navy
+\definecolor{accent}{HTML}{1D4ED8}    % Royal Tech Blue
+\definecolor{accentbg}{HTML}{EFF6FF}  % Soft Blue Tint
+\definecolor{textmain}{HTML}{1E293B}  % Charcoal Body Text
+\definecolor{textmuted}{HTML}{475569} % Muted Slate
+\definecolor{rulecolor}{HTML}{CBD5E1} % Subtle Divider
+
+\color{textmain}
+\setlength{\parindent}{0pt}
+
+% Header & Footer
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\scriptsize\color{textmuted}Brian B. Avants, Ph.D. $\;\cdot\;$ Curriculum Vitae $\;\cdot\;$ \href{https://stnava.github.io}{stnava.github.io}}
+\fancyfoot[R]{\scriptsize\color{textmuted}Page \thepage\ of \pageref*{LastPage}}
+
+% Section Formatting
+\titleformat{\section}
+  {\normalsize\bfseries\color{primary}}
+  {}{0em}{}
+  [\vspace{-6pt}{\color{accent}\rule{\textwidth}{1.1pt}}\vspace{-2pt}]
+\titlespacing*{\section}{0pt}{10pt}{5pt}
+
+\titleformat{\subsection}
+  {\small\bfseries\color{accent}}
+  {}{0em}{}
+\titlespacing*{\subsection}{0pt}{6pt}{3pt}
+
+% Custom Entry Commands
+\newcommand{\cvrole}[4]{%
+  \noindent\textbf{\small\color{primary}#1} \hfill {\footnotesize\textbf{\color{accent}#2}}\par\nopagebreak%
+  \noindent{\footnotesize\textit{\color{textmuted}#3} \hfill {\footnotesize\color{textmuted}#4}}\par\nopagebreak\vspace{1.5pt}%
 }
-\makeatletter
-\renewcommand*\bibliographyitemlabel{\@biblabel{\arabic{enumiv}}}
-\makeatother
-\moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
-\moderncvcolor{red} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
-\usepackage{comment}
-\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
-\usepackage[scale=0.75]{geometry} % Reduce document margins
-%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
-%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
 
-%----------------------------------------------------------------------------------------
-%	NAME AND CONTACT INFORMATION SECTION
-%----------------------------------------------------------------------------------------
+\newcommand{\cvline}[2]{%
+  \noindent\begin{tabularx}{\textwidth}{@{} >{\raggedright\arraybackslash\bfseries\footnotesize\color{accent}}p{1.15in} >{\footnotesize\arraybackslash}X @{}}
+    #1 & #2
+  \end{tabularx}\par\vspace{2pt}%
+}
 
-\firstname{Brian} % Your first name
-\familyname{Avants} % Your last name
-
-% All information in this block is optional, comment out any lines you don't need
-\title{Brain mapping: theory \& methods}
-% \address{300 Binney St, 95X55}{Cambridge, MA 02142}
-\email{avants at grasp.cis.upenn.edu}
-\homepage{stnava.github.io}{homepage} % The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
-\extrainfo{My H-index: \href{http://scholar.google.com/citations?hl=en\&user=t4kkowgAAAAJ}{51
-    (link)} \\ Pubmed: \href{http://www.ncbi.nlm.nih.gov/pubmed?term=(\%22Avants\%20B\%22)\%20}{(papers)} }
-% \photo[70pt][0.4pt]{BA} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
-%\quote{"A witty and playful quotation" - John Smith}
-%
-%----------------------------------------------------------------------------------------
+\setlist[itemize]{leftmargin=1.2em, itemsep=1.5pt, topsep=2pt, parsep=0pt, label={\color{accent}\tiny\faSquare}}
+\setlist[enumerate]{leftmargin=1.8em, itemsep=2.5pt, topsep=3pt, parsep=0pt, font=\footnotesize\bfseries\color{accent}}
 
 \begin{document}
 
-\makecvtitle % Print the CV title
+%==============================================================================
+% HEADER
+%==============================================================================
+\begin{center}
+  {\fontsize{22}{26}\selectfont\bfseries\color{primary} BRIAN BEAUMONT AVANTS, Ph.D.}\\[4pt]
+  {\normalsize\bfseries\color{accent} AI \& Machine Learning Executive $\;\cdot\;$ Computational Anatomy Pioneer $\;\cdot\;$ Founder, Cingulate LLC}\\[5pt]
+  {\footnotesize\color{textmuted}
+    \faMapMarker*\enspace Cingulate LLC, 145 High Street, Portsmouth, NH, USA \quad
+    \faPhone*\enspace +1 (415) 508-4437 \quad
+    \faEnvelope\enspace \href{mailto:antsx@antsx.com}{antsx@antsx.com} \quad
+    \faGlobe\enspace \href{https://stnava.github.io}{stnava.github.io}\\[2pt]
+    \faGithub\enspace \href{https://github.com/stnava}{github.com/stnava} $\cdot$ \href{https://github.com/ANTsX}{github.com/ANTsX} \quad
+    \faLinkedin\enspace \href{https://www.linkedin.com/in/brian-avants}{linkedin.com/in/brian-avants} \quad
+    \faIdBadge\enspace ORCID: \href{https://orcid.org/0000-0002-4212-3362}{0000-0002-4212-3362}\\[2pt]
+    \faGraduationCap\enspace \href{https://scholar.google.com/citations?user=t4kkowgAAAAJ&hl=en}{Google Scholar: \textbf{57,000+ Citations} $\cdot$ \textbf{h-index: 71} $\cdot$ \textbf{i10-index: 165}} \quad
+    \faBookMedical\enspace \href{https://pubmed.ncbi.nlm.nih.gov/?term=Avants+B}{PubMed Author Profile}
+  }
+\end{center}
+\vspace{-4pt}
+{\color{rulecolor}\hrule height 0.6pt}
+\vspace{6pt}
 
-\section{Current Position}
-\cvitem{2018--present}{Visiting Associate Professor of Radiology and Medical Imaging, University of Virginia, Charlottesville, VA}
+%==============================================================================
+% EXECUTIVE SUMMARY & IMPACT METRICS
+%==============================================================================
+\noindent{\footnotesize\linespread{1.12}\selectfont
+\textbf{\color{primary}EXECUTIVE \& SCIENTIFIC SUMMARY:} Entrepreneurial AI/ML executive, principal data scientist, and computational imaging leader with over two decades of impact spanning academic medicine, pharmaceutical drug development, clinical trial CROs, and open-source software engineering. Co-creator and lead architect of the \textbf{ANTsX ecosystem} (\texttt{ANTs}, \texttt{ANTsPy}, \texttt{ANTsR}, \texttt{ANTsPyNet}, \texttt{ANTsPyMM}), the international standard for diffeomorphic medical image registration (\texttt{SyN}), morphometry, and deep learning phenotyping (\textbf{57,000+ citations, h-index 71}). Proven executive track record founding \textbf{Cingulate LLC}, directing global Machine Learning teams at \textbf{Invicro}, and leading translational imaging biomarker strategy for the landmark \textit{Aducanumab/Aduhelm} program at \textbf{Biogen}.\par
+}
 
-\cvitem{2018--present}{Founder and Director, Cingulate, LLC, Hampton, NH}
+\vspace{5pt}
+\noindent
+\fcolorbox{rulecolor}{accentbg}{%
+  \begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}
+    \vspace{2pt}
+    \begin{tabularx}{\textwidth}{@{} >{\centering\arraybackslash}X | >{\centering\arraybackslash}X | >{\centering\arraybackslash}X | >{\centering\arraybackslash}X @{}}
+      {\footnotesize\textbf{\color{accent}57,000+ Citations}} & {\footnotesize\textbf{\color{accent}h-index: 71 / i10: 165}} & {\footnotesize\textbf{\color{accent}6x \#1 Global Benchmarks}} & {\footnotesize\textbf{\color{accent}Pharma \& Venture AI Lead}} \\
+      {\scriptsize Foundational imaging \& ML methods} & {\scriptsize 180+ peer-reviewed publications} & {\scriptsize Klein, EMPIRE10, BRATS, SATA} & {\scriptsize Cingulate, Invicro, Biogen, UVA, UPenn}
+    \end{tabularx}
+    \vspace{2pt}
+  \end{minipage}%
+}
 
-\cvitem{2018--present}{Senior Director of Machine Learning, Invicro, Boston, MA}
+%==============================================================================
+% CURRENT & EXECUTIVE POSITIONS
+%==============================================================================
+\section{ENTREPRENEURIAL, EXECUTIVE \& ACADEMIC APPOINTMENTS}
 
-\section{Research Interests}
+\cvrole{Founder \& Principal Consultant}{2018 -- Present}{Cingulate LLC}{Portsmouth, NH}
+{\footnotesize
+\begin{itemize}
+  \item Founder and managing principal of an independent AI, machine learning, and computational neuroimaging consultancy serving biotechnology, pharmaceutical, defense (DoD/CDMRP), and academic research organizations.
+  \item Architect of novel interpretable representation learning and matrix optimization tools, including \textbf{NSA-Flow} (\textit{Non-Negative Stiefel Approximating Flow}, PyTorch) and \textbf{SiMLR} (\textit{Similarity-driven Multi-view Linear Reconstruction}, \textit{Nature Computational Science} 2021).
+  \item Lead multi-modal neuroimaging phenotyping, longitudinal subtyping, and normative database engineering for large-scale studies including the \textbf{UK Biobank}, \textbf{Parkinson's Progression Markers Initiative (PPMI)}, and \textbf{LIMBIC-CENC}.
+\end{itemize}
+}
+\vspace{3pt}
 
-\cvitem{}{\textbf{Deep learning:} high-dimensional multi-output regression,
-segmentation, super resolution, longitudinal embedding, multiple modality prediction,
-generative adversarial networks, evaluation and interpretation of networks.}
+\cvrole{Visiting Associate Professor of Radiology and Medical Imaging}{2018 -- Present}{University of Virginia School of Medicine}{Charlottesville, VA}
+{\footnotesize
+\begin{itemize}
+  \item Co-lead multi-view machine learning and quantitative neuroimaging investigations of repetitive low-level blast exposure and traumatic brain injury (TBI) in military Special Operations personnel and breachers (\textit{Journal of Neurotrauma} 2020, 2022, 2024).
+  \item Co-architect of the \textbf{Normative Neuroimaging Library} (\textit{J. Neurotrauma} 2024) and \textbf{Deep Computational Anatomy via Latent-Aligned Multiview Normalizing Flows} (2026).
+\end{itemize}
+}
+\vspace{3pt}
 
-\cvitem{}{\textbf{Brain mapping:} brain structure, function,
-cognition and its interaction with environment and disease; visualization,
-modality integration, reproducibility, machine learning, longitudinal analysis,
-open data and science.}
+\cvrole{Senior Director of Machine Learning}{2018 -- 2024}{Invicro (a Konica Minolta Company)}{Boston, MA}
+{\footnotesize
+\begin{itemize}
+  \item Directed the enterprise Machine Learning group for a premier global imaging CRO, leading clinical trial software development and integrative AI analytics across neurodegenerative, oncology, cardiopulmonary, and multi-species drug development programs.
+  \item Designed and deployed \textbf{ANTsPyMM}, automated deep learning quality control, 3D concurrent super-resolution, and multi-modal patient representation learning pipelines (\textit{ICLR} 2023, \textit{Patterns} 2023, \textit{European Journal of Human Genetics} 2024).
+\end{itemize}
+}
+\vspace{3pt}
 
-\section{Education}
-\cventry{2005}{Ph.D.}{The University of Pennsylvania}{Philadelphia, PA}{\textit{Bioengineering}}{}% Arguments not required can be left empty
-\cventry{2002}{M.S.}{The University of Pennsylvania}{Philadelphia, PA}{\textit{Computer Science}}{}
-\cventry{1998}{B.A.}{New College of Florida}{Sarasota, FL}{\textit{Physics}}{}
+\cvrole{Visiting Scholar, Institute for Computational and Experimental Research in Mathematics (ICERM)}{Spring 2020}{Brown University}{Providence, RI}
+{\footnotesize
+\begin{itemize}
+  \item Invited visiting scientist for the semester program \textit{``Model and Dimension Reduction in Uncertain and Dynamic Systems''}; developed mathematical foundations for integrative multi-view machine learning (\texttt{SiMLR}).
+\end{itemize}
+}
+\vspace{3pt}
 
-\section{Professional Appointments}
-\cvitem{2020, Spring}{Visiting scientist at Brown University’s Institute for Computational and Experimental Research in Mathematics (ICERM) for the semester program “Model and dimension reduction in uncertain and dynamic systems”.}
-\cvitem{2016--2018}{Associate Director, Imaging Analytics, Biomarkers Group, Biogen}
-\cvitem{2012--2016}{Assistant Professor of Radiology, University of Pennsylvania}
-\cvitem{2008--2012}{Research Associate, Radiology, University of Pennsylvania}
-\cvitem{2006--2008}{Research Fellow, Radiology, University of Pennsylvania}
+\cvrole{Associate Director, Translational \& Advanced Analytics (Imaging Biomarkers)}{2016 -- 2018}{Biogen}{Cambridge, MA}
+{\footnotesize
+\begin{itemize}
+  \item Lead integrative imaging data scientist for the \textbf{Aducanumab (Aduhelm)} clinical trial program (Phase 1b PRIME and Phase 3 ENGAGE/EMERGE); performed confirmatory amyloid PET SUVR analyses and created Figure 1 and the cover visualization for the landmark \textbf{2016 \textit{Nature} publication}.
+  \item Led longitudinal network-specific rs-fMRI biomarker discovery in amyloid-positive cohorts (\textit{Neurobiology of Aging} 2018) and initiated \textbf{ANTsPy} development for deep learning in neuroimaging.
+\end{itemize}
+}
+\vspace{3pt}
 
-% \section{Research Highlights}
-% \cvitem{2008--2015}{Human Subjects Research Training University of Pennsylvania}
+\cvrole{Assistant Professor of Radiology}{2012 -- 2016}{University of Pennsylvania Perelman School of Medicine (PICSL)}{Philadelphia, PA}
+{\footnotesize
+\begin{itemize}
+  \item Directed computational neuroimaging, multi-modal MRI/DTI/PET/ASL methodology, and big-data imaging genetics projects; served as Principal Investigator on NIH BD2K K01 Career Development Award and Image Analysis Lead for IARPA KRNS.
+\end{itemize}
+}
+\vspace{3pt}
 
-\section{Awards and Honors}
-        \cvitem{2014}{Best paper award with Nicholas Tustison at STACOM 2014 challenge.}
-	      \cvitem{2013}{Advanced Normalization Tools with R
-                \href{http://stnava.github.io/ANTsR/}{(ANTsR)}
-                wins BRATS 2013 Tumor Segmentation Challenge at
-                MICCAI, Nagoya, Japan (with Nick Tustison).}
-	      \cvitem{2013}{Advanced Normalization Tools
-                \href{http://stnava.github.io/ANTS/}{(ANTs)}
-                finishes first in segmentation categories
-                at SATA challenge, MICCAI, Nagoya, Japan (with Nick Tustison).}
-	      \cvitem{2012}{Advanced Normalization Tools \href{http://stnava.github.io/ANTs/}{(ANTs)}
-                Software Selected to provide "Standard Setting" image
-                registration results for MICCAI 2013 Multi-Atlas
-                Segmentation Challenge: 4D cardiac, brain and
-                multimodality canine leg MR images}
-            \cvitem{2012}{All \href{http://brianavants.wordpress.com/2013/03/04/ants-in-the-world/}{top finishers} in 2012 MICCAI multi-atlas
-            segmentation used ANTs}
-            \cvitem{2010}{ANTs finished {\em 1st overall} in an unbiased \href{http://www.ncbi.nlm.nih.gov/pubmed/21632295}{EMPIRE10} international lung mapping competition}
-	      \cvitem{2009}{ANTs finished in {\em 1st rank} in an
-                unbiased
-                \href{http://www.ncbi.nlm.nih.gov/pubmed/19195496}{Klein
-                  2009} international brain mapping competition}
-	      \cvitem{2007}{Young Investigator Award, General Medical Computing, MICCAI}
-	      \cvitem{2003}{Best Poster Award SPIE Medical Imaging}
-	      \cvitem{1995}{Future Healthcare Researcher Scholarship, Humana Health Care}
-	      \cvitem{1994}{National Merit Scholarship, New College of Florida, Sarasota, FL}
+\cvrole{Research Associate (2008--2012) $\cdot$ Postdoctoral Research Fellow (2006--2008)}{2006 -- 2012}{University of Pennsylvania, Department of Radiology}{Philadelphia, PA}
+{\footnotesize
+\begin{itemize}
+  \item Developed foundational methods for \textbf{Symmetric Diffeomorphic Image Registration (\texttt{SyN})}, \textbf{N4ITK} bias correction, \textbf{Atropos} multivariate segmentation, \textbf{DiReCT} cortical thickness, and \textbf{Sparse Canonical Correlation Analysis (\texttt{SCCAN})}.
+\end{itemize}
+}
+\vspace{3pt}
 
-\section{Editorial Positions}
-\cvitem{2017}{Topic Editor - Neuroimage special issue on Brain Parcellation}
-\cvitem{2015}{Topic Editor - Frontiers in
-            Neuroinformatics: \href{http://www.frontiersin.org/neuroinformatics/researchtopics/neuroinformatics_with_the_insi/1580}{ITK topic}}
-	      \cvitem{current}{Ad hoc Reviewer - Nature Neuroscience}
-	      \cvitem{---}{Ad hoc Reviewer - Neuroimage}
-	      \cvitem{---}{Ad hoc Reviewer - IEEE Transaction on Medical Imaging}
-	      \cvitem{---}{Ad hoc Reviewer - Pediatrics}
-	      \cvitem{---}{Ad hoc Reviewer - Medical Physics}
-	      \cvitem{---}{Ad hoc Reviewer - Human Brain Mapping}
-	      \cvitem{---}{Ad hoc Reviewer - IEEE Pattern Analysis Machine Intelligence}
-          \cvitem{---}{Ad hoc Reviewer - Medical Image Analysis}
+\cvrole{Algorithm Developer, Imaging Department}{1999 -- 2000}{Siemens Corporate Research}{Princeton, NJ}
+{\footnotesize
+\begin{itemize}
+  \item Developed adaptive minimal-path vessel tracking and 3D segmentation algorithms in CTA/CE-MRA volumetric imaging.
+\end{itemize}
+}
 
-\section{Academic and Institutional Committees}
-\cvitem{2019}{Contributor to brain injury biomarker strategy panel sponsored by Cohen Veteran's Biosciences.}
-\cvitem{2013--present}{Grant Reviewer - Alzheimer's Association}
-\cvitem{2013--present}{Consultant, American College of Radiology Head Injury
-  Institute Information Technology Committee}
-% \cvitem{2013--present}{Doctoral committee member for Efstathios D Gennatas}
-\cvitem{2010--present}{\href{http://www.itk.org}{Insight ToolKit} Version 4 Development Leader
-  and regular contributor to this large-scale industry-academic collaborative effort sponsored by NLM}
-	      \cvitem{2011--present}{International Neuroinformatics Coordinating Facility
-            Registration and Atlasing Task Force Member \href{http://www.youtube.com/watch?v=DOqIJRIB5Q4\&noredirect=1}{(youtube video)}}
-	      \cvitem{2006--present}{Spatial Transformations Informatics Technology
-            Initiative (SIFTI) member}
-	      \cvitem{2006--present}{Neuroimaging Informatics Tools
-                and Resources Clearinghouse member}
+%==============================================================================
+% EDUCATION & TRAINING
+%==============================================================================
+\section{EDUCATION \& POSTDOCTORAL TRAINING}
+\cvline{2006 -- 2008}{\textbf{Postdoctoral Fellowship in Radiology}, University of Pennsylvania, Philadelphia, PA.}
+\cvline{2005}{\textbf{Ph.D. in Bioengineering}, University of Pennsylvania, Philadelphia, PA. Dissertation: \textit{Diffeomorphometry for Computational Anatomy}. NIH Institute for Medicine and Engineering Trainee (2002).}
+\cvline{2002 / 2003}{\textbf{M.S. in Computer Science}, University of Pennsylvania, Philadelphia, PA.}
+\cvline{1998}{\textbf{B.A. in Physics and Literature}, New College of Florida, Sarasota, FL (\textit{With High Honors}; National Merit Scholar).}
 
+%==============================================================================
+% RESEARCH & TECHNICAL INTERESTS
+%==============================================================================
+\section{RESEARCH DOMAINS \& TECHNICAL EXPERTISE}
+\cvline{Deep Learning \& AI}{High-dimensional multi-output regression, 3D segmentation, concurrent super-resolution, longitudinal manifold embedding (Aligned-UMAP), Stiefel manifold flow (\texttt{NSA-Flow}), normalizing flows, multi-modal prediction with missing modalities, and interpretable neural architectures.}
+\cvline{Brain Mapping}{Brain structure, function, perfusion, neuroinflammation, and cognition across development, aging, neurotrauma, and neurodegeneration; multi-view modality integration (\texttt{SiMLR}, \texttt{SCCAN}); disease subtyping and staging (\texttt{subtyper}); reproducible biobank-scale phenotyping.}
+\cvline{Tech Stack}{C++, Python, PyTorch, TensorFlow/Keras, R, Julia, CMake, ITK, Bash, Git, LaTeX, Docker/Singularity, AWS/HPC cloud architectures.}
 
-\section{Major Academic Collaborations}
-       \cvitem{2016--2017} {Collaboration with Dr. Howie Rosen, UCSF Neurology, in multiple modality and longitudinal analysis.}
-       \cvitem{2013--2017} {Collaboration with Dr. Yvette Sheline, UPenn Center for Neuromodulation in Depression and Stress (CNDS), in multiple modality and longitudinal analysis.}
-      \cvitem{2006--2018} {Collaboration with Dr. Martha Farah (UPenn) and Dr. Hallam Hurt (CHOP), understanding the effects of stress and poverty on brain development.}
-      \cvitem{2006--2018} {Collaboration with Dr. Murray Grossman (UPenn),  multiple modality biomarkers for frontotemporal lobar degeneration and related disorders.}
-      \cvitem{2013--2016} {Collaboration with Dr. Ruben Gur (UPenn), Brain-Behavior Laboratory (BBL), in big data analysis of normal adolescent development and early signs of neuropsychiatric disorders.}
-      \cvitem{2013--2016} {Collaboration with Dr. Lyle Ungar (UPenn), analyzing the eigenspaces relating words, sentences and brain activity.}
+%==============================================================================
+% PRIMARY SOFTWARE & OPEN-SOURCE ECOSYSTEM
+%==============================================================================
+\section{FLAGSHIP SOFTWARE CONTRIBUTIONS \& OPEN-SOURCE ECOSYSTEM}
+\cvline{ANTs (2008--)}{Advanced Normalization Tools (\href{https://github.com/ANTsX/ANTs}{github.com/ANTsX/ANTs}): C++ library used globally across academia and industry for medical image registration (\texttt{SyN}), segmentation (\texttt{Atropos}), and cortical thickness; \textbf{Creator \& Lead Architect}.}
+\cvline{ANTsPy \& ANTsPyNet}{Python interface and deep learning library (\href{https://github.com/ANTsX/ANTsPy}{ANTsPy}, \href{https://github.com/ANTsX/ANTsPyNet}{ANTsPyNet}) providing pre-trained 2D/3D networks for brain extraction, Deep Atropos, HippMapp3r, brain age, lesion segmentation, and super-resolution; \textbf{Co-Creator \& Architect}.}
+\cvline{ANTsPyMM (2021--)}{Multi-modal neuroimaging processing and automated QC framework (\href{https://github.com/ANTsX/ANTsPyMM}{ANTsX/ANTsPyMM}) converting structural T1w, FLAIR, rs-fMRI, DTI, and neuromelanin MRI into standardized Image Derived Phenotypes (IDPs); \textbf{Lead Architect}.}
+\cvline{ANTsR (2012--)}{R statistical programming extension of ANTs (\href{https://github.com/ANTsX/ANTsR}{ANTsX/ANTsR}) featuring \texttt{Eigenanatomy}, \texttt{SCCAN}, and \texttt{SiMLR}; \textbf{Creator \& Lead Designer}.}
+\cvline{NSA-Flow (2025--)}{PyTorch package (\href{https://github.com/stnava/nsa_flow}{stnava/nsa\_flow}) implementing Non-Negative Stiefel Approximating Flow for orthogonalish, sparse, interpretable matrix factorization and representation learning; \textbf{Creator}.}
+\cvline{subtyper (2023--)}{Disease subtyping, staging, and latent space evaluation toolkit (\href{https://github.com/stnava/subtyper}{stnava/subtyper}); \textbf{Creator}.}
+\cvline{ITKv4 (2002--)}{The Insight ToolKit (\href{https://itk.org}{itk.org}): \textbf{Lead Designer} for the v4 deformable image registration framework.}
+\cvline{Neuroconductor}{R platform for reproducible neuroimaging data science (\href{https://neuroconductor.org}{neuroconductor.org}); \textbf{Co-Founder \& Contributor}.}
 
-\section{Major Academic Teaching Responsibilities}
-        \cvitem{Summer 2017}{Summer advisor to Nicholas Cullen (B.S. in computer science)
-          for Biogen Biomarkers internship on deep learning and multivariate analysis in
-          neuroimaging of Alzheimer's Disease}
-        \cvitem{2014--2016}{Faculty technical advisor, with clinical advisor Branch Coslett,
-          to Dorian Pustina, postdoctoral scientist studying machine learning applied to stroke;
-          \textit{Dr. Pustina is currently Director of Experimental Neuroimaging at the CHDI foundation
-          for Huntington's disease research.}}
-        \cvitem{2012--2017}{Ph.D. Co-Advisor of Stathis Gennatas, UPenn Doctoral
-                    student, Neuroscience; \textit{currently data scientist at UCSF working with Lyle Ungar.}}
-	      \cvitem{2010--2015}{Ph.D. Advisor of Ben Kandel, UPenn Doctoral
-                student, Bioengineering;  Ben's work was awarded an
-                oral presentation at IPMI-2013; \textit{currently a data scientist at Picwell.}}
-	      \cvitem{2010--2015}{Ph.D. Co-Advisor of Paramveer Dhillon, Doctoral student,
-            UPenn Computer Science with Professor Lyle Ungar;  Paramveer's
-            work was an awarded an oral presentation at PRNI-2013; \textit{currently MIT post-doc studying large-scale networks.}}
-        \cvitem{2012--2013}{Organizer of Provost-sponsored UPenn
-                 Interdisciplinary Seminar Series on multi-modality brain
-                 mapping: See \href{http://brainomics.wordpress.com}{brainomics
-                 link} for full list of activities}
-     %	     \cvitem{2013}{Hosted Moriah Thomason for talk on Fetal Connectome}
-     %	     \cvitem{2013}{Hosted Mert Sabuncu for talk on Relevance Vector Machines}
-     %	     \cvitem{2012}{Hosted David Van Essen for talk on Human Connectome Project}
+%==============================================================================
+% AWARDS AND HONORS
+%==============================================================================
+\section{AWARDS, INTERNATIONAL BENCHMARKS \& HONORS}
+\cvline{2014}{\textbf{Best Paper Award} (with Nicholas J. Tustison) at the STACOM 2014 Challenge, MICCAI.}
+\cvline{2013}{\textbf{1st Place, BRATS 2013 Brain Tumor Segmentation Challenge}, MICCAI, Nagoya, Japan (\texttt{ANTsR}, with N. Tustison).}
+\cvline{2013}{\textbf{1st Place, SATA Segmentation Challenge}, MICCAI, Nagoya, Japan (\texttt{ANTs}, with N. Tustison).}
+\cvline{2012--2013}{\textbf{``Standard Setting'' Image Registration Software} selected for the MICCAI 2013 Multi-Atlas Segmentation Challenge (4D cardiac, brain, and multimodality canine leg MR images); all top finishers in MICCAI 2012 multi-atlas segmentation used \texttt{ANTs}.}
+\cvline{2010}{\textbf{1st Overall} in the unbiased \textbf{EMPIRE10} International Thoracic CT Lung Registration Challenge (\textit{IEEE TMI} 2011).}
+\cvline{2009}{\textbf{1st Rank} in the unbiased \textbf{Klein 2009} International Brain MRI Registration Evaluation of 14 nonlinear algorithms (\textit{NeuroImage} 2009).}
+\cvline{2007}{\textbf{Young Investigator Award}, General Medical Computing, MICCAI, Brisbane, Australia.}
+\cvline{2003}{\textbf{Best Poster Award}, SPIE Medical Imaging.}
+\cvline{1995}{\textbf{Future Healthcare Researcher Scholarship}, Humana Health Care.}
+\cvline{1994}{\textbf{National Merit Scholarship}, New College of Florida, Sarasota, FL.}
 
-            \section{Media Coverage}
-                   \cvitem{2016}{Performed confirmatory amyloid PET analysis in the PRIME dataset and created Figure 1 and cover image associated with \href{http://www.nature.com/nature/journal/v537/n7618/full/nature19323.html}{this Nature publication.}}
-                   \cvitem{2013}{CNN \href{http://www.cnn.com/2013/06/13/health/martha-farah-brain/index.html}{
-                              article}  on collaboration with Martha Farah.}
-            	      \cvitem{2012}{Daily
-                        Mail UK \href{http://www.dailymail.co.uk/news/article-2217722/Reading-How-books-age-helps-boost-brain-Reading-young-age-helps-organ-mature-quicker-later-life.html}{article}
-                        on SFN 2012 presentation}
-            	     \cvitem{2012}{Washington post \href{http://www.washingtonpost.com/blogs/on-parenting/post/childhood-environment-affects-brain-growth-and-function-new-studies-find/2012/10/16/1c226baa-17ba-11e2-a55c-39408fbe6a4b_blog.html}{article} on SFN 2012 presentation}
-            	    \cvitem{2012}{PENN medicine press publicity for our MICCAI 2012
-                        segmentation competition win: \href{http://news.pennmedicine.org/blog/2012/10/image-wizardry-penn-meds-prize-winning-algorithm-speeds-radiologic-testing-process.html}{article}}
+%==============================================================================
+% GRANTS & SPONSORED RESEARCH
+%==============================================================================
+\section{GRANTS, SPONSORED RESEARCH \& CONSORTIUM LEADERSHIP}
+\cvline{2018 -- Present}{\textbf{DoD / CDMRP / LIMBIC-CENC Neurotrauma \& Blast Overpressure Research Programs} (with James R. Stone, M.D., Ph.D. \& Nicholas J. Tustison, D.Sc., University of Virginia): Multi-view neuroimaging biomarkers (\texttt{SiMLR}, \texttt{NSA-Flow}), TSPO PET neuroinflammation, and Normative Neuroimaging Library development in Special Operations personnel and combat breachers (Role: \textbf{Co-Investigator / Lead ML Consultant}).}
+\cvline{2018 -- 2024}{\textbf{Parkinson's Progression Markers Initiative (PPMI) \& Multimodal Neurodegeneration Consortia} (Invicro / Michael J. Fox Foundation / NIH CARD Collaborations): Automated multi-modal MRI/PET phenotyping (\texttt{ANTsPyMM}), Aligned-UMAP longitudinal subtyping, and missing-modality patient representation learning (Role: \textbf{Senior Director of ML / Co-Investigator}).}
+\cvline{10/2014 -- 09/2019}{\textbf{The Imaging Genomics of Pediatric Executive Function}, NIH Big Data to Knowledge (BD2K), \textbf{K01-ES025432-01} (\textbf{Avants, Brian, PI}), \$275,000/annual direct costs, 80\% effort.}
+\cvline{08/2015 -- 05/2018}{\textbf{Multimodal Brain Maturation Indices Modulating Psychopathology and Neurocognition}, NIH \textbf{R01-MH107235-01} (Gur, Ruben, PI), \$275,000/annual direct costs (Role: \textbf{Collaborator}).}
+\cvline{09/2013 -- 08/2018}{\textbf{Neuroscience Neuroimaging Center}, NIH \textbf{P30-NS045839-07} (Detre, John, M.D., PI), \$499,727/annual direct costs (Role: \textbf{Collaborator / Technical Core Lead}).}
+\cvline{2014}{\textbf{Knowledge Representation in Neural Systems (KRNS)}, IARPA-BAA-12-05, 50\% effort (Role: \textbf{Image Analysis Lead}).}
+\cvline{09/2012 -- 07/2013}{\textbf{Age, Hearing Loss, and Sentence Comprehension: Neural Correlates}, NIA/NIH \textbf{5-R01-AG038490-05} (Grossman, Murray, PI), \$291,978/annual direct costs (Role: \textbf{Co-PI}).}
+\cvline{09/2011 -- 08/2015}{\textbf{Continued Development and Maintenance of ITK-SNAP 3D Image Segmentation Software}, NIH \textbf{R01-EB014346-01} (Yushkevich, Paul A., PI), \$350,824/annual direct costs (Role: \textbf{Collaborator}).}
+\cvline{09/2010 -- 08/2015}{\textbf{TDP-43 Proteinopathies in ALS-Dementia}, NIH \textbf{P01-AG032953-02} (Lee, Virginia / Grossman, Murray, PI), \$729,272/annual direct costs (Role: \textbf{Collaborator}).}
+\cvline{06/2010 -- 06/2013}{\textbf{Fundamental Refactoring of Deformable Image Registration in ITK with Distributed Computing and GPU Acceleration}, National Library of Medicine \textbf{HHSN276201000492P} (Gee, James C., PI), \$472,861/annual direct costs (Role: \textbf{Co-PI \& Architecture Lead}).}
+\cvline{02/2011 -- 01/2012}{\textbf{Longitudinal Multi-Modal Neuroimaging of Natural Recovery after Traumatic Brain Injury: A Pilot Study}, Moss Rehab Research Institute / NIH (\textbf{Avants, Brian, PI}), \$7,764/annual direct costs.}
+\cvline{08/2007 -- 04/2013}{\textbf{In Utero Cocaine Exposure: Adolescent \& Young Adult Neurocognitive Outcome}, CHOP / NIH \textbf{R01-DA14129-08} (Gee, James C., PI), \$102,515/annual direct costs (Role: \textbf{Collaborator}).}
+\cvline{06/2010 -- 05/2012}{\textbf{Parkinson's Disease \& Dementia}, NIH \textbf{P50-NS053488-04S1} (Trojanowski / Grossman, PI), \$132,641/annual direct costs (Role: \textbf{Collaborator}).}
+\cvline{09/2009 -- 08/2012}{\textbf{Tract-Specific Analysis of Brain White Matter}, NIH \textbf{R01-NS065347-02} (Gee, James C., PI), \$370,667/annual direct costs (Role: \textbf{Collaborator}).}
+\cvline{09/2009 -- 05/2010}{\textbf{Pediatric Template of Brain Perfusion}, NIMH/NIH \textbf{3-R01-MH080892-01A2S1} (Wang, Jiongjiong, PI) (Role: \textbf{Co-PI}).}
+\cvline{09/2008 -- 09/2011}{\textbf{Advanced Neuroimage Registration Methods: Effects of Prenatal Cocaine Exposure}, NIH (Gee, James C., PI; \textbf{Avants, Brian, Co-PI}), \$354,375/annual direct costs.}
+\cvline{06/2008 -- 01/2011}{\textbf{The Longitudinal Effect of Neurodegeneration on Language-Network Neuroanatomy and Cognition}, UPenn Institute on Aging (Gee, James C., PI; \textbf{Avants, Brian, Co-PI}).}
+\cvline{04/2007 -- 01/2011}{\textbf{Long Term Effects of Prenatal Cocaine Exposure}, NIH (Hurt, Hallam, PI) (Role: \textbf{Research Scientist}).}
+\cvline{04/2006 -- 03/2010}{\textbf{Shape Optimizing Diffeomorphisms for Computational Biology}, NIH / UCLA Center for Computational Biology \textbf{R01-EB006266} (Gee, James C., PI; based on B. Avants' Ph.D. thesis).}
+\cvline{08/2004 -- 06/2009}{\textbf{Surface-based Cortical Analysis in ITK: Segmentation, Conformal Flattening and Statistics}, NLM-NIH ITK Development Grant (Gee, James C., PI; \textbf{Avants, Brian, Co-PI}).}
+\cvline{09/2002 -- 06/2005}{\textbf{Bioengineering Training in Cardiovascular Pathophysiology}, Institute for Medicine and Engineering Training Grant, UPenn (Davies, Peter, PI; \textbf{Trainee}).}
 
-            \section{Professional Skills \& Primary Software Contributions}
-                  \cvitem{Programming Languages}{Software Engineering \&
-                          Programming - C++, CMake, R, Julia, Python, Bash, Rst, LaTeX, Git,
-                          Gerrit, others as needed}
-                  \cvitem{ANTs\\since 2008}{Advanced Normalization Tools: C++ software used broadly in
-                  both academia \& industry for medical image analytics; \textbf{lead developer/designer.}}
-                  \cvitem{ANTsR\\since 2012}{R statistical programming language extension of ANTs with
-                  novel imaging-specific extensions; ideal for teaching; \textbf{lead developer/designer.}}
-                  \cvitem{ANTsPy\\ 2017}{Python statistical programming language extension of ANTs with
-                  novel imaging-specific extensions; ideal for teaching; \textit{*new* with Nicholas Cullen.}}
-                  \cvitem{Neuro\\conductor\\since 2016}{The neuroconductor platform provides new data science support that
-                    bridges novel medical imaging methods with the world's leading statistical platform; \textit{founder and contributor.}}
-                  \cvitem{ITK\\since 2002}{The Insight ToolKit - \textbf{lead designer} for registration framework for
-                  this seminal medical imaging analysis library.}
-            %	      \cvitem{Visualization}{Visualization: e.g. \href{http://vimeo.com/66781467}{a gource of ANTs development}}
-            %	      \cvitem{}{Reproducible science as a teaching tool: e.g. \href{https://github.com/stnava/ANTS_MultiModality}{ANTs tutorial}}
-            %	      \cvitem{}{Other examples: \href{http://brianavants.wordpress.com}{slideshow}}
+%==============================================================================
+% EDITORIAL, ADVISORY & INSTITUTIONAL SERVICE
+%==============================================================================
+\section{EDITORIAL POSITIONS, ADVISORY PANELS \& PROFESSIONAL SERVICE}
+\cvline{2019}{\textbf{Brain Injury Biomarker Strategy Panel Contributor}, sponsored by Cohen Veterans Bioscience.}
+\cvline{2017}{\textbf{Topic Editor}, \textit{NeuroImage} Special Issue on Brain Parcellation.}
+\cvline{2012 -- 2015}{\textbf{Topic Editor}, \textit{Frontiers in Neuroinformatics}: Research Topic on Neuroinformatics with the Insight ToolKit (ITK).}
+\cvline{2013 -- Present}{\textbf{Grant Reviewer}, Alzheimer's Association \& Ad Hoc Federal/International Study Sections.}
+\cvline{2013 -- Present}{\textbf{Consultant}, American College of Radiology (ACR) Head Injury Institute Information Technology Committee.}
+\cvline{2010 -- Present}{\textbf{Insight ToolKit (ITKv4) Development Leader}, NLM/NIH-sponsored industry-academic consortium.}
+\cvline{2011 -- Present}{\textbf{Task Force Member}, International Neuroinformatics Coordinating Facility (INCF) Registration and Atlasing Task Force.}
+\cvline{2006 -- Present}{\textbf{Member}, Neuroimaging Informatics Tools and Resources Clearinghouse (NITRC) \& Spatial Transformations Informatics Technology Initiative (SIFTI).}
+\cvline{Peer Review}{\textbf{Ad Hoc Referee:} \textit{Nature Neuroscience}, \textit{Nature Computational Science}, \textit{Nature Methods}, \textit{Medical Image Analysis}, \textit{NeuroImage}, \textit{IEEE Transactions on Medical Imaging}, \textit{IEEE TPAMI}, \textit{Human Brain Mapping}, \textit{Medical Physics}, \textit{Pediatrics}.}
+\cvline{Memberships}{Organization for Human Brain Mapping (OHBM); International Society for Magnetic Resonance in Medicine (ISMRM).}
 
-            \section{Professional Memberships}
-            	      \cvitem{2011--present}{The Organization for Human Brain Mapping (OHBM)}
-            	      \cvitem{2011--present}{The International Society for
-                            Magnetic Resonance in Medicine (ISMRM)}
+%==============================================================================
+% MENTORSHIP, TEACHING & ACADEMIC COLLABORATIONS
+%==============================================================================
+\section{MENTORSHIP, ADVISING \& MAJOR RESEARCH COLLABORATIONS}
+\cvline{2018 -- Present}{\textbf{Industry \& Consortium Mentorship (Invicro, Cingulate LLC, UVA):} Mentored machine learning scientists, postdoctoral fellows, and Ph.D. interns across deep learning, multimodal representation learning, and longitudinal clinical trial modeling (including collaborations with Anant Dadu, Zhenbang Wu, Brandon Theodorou, and Taylor Gosselin).}
+\cvline{Summer 2017}{\textbf{Industry Internship Advisor to Nicholas Cullen} (Biogen Biomarkers Group): Deep learning and multivariate neuroimaging in Alzheimer's Disease; co-created \texttt{ANTsPy} and co-authored Springer Protocols chapter on deep learning brain segmentation.}
+\cvline{2014 -- 2016}{\textbf{Faculty Technical Advisor to Dr. Dorian Pustina} (UPenn Postdoctoral Scientist, with Dr. H. Branch Coslett): Automated stroke lesion segmentation (\texttt{LINDA}) and multivariate lesion-symptom mapping (\texttt{SCCAN}); \textit{subsequently Director of Experimental Neuroimaging at CHDI Foundation}.}
+\cvline{2012 -- 2017}{\textbf{Ph.D. Co-Advisor to Dr. Efstathios (Stathis) Gennatas} (UPenn Neuroscience): Developmental brain morphometry across childhood to young adulthood (\textit{J. Neurosci.} 2017); \textit{subsequently faculty/scientist at UCSF}.}
+\cvline{2010 -- 2015}{\textbf{Ph.D. Advisor to Dr. Benjamin M. Kandel} (UPenn Bioengineering): Eigenanatomy, sparse linear regression, and ASL perfusion decomposition (Oral presentation at IPMI 2013).}
+\cvline{2010 -- 2015}{\textbf{Ph.D. Co-Advisor to Dr. Paramveer S. Dhillon} (UPenn Computer Science, with Prof. Lyle Ungar): Prior-based Eigenanatomy and functional parcellation (Oral presentation at PRNI 2013; \textit{subsequently MIT postdoc and faculty at University of Michigan}).}
+\cvline{2012 -- 2013}{\textbf{Organizer, UPenn Provost's Interdisciplinary Seminar Series on Multi-Modality Brain Mapping} (\textit{Brainomics}): Hosted David Van Essen (Human Connectome Project), Mert Sabuncu, and Moriah Thomason.}
+\cvline{Key Collaborations}{\textbf{Dr. James R. Stone \& Dr. Nicholas J. Tustison} (UVA/UC Irvine: ANTsX, SiMLR, NSA-Flow, military blast neurotrauma); \textbf{Dr. Mike Nalls \& Dr. Faraz Faghri} (NIH CARD / Data Tecnica: multimodal AI \& Parkinson's subtyping); \textbf{Dr. Murat Maga} (Seattle Children's/UW: evolutionary morphometrics \& \texttt{SlicerMorph}); \textbf{Dr. Murray Grossman} (UPenn FTLD Center); \textbf{Dr. Martha Farah \& Dr. Hallam Hurt} (UPenn/CHOP socioeconomic brain development); \textbf{Dr. Ruben Gur} (UPenn Brain-Behavior Lab); \textbf{Dr. Howie Rosen} (UCSF Neurology); \textbf{Dr. Yvette Sheline} (UPenn CNDS).}
 
-            \section{Languages}
-                \cvitem{English}{Mothertongue}
-                \cvitem{Spanish}{Intermediate/Conversational}
+%==============================================================================
+% MEDIA COVERAGE
+%==============================================================================
+\section{HIGHLIGHTED MEDIA \& COVER FEATURES}
+\cvline{2016}{\textbf{\textit{Nature} Cover Story (Aducanumab PRIME Study):} Performed confirmatory amyloid PET analysis and created Figure 1 and the cover visualization for Sevigny et al., \textit{``The antibody aducanumab reduces A$\beta$ plaques in Alzheimer's disease''} (\textit{Nature} 537, 50--56).}
+\cvline{2013}{\textbf{CNN Health Feature:} Coverage of collaborative neuroimaging research with Dr. Martha Farah on childhood environment and brain development.}
+\cvline{2012}{\textbf{\textit{The Washington Post} \& \textit{Daily Mail} (UK):} International press coverage of Society for Neuroscience (SfN) press conference presentation on early home environment and adolescent cortical thickness.}
+\cvline{2012}{\textbf{Penn Medicine News:} Feature article (\textit{``Image Wizardry''}) highlighting \texttt{ANTs} winning the MICCAI 2012 segmentation competition.}
 
-%            \cvitemwithcomment{English}{Mothertongue}{}
-%            \cvitemwithcomment{Spanish}{Intermediate}{Conversational}
+%==============================================================================
+% TUTORIALS & INVITED LECTURES
+%==============================================================================
+\section{SELECTED BRAIN MAPPING \& DATA SCIENCE TUTORIALS}
+\cvline{May 2019}{``Introduction to the ANTsX Ecosystem,'' Workshop Tutorial, ICERM, Brown University, Providence, RI.}
+\cvline{Jun 2018}{``ANTsX for Decoding and Resting-State fMRI Studies,'' Talk \& Tutorial, Haxby Lab, Dartmouth College, Hanover, NH.}
+\cvline{Aug 2017}{``ANTs and ANTsR for Clinical Applications,'' Two-Day Tutorial, Seattle Children's / University of Washington, Seattle, WA.}
+\cvline{Aug 2016}{``ANTs and ANTsR in Biostatistics,'' Two-Day Tutorial, MD Anderson Cancer Center, Houston, TX.}
+\cvline{Jul 2016}{Data Science Domain Expert Invitee, Park City Mathematics Institute (PCMI), Park City, UT.}
+\cvline{Jun 2015}{``ANTs and ANTsR,'' One-Day Tutorial, USC Center for Imaging Genetics (ENIGMA), Los Angeles, CA.}
+\cvline{May 2015}{``ANTs and ANTsR in Machine Learning,'' Two-Day Tutorial (with N. Tustison), McGill University \& Montreal Neurological Institute, Montreal, QC.}
+\cvline{Sep 2013}{``Multivariate Medical Imaging Analysis with R,'' MICCAI 2013 Tutorial, Nagoya, Japan.}
+\cvline{Jul 2013}{``ANTs \& Eigenanatomy,'' UCLA Neuroimaging Training Program, Los Angeles, CA.}
+\cvline{Sep 2011}{``ITKv4 Image Registration Tutorial'' (with Kitware, Inc.), MICCAI 2011, Toronto, ON.}
+\cvline{Oct 2006}{``Tutorial on Neuromorphometry,'' MICCAI 2006, Copenhagen, Denmark.}
 
-\section{Brain mapping \& data science tutorials}
-\cvitem{May 2019}{"Introduction to the ANTsX Ecosystem", tutorial, ICERM, Brown University, Providence, RI.}
-\cvitem{Jun 2018}{"ANTsX for decoding and resting state fMRI studies", talk and tutorial, Dartmouth College, Hanover, NH \textit{at Haxby Lab.}}
-\cvitem{Aug 2017}{"ANTs and ANTsR for clinical applications", two day tutorial, Seattle Children's/University of Washington, Seattle, WA, Aug 2017, \textit{organized by Murat Maga.}}
-\cvitem{Aug 2016}{"ANTs and ANTsR in biostatistics", two day tutorial at MD Anderson, Houston, TX, Aug 2016, \textit{organized by Hongtu Zhu.}}
-\cvitem{Jul 2016}{Park City Mathematics Institute, Data science domain expert invitee, Park City, Utah, \textit{organized by Rafe Mazzeo, Stanford University.}}
-\cvitem{Jul 2015}{"ANTs and ANTsR", one day tutorial at USC Center for Imaging Genetics, Los Angeles, June 2015, \textit{organized by Neda Jahanshad.}}
-\cvitem{May 2015}{"ANTs and ANTsR in machine learning", two day tutorial with Nick Tustison, McGill University and Montreal Neurological Institute, Montreal, CN, \textit{organized by Tal Arbel.}}
-\cvitem{Sep 2013}{"Multivariate Medical Imaging Analysis with R", MICCAI 2013, Nagoya, Japan.}
-\cvitem{Jul 2013}{"ANTs \& Eigenanatomy", Neuroimaging Training Program, UCLA, Los Angeles, CA.}
-\cvitem{Sep 2011}{"ITKv4 Image Registration Tutorial", MICCAI 2011, Toronto, Canada.}
-\cvitem{Oct 2006}{"Tutorial on Neuromorphometry", MICCAI 2006, Copenhagen, Denmark.}
+\section{SELECTED INVITED LECTURES \& KEYNOTES}
+\cvline{2018 -- 2025}{\textbf{Invited Industry, Consortium \& Academic Presentations:} Michael J. Fox Foundation (MJFF) PPMI Data Science Working Group; LIMBIC-CENC Annual Conferences; ICERM Workshop on Dimension Reduction (Brown University); Invicro Translational Biomarker Symposia.}
+\cvline{Jun 2017}{``Translational Brain Mapping in Neurodegenerative Disease,'' Yale University, New Haven, CT.}
+\cvline{Apr 2017}{Platform Presentation on Quantitative Amyloid PET \& Connectivity Biomarkers, AD/PD 2017, Vienna, Austria.}
+\cvline{Mar 2017}{``Multiple Modality Analysis of Alzheimer's Disease,'' Duke University, Durham, NC.}
+\cvline{Jun 2015}{``Large-Scale, Predictive Analytics for M$^3$ Pediatric Neuroimaging,'' ISMRM Annual Meeting, Toronto, ON.}
+\cvline{May 2015}{``Introduction to the ANTs Ecosystem,'' University of California, San Diego, La Jolla, CA.}
+\cvline{Nov 2014}{``Functional Imaging Analysis with R,'' University of South Carolina, Columbia, SC.}
+\cvline{Aug 2014}{``Big Image Registration,'' Frontiers in Human Brain Mapping Workshop, Princeton University, Princeton, NJ.}
+\cvline{Apr 2014}{``Eigenwords \& Eigenanatomy for Decoding Neural Representations of Semantics,'' HRL Laboratories, Malibu, CA.}
+\cvline{Feb 2014}{``ANTs \& Eigenanatomy for Integrative Brain Mapping,'' University of Calgary, Calgary, AB.}
+\cvline{Oct 2012}{``A Unified Image Registration Framework for ITKv4,'' National Library of Medicine (NIH), Bethesda, MD.}
+\cvline{Oct 2012}{``Early Home Environment Impacts Cortical Thickness in Young Adulthood,'' SfN Press Conference, New Orleans, LA.}
+\cvline{Jun 2012}{``Eigenanatomy Methods for Multivariate Brain Mapping,'' University of California, San Francisco, CA.}
+\cvline{May 2012}{``Early Home Environment Impacts Cortical Thickness,'' Chinese Academy of Sciences, Beijing, China; \& Incheon National University, South Korea.}
+\cvline{2011}{Invited Lectures at UCLA (Dec 2011), Society for Neuroscience (Nov 2011), and Washington University in St. Louis (Jan \& Feb 2011).}
+\cvline{2005 -- 2010}{Invited Lectures at Chinese Academy of Sciences (2010), National Library of Medicine (2010), Columbia University (2009), SRI International (2009), Stanford University (2008), HHMI Janelia Farm (2008), ISBI (2006, 2007), and ISI Utrecht (2005).}
 
-
-\section{Lectures by Invitation}
-\cvitem{Jun 2017}{Invited lecture on translational brain mapping in neurodegenerative disease, Yale University, New Haven CT}
-\cvitem{Mar 2017}{Lecture of multiple modality analysis of Alzheimer's disease, Duke University, Durham, NC}
-\cvitem{Apr 2017}{Platform presentation at ADPD 2017, Vienna, Austria}
-\cvitem{Jun 2015}{"Large-scale, predictive analytics for M$^3$ pediatric neuroimaging", International Society for Magnetic Resonance in Medicine Meeting, Toronto, CN}
-\cvitem{May 2015}{Invited to deliver ANTs introduction talk at University of California, San Diego.  San Diego, CA}
-\cvitem{Nov 2014}{"Functional Imaging Analysis with R", University of South Carolina}
-\cvitem{Aug 2014}{"Big Image Registration", Frontiers in Human Brain Mapping Workshop, Princeton University}
-\cvitem{Apr 2014}{"Eigenwords \& Eigenanatomy for Decoding Neural Representations of Semantics", HRL, Malibu, CA}
-\cvitem{Feb 2014}{"ANTs \& Eigenanatomy for Integrative Brain Mapping ", University of Calgary, Calgary, Alberta}
-\cvitem{Mar 2013}{"Multi-Modality Analysis", CMROI Workshop, University of Pennsylvania, Philadelphia, PA}
-\cvitem{May 2012}{"Early Home Environment Impacts Cortical Thickness in Young Adulthood", Chinese Academy of Sciences, Beijing, China}
-\cvitem{Oct 2012}{"A Unified Image Registration Framework for ITKv4", National Library of Medicine, Bethesda, MD}
-\cvitem{Jul 2012}{"A Unified Registration Framework for ITKv4," WBIR 2012, Nashville, TN}
-\cvitem{Oct 2012}{"Early Home Environment Impacts Cortical Thickness in Young Adulthood," Society for Neuroscience Press Conference, New Orleans, LA}
-\cvitem{May 2012}{"Multivariate Methods for Integrating Multiple Modalities in Brain Mapping", Incheon National University, Incheon, South Korea}
-\cvitem{Jun 2012}{"Eigenanatomy Methods for Multivariate Brain Mapping", University of California, San Francisco}
-\cvitem{Jan 2011}{"Open Source Neonatal Brain Mapping," Washington University at St. Louis, St. Louis, MO}
-\cvitem{Nov 2011}{"Multivariate analyses improve detection power for cortical longitudinal change in dementia", Society for Neuroscience Meeting, Washington D.C.}
-\cvitem{Dec 2011}{"Modern analytics for neuroimaging," University of California, Los Angeles}
-\cvitem{Feb 2011}{"Multivariate methods in neuroimaging", Washington Univ. at St. Louis}
-\cvitem{Sep 2010}{"Open Source in Medical Imaging" Inst. of Automation, Chinese Academy of Sciences, Beijing, China}
-\cvitem{Jun 2010}{``Open Source Image Registration'', National Library of Medicine, Bethesda, MD}
-\cvitem{Sep 2010}{"Multivariate Longitudinal Correlation of Atrophy in White Matter and Gray Matter" MICCAI, Beijing, China}
-\cvitem{Jul 2010}{"Advanced ITK-Based Image Registration,'' NLM, Bethesda, MD}
-\cvitem{Sep 2010}{``Sparse Unbiased Analysis of Anatomical Variance in Longitudinal Neuroimaging,'' MICCAI 2010, Beijing China. (45 of 786 submissions accepted for oral presentation)}
-\cvitem{Jun 2009}{``Grammatical comprehension and longitudinal adolescent brain development: a multivariate DTI and T1 analysis,'' Human Brain Mapping 2009, San Francisco, CA}
-\cvitem{Jul 2009}{``Democratizing Hippocampus Labeling,'' Columbia University, NY, NY}
-\cvitem{Jul 2009}{``Multivariate Analysis of the Adolescent Brain and its Association with Language Development,'' Columbia University, NY, NY}
-\cvitem{Mar 2009}{``Follow-Up on Effects of Prenatal Cocaine Exposure on the Young Adult Brain,'' Eastern SPR, Philadelphia, PA}
-\cvitem{Jul 2009}{``Multivariate Methods and Applications for Neuroimaging,'' SRI, Menlo Park, CA}
-\cvitem{Jun 2008}{``The Longitudinal Effect of Neurodegeneration of Language Network Neuroanatomy and Cognition,'' Pendergrass Symposium, Univ. of Penn. Philadelphia, PA}
-\cvitem{Sep 2008}{``Template-based Brain Mapping with Diffeomorphisms,'' Janelia Farm, Ashburn, Virginia}
-\cvitem{Oct 2008}{``Multivariate Template-based Retinotopic Mapping,'' Stanford Vision Science Group, Stanford University, Palo Alto, CA}
-\cvitem{Apr 2007}{``Symmetric Shape Averaging in the Diffeomorphic Space", International Symposium Biomedical Imaging, Washington DC}
-\cvitem{Oct 2007}{``Spatiotemporal Normalization for Longitudinal Analysis of Gray Matter Atrophy in Frontotemporal Dementia,'' MICCAI 2007, Brisbane, Australia}
-\cvitem{Apr 2006}{``Geodesic shape averaging,'' IEEE International Symposium on Biomedical Imaging 2006, Alexandria, VA}
-\cvitem{Nov 2007}{``Mapping Statistical Patterns in Medical Images via Diffeomorphisms,'' Univ. of Pennsylvania, CIS 520 lecture, Philadelphia, PA}
-\cvitem{Jul 2005}{``Shape Optimizing Diffeomorphisms in Medical Imaging,'' ISI, Utrecht, NL}
-
-
-
-\section{Grants}
-
-% \subsection{Past}
-\cvitem{10/2014-9/2019}{The Imaging Genomics of Pediatric Executive Function, NIH,
-  K01ES025432-01, (Avants, Brian, PI), \$275,000/annual direct
-  costs, 80\% effort (Big data to knowledge (BD2K) research grant.)}
-
-\cvitem{08/01/15-05/31/18}{Multimodal brain maturation indices modulating psychopathology and neurocognition, NIH, R01MH107235-01, (Avants, Brian, collaborator, Gur, Ruben, PI), \$275,000/annual direct costs, 5\% effort (via cost sharing with K01.)}
-
-\cvitem{9/2013-8/2018}{Neuroscience Neuroimaging Center, NIH, P30-NS045839-07, (Detre, John, M.D., PI), \$499,727/annual direct costs, 10\% effort (Role in grant: Collaborator, To provide support for technical aspects of neuroimaging using MRI.)}
-
-\cvitem{2014}{IARPA-sponsored Knowledge Representation in Neural Systems
-  (KRNS), IARPA-BAA-12-05, 50\% effort (Role in grant: Image
-  Analysis Lead)}
-
-\cvitem{9/2012-7/2013}{Age, Hearing Loss, And Sentence Comprehension: Neural Correlates, National Institute On Aging/Nih/Dhhs, 5-R01-AG-038490-05, (Murray Grossman, PI), \$291,978/annual direct costs (Role in grant: Co-PI)}
-
-\cvitem{9/2011-8/2015}{Continued Development and Maintenance of ITK-SNAP 3D Image Segmentation Software, NIH, R01-EB014346-01, (Yushkevich, Paul A., Ph.D., PI), \$350,824/annual direct costs (Role in grant: Collaborator)}
-
-\cvitem{9/2010-8/2015}{TDP-43 Proteinopathies in ALS-Dementia, NIH, P01-AG032953-02, (Lee, Virginia/Grossman, Murray, PI), \$729,272/annual direct costs (Role in grant: Collaborator)}
-
-\cvitem{6/2010-6/2013}{Fundamental Refactoring Of Deformable Image Registration In Itk With Distributed Computing And Gpu Acceleration, National Library Of Medicine, HHSN276201000492P, (JAMES C GEE, PI), \$472,861/annual direct costs (Role in grant: Co-PI)}
-
-\cvitem{8/2007-4/2013}{In Utero Cocaine Exposure: Adolescent \& Young Adult Neurocognitive Outcome, Children's Hospital of Philadelphia, R01-DA14129-08, (Gee, James C., Ph.D., PI), \$102,515/annual direct costs (Role in grant: Collaborator, To explore the effects of gestational cocaine exposure on neurocognitive outcome of adolescents and young adults)}
-
-\cvitem{2/2011-1/2012}{Longitudinal Multi-model Neuroimaging of Natural Recovery after Traumatic Brain Injury: A Pilot Study, Moss Rehab Research Institute/NIH, (\textbf{Avants}, Brian Ph.D., PI), \$7,764/annual direct costs (Role in grant: PI)}
-
-
-\cvitem{6/2010-5/2012}{Parkinsons Disease \& Dementia, NIH, P50-NS053488-04S1, (Trojanowski/Grossman, PI), \$132,641/annual direct costs (Role in grant: Collaborator)}
-
-
-\cvitem{9/2009-5/2010}{Pediatric Template Of Brain Perfusion, National Institute Of Mental Health/Nih/Dhhs, 3-R01-MH-080892-01A2S1, (JiongJiong Wang, PI) \$0/annual direct costs, (Role in grant: Co-PI)}
-
-\cvitem{9/2009-8/2012}{Tract-Specific Analysis of Brain White Matter, NIH, R01-NS065347-02, (Gee, James C., Ph.D., PI), \$370,667/annual direct costs, (Role in grant: Collaborator)}
-
-
-\cvitem{9/2008-9/2011}{Advanced Neuroimages Registration Methods: Effects of Prenatal Cocaine Exposure, NIH, (James C. Gee, PI: Brian \textbf{Avants}, Co-Investigator), \$354,375/annual direct costs, (Role in grant: Co-PI)}
-
-
-\cvitem{6/2008-1/2011}{The Longitudinal Effect of Neurodegeneration onLanguage-Network Neuroanatomy and Cognition, University of Pennsylvania, Institute of Aging, (James C. Gee, PI: Brian \textbf{Avants}, Co-Investigator), (Role in grant: Co-PI)}
-
-
-\cvitem{4/2007-1/2011}{Long Term Effects of Prenatal Cocaine Exposure, NIH, (Hallam Hurt, PI), (Role in grant: Research Scientist)}
-
-
-\cvitem{4/2006-3/2010}{Shape Optimizing Diffeomorphisms for Computational Biology, NIH - UCLA Center for Computational Biology, R01-EB006266, (James C. Gee, PI) (Role in grant: Research Scientist)}
-
-
-\cvitem{8/2004-6/2009}{Surface-based Cortical Analysis in ITK: Segmentation,
-  Conformal Flattening and Statistics, NLM-NIH ITK Development Grant,
- (James C. Gee, PI, Role in grant: Co-PI, Open source development)}
-
-
-\cvitem{9/2002-6/2010}{Bioengineering Training in Cardiovascular Pathophysiology,
-  Institute for Medicine and Engineering Training Grant, University of Pennsylvania, Philadelphia, PA, (Peter Davies, PI), (Role in grant: Trainee )}
-
-
-\section{Articles Under Review/Development}
+%==============================================================================
+% PUBLICATIONS
+%==============================================================================
+\section{PEER-REVIEWED JOURNAL PUBLICATIONS \& RECENT PREPRINTS (1999 -- 2026)}
+{\footnotesize\color{textmuted}
+Full citation metrics (\textbf{57,000+ citations, h-index: 71}): \href{https://scholar.google.com/citations?hl=en&user=t4kkowgAAAAJ&view_op=list_works&sortby=pubdate}{Google Scholar Profile} $\;\cdot\;$ \href{https://pubmed.ncbi.nlm.nih.gov/?term=Avants+B}{PubMed Index}\par\vspace{3pt}
+}
 
 \begin{enumerate}
-\item \textbf{Avants}, B. B.; Tustison, N. J.; Stone, J. R. (2018), \textit{Software for learning multi-view brain embeddings and application to imaging genetics of depression}, Frontiers in Neuroinformatics (submitted)
-\item \textit{A reproducible analysis pipeline for population studies of ASL-based cerebral blood flow}, last author, (in process)
-\item \textit{Environmental influences on early childhood hippocampal growth}, with Martha Farah and Hallam Hurt, (in process)
-\item \textit{Joint Fusion for optimal template creation}, with Nicholas J Tustison, (in process)
-\item \textit{The ANTs longitudinal cortical thickness pipeline}, with Nicholas J Tustison, (submitted)
+{\footnotesize
+  % --- 2026 ---
+  \item Tustison, N. J.; \textbf{Avants, B. B.}; Cook, P. A.; Gee, J. C.; Stone, J. R. (2026). \textit{Deep Computational Anatomy via Latent-Aligned Multiview Normalizing Flows}. bioRxiv / PubMed (PMID: 42146611).
+  \item Theodorou, B.; Dadu, A.; \textbf{Avants, B.}; Nalls, M.; Sun, J.; Faghri, F. (2026). \textit{Realistic PET image synthesis from MRI for automated inference of brain atrophy and Alzheimer's}. \textbf{iScience}, 29(5), 115747.
+
+  % --- 2025 ---
+  \item \textbf{Avants, B. B.}, et al. (2025). \textit{Non-Negative Stiefel Approximating Flow: Orthogonalish Matrix Optimization for Interpretable Embeddings}. \textbf{arXiv}:2511.06425.
+  \item \textbf{Avants, B. B.}; Tustison, N. J.; Stone, J. R. (2025). \textit{Joint representations from multi-view MRI-based learning support cognitive and functional performance domains}. \textbf{medRxiv}.
+
+  % --- 2024 ---
+  \item Tustison, N. J.; Yassa, M. A.; Rizvi, B.; Cook, P. A.; Holbrook, A. J.; Sathishkumar, M. T.; Tustison, M. G.; Gee, J. C.; Stone, J. R.; \textbf{Avants, B. B.} (2024). \textit{ANTsX neuroimaging-derived structural phenotypes of UK Biobank}. \textbf{Scientific Reports}, 14(1), 8848.
+  \item Stone, J. R.; \textbf{Avants, B. B.}; Tustison, N. J.; Gill, J.; Wilde, E. A.; Neumann, K. D.; Gladney, L. A.; Kilgore, M. O.; Bowling, F.; Wilson, C. M. (2024). \textit{Neurological effects of repeated blast exposure in Special Operations personnel}. \textbf{Journal of Neurotrauma}, 41(7--8), 942--956.
+  \item Tustison, N.; \textbf{Avants, B.}; Whitlow, C. T.; Lancashire, L.; Bhatt, S. D.; Haas, M. (2024). \textit{Normative Neuroimaging Library: Designing a Comprehensive and Demographically Diverse Dataset of Healthy Controls to Support Traumatic Brain Injury Diagnostic and Therapeutic Development}. \textbf{Journal of Neurotrauma}, 41(23--24), 2497--2512.
+  \item Yang, Z.; Wen, J.; Erus, G.; \textbf{Avants, B. B.}, et al. (2024). \textit{Brain aging patterns in a large and diverse cohort of 49,482 individuals}. \textbf{Nature Medicine}, 30, 3015--3026.
+  \item \textbf{Avants, B. B.}; Fonville, L.; Hampton, O.; Reardon, A.; Stenger, A.; Wang, X.; Tustison, N. J.; Stone, J. R.; Cook, P. A.; Marebwa, B.; Chahine, L. M. (2024). \textit{Magnetic Resonance Imaging Data Phenotypes for the Parkinson's Progression Markers Initiative}. \textbf{medRxiv}.
+  \item Dennis, E. L.; Rowland, J.; Esopenko, C.; Tustison, N.; Newsome, M.; \textbf{Avants, B.}; Gill, J.; Hinds, S.; Kenney, K.; Lindsey, H. (2024). \textit{Brain volume changes following blast-related mild TBI in service members and veterans: a LIMBIC-CENC study}. \textbf{medRxiv}, 2024.02.27.24303460.
+  \item Polfus, L.; Shirazi, H. M.; Reardon, A.; Varga, M.; Tchourbanov, A.; Gosselin, T.; Dadu, A.; \textbf{Avants, B.}; Faghri, F.; Nalls, M.; Hesterman, J. (2024). \textit{Genetic and brain imaging phenotype joint prediction of longitudinal Parkinson's Disease subtypes}. \textbf{European Journal of Human Genetics}, 32, 653.
+
+  % --- 2023 ---
+  \item Wu, Z.; Dadu, A.; Tustison, N.; \textbf{Avants, B.}; Nalls, M.; Sun, J.; Faghri, F. (2023). \textit{Multimodal Patient Representation Learning with Missing Modalities and Labels}. \textbf{The Twelfth International Conference on Learning Representations (ICLR)}.
+  \item Dadu, A.; Satone, V. K.; Kaur, R.; Koretsky, M. J.; Iwaki, H.; Qi, Y. A.; Ramos, D. M.; \textbf{Avants, B.}; Hesterman, J.; Gunn, R.; Nalls, M.; Faghri, F. (2023). \textit{Application of Aligned-UMAP to longitudinal biomedical studies}. \textbf{Patterns} (Cell Press), 4(6), 100741.
+  \item \textbf{Avants, B.}; Tustison, N. J.; McMillan, C. T.; Gosselin, T.; Gunn, R.; Hesterman, J. (2023). \textit{Concurrent 3D super resolution on intensity and segmentation maps improves detection of structural effects in neurodegenerative disease}. \textbf{medRxiv}, 2023.02.02.23285376.
+
+  % --- 2022 ---
+  \item Elhamod, M.; Diamond, K. M.; Maga, A. M.; Bakis, Y.; Bart Jr, H. L.; Mabee, P.; Dahdul, W.; Leipzig, J.; Greenberg, J.; \textbf{Avants, B.} (2022). \textit{Hierarchy-guided neural network for species classification}. \textbf{Methods in Ecology and Evolution}, 13(3), 642--652.
+  \item \textbf{Avants, B. B.}; Tustison, N. J. (2022). \textit{Mapping the Spatial Distribution of Lesions in Stroke: Effect of Diffeomorphic Registration Strategy in the ATLAS Dataset}. In \textbf{Lesion-to-Symptom Mapping: Principles and Tools} (pp. 79--94), Springer.
+  \item Stone, J.; \textbf{Avants, B.}; Tustison, N.; Gill, J.; Wilde, E.; Neumann, K.; Gladney, L.; Kilgore, M.; Modica, L. T.; Bowling, F. (2022). \textit{Increased Neuroinflammation in special operators with a history of blast overpressure exposure}. \textbf{Journal of Neurotrauma}, 39(11--12), A27--A28.
+
+  % --- 2021 ---
+  \item \textbf{Avants, B. B.}; Tustison, N. J.; Stone, J. R. (2021). \textit{Similarity-driven multi-view embeddings from high-dimensional biomedical data}. \textbf{Nature Computational Science}, 1(2), 143--152.
+  \item Tustison, N. J.; Cook, P. A.; Holbrook, A. J.; Johnson, H. J.; Muschelli, J.; Devenyi, G. A.; Duda, J. T.; Das, S. R.; Cullen, N. C.; Gillen, D. L.; Yassa, M. A.; Stone, J. R.; Gee, J. C.; \textbf{Avants, B. B.} (2021). \textit{The ANTsX ecosystem for quantitative biological and medical imaging}. \textbf{Scientific Reports}, 11(1), 9068.
+  \item Tustison, N. J.; Altes, T. A.; Qing, K.; He, M.; Miller, G. W.; \textbf{Avants, B. B.}; Shim, Y. M.; Gee, J. C.; Mugler III, J. P.; Mata, J. F. (2021). \textit{Image-versus histogram-based considerations in semantic segmentation of pulmonary hyperpolarized gas images}. \textbf{Magnetic Resonance in Medicine}, 86(5), 2822--2836.
+  \item Diamond, K. M.; \textbf{Avants, B. B.}; Maga, A. M. (2021). \textit{Machine learning-based segmentation and landmarking of 2D fish images}. \textbf{Integrative and Comparative Biology}, 61, E1100--E1101.
+
+  % --- 2019 - 2020 ---
+  \item Stone, J. R.; \textbf{Avants, B. B.}; Tustison, N. J.; Wassermann, E. M.; Gill, J.; Polejaeva, E.; Dell, K. C.; Carr, W.; Yarnell, A. M.; LoPresti, M. L. (2020). \textit{Functional and structural neuroimaging correlates of repetitive low-level blast exposure in career breachers}. \textbf{Journal of Neurotrauma}, 37(23), 2468--2481.
+  \item Tustison, N. J.; Holbrook, A. J.; \textbf{Avants, B. B.}; Roberts, J. M.; Cook, P. A.; Reagh, Z. M.; Duda, J. T.; Stone, J. R.; Gillen, D. L.; Yassa, M. A. (2019). \textit{Longitudinal Mapping of Cortical Thickness Measurements: An ANTs Longitudinal Cortical Thickness Pipeline}. \textbf{NeuroImage}, 199, 523--536.
+
+  % --- 2018 ---
+  \item \textbf{Avants, B. B.}; Hutchison, R. M.; Mikulskis, A.; Salinas-Valenzuela, C.; Hargreaves, R.; Beaver, J.; Chiao, P.; ADNI (2018). \textit{Amyloid beta--positive subjects exhibit longitudinal network-specific reductions in spontaneous brain activity}. \textbf{Neurobiology of Aging}, 74, 191--201.
+  \item Chiao, P.; Bedell, B. J.; \textbf{Avants, B. B.}; Zijdenbos, A. P.; Grand'Maison, M.; O'Neill, P.; O'Gorman, J.; Chen, T.; Koeppe, R. (2018). \textit{Impact of Reference/Target Region Selection on Amyloid PET Standard Uptake Value Ratios in the Phase 1b PRIME Study of Aducanumab}. \textbf{Journal of Nuclear Medicine}, 60(1), 100--106.
+  \item Muschelli, J.; Fortin, J. P.; Gherman, A.; \textbf{Avants, B. B.}; Whitcher, B.; Caffo, B.; Crainiceanu, C. (2018). \textit{Neuroconductor: An R platform for medical imaging analysis}. \textbf{Biostatistics}, 20(2), 218--239.
+  \item Pustina, D.; \textbf{Avants, B. B.}; Faseyitan, O. K.; Medaglia, J. D.; Coslett, H. B. (2018). \textit{Improved accuracy of lesion to symptom mapping with multivariate sparse canonical correlations}. \textbf{Neuropsychologia}, 115, 154--166.
+
+  % --- 2017 ---
+  \item Pustina, D.; Coslett, H. B.; Ungar, L.; Faseyitan, O. K.; Medaglia, J. D.; \textbf{Avants, B. B.}; Schwartz, M. F. (2017). \textit{Enhanced estimations of post-stroke aphasia severity using stacked multimodal predictions}. \textbf{Human Brain Mapping}, 38(11), 5603--5615.
+  \item Maga, A. M.; Tustison, N. J.; \textbf{Avants, B. B.} (2017). \textit{A population level atlas of Mus musculus craniofacial skeleton and automated image-based shape analysis}. \textbf{Journal of Anatomy}, 231(3), 433--443.
+  \item Gennatas, E. D.; \textbf{Avants, B. B.}; Wolf, D. H.; Satterthwaite, T. D.; Ruparel, K.; Ciric, R.; Hakonarson, H.; Gur, R. E.; Gur, R. C. (2017). \textit{Age-related effects and sex differences in gray matter density, volume, mass, and cortical thickness from childhood to young adulthood}. \textbf{Journal of Neuroscience}, 37(20), 5065--5073.
+  \item Xie, L.; Pluta, J. B.; Das, S. R.; Wisse, L. E. M.; Wang, H.; Mancuso, L.; Kliot, D.; \textbf{Avants, B. B.}; Ding, S.; Manj{\'o}n, J. V.; Yushkevich, P. A. (2017). \textit{Multi-template analysis of human perirhinal cortex in brain MRI: Explicitly accounting for anatomical variability}. \textbf{NeuroImage}, 144, 183--202.
+
+  % --- 2016 ---
+  \item Olm, C. A.; Kandel, B. M.; \textbf{Avants, B. B.}; Detre, J. A.; Gee, J. C.; Grossman, M.; McMillan, C. T. (2016). \textit{Arterial spin labeling perfusion predicts longitudinal decline in semantic variant primary progressive aphasia}. \textbf{Journal of Neurology}, 263(10), 1927--1938.
+  \item Kandel, B. M.; \textbf{Avants, B. B.}; Gee, J. C.; McMillan, C. T.; Erus, G.; Doshi, J.; Davatzikos, C.; Wolk, D. A. (2016). \textit{White matter hyperintensities are more highly associated with preclinical Alzheimer's disease than imaging and cognitive markers of neurodegeneration}. \textbf{Alzheimer's \& Dementia: Diagnosis, Assessment \& Disease Monitoring}, 4, 18--27.
+  \item Legant, W. R.; Shao, L.; Grimm, J. B.; Brown, T. A.; Milkie, D. E.; \textbf{Avants, B. B.}; Lavis, L. D.; Betzig, E. (2016). \textit{High-density three-dimensional localization microscopy across large volumes}. \textbf{Nature Methods}, 13(4), 359--365.
+  \item Pustina, D.; Coslett, H. B.; Turkeltaub, P. E.; Tustison, N. J.; Schwartz, M. F.; \textbf{Avants, B. B.} (2016). \textit{Automated segmentation of chronic stroke lesions using LINDA: Lesion identification with neighborhood data analysis}. \textbf{Human Brain Mapping}, 37(4), 1405--1421.
+  \item Betancourt, L. M.; \textbf{Avants, B. B.}; Farah, M. J.; Brodsky, N. L.; Wu, J.; Ashtari, M.; Hurt, H. (2016). \textit{Effect of socioeconomic status (SES) disparity on neural development in female African-American infants at age 1 month}. \textbf{Developmental Science}, 19(6), 947--956.
+  \item \textbf{Avants, B. B.}; Hackman, D. A.; Betancourt, L. M.; Lawson, G. M.; Hurt, H.; Farah, M. J. (2016). \textit{Relation of Childhood Home Environment to Cortical Thickness in Late Adolescence: Specificity of Experience and Timing}. \textbf{PLOS ONE}, 10(10), e0138217.
+
+  % --- 2015 ---
+  \item \textbf{Avants, B. B.}; Johnson, H. J.; Tustison, N. J. (2015). \textit{Neuroinformatics and the Insight ToolKit}. \textbf{Frontiers in Neuroinformatics}, 9, 5.
+  \item Pustina, D.; \textbf{Avants, B. B.}; Sperling, M.; Gorniak, R.; He, X.; Doucet, G.; Barnett, P.; Mintzer, S.; Sharan, A.; Tracy, J. (2015). \textit{Predicting the laterality of temporal lobe epilepsy from PET, MRI, and DTI: A multimodal study}. \textbf{NeuroImage: Clinical}, 9, 20--31.
+  \item \textbf{Avants, B. B.}; Duda, J. T.; Kilroy, E.; Krasileva, K.; Jann, K.; Kandel, B. T.; Tustison, N. J.; Yan, L.; Jog, M.; Smith, R.; Wang, Y.; Dapretto, M.; Wang, D. J. J. (2015). \textit{The pediatric template of brain perfusion}. \textbf{Scientific Data}, 2, 150003.
+  \item Wu, J.; Awate, S. P.; Licht, D. J.; Clouchoux, C.; du Plessis, A. J.; \textbf{Avants, B. B.}; Vossough, A.; Gee, J. C.; Limperopoulos, C. (2015). \textit{Assessment of MRI-Based Automated Fetal Cerebral Cortical Folding Measures in Prediction of Gestational Age in the Third Trimester}. \textbf{AJNR Am J Neuroradiol}, 36(7), 1369--1374.
+  \item Isgum, I.; Benders, M. J.; \textbf{Avants, B.}; Cardoso, M. J.; Counsell, S. J., et al. (2015). \textit{Evaluation of automatic neonatal brain segmentation algorithms: The NeoBrainS12 challenge}. \textbf{Medical Image Analysis}, 20(1), 135--151.
+  \item Kandel, B. M.; Wang, D. J. J.; Detre, J. A.; Gee, J. C.; \textbf{Avants, B. B.} (2015). \textit{Decomposing cerebral blood flow MRI into functional and structural components: a non-local approach based on prediction}. \textbf{NeuroImage}, 105, 156--170.
+  \item Kandel, B. M.; \textbf{Avants, B. B.}; Gee, J. C.; Arnold, S. E.; Wolk, D. A. (2015). \textit{Neuropsychological Testing Predicts Cerebrospinal Fluid Amyloid-$\beta$ in Mild Cognitive Impairment}. \textbf{Journal of Alzheimer's Disease}, 46(4), 901--912.
+  \item Kandel, B. M.; Wang, D. J. J.; Gee, J. C.; \textbf{Avants, B. B.} (2015). \textit{Eigenanatomy: sparse dimensionality reduction for multi-modal medical image analysis}. \textbf{Methods}, 73, 43--53.
+
+  % --- 2014 ---
+  \item Adler, D. H.; Pluta, J.; Kadivar, S.; Craige, C.; Gee, J. C.; \textbf{Avants, B. B.}; Yushkevich, P. A. (2014). \textit{Histology-derived volumetric annotation of the human hippocampal subfields in postmortem MRI}. \textbf{NeuroImage}, 84, 505--523.
+  \item \textbf{Avants, B. B.}; Tustison, N. J.; Stauffer, M.; Song, G.; Wu, B.; Gee, J. C. (2014). \textit{The Insight ToolKit image registration framework}. \textbf{Frontiers in Neuroinformatics}, 8, 44.
+  \item \textbf{Avants, B. B.}; Libon, D. J.; Rascovsky, K.; Boller, A.; McMillan, C. T.; Massimo, L.; Coslett, H. B.; Chatterjee, A.; Gross, R. G.; Grossman, M. (2014). \textit{Sparse canonical correlation analysis relates network-level atrophy to multivariate cognitive measures in a neurodegenerative population}. \textbf{NeuroImage}, 84, 698--711.
+  \item Cook, P. A.; McMillan, C. T.; \textbf{Avants, B. B.}; Peelle, J. E.; Gee, J. C.; Grossman, M. (2014). \textit{Relating brain anatomy and cognitive ability using a multivariate multimodal framework}. \textbf{NeuroImage}, 99, 477--486.
+  \item Dhillon, P. S.; Wolk, D. A.; Das, S. R.; Ungar, L. H.; Gee, J. C.; \textbf{Avants, B. B.} (2014). \textit{Subject-specific functional parcellation via Prior Based Eigenanatomy}. \textbf{NeuroImage}, 99, 14--27.
+  \item McMillan, C. T.; \textbf{Avants, B. B.}; Cook, P.; Ungar, L.; Trojanowski, J. Q.; Grossman, M. (2014). \textit{The power of neuroimaging biomarkers for screening frontotemporal dementia}. \textbf{Human Brain Mapping}, 35(9), 4827--4840.
+  \item McMillan, C. T.; Toledo, J. B.; \textbf{Avants, B. B.}; Cook, P. A.; Wood, E. M.; Suh, E.; Irwin, D. J.; Powers, J.; Olm, C.; Elman, L.; McCluskey, L.; Schellenberg, G. D.; Lee, V. M.-Y.; Trojanowski, J. Q.; Van Deerlin, V. M.; Grossman, M. (2014). \textit{Genetic and neuroanatomic associations in sporadic frontotemporal lobar degeneration}. \textbf{Neurobiology of Aging}, 35(6), 1473--1482.
+  \item Tustison, N. J.; Cook, P. A.; Klein, A.; Song, G.; Das, S. R.; Duda, J. T.; Kandel, B. M.; van Strien, N.; Stone, J. R.; Gee, J. C.; \textbf{Avants, B. B.} (2014). \textit{Large-scale evaluation of ANTs and FreeSurfer cortical thickness measurements}. \textbf{NeuroImage}, 99, 166--179.
+
+  % --- 2013 ---
+  \item Hopkins, W. D.; \textbf{Avants, B. B.} (2013). \textit{Regional and Hemispheric Variation in Cortical Thickness in Chimpanzees (Pan troglodytes)}. \textbf{Journal of Neuroscience}, 33(12), 5241--5248.
+  \item Kim, J.; \textbf{Avants, B.}; Whyte, J.; Gee, J. C. (2013). \textit{Methodological considerations in longitudinal morphometry of traumatic brain injury}. \textbf{Frontiers in Human Neuroscience}, 7, 52.
+  \item Lawson, G. M.; Duda, J. T.; \textbf{Avants, B. B.}; Wu, J.; Farah, M. J. (2013). \textit{Associations between children's socioeconomic status and prefrontal cortical thickness}. \textbf{Developmental Science}, 16(5), 641--652.
+  \item McMillan, C. T.; \textbf{Avants, B.}; Irwin, D. J.; Toledo, J. B.; Wolk, D. A.; Van Deerlin, V. M.; Shaw, L. M.; Trojanowski, J. Q.; Grossman, M. (2013). \textit{Can MRI screen for CSF biomarkers in neurodegenerative disease?}. \textbf{Neurology}, 80(2), 132--138.
+  \item McMillan, C. T.; Irwin, D. J.; \textbf{Avants, B. B.}; Powers, J.; Cook, P. A.; Toledo, J. B.; McCarty Wood, E.; Van Deerlin, V. M.; Lee, V. M.-Y.; Trojanowski, J. Q.; Grossman, M. (2013). \textit{White matter imaging helps dissociate tau from TDP-43 in frontotemporal lobar degeneration}. \textbf{J. Neurol. Neurosurg. Psychiatry}, 84(9), 949--955.
+  \item Tustison, N. J.; \textbf{Avants, B. B.} (2013). \textit{Explicit B-spline regularization in diffeomorphic image registration}. \textbf{Frontiers in Neuroinformatics}, 7, 39.
+  \item Tustison, N. J.; Johnson, H. J.; Rohlfing, T.; Klein, A.; Ghosh, S. S.; Ibanez, L.; \textbf{Avants, B. B.} (2013). \textit{Instrumentation bias in the use and evaluation of scientific software: recommendations for reproducible practices in the computational sciences}. \textbf{Frontiers in Neuroscience}, 7, 162.
+  \item Weber, M. J.; Detre, J. A.; Thompson-Schill, S. L.; \textbf{Avants, B. B.} (2013). \textit{Reproducibility of functional network metrics and network structure: a comparison of task-related BOLD, resting ASL with BOLD contrast, and resting cerebral blood flow}. \textbf{Cogn. Affect. Behav. Neurosci.}, 13(3), 627--640.
+
+  % --- 2012 ---
+  \item Badea, A.; Gewalt, S.; \textbf{Avants, B. B.}; Cook, J. J.; Johnson, G. A. (2012). \textit{Quantitative mouse brain phenotyping based on single and multispectral MR protocols}. \textbf{NeuroImage}, 63(3), 1633--1645.
+  \item Cook, P. A.; \textbf{Avants, B. B.}; McMillan, C. T.; Powers, J.; Gee, J. C.; Grossman, M. (2012). \textit{Multimodal neuroimaging reveals gray and white matter associations with verbal fluency in frontotemporal degeneration}. \textbf{Dement. Geriatr. Cogn. Disord.}, 33(1), 154--155.
+  \item Das, S. R.; \textbf{Avants, B. B.}; Pluta, J.; Wang, H.; Suh, J. W.; Weiner, M. W.; Mueller, S. G.; Yushkevich, P. A. (2012). \textit{Measuring longitudinal change in the hippocampal formation from in vivo high-resolution T2-weighted MRI}. \textbf{NeuroImage}, 60(2), 1266--1279.
+  \item Datta, R.; Lee, J.; Duda, J.; \textbf{Avants, B. B.}; Vite, C. H.; Tseng, B.; Gee, J. C.; Aguirre, G. D.; Aguirre, G. K. (2012). \textit{A Digital Atlas of the Dog Brain}. \textbf{PLOS ONE}, 7(12), e52140.
+  \item Ghosh, S. S.; Klein, A.; \textbf{Avants, B.}; Millman, K. J. (2012). \textit{Learning from open source software projects to improve scientific review}. \textbf{Frontiers in Computational Neuroscience}, 6, 18.
+  \item Gross, R. G.; McMillan, C. T.; Chandrasekaran, K.; Dreyfuss, M.; Ash, S.; \textbf{Avants, B.}; Cook, P.; Moore, P.; Libon, D. J.; Siderowf, A.; Grossman, M. (2012). \textit{Sentence processing in Lewy body spectrum disorder: The role of working memory}. \textbf{Brain and Cognition}, 78(2), 85--93.
+  \item Hanson, J. L.; Chung, M. K.; \textbf{Avants, B. B.}; Rudolph, K. D.; Shirtcliff, E. A.; Gee, J. C.; Davidson, R. J.; Pollak, S. D. (2012). \textit{Structural Variations in Prefrontal Cortex Mediate the Relationship between Early Childhood Stress and Spatial Working Memory}. \textbf{Journal of Neuroscience}, 32(23), 7917--7925.
+  \item Hanson, J. L.; Suh, J. W.; Nacewicz, B. M.; Sutterer, M. J.; Cayo, A. A.; Stodola, D. E.; Burghy, C. A.; Wang, H.; \textbf{Avants, B. B.}; Yushkevich, P. A.; Essex, M. J.; Pollak, S. D.; Davidson, R. J. (2012). \textit{Robust Automated Amygdala Segmentation via Multi-Atlas Diffeomorphic Registration}. \textbf{Frontiers in Neuroscience}, 6, 166.
+  \item Hurst, D. R.; Schoenemann, P. T.; Loyet, M. M.; \textbf{Avants, B. B.}; Gee, J. C. (2012). \textit{How well does endocranial morphology predict behavioral differences in primates?}. \textbf{Am. J. Phys. Anthropol.}, 147(54), 171.
+  \item Jain, V.; Duda, J.; \textbf{Avants, B.}; Giannetta, M.; Xie, S. X.; Roberts, T.; Detre, J. A.; Hurt, H.; Wehrli, F. W.; Wang, D. J. J. (2012). \textit{Longitudinal Reproducibility and Accuracy of Pseudo-Continuous Arterial Spin-labeled Perfusion MR Imaging in Typically Developing Children}. \textbf{Radiology}, 263(2), 527--536.
+  \item Libon, D. J.; McMillan, C.; \textbf{Avants, B.}; Boller, A.; Morgan, B.; Burkholder, L.; Chandrasekaran, K.; Elman, L.; McCluskey, L.; Grossman, M. (2012). \textit{Deficits in Concept Formation in Amyotrophic Lateral Sclerosis}. \textbf{Neuropsychology}, 26(4), 422--429.
+  \item Loyet, M. M.; Schoenemann, P. T.; \textbf{Avants, B. B.}; Gee, J. C. (2012). \textit{Associations between localized variation in brain anatomy and social behavior in healthy human subjects}. \textbf{Am. J. Phys. Anthropol.}, 147(54), 196.
+  \item Rohlfing, T.; \textbf{Avants, B.} (2012). \textit{``Nonparametric Local Smoothing'' is not image registration}. \textbf{BMC Research Notes}, 5, 610.
+  \item Tustison, N. J.; \textbf{Avants, B. B.}; Cook, P. A.; Kim, J.; Whyte, J.; Gee, J. C.; Stone, J. R. (2012). \textit{Logical circularity in voxel-based analysis: Normalization strategy may induce statistical bias}. \textbf{Human Brain Mapping}, 35(3), 745--759.
+
+  % --- 2011 ---
+  \item Ashtari, M.; \textbf{Avants, B.}; Cyckowski, L.; Cervellione, K. L.; Roofeh, D.; Cook, P.; Gee, J.; Sevy, S.; Kumra, S. (2011). \textit{Medial temporal structures and memory functions in adolescents with heavy cannabis use}. \textbf{J. Psychiatr. Res.}, 45(8), 1055--1066.
+  \item \textbf{Avants, B. B.}; Tustison, N. J.; Song, G.; Cook, P. A.; Klein, A.; Gee, J. C. (2011). \textit{A reproducible evaluation of ANTs similarity metric performance in brain image registration}. \textbf{NeuroImage}, 54(3), 2033--2044.
+  \item \textbf{Avants, B. B.}; Tustison, N. J.; Wu, J.; Cook, P. A.; Gee, J. C. (2011). \textit{An Open Source Multivariate Framework for n-Tissue Segmentation with Evaluation on Public Data}. \textbf{Neuroinformatics}, 9(4), 381--400.
+  \item Boller, A.; Libon, D.; Rascovsky, K.; Gross, R. G.; Dreyfuss, M.; \textbf{Avants, B.}; Massimo, L.; Moore, P.; Kitain, J.; Coslett, H.; Chatterjee, A.; Grossman, M. (2011). \textit{Philadelphia Brief Assessment of Cognition (PBAC): A Validated Screening Measure for Dementia}. \textbf{Neurology}, 76(9, 4), A511.
+  \item Das, S. R.; Mechanic-Hamilton, D.; Pluta, J.; Korczykowski, M.; Detre, J. A.; Yushkevich, P. A. (2011). \textit{Heterogeneity of functional activation during memory encoding across hippocampal subfields in temporal lobe epilepsy}. \textbf{NeuroImage}, 58(4), 1121--1130.
+  \item Morgan, B.; Gross, R. G.; Clark, R.; Dreyfuss, M.; Boller, A.; Camp, E.; Liang, T.-W.; \textbf{Avants, B.}; McMillan, C. T.; Grossman, M. (2011). \textit{Some is not enough: Quantifier comprehension in corticobasal syndrome and behavioral variant frontotemporal dementia}. \textbf{Neuropsychologia}, 49(13), 3532--3541.
+  \item Murphy, K.; van Ginneken, B.; Reinhardt, J. M., ..., Tustison, N.; \textbf{Avants, B.}; Gee, J. C., ..., Pluim, J. P. W. (2011). \textit{Evaluation of Registration Methods on Thoracic CT: The EMPIRE10 Challenge}. \textbf{IEEE Transactions on Medical Imaging}, 30(11), 1901--1920.
+  \item Schoenemann, P. T.; Holloway, R.; Monge, J.; \textbf{Avants, B.}; Gee, J. (2011). \textit{Differences in endocranial shape between Homo and Pongids assessed through non-rigid deformation analysis of high-resolution CT images}. \textbf{Am. J. Phys. Anthropol.}, 144(52), 265--266.
+  \item Tustison, N.; \textbf{Avants, B.}; Cook, P.; Kim, J.; Whyte, J.; Gee, J.; Ahlers, S.; Stone, J. (2011). \textit{Multivariate analysis of diffusion tensor imaging and cortical thickness maps in a traumatic brain injury (TBI) cohort using Advanced Normalization Tools (ANTs)}. \textbf{J. Neurotrauma}, 28(6), A111.
+  \item Tustison, N. J.; \textbf{Avants, B. B.}; Flors, L.; Altes, T. A.; de Lange, E. E.; Mugler III, J. P.; Gee, J. C. (2011). \textit{Ventilation-Based Segmentation of the Lungs Using Hyperpolarized He-3 MRI}. \textbf{J. Magn. Reson. Imaging}, 34(4), 831--841.
+  \item Tustison, N. J.; \textbf{Avants, B. B.}; Siqueira, M.; Gee, J. C. (2011). \textit{Topological Well-Composedness and Glamorous Glue: A Digital Gluing Algorithm for Topologically Constrained Front Propagation}. \textbf{IEEE Trans Image Process}, 20(6), 1756--1761.
+  \item Wang, H.; Das, S. R.; Suh, J. W.; Altinay, M.; Pluta, J.; Craige, C.; \textbf{Avants, B.}; Yushkevich, P. A.; ADNI (2011). \textit{A learning-based wrapper method to correct systematic errors in automatic image segmentation: Consistently improved performance in hippocampus, cortex and brain segmentation}. \textbf{NeuroImage}, 55(3), 968--985.
+
+  % --- 2010 ---
+  \item Ash, S.; McMillan, C.; Gunawardena, D.; \textbf{Avants, B.}; Morgan, B.; Khan, A.; Moore, P.; Gee, J.; Grossman, M. (2010). \textit{Speech errors in progressive non-fluent aphasia}. \textbf{Brain and Language}, 113(1), 13--20.
+  \item \textbf{Avants, B. B.}; Cook, P. A.; Ungar, L.; Gee, J. C.; Grossman, M. (2010). \textit{Dementia induces correlated reductions in white matter integrity and cortical thickness: A multivariate neuroimaging study with sparse canonical correlation analysis}. \textbf{NeuroImage}, 50(3), 1004--1016.
+  \item \textbf{Avants, B. B.}; Yushkevich, P.; Pluta, J.; Minkoff, D.; Korczykowski, M.; Detre, J.; Gee, J. C. (2010). \textit{The optimal template effect in hippocampus studies of diseased populations}. \textbf{NeuroImage}, 49(3), 2457--2466.
+  \item Farag, C.; Troiani, V.; Bonner, M.; Powers, C.; \textbf{Avants, B.}; Gee, J.; Grossman, M. (2010). \textit{Hierarchical Organization of Scripts: Converging Evidence from fMRI and Frontotemporal Degeneration}. \textbf{Cerebral Cortex}, 20(10), 2453--2463.
+  \item Grossman, M.; Eslinger, P. J.; Troiani, V.; Anderson, C.; \textbf{Avants, B.}; Gee, J. C.; McMillan, C.; Massimo, L.; Khan, A.; Antani, S. (2010). \textit{The role of ventral medial prefrontal cortex in social decisions: Converging evidence from fMRI and frontotemporal lobar degeneration}. \textbf{Neuropsychologia}, 48(12), 3505--3512.
+  \item Gunawardena, D.; Ash, S.; McMillan, C.; \textbf{Avants, B.}; Gee, J.; Grossman, M. (2010). \textit{Why are patients with progressive nonfluent aphasia nonfluent?}. \textbf{Neurology}, 75(7), 588--594.
+  \item Hanson, J. L.; Chung, M. K.; \textbf{Avants, B. B.}; Shirtcliff, E. A.; Gee, J. C.; Davidson, R. J.; Pollak, S. D. (2010). \textit{Early Stress Is Associated with Alterations in the Orbitofrontal Cortex: A Tensor-Based Morphometry Investigation of Brain Structure and Behavioral Risk}. \textbf{Journal of Neuroscience}, 30(22), 7466--7472.
+  \item Kim, J.; Whyte, J.; Patel, S.; \textbf{Avants, B.}; Europa, E.; Wang, J.; Slattery, J.; Gee, J. C.; Coslett, H. B.; Detre, J. A. (2010). \textit{Resting Cerebral Blood Flow Alterations in Chronic Traumatic Brain Injury: An Arterial Spin Labeling Perfusion fMRI Study}. \textbf{J. Neurotrauma}, 27(8), 1399--1411.
+  \item Klein, A.; Ghosh, S. S.; \textbf{Avants, B.}; Yeo, B. T. T.; Fischl, B.; Ardekani, B.; Gee, J. C.; Mann, J. J.; Parsey, R. V. (2010). \textit{Evaluation of volume-based and surface-based brain image registration methods}. \textbf{NeuroImage}, 51(1), 214--220.
+  \item Rao, H.; Betancourt, L.; Giannetta, J. M.; Brodsky, N. L.; Korczykowski, M.; \textbf{Avants, B. B.}; Gee, J. C.; Wang, J.; Hurt, H.; Detre, J. A.; Farah, M. J. (2010). \textit{Early parental care is important for hippocampal maturation: Evidence from brain morphology in humans}. \textbf{NeuroImage}, 49(1), 1144--1150.
+  \item Schoenemann, P. T.; Monge, J.; Holloway, R. L.; \textbf{Avants, B. B.}; Gee, J. C. (2010). \textit{Creating statistical atlases of modern primate endocranial morphology using non-rigid deformation analysis of high-resolution CT images}. \textbf{Am. J. Phys. Anthropol.}, (50), 208--209.
+  \item Tustison, N. J.; \textbf{Avants, B. B.}; Cook, P. A.; Zheng, Y.; Egan, A.; Yushkevich, P. A.; Gee, J. C. (2010). \textit{N4ITK: Improved N3 bias correction}. \textbf{IEEE Transactions on Medical Imaging}, 29(6), 1310--1320.
+  \item Wang, D. J. J.; Bi, X.; \textbf{Avants, B. B.}; Meng, T.; Zuehlsdorff, S.; Detre, J. A. (2010). \textit{Estimation of Perfusion and Arterial Transit Time in Myocardium Using Free-Breathing Myocardial Arterial Spin Labeling With Navigator-Echo}. \textbf{Magn. Reson. Med.}, 64(5), 1289--1295.
+  \item Yushkevich, P. A.; \textbf{Avants, B. B.}; Das, S. R.; Pluta, J.; Altinay, M.; Craige, C.; ADNI (2010). \textit{Bias in estimation of hippocampal atrophy using deformation-based morphometry arises from asymmetric global normalization: An illustration in ADNI 3T MRI data}. \textbf{NeuroImage}, 50(2), 434--445.
+  \item Yushkevich, P. A.; Wang, H.; Pluta, J.; Das, S. R.; Craige, C.; \textbf{Avants, B. B.}; Weiner, M. W.; Mueller, S. (2010). \textit{Nearly automatic segmentation of hippocampal subfields in in vivo focal T2-weighted MRI}. \textbf{NeuroImage}, 53(4), 1208--1224.
+
+  % --- 2009 ---
+  \item Ash, S.; Moore, P.; Vesely, L.; Gunawardena, D.; McMillan, C.; Anderson, C.; \textbf{Avants, B.}; Grossman, M. (2009). \textit{Non-fluent speech in frontotemporal lobar degeneration}. \textbf{Journal of Neurolinguistics}, 22(4), 370--383.
+  \item \textbf{Avants, B.}; Khan, A.; McCluskey, L.; Elman, L.; Grossman, M. (2009). \textit{Longitudinal Cortical Atrophy in Amyotrophic Lateral Sclerosis With Frontotemporal Dementia}. \textbf{Archives of Neurology}, 66(1), 138--139.
+  \item Bonner, M. F.; Vesely, L.; Price, C.; Anderson, C.; Richmond, L.; Farag, C.; \textbf{Avants, B.}; Grossman, M. (2009). \textit{Reversal of the concreteness effect in semantic dementia}. \textbf{Cognitive Neuropsychology}, 26(6), 568--579.
+  \item Das, S. R.; \textbf{Avants, B. B.}; Grossman, M.; Gee, J. C. (2009). \textit{Registration based cortical thickness measurement}. \textbf{NeuroImage}, 45(3), 867--879.
+  \item Das, S. R.; Mechanic-Hamilton, D.; Korczykowski, M.; Pluta, J.; Glynn, S.; \textbf{Avants, B. B.}; Detre, J. A.; Yushkevich, P. A. (2009). \textit{Structure Specific Analysis of the Hippocampus in Temporal Lobe Epilepsy}. \textbf{Hippocampus}, 19(6), 517--525.
+  \item Klein, A.; Andersson, J.; Ardekani, B. A.; Ashburner, J.; \textbf{Avants, B.}, et al. (2009). \textit{Evaluation of 14 nonlinear deformation algorithms applied to human brain MRI registration}. \textbf{NeuroImage}, 46(3), 786--802.
+  \item Massimo, L.; Powers, C.; Moore, P.; Vesely, L.; \textbf{Avants, B.}; Gee, J.; Libon, D. J.; Grossman, M. (2009). \textit{Neuroanatomy of Apathy and Disinhibition in Frontotemporal Lobar Degeneration}. \textbf{Dement. Geriatr. Cogn. Disord.}, 27(1), 96--104.
+  \item Pluta, J.; \textbf{Avants, B. B.}; Glynn, S.; Awate, S.; Gee, J. C.; Detre, J. A. (2009). \textit{Appearance and Incomplete Label Matching for Diffeomorphic Template Based Hippocampus Segmentation}. \textbf{Hippocampus}, 19(6), 565--571.
+  \item Schoenemann, P. T.; Monge, J.; \textbf{Avants, B. B.}; Gee, J. C. (2009). \textit{An atlas of modern human cranial morphology constructed via non-rigid deformation analysis of high-resolution CT images}. \textbf{Am. J. Phys. Anthropol.}, 231.
+  \item Tustison, N. J.; \textbf{Avants, B. B.}; Gee, J. C. (2009). \textit{Directly Manipulated Free-Form Deformation Image Registration}. \textbf{IEEE Trans Image Process}, 18(3), 624--635.
+  \item Yushkevich, P. A.; \textbf{Avants, B. B.}; Pluta, J.; Das, S.; Minkoff, D.; Mechanic-Hamilton, D.; Glynn, S.; Pickup, S.; Liu, W.; Gee, J. C.; Grossman, M.; Detre, J. A. (2009). \textit{A high-resolution computational atlas of the human hippocampus from postmortem magnetic resonance imaging at 9.4 T}. \textbf{NeuroImage}, 44(2), 385--398.
+
+  % --- 2008 ---
+  \item \textbf{Avants, B.}; Duda, J. T.; Kim, J.; Zhang, H.; Pluta, J.; Gee, J. C.; Whyte, J. (2008). \textit{Multivariate Analysis of Structural and Diffusion Imaging in Traumatic Brain Injury}. \textbf{Academic Radiology}, 15(11), 1360--1375.
+  \item \textbf{Avants, B. B.}; Epstein, C. L.; Grossman, M.; Gee, J. C. (2008). \textit{Symmetric diffeomorphic image registration with cross-correlation: Evaluating automated labeling of elderly and neurodegenerative brain}. \textbf{Medical Image Analysis}, 12(1), 26--41.
+  \item Grossman, M.; Anderson, C.; Khan, A.; \textbf{Avants, B.}; Elman, L.; McCluskey, L. (2008). \textit{Impaired action knowledge in amyotrophic lateral sclerosis}. \textbf{Neurology}, 71(18), 1396--1401.
+  \item Grossman, M.; Anderson, C.; Khan, A.; \textbf{Avants, B.}; Elman, L.; McCluskey, L. (2008). \textit{Neural basis for impaired action knowledge in amyotrophic lateral sclerosis}. \textbf{Neurology}, 70(11, 1), A248.
+  \item Kim, J.; \textbf{Avants, B.}; Patel, S.; Whyte, J.; Coslett, B. H.; Pluta, J.; Detre, J. A.; Gee, J. C. (2008). \textit{Structural consequences of diffuse traumatic brain injury: A large deformation tensor-based morphometry study}. \textbf{NeuroImage}, 39(3), 1014--1026.
+  \item Massimo, L. M.; Anderson, C.; Moore, P.; \textbf{Avants, B.}; Libon, D.; Cynwyd, B.; Grossman, M. (2008). \textit{Neuroanatomical correlates of apathy and disinhibition in frontotemporal dementia}. \textbf{Neurology}, 70(11, 1), A443.
+  \item Schoenemann, P. T.; Holloway, R. L.; \textbf{Avants, B. B.}; Gee, J. C. (2008). \textit{Endocast asymmetry in pongids assessed via non-rigid deformation analysis of high-resolution CT images}. \textbf{Am. J. Phys. Anthropol.}, (46), 188.
+  \item Schoenemann, P. T.; Holloway, R. L.; \textbf{Avants, B. B.}; Gee, J. C. (2008). \textit{The role of micro-morphological stress markers in the differential diagnosis of infectious bone diseases}. \textbf{Am. J. Phys. Anthropol.}, (46), 188--189.
+  \item Simon, T. J.; Wu, Z.; \textbf{Avants, B.}; Zhang, H.; Gee, J. C.; Stebbins, G. T. (2008). \textit{Atypical cortical connectivity and visuospatial cognitive impairments are related in children with chromosome 22q11.2 deletion syndrome}. \textbf{Behav Brain Funct}, 4, 25.
+
+  % --- 1999 - 2007 ---
+  \item Aguirre, G. K.; Komaromy, A. M.; Cideciyan, A. V.; Brainard, D. H.; Aleman, T. S.; Roman, A. J.; \textbf{Avants, B. B.}; Gee, J. C.; Korczykowski, M.; Hauswirth, W. W.; Acland, G. M.; Aguirre, G. D.; Jacobson, S. G. (2007). \textit{Canine and human visual cortex intact and responsive despite early retinal blindness from RPE65 mutation}. \textbf{PLoS Medicine}, 4(6), 1117--1128.
+  \item \textbf{Avants, B. B.}; Hurt, H.; Giannetta, J. M.; Epstein, C. L.; Shera, D. M.; Rao, H.; Wang, J.; Gee, J. C. (2007). \textit{Effects of heavy in utero cocaine exposure on adolescent caudate morphology}. \textbf{Pediatric Neurology}, 37(4), 275--279.
+  \item Fan, Y.; Rao, H.; Hurt, H.; Giannetta, J.; Korczykowski, M.; Shera, D.; \textbf{Avants, B. B.}; Gee, J. C.; Wang, J.; Shen, D. (2007). \textit{Multivariate examination of brain abnormality using both structural and functional MRI}. \textbf{NeuroImage}, 36(4), 1189--1199.
+  \item Ng, L.; Pathak, S. D.; Kuan, C.; Lau, C.; Dong, H.; Sodt, A.; Dang, C.; \textbf{Avants, B.}; Yushkevich, P.; Gee, J. C.; Haynor, D.; Lein, E.; Jones, A.; Hawrylycz, M. (2007). \textit{Neuroinformatics for genome-wide 3D gene expression mapping in the mouse brain}. \textbf{IEEE/ACM Trans. Comput. Biol. Bioinform.}, 4(3), 382--393.
+  \item Rao, H.; Wang, J.; Giannetta, J.; Korczykowski, M.; Shera, D.; \textbf{Avants, B. B.}; Gee, J.; Detre, J. A.; Hurt, H. (2007). \textit{Altered resting cerebral blood flow in adolescents with in utero cocaine exposure revealed by perfusion functional MRI}. \textbf{Pediatrics}, 120(5), E1245--E1254.
+  \item Schoenemann, P. T.; Gee, J.; \textbf{Avants, B.}; Holloway, R. L.; Monge, J.; Lewis, J. (2007). \textit{Validation of plaster endocast morphology through 3D CT image analysis}. \textbf{Am. J. Phys. Anthropol.}, 132(2), 183--192.
+  \item Schoenemann, P. T.; Monge, J.; \textbf{Avants, B. B.}; Glotzer, D.; Gee, J. C. (2007). \textit{Sex differences in cranial form assessed via non-rigid deformation analysis of high-resolution CT images}. \textbf{Am. J. Phys. Anthropol.}, (44), 209.
+  \item Zhang, H.; \textbf{Avants, B. B.}; Yushkevich, P. A.; Woo, J. H.; Wang, S.; McCluskey, L. F.; Elman, L. B.; Melhem, E. R.; Gee, J. C. (2007). \textit{High-dimensional spatial normalization of diffusion tensor images improves the detection of white matter differences: an example study using amyotrophic lateral sclerosis}. \textbf{IEEE Transactions on Medical Imaging}, 26(11), 1585--1597.
+  \item \textbf{Avants, B. B.}; Schoenemann, P. T.; Gee, J. C. (2006). \textit{Lagrangian frame diffeomorphic image registration: Morphometric comparison of human and chimpanzee cortex}. \textbf{Medical Image Analysis}, 10(3), 397--412.
+  \item \textbf{Avants, B.}; Grossman, M.; Gee, J. C. (2005). \textit{The correlation of cognitive decline with frontotemporal dementia induced annualized gray matter loss using diffeomorphic morphometry}. \textbf{Alzheimer Dis. Assoc. Disord.}, 19 Suppl 1, S25--S28.
+  \item \textbf{Avants, B.}; Gee, J.; Schoenemann, P.; Monge, J.; Lewis, J.; Holloway, R. (2005). \textit{A new method for assessing endocast morphology: calculating local curvature from 3D CT images}. \textbf{Am. J. Phys. Anthropol.}, (40), 67.
+  \item Sundaram, T. A.; \textbf{Avants, B. B.}; Gee, J. C. (2005). \textit{Towards a dynamic model of pulmonary parenchymal deformation: evaluation of methods for temporal reparameterization of lung data}. \textbf{MICCAI}, 8(Pt 2), 328--335.
+  \item \textbf{Avants, B.}; Gee, J. (2004). \textit{Geodesic estimation for large deformation anatomical shape averaging and interpolation}. \textbf{NeuroImage}, 23(1), S139--S150.
+  \item \textbf{Avants, B.}; Gee, J.; Schoenemann, P. T.; Monge, J.; Lewis, J. E.; Holloway, R. L. (2004). \textit{Validation of plaster endocast morphology through 3D CT image analysis}. \textbf{Am. J. Phys. Anthropol.}, (38), 56.
+  \item Schoenemann, P. T.; \textbf{Avants, B. B.}; Gee, J. C.; Glotzer, L. D.; Sheehan, M. J. (2004). \textit{Analysis of chimp-human brain differences via non-rigid deformation of 3D MR images}. \textbf{Am. J. Phys. Anthropol.}, (38), 174--175.
+  \item \textbf{Avants, B.}; Gee, J. (2003). \textit{The shape operator for differential analysis of images}. \textbf{Information Processing in Medical Imaging (IPMI)}, 18, 101--113.
+  \item Dubb, A.; Gur, R.; \textbf{Avants, B.}; Gee, J. (2003). \textit{Characterization of sexual dimorphism in the human corpus callosum}. \textbf{NeuroImage}, 20(1), 512--519.
+  \item \textbf{Avants, B.}; Soodak, D.; Ruppeiner, G. (1999). \textit{Measuring the electrical conductivity of the earth}. \textbf{American Journal of Physics}, 67(7), 593--598.
+}
 \end{enumerate}
 
-\section{Journal Publications} % see https://github.com/agrede/biblatex-moderncv
-% \nocite{*}
-% \printbibliography[title={Publications}]
+%==============================================================================
+% SELECTED CONFERENCE PUBLICATIONS & BOOK CHAPTERS
+%==============================================================================
+\section{SELECTED PEER-REVIEWED CONFERENCE PUBLICATIONS}
 \begin{enumerate}
-\item See these links for latest papers: \href{https://scholar.google.com/citations?hl=en&user=t4kkowgAAAAJ&view_op=list_works&sortby=pubdate}{Google scholar search} and \href{http://www.ncbi.nlm.nih.gov/pubmed?term=(\%22Avants\%20B\%22)\%20}{Pubmed  search}
-
-\item \textbf{Avants}, B.B.; Hutchison, R.M.; Mikulskis, A.; Salinas-Valenzuela, C.; Hargreaves, R.; Beaver, J.; Chiao, P. and Alzheimer’s Disease Neuroimaging Initiative, (2018). Amyloid beta–positive subjects exhibit longitudinal network-specific reductions in spontaneous brain activity. Neurobiology of aging.
-
-
-\item Chiao, P.; Bedell, B.J.; \textbf{Avants}, B. B.; Zijdenbos, A.P.; Grand'Maison, M.; O'Neill, P.; O'Gorman, J.; Chen, T.; Koeppe, R. (2018), \textit{Impact of Reference/Target Region Selection on Amyloid PET Standard Uptake Value Ratios in the Phase 1b PRIME Study of Aducanumab}, J Nucl Med.
-
-\item Muschelli, J.; Fortin, J. P.; Gherman, A; \textbf{Avants} B. B.; Whitcher, B.; Caffo B. \& Crainiceanu C. (2018), \textit{Neuroconductor: An R platform for Neuroimaging}, Biostatistics.
-
-\item Pustina, D.; \textbf{Avants}, B. B.; Faseyitan, O.; Medaglia, J.; Coslett, H. B., (2018), \textit{Improved accuracy of lesion to symptom mapping with multivariate sparse canonical correlations}, Neuropsychologia.
-
-\item Pustina, D.; Coslett, H. B.; Ungar, L.; Faseyitan, O. K.; Medaglia, J. D.; \textbf{Avants}, B. B.; Schwartz, M. F., (2017), \textit{Enhanced estimations of post-stroke aphasia severity using stacked multimodal predictions}, Human Brain Mapping.
-
-\item Tustison, N. J.; Holbrook, A. J.; \textbf{Avants}, B. B.; Roberts, J. M.; Cook, P. A.; Reagh, Z. M.; Stone, J. R.; Gillen, D. L.; Yassa, M. A., (2017), \textit{The ANTs Longitudinal Cortical Thickness Pipeline}, bioRxiv.
-
-\item Maga, M. A.; Tustison, N. J.; \textbf{Avants}, B. B. (2017), \textit{A population level atlas of Mus musculus craniofacial skeleton and automated image-based shape analysis}, Journal of Anatomy.
-
-\item Gennatas, E. D.; \textbf{Avants}, B. B.; Wolf, D. H.; Satterthwaite, T. D.; Ruparel, K.; Ciric, R.; Hakonarson, H.; Gur, R. E.; Gur, R. C., (2017), \textit{Age-related effects and sex differences in gray matter density, volume, mass, and cortical thickness from childhood to young adulthood}, Journal of Neuroscience.
-
-\item Xie, L.; Pluta, J. B.; Das, S. R.; Wisse, L. E. M.; Wang, H.; Mancuso, L.; Kliot, D.; \textbf{Avants}, B. B.; Ding, S.; Manj{\'o}n, J. V.; Yushkevich, P., (2017), \textit{Multi-template analysis of human perirhinal cortex in brain MRI: Explicitly accounting for anatomical variability}, Neuroimage.
-
-\item Olm, C. A.; Kandel, B. M.; \textbf{Avants}, B. B.; Detre, J. A.; Gee, J. C.; Grossman, M.; McMillan, C. T., (2016), \textit{Arterial spin labeling perfusion predicts longitudinal decline in semantic variant primary progressive aphasia}, Journal of Neurology.
-
-\item Kandel, B. M.; \textbf{Avants}, B. B.; Gee, J. C.; McMillan, C. T.; Erus, G.; Doshi, J.; Davatzikos, C.; Wolk, D. A., (2016), \textit{White matter hyperintensities are more highly associated with preclinical Alzheimer's disease than imaging and cognitive markers of neurodegeneration}, Alzheimer's \& Dementia: Diagnosis, Assessment \& Disease Monitoring.
-
-\item Legant, W. R.; Shao, L.; Grimm, J. B.; Brown, T. A.; Milkie, D. E.; \textbf{Avants}, B. B.; Lavis, L. D.; Betzig, E., (2016), \textit{High-density three-dimensional localization microscopy across large volumes}, Nature methods.
-
-\item Pustina, D.; Coslett, H; Turkeltaub, P. E.; Tustison, N. J.; Schwartz, M. F.; Avants, B. B., (2016), \textit{Automated segmentation of chronic stroke lesions using LINDA: lesion identification with neighborhood data analysis}, Human Brain Mapping.
-
-\item Betancourt, L.; \textbf{Avants}, B. B.; Farah, M. J.; Brodsky, N. L.; Wu, Jue;  Ashtari, M.; \& Hurt, H., (2016), \textit{Effect of socioeconomic status (SES) disparity on neural development in female African-American infants at age 1 month}, Developmental Science.
-
-\item \textbf{Avants}, B. B.; Hackman, D.; Betancourt, L.; Lawson, G. M.; Hurt, H.; Farah, M.J (2016), \textit{Relation of Childhood Home Environment to Cortical Thickness in Late Adolescence: Specificity of Experience and Timing}, PLOS One.
-
-\item  \textbf{Avants}, B. B.; Johnson, H. J.; Tustison, N. J., (2015), \textit{Neuroinformatics and the The Insight ToolKit}, Frontiers in neuroinformatics 9.
-
-\item Pustina, D.; \textbf{Avants}, B. B.; Sperling, M.; Gorniak, R.; He, X.; Doucet, G.; Barnett, P.; Mintzer, S.; Sharan, A. \& Tracy, J. (2015), \textit{Predicting the laterality of temporal lobe epilepsy from PET, MRI, and DTI: A multimodal study}, Neuroimage Clin, 9, 20--31.
-
-\item \textbf{Avants}, B. B.; Duda, J. T.; Kilroy, E.; Krasileva, K.; Jann, K.; Kandel, B. T.; Tustison, N. J.; Yan, L.; Jog, M.; Smith, R.; Wang, Y.; Dapretto, M. \& Wang, D. J. J. (2015), \textit{The pediatric template of brain perfusion}, Sci Data 2, 150003.
-
-\item Wu, J.; Awate, S. P.; Licht, D. J.; Clouchoux, C.; du Plessis, A. J.; \textbf{Avants}, B. B.; Vossough, A.; Gee, J. C. \& Limperopoulos, C. (2015), \textit{Assessment of MRI-Based Automated Fetal Cerebral Cortical Folding Measures in Prediction of Gestational Age in the Third Trimester}, AJNR Am J Neuroradiol 36(7), 1369--1374.
-
-\item Isgum, I.; Benders, M. J. N. L.; \textbf{Avants}, B.; Cardoso, M. J.; Counsell, S. J.; Gomez, E. F.; Gui, L.; Hűppi, P. S.; Kersbergen, K. J.; Makropoulos, A.; Melbourne, A.; Moeskops, P.; Mol, C. P.; Kuklisova-Murgasova, M.; Rueckert, D.; Schnabel, J. A.; Srhoj-Egekher, V.; Wu, J.; Wang, S.; de Vries, L. S. \& Viergever, M. A. (2015), \textit{Evaluation of automatic neonatal brain segmentation algorithms: The NeoBrainS12 challenge}, Med Image Anal 20(1), 135--151.
-
-\item Kandel, B. M.; Wang, D. J. J.; Detre, J. A.; Gee, J. C. \& \textbf{Avants}, B. B. (2015), \textit{Decomposing cerebral blood flow MRI into functional and structural components: a non-local approach based on prediction}, Neuroimage 105, 156--170.
-
-\item Kandel, B. M.; \textbf{Avants}, B. B.; Gee, J. C.; Arnold, S. E. \& Wolk, D. A. (2015), \textit{Neuropsychological Testing Predicts Cerebrospinal Fluid Amyloid-$\beta$ in Mild Cognitive Impairment}, J Alzheimers Dis 46(4), 901--912.
-
-\item Kandel, B. M.; Wang, D. J. J.; Gee, J. C. \& \textbf{Avants}, B. B. (2015), \textit{Eigenanatomy: sparse dimensionality reduction for multi-modal medical image analysis}, Methods 73, 43--53.
-
-\item Adler, D. H.; Pluta, J.; Kadivar, S.; Craige, C.; Gee, J. C.; \textbf{Avants}, B. B. \&  Yushkevich, P. A. (2014), \textit{Histology-derived volumetric annotation of the human hippocampal subfields in postmortem MRI}, Neuroimage 84, 505--523.
-
-\item \textbf{Avants}, B. B.; Tustison, N. J.; Stauffer, M.; Song, G.; Wu, B. \&  Gee, J. C. (2014), \textit{The Insight ToolKit image registration framework}, Front Neuroinform 8, 44.
-
-\item  \textbf{Avants}, B. B.; Libon, D. J.; Rascovsky, K.; Boller, A.; McMillan, C. T.; Massimo, L.; Coslett, H. B.; Chatterjee, A.; Gross, R. G. \&  Grossman, M. (2014), \textit{Sparse canonical correlation analysis relates network-level atrophy to multivariate cognitive measures in a neurodegenerative population}, Neuroimage 84, 698--711.
-
-\item  Cook, P. A.; McMillan, C. T.; \textbf{Avants}, B. B.; Peelle, J. E.; Gee, J. C. \&  Grossman, M. (2014), \textit{Relating brain anatomy and cognitive ability using a multivariate multimodal framework}, Neuroimage 99, 477--486.
-
-\item  Dhillon, P. S.; Wolk, D. A.; Das, S. R.; Ungar, L. H.; Gee, J. C. \&  \textbf{Avants}, B. B. (2014), \textit{Subject-specific functional parcellation via Prior Based Eigenanatomy}, Neuroimage 99, 14--27.
-
-\item  McMillan, C. T.; \textbf{Avants}, B. B.; Cook, P.; Ungar, L.; Trojanowski, J. Q. \&  Grossman, M. (2014), \textit{The power of neuroimaging biomarkers for screening frontotemporal dementia}, Hum. Brain Mapp. 35(9), 4827--4840.
-
-\item  McMillan, C. T.; Toledo, J. B.; \textbf{Avants}, B. B.; Cook, P. A.; Wood, E. M.; Suh, E.; Irwin, D. J.; Powers, J.; Olm, C.; Elman, L.; McCluskey, L.; Schellenberg, G. D.; Lee, V. M.-Y.; Trojanowski, J. Q.; Van Deerlin, V. M. \&  Grossman, M. (2014), \textit{Genetic and neuroanatomic associations in sporadic frontotemporal lobar degeneration}, Neurobiol. Aging 35(6), 1473--1482.
-
-\item  Tustison, N. J.; Cook, P. A.; Klein, A.; Song, G.; Das, S. R.; Duda, J. T.; Kandel, B. M.; van Strien, N.; Stone, J. R.; Gee, J. C. \&  \textbf{Avants}, B. B. (2014), \textit{Large-scale evaluation of ANTs and FreeSurfer cortical thickness measurements}, Neuroimage 99, 166--179.
-
-\item  Hopkins, W. D. \&  \textbf{Avants}, B. B. (2013), \textit{Regional and Hemispheric Variation in Cortical Thickness in Chimpanzees (Pan troglodytes)}, J. Neurosci. 33(12), 5241--5248.
-
-\item  Kim, J.; \textbf{Avants}, B.; Whyte, J. \&  Gee, J. C. (2013), \textit{Methodological considerations in longitudinal morphometry of traumatic brain injury}, Front Hum Neurosci 7, 52.
-
-\item  Lawson, G. M.; Duda, J. T.; \textbf{Avants}, B. B.; Wu, J. \&  Farah, M. J. (2013), \textit{Associations between children's socioeconomic status and prefrontal cortical thickness}, Dev Sci 16(5), 641--652.
-
-\item  McMillan, C. T.; \textbf{Avants}, B.; Irwin, D. J.; Toledo, J. B.; Wolk, D. A.; Van Deerlin, V. M.; Shaw, L. M.; Trojanoswki, J. Q. \&  Grossman, M. (2013), \textit{Can MRI screen for CSF biomarkers in neurodegenerative disease?}, Neurology 80(2), 132--138.
-
-\item  McMillan, C. T.; Irwin, D. J.; \textbf{Avants}, B. B.; Powers, J.; Cook, P. A.; Toledo, J. B.; McCarty Wood, E.; Van Deerlin, V. M.; Lee, V. M.-Y.; Trojanowski, J. Q. \&  Grossman, M. (2013), \textit{White matter imaging helps dissociate tau from TDP-43 in frontotemporal lobar degeneration}, J. Neurol. Neurosurg. Psychiatry.
-
-\item  Tustison, N. J. \&  \textbf{Avants}, B. B. (2013), \textit{Explicit B-spline regularization in diffeomorphic image registration}, Front Neuroinform 7, 39.
-
-\item  Tustison, N. J.; Johnson, H. J.; Rohlfing, T.; Klein, A.; Ghosh, S. S.; Ibanez, L. \&  \textbf{Avants}, B. B. (2013), \textit{Instrumentation bias in the use and evaluation of scientific software: recommendations for reproducible practices in the computational sciences}, Front Neurosci 7, 162.
-
-\item  Weber, M. J.; Detre, J. A.; Thompson-Schill, S. L. \&  \textbf{Avants}, B. B. (2013), \textit{Reproducibility of functional network metrics and network structure: a comparison of task-related BOLD, resting ASL with BOLD contrast, and resting cerebral blood flow}, Cogn. Affect. Behav. Neurosci. 13(3), 627--640.
-
-\item  Badea, A.; Gewalt, S.; \textbf{Avants}, B. B.; Cook, J. J. \&  Johnson, G. A. (2012), \textit{Quantitative mouse brain phenotyping based on single and multispectral MR protocols}, Neuroimage 63(3), 1633--1645.
-
-\item  Cook, P. A.; \textbf{Avants}, B. B.; McMillan, C. T.; Powers, J.; Gee, J. C. \&  Grossman, M. (2012), \textit{Multimodal neuroimaging reveals gray and white matter associations with verbal fluency in frontotemporal degeneration}, Dement. Geriatr. Cogn. Disord. 33(1), 154--155.
-
-\item  Das, S. R.; \textbf{Avants}, B. B.; Pluta, J.; Wang, H.; Suh, J. W.; Weiner, M. W.; Mueller, S. G. \&  Yushkevich, P. A. (2012), \textit{Measuring longitudinal change in the hippocampal formation from in vivo high-resolution T2-weighted MRI}, Neuroimage 60(2), 1266--1279.
-
-\item  Datta, R.; Lee, J.; Duda, J.; \textbf{Avants}, B. B.; Vite, C. H.; Tseng, B.; Gee, J. C.; Aguirre, G. D. \&  Aguirre, G. K. (2012), \textit{A Digital Atlas of the Dog Brain}, PLOS ONE 7(12).
-
-\item  Ghosh, S. S.; Klein, A.; \textbf{Avants}, B. \&  Millman, K. J. (2012), \textit{Learning from open source software projects to improve scientific review}, Front Comput Neurosci 6, 18.
-
-\item  Gross, R. G.; McMillan, C. T.; Chandrasekaran, K.; Dreyfuss, M.; Ash, S.; \textbf{Avants}, B.; Cook, P.; Moore, P.; Libon, D. J.; Siderowf, A. \&  Grossman, M. (2012), \textit{Sentence processing in Lewy body spectrum disorder: The role of working memory}, Brain Cogn. 78(2), 85--93.
-
-\item  Hanson, J. L.; Chung, M. K.; \textbf{Avants}, B. B.; Rudolph, K. D.; Shirtcliff, E. A.; Gee, J. C.; Davidson, R. J. \&  Pollak, S. D. (2012), \textit{Structural Variations in Prefrontal Cortex Mediate the Relationship between Early Childhood Stress and Spatial Working Memory}, J. Neurosci. 32(23), 7917--7925.
-
-\item  Hanson, J. L.; Suh, J. W.; Nacewicz, B. M.; Sutterer, M. J.; Cayo, A. A.; Stodola, D. E.; Burghy, C. A.; Wang, H.; \textbf{Avants}, B. B.; Yushkevich, P. A.; Essex, M. J.; Pollak, S. D. \&  Davidson, R. J. (2012), \textit{Robust Automated Amygdala Segmentation via Multi-Atlas Diffeomorphic Registration}, Front Neurosci 6, 166.
-
-\item  Hurst, D. R.; Schoenemann, P. T.; Loyet, M. M.; \textbf{Avants}, B. B. \&  Gee, J. C. (2012), \textit{How well does endocranial morphology predict behavioral differences in primates?}, Am. J. Phys. Anthropol. 147(54), 171.
-
-\item  Jain, V.; Duda, J.; \textbf{Avants}, B.; Giannetta, M.; Xie, S. X.; Roberts, T.; Detre, J. A.; Hurt, H.; Wehrli, F. W. \&  Wang, D. J. J. (2012), \textit{Longitudinal Reproducibility and Accuracy of Pseudo-Continuous Arterial Spin-labeled Perfusion MR Imaging in Typically Developing Children}, Radiology 263(2), 527--536.
-
-\item  Libon, D. J.; McMillan, C.; \textbf{Avants}, B.; Boller, A.; Morgan, B.; Burkholder, L.; Chandrasekaran, K.; Elman, L.; McCluskey, L. \&  Grossman, M. (2012), \textit{Deficits in Concept Formation in Amyotrophic Lateral Sclerosis}, Neuropsychology 26(4), 422--429.
-
-\item  Loyet, M. M.; Schoenemann, P. T.; \textbf{Avants}, B. B. \&  Gee, J. C. (2012), \textit{Associations between localized variation in brain anatomy and social behavior in healthy human subjects}, Am. J. Phys. Anthropol. 147(54), 196.
-
-\item  Rohlfing, T. \&  \textbf{Avants}, B. (2012), \textit{"Nonparametric Local Smoothing" is not image registration}, BMC Res Notes 5, 610.
-
-\item  Tustison, N. J.; \textbf{Avants}, B. B.; Cook, P. A.; Kim, J.; Whyte, J.; Gee, J. C. \&  Stone, J. R. (2012), \textit{Logical circularity in voxel-based analysis: Normalization strategy may induce statistical bias}, Hum. Brain Mapp..
-
-\item  Ashtari, M.; \textbf{Avants}, B.; Cyckowski, L.; Cervellione, K. L.; Roofeh, D.; Cook, P.; Gee, J.; Sevy, S. \&  Kumra, S. (2011), \textit{Medial temporal structures and memory functions in adolescents with heavy cannabis use}, J. Psychiatr. Res. 45(8), 1055--1066.
-
-\item  \textbf{Avants}, B. B.; Tustison, N. J.; Song, G.; Cook, P. A.; Klein, A. \&  Gee, J. C. (2011), \textit{A reproducible evaluation of ANTs similarity metric performance in brain image registration}, Neuroimage 54(3), 2033--2044.
-
-\item  \textbf{Avants}, B. B.; Tustison, N. J.; Wu, J.; Cook, P. A. \&  Gee, J. C. (2011), \textit{An Open Source Multivariate Framework for n-Tissue Segmentation with Evaluation on Public Data}, Neuroinformatics 9(4), 381--400.
-
-\item  Boller, A.; Libon, D.; Rascovsky, K.; Gross, R. G.; Dreyfuss, M.; \textbf{Avants}, B.; Massimo, L.; Moore, P.; Kitain, J.; Coslett, H.; Chatterjee, A. \&  Grossman, M. (2011), \textit{Philadelphia Brief Assessment of Cognition (PBAC): A Validated Screening Measure for Dementia}, Neurology 76(9, 4), A511.
-
-\item  Das, S. R.; Mechanic-Hamilton, D.; Pluta, J.; Korczykowski, M.; Detre, J. A. \&  Yushkevich, P. A. (2011), \textit{Heterogeneity of functional activation during memory encoding across hippocampal subfields in temporal lobe epilepsy}, Neuroimage 58(4), 1121--1130.
-
-\item  Morgan, B.; Gross, R. G.; Clark, R.; Dreyfuss, M.; Boller, A.; Camp, E.; Liang, T.-W.; \textbf{Avants}, B.; McMillan, C. T. \&  Grossman, M. (2011), \textit{Some is not enough: Quantifier comprehension in corticobasal syndrome and behavioral variant frontotemporal dementia}, Neuropsychologia 49(13), 3532--3541.
-
-\item  Murphy, K.; van Ginneken, B.; Reinhardt, J. M.; Kabus, S.; Ding, K.; Deng, X.; Cao, K.; Du, K.; Christensen, G. E.; Garcia, V.; Vercauteren, T.; Ayache, N.; Commowick, O.; Malandain, G.; Glocker, B.; Paragios, N.; Navab, N.; Gorbunova, V.; Sporring, J.; de Bruijne, M.; Han, X.; Heinrich, M. P.; Schnabel, J. A.; Jenkinson, M.; Lorenz, C.; Modat, M.; McClelland, J. R.; Ourselin, S.; Muenzing, S. E. A.; Viergever, M. A.; De Nigris, D.; Collins, D. L.; Arbel, T.; Peroni, M.; Li, R.; Sharp, G. C.; Schmidt-Richberg, A.; Ehrhardt, J.; Werner, R.; Smeets, D.; Loeckx, D.; Song, G.; Tustison, N.; \textbf{Avants}, B.; Gee, J. C.; Staring, M.; Klein, S.; Stoel, B. C.; Urschler, M.; Werlberger, M.; Vandemeulebroucke, J.; Rit, S.; Sarrut, D. \&  Pluim, J. P. W. (2011), \textit{Evaluation of Registration Methods on Thoracic CT: The EMPIRE10~Challenge}, IEEE Trans Med Imaging 30(11), 1901--1920.
-
-\item  Schoenemann, P. T.; Holloway, R.; Monge, J.; \textbf{Avants}, B. \&  Gee, J. (2011), \textit{Differences in endocranial shape between Homo and Pongids assessed through non-rigid deformation analysis of high-resolution CT images}, Am. J. Phys. Anthropol. 144(52), 265--266.
-
-\item  Tustison, N.; \textbf{Avants}, B.; Cook, P.; Kim, J.; Whyte, J.; Gee, J.; Ahlers, S. \&  Stone, J. (2011), \textit{Multivariate analysis of diffusion tensor imaging and cortical thickness maps in a traumatic brian injury (TBI) cohort using Advanced Normalization Tools (ANTs)}, J. Neurotrauma 28(6), A111.
-
-\item  Tustison, N. J.; \textbf{Avants}, B. B.; Flors, L.; Altes, T. A.; de lange, E. E.; Mugler, III, J. P. \&  Gee, J. C. (2011), \textit{Ventilation-Based Segmentation of the Lungs Using Hyperpolarized He-3 MRI}, J. Magn. Reson. Imaging 34(4), 831--841.
-
-\item  Tustison, N. J.; \textbf{Avants}, B. B.; Siqueira, M. \&  Gee, J. C. (2011), \textit{Topological Well-Composedness and Glamorous Glue: A Digital Gluing Algorithm for Topologically Constrained Front Propagation}, IEEE Trans Image Process 20(6), 1756--1761.
-
-\item  Wang, H.; Das, S. R.; Suh, J. W.; Altinay, M.; Pluta, J.; Craige, C.; \textbf{Avants}, B.; Yushkevich, P. A. \&  Initia, A. D. N. (2011), \textit{A learning-based wrapper method to correct systematic errors in automatic image segmentation: Consistently improved performance in hippocampus, cortex and brain segmentation}, Neuroimage 55(3), 968--985.
-
-\item  Ash, S.; McMillan, C.; Gunawardena, D.; \textbf{Avants}, B.; Morgan, B.; Khan, A.; Moore, P.; Gee, J. \&  Grossman, M. (2010), \textit{Speech errors in progressive non-fluent aphasia}, Brain Lang. 113(1), 13--20.
-
-\item  \textbf{Avants}, B. B.; Cook, P. A.; Ungar, L.; Gee, J. C. \&  Grossman, M. (2010), \textit{Dementia induces correlated reductions in white matter integrity and cortical thickness: A multivariate neuroimaging study with sparse canonical correlation analysis}, Neuroimage 50(3), 1004--1016.
-
-\item  \textbf{Avants}, B. B.; Yushkevich, P.; Pluta, J.; Minkoff, D.; Korczykowski, M.; Detre, J. \&  Gee, J. C. (2010), \textit{The optimal template effect in hippocampus studies of diseased populations}, Neuroimage 49(3), 2457--2466.
-
-\item  Farag, C.; Troiani, V.; Bonner, M.; Powers, C.; \textbf{Avants}, B.; Gee, J. \&  Grossman, M. (2010), \textit{Hierarchical Organization of Scripts: Converging Evidence from fMRI and Frontotemporal Degeneration}, Cereb. Cortex 20(10), 2453--2463.
-
-\item  Grossman, M.; Eslinger, P. J.; Troiani, V.; Anderson, C.; \textbf{Avants}, B.; Gee, J. C.; McMillan, C.; Massimo, L.; Khan, A. \&  Antani, S. (2010), \textit{The role of ventral medial prefrontal cortex in social decisions Converging evidence from fMRI and frontotemporal lobar degeneration}, Neuropsychologia 48(12), 3505--3512.
-
-\item  Gunawardena, D.; Ash, S.; McMillan, C.; \textbf{Avants}, B.; Gee, J. \&  Grossman, M. (2010), \textit{Why are patients with progressive nonfluent aphasia nonfluent?}, Neurology 75(7), 588--594.
-
-\item  Hanson, J. L.; Chung, M. K.; \textbf{Avants}, B. B.; Shirtcliff, E. A.; Gee, J. C.; Davidson, R. J. \&  Pollak, S. D. (2010), \textit{Early Stress Is Associated with Alterations in the Orbitofrontal Cortex: A Tensor-Based Morphometry Investigation of Brain Structure and Behavioral Risk}, J. Neurosci. 30(22), 7466--7472.
-
-\item  Kim, J.; Whyte, J.; Patel, S.; \textbf{Avants}, B.; Europa, E.; Wang, J.; Slattery, J.; Gee, J. C.; Coslett, H. B. \&  Detre, J. A. (2010), \textit{Resting Cerebral Blood Flow Alterations in Chronic Traumatic Brain Injury: An Arterial Spin Labeling Perfusion fMRI Study}, J. Neurotrauma 27(8), 1399--1411.
-
-\item  Klein, A.; Ghosh, S. S.; \textbf{Avants}, B.; Yeo, B. T. T.; Fischl, B.; Ardekani, B.; Gee, J. C.; Mann, J. J. \&  Parsey, R. V. (2010), \textit{Evaluation of volume-based and surface-based brain image registration methods}, Neuroimage 51(1), 214--220.
-
-\item  Rao, H.; Betancourt, L.; Giannetta, J. M.; Brodsky, N. L.; Korczykowski, M.; \textbf{Avants}, B. B.; Gee, J. C.; Wang, J.; Hurt, H.; Detre, J. A. \&  Farah, M. J. (2010), \textit{Early parental care is important for hippocampal maturation: Evidence from brain morphology in humans}, Neuroimage 49(1), 1144--1150.
-
-\item  Schoenemann, P. T.; Monge, J.; Holloway, R. L.; \textbf{Avants}, B. B. \&  Gee, J. C. (2010), \textit{Creating statistical atlases of modern primate endocranial morphology rising non-rigid deformation analysis of high-resolution CT images}, Am. J. Phys. Anthropol.(50), 208--209.
-
-\item  Tustison, N. J.; \textbf{Avants}, B. B.; Cook, P. A.; Zheng, Y.; Egan, A.; Yushkevich, P. A. \&  Gee, J. C. (2010), \textit{N4ITK: improved N3~bias correction}, IEEE Trans Med Imaging 29(6), 1310--1320.
-
-\item  Wang, D. J. J.; Bi, X.; \textbf{Avants}, B. B.; Meng, T.; Zuehlsdorff, S. \&  Detre, J. A. (2010), \textit{Estimation of Perfusion and Arterial Transit Time in Myocardium Using Free-Breathing Myocardial Arterial Spin Labeling With Navigator-Echo}, Magn. Reson. Med. 64(5), 1289--1295.
-
-\item  Yushkevich, P. A.; \textbf{Avants}, B. B.; Das, S. R.; Pluta, J.; Altinay, M.; Craige, C. \&  Initi, A. D. N. (2010), \textit{Bias in estimation of hippocampal atrophy using deformation-based morphometry arises from asymmetric global normalization: An illustration in ADNI 3~T MRI data}, Neuroimage 50(2), 434--445.
-
-\item  Yushkevich, P. A.; Wang, H.; Pluta, J.; Das, S. R.; Craige, C.; \textbf{Avants}, B. B.; Weiner, M. W. \&  Mueller, S. (2010), \textit{Nearly automatic segmentation of hippocampal subfields in in vivo focal T2-weighted MRI}, Neuroimage 53(4), 1208--1224.
-
-\item  Ash, S.; Moore, P.; Vesely, L.; Gunawardena, D.; McMillan, C.; Anderson, C.; \textbf{Avants}, B. \&  Grossman, M. (2009), \textit{Non-fluent speech in frontotemporal lobar degeneration}, Journal of Neurolinguistics 22(4), 370--383.
-
-\item  \textbf{Avants}, B.; Khan, A.; McCluskey, L.; Elman, L. \&  Grossman, M. (2009), \textit{Longitudinal Cortical Atrophy in Amyotrophic Lateral Sclerosis With Frontotemporal Dementia}, Arch. Neurol. 66(1), 138--139.
-
-\item  Bonner, M. F.; Vesely, L.; Price, C.; Anderson, C.; Richmond, L.; Farag, C.; \textbf{Avants}, B. \&  Grossman, M. (2009), \textit{Reversal of the concreteness effect in semantic dementia}, Cognitive Neuropsychology 26(6), 568--579.
-
-\item  Das, S. R.; \textbf{Avants}, B. B.; Grossman, M. \&  Gee, J. C. (2009), \textit{Registration based cortical thickness measurement}, Neuroimage 45(3), 867--879.
-
-\item  Das, S. R.; Mechanic-Hamilton, D.; Korczykowski, M.; Pluta, J.; Glynn, S.; \textbf{Avants}, B. B.; Detre, J. A. \&  Yushkevich, P. A. (2009), \textit{Structure Specific Analysis of the Hippocampus in Temporal Lobe Epilepsy}, Hippocampus 19(6), 517--525.
-
-\item  Klein, A.; Andersson, J.; Ardekani, B. A.; Ashburner, J.; \textbf{Avants}, B.; Chiang, M.-C.; Christensen, G. E.; Collins, D. L.; Gee, J.; Hellier, P.; Song, J. H.; Jenkinson, M.; Lepage, C.; Rueckert, D.; Thompson, P.; Vercauteren, T.; Woods, R. P.; Mann, J. J. \&  Parsey, R. V. (2009), \textit{Evaluation of 14 nonlinear deformation algorithms applied to human brain MRI registration}, Neuroimage 46(3), 786--802.
-
-\item  Massimo, L.; Powers, C.; Moore, P.; Vesely, L.; \textbf{Avants}, B.; Gee, J.; Libon, D. J. \&  Grossman, M. (2009), \textit{Neuroanatomy of Apathy and Disinhibition in Frontotemporal Lobar Degeneration}, Dement. Geriatr. Cogn. Disord. 27(1), 96--104.
-
-\item  Pluta, J.; \textbf{Avants}, B. B.; Glynn, S.; Awate, S.; Gee, J. C. \&  Detre, J. A. (2009), \textit{Appearance and Incomplete Label Matching for Diffeomorphic Template Based Hippocampus Segmentation}, Hippocampus 19(6), 565--571.
-
-\item  Schoenemann, P. T.; Monge, J.; \textbf{Avants}, B. B. \&  Gee, J. C. (2009), \textit{An atlas of modern human cranial morpbology constructed via non-rigid deformation analysis of high-resolution CT images}, Am. J. Phys. Anthropol., 231.
-
-\item  Tustison, N. J.; \textbf{Avants}, B. B. \&  Gee, J. C. (2009), \textit{Directly Manipulated Free-Form Deformation Image Registration}, IEEE Trans Image Process 18(3), 624--635.
-
-\item  Yushkevich, P. A.; \textbf{Avants}, B. B.; Pluta, J.; Das, S.; Minkoff, D.; Mechanic-Hamilton, D.; Glynn, S.; Pickup, S.; Liu, W.; Gee, J. C.; Grossman, M. \&  Detre, J. A. (2009), \textit{A high-resolution computational atlas of the human hippocampus from postmortem magnetic resonance imaging at 9.4~T}, Neuroimage 44(2), 385--398.
-
-\item  \textbf{Avants}, B.; Duda, J. T.; Kim, J.; Zhang, H.; Pluta, J.; Gee, J. C. \&  Whyte, J. (2008), \textit{Multivariate Analysis of Structural and Diffusion Imaging in Traumatic Brain Injury}, Acad. Radiol. 15(11), 1360--1375.
-
-\item  \textbf{Avants}, B. B.; Epstein, C. L.; Grossman, M. \&  Gee, J. C. (2008), \textit{Symmetric diffeomorphic image registration with cross-correlation: Evaluating automated labeling of elderly and neurodegenerative brain}, Med. Image Anal. 12(1), 26--41.
-
-\item  Grossman, M.; Anderson, C.; Khan, A.; \textbf{Avants}, B.; Elman, L. \&  McCluskey, L. (2008), \textit{Impaired action knowledge in amyotrophic lateral sclerosis}, Neurology 71(18), 1396--1401.
-
-\item  Grossman, M.; Anderson, C.; Khan, A.; \textbf{Avants}, B.; Elman, L. \&  McCluskey, L. (2008), \textit{Neural basis for impaired action knowledge in amyotrophic lateral sclerosis}, Neurology 70(11, 1), A248.
-
-\item  Kim, J.; \textbf{Avants}, B.; Patel, S.; Whyte, J.; Coslett, B. H.; Pluta, J.; Detre, J. A. \&  Gee, J. C. (2008), \textit{Structural consequences of diffuse traumatic brain injury: A large deformation tensor-based morphometry study}, Neuroimage 39(3), 1014--1026.
-
-\item  Massimo, L. M.; Anderson, C.; Moore, P.; \textbf{Avants}, B.; Libon, D.; Cynwyd, B. \&  Grossman, M. (2008), \textit{Neuroanatomical correlates of apathy and disinhibition in frontotemporal dementia}, Neurology 70(11, 1), A443.
-
-\item  Schoenemann, P. T.; Holloway, R. L.; \textbf{Avants}, B. B. \&  Gee, J. C. (2008), \textit{Endocast asymmetry in pongids assessed via non-rigid deformation analysis of high-resolution CT images}, Am. J. Phys. Anthropol.(46), 188.
-
-\item  Schoenemann, P. T.; Holloway, R. L.; \textbf{Avants}, B. B. \&  Gee, J. C. (2008), \textit{The role of micro-morphological stress markers in the differential diagnosis of infectious bone diseases}, Am. J. Phys. Anthropol.(46), 188--189.
-
-\item  Simon, T. J.; Wu, Z.; \textbf{Avants}, B.; Zhang, H.; Gee, J. C. \&  Stebbins, G. T. (2008), \textit{Atypical cortical connectivity and visuospatial cognitive impairments are related in children with chromosome 22q11.2 deletion syndrome}, Behav Brain Funct 4, 25.
-
-\item  Aguirre, G. K.; Komaromy, A. M.; Cideciyan, A. V.; Brainard, D. H.; Aleman, T. S.; Roman, A. J.; \textbf{Avants}, B. B.; Gee, J. C.; Korczykowski, M.; Hauswirth, W. W.; Acland, G. M.; Aguirre, G. D. \&  Jacobson, S. G. (2007), \textit{Canine and human visual cortex intact and responsive despite early retinal blindness from RPE65~mutation}, PLoS Med. 4(6), 1117--1128.
-
-\item  \textbf{Avants}, B. B.; Hurt, H.; Giannetta, J. M.; Epstein, C. L.; Shera, D. M.; Rao, H.; Wang, J. \&  Gee, J. C. (2007), \textit{Effects of heavy in utero cocaine exposure on adolescent caudate morphology}, Pediatr. Neurol. 37(4), 275--279.
-
-\item  Fan, Y.; Rao, H.; Hurt, H.; Giannetta, J.; Korczykowski, M.; Shera, D.; \textbf{Avants}, B. B.; Gee, J. C.; Wang, J. \&  Shen, D. (2007), \textit{Multivariate examination of brain abnormality using both structural and functional MRI}, Neuroimage 36(4), 1189--1199.
-
-\item  Ng, L.; Pathak, S. D.; Kuan, C.; Lau, C.; Dong, H.; Sodt, A.; Dang, C.; \textbf{Avants}, B.; Yushkevich, P.; Gee, J. C.; Haynor, D.; Lein, E.; Jones, A. \&  Hawrylycz, M. (2007), \textit{Neuroinformatics for genome-wide 3D gene expression mapping in the mouse brain}, IEEE-ACM T. Comput. Bi. 4(3), 382--393.
-
-\item  Rao, H.; Wang, J.; Giannetta, J.; Korczykowski, M.; Shera, D.; \textbf{Avants}, B. B.; Gee, J.; Detre, J. A. \&  Hurt, H. (2007), \textit{Altered resting cerebral blood flow in adolescents with in utero cocaine exposure revealed by perfusion functional MRI}, Pediatrics 120(5), E1245-E1254.
-
-\item  Schoenemann, P. T.; Gee, J.; \textbf{Avants}, B.; Holloway, R. L.; Monge, J. \&  Lewis, J. (2007), \textit{Validation of plaster endocast morphology through 3D CT image analysis}, Am. J. Phys. Anthropol. 132(2), 183--192.
-
-\item  Schoenemann, P. T.; Monge, J.; \textbf{Avants}, B. B.; Glotzer, D. \&  Gee, J. C. (2007), \textit{Sex differences in cranial form assessed via non-rigid deformation analysis of high-resolution CT images}, Am. J. Phys. Anthropol.(44), 209.
-
-\item  Zhang, H.; \textbf{Avants}, B. B.; Yushkevich, P. A.; Woo, J. H.; Wang, S.; McCluskey, L. F.; Elman, L. B.; Melhem, E. R. \&  Gee, J. C. (2007), \textit{High-dimensional spatial normalization of diffusion tensor images improves the detection of white matter differences: an example study using amyotrophic lateral sclerosis}, IEEE Trans Med Imaging 26(11), 1585--1597.
-
-\item  \textbf{Avants}, B. B.; Schoenemann, P. T. \&  Gee, J. C. (2006), \textit{Lagrangian frame diffeomorphic image registration: Morphometric comparison of human and chimpanzee cortex}, Med. Image Anal. 10(3), 397--412.
-
-\item  \textbf{Avants}, B.; Grossman, M. \&  Gee, J. C. (2005), \textit{The correlation of cognitive decline with frontotemporal dementia induced annualized gray matter loss using diffeomorphic morphometry}, Alzheimer Dis. Assoc. Disord. 19 Suppl 1, S25--S28.
-
-\item  \textbf{Avants}, B.; Gee, J.; Schoenemann, P.; Monge, J.; Lewis, J. \&  Holloway, R. (2005), \textit{A new method for assessing endbcast morphology: calculating local curvature from 3D CT images}, Am. J. Phys. Anthropol.(40), 67.
-
-\item  Sundaram, T. A.; \textbf{Avants}, B. B. \&  Gee, J. C. (2005), \textit{Towards a dynamic model of pulmonary parenchymal deformation: evaluation of methods for temporal reparameterization of lung data}, Med Image Comput Comput Assist Interv 8(Pt 2), 328--335.
-
-\item  \textbf{Avants}, B. \&  Gee, J. (2004), \textit{Geodesic estimation for large deformation anatomical shape averaging and interpolation}, Neuroimage 23(1), S139-S150.
-
-\item  \textbf{Avants}, B.; Gee, J.; Schoenemann, P. T.; Monge, J.; Lewis, J. E. \&  Holloway, R. L. (2004), \textit{Validation of plaster endocast morphology through 3D CT image analysis}, Am. J. Phys. Anthropol.(38), 56.
-
-\item  Schoenemann, P. T.; \textbf{Avants}, B. B.; Gee, J. C.; Glotzer, L. D. \&  Sheehan, M. J. (2004), \textit{Analysis of chimp-human brain differences via non-rigid deformation of 3D MR images}, Am. J. Phys. Anthropol.(38), 174--175.
-
-\item  \textbf{Avants}, B. \&  Gee, J. (2003), \textit{The shape operator for differential analysis of images}, Inf Process Med Imaging 18, 101--113.
-
-\item  Dubb, A.; Gur, R.; \textbf{Avants}, B. \&  Gee, J. (2003), \textit{Characterization of sexual dimorphism in the human corpus callosum}, Neuroimage 20(1), 512--519.
-
-\item  \textbf{Avants}, B.; Soodak, D. \&  Ruppeiner, G. (1999), \textit{Measuring the electrical conductivity of the earth}, American Journal of Physics 67(7), 593--598.
+{\footnotesize
+  \item Wu, Z.; Dadu, A.; Tustison, N.; \textbf{Avants, B.}; Nalls, M.; Sun, J.; Faghri, F. (2023). \textit{Multimodal Patient Representation Learning with Missing Modalities and Labels}. \textbf{ICLR 2023}.
+  \item Hutchison, R. M.; Chiao, P.; \textbf{Avants, B. B.} (2017). \textit{Decomposing the interdependence of brain anatomy, connectivity, and perfusion}. \textbf{OHBM Annual Meeting}, Vancouver, Canada.
+  \item Pustina, D.; Coslett, B.; Schwartz, M. F.; \textbf{Avants, B. B.} (2015). \textit{A supervised framework for lesion segmentation and automated VLSM analyses in left hemispheric stroke}. \textbf{Academy of Aphasia 53rd Annual Meeting}, Tucson, AZ.
+  \item Kandel, B. M.; Wang, D. J. J.; Gee, J. C.; \textbf{Avants, B. B.} (2014). \textit{Single-subject structural networks with closed-form rotation invariant matching improve power in developmental studies of the cortex}. \textbf{MICCAI}, 17(Pt 3), 137--144.
+  \item Xie, L.; Pluta, J.; Wang, H.; Das, S. R.; Mancuso, L.; Kliot, D.; \textbf{Avants, B. B.}; Ding, S.-L.; Wolk, D. A.; Yushkevich, P. A. (2014). \textit{Automatic clustering and thickness measurement of anatomical variants of the human perirhinal cortex}. \textbf{MICCAI}, 17(Pt 3), 81--88.
+  \item Duda, J. T.; Detre, J. A.; Kim, J.; Gee, J. C.; \textbf{Avants, B. B.} (2013). \textit{Fusing functional signals by sparse canonical correlation analysis improves network reproducibility}. \textbf{MICCAI}, 16(Pt 3), 635--642.
+  \item Dhillon, P.; Kandel, B. M.; Wolk, D.; Gee, J. C.; \textbf{Avants, B.} (2013). \textit{Prior-based Eigenanatomy for Classification of Autism Spectrum Disorder}. \textbf{PRNI 2013}.
+  \item Kandel, B. M.; Wolk, D.; Gee, J. C.; \textbf{Avants, B.} (2013). \textit{Predicting Cognitive Data From Medical Images Using Sparse Linear Regression}. \textbf{Information Processing in Medical Imaging (IPMI)}.
+  \item \textbf{Avants, B.}; Dhillon, P.; Kandel, B. M.; Cook, P. A.; McMillan, C. T.; Grossman, M.; Gee, J. C. (2012). \textit{Eigenanatomy improves detection power for longitudinal cortical change}. \textbf{MICCAI}, 15, 206--213.
+  \item \textbf{Avants, B.}; Cook, P. A.; McMillan, C.; Grossman, M.; Tustison, N. J.; Zheng, Y.; Gee, J. C. (2010). \textit{Sparse unbiased analysis of anatomical variance in longitudinal imaging}. \textbf{MICCAI}, 13, 324--331.
+  \item Wang, H.; Das, S.; Pluta, J.; Craige, C.; Altinay, M.; \textbf{Avants, B.}; Weiner, M.; Mueller, S.; Yushkevich, P. (2010). \textit{Standing on the shoulders of giants: improving medical image segmentation via bias correction}. \textbf{MICCAI}, 13, 105--112.
+  \item Sun, H.; \textbf{Avants, B. B.}; Frangi, A. F.; Sukno, F.; Gee, J. C.; Yushkevich, P. A. (2008). \textit{Cardiac medial modeling and time-course heart wall thickness analysis}. \textbf{MICCAI}, 11, 766--773.
+  \item Yushkevich, P. A.; \textbf{Avants, B. B.}; Pluta, J.; Minkoff, D.; Detre, J. A.; Grossman, M.; Gee, J. C. (2008). \textit{Shape-based alignment of hippocampal subfields: evaluation in postmortem MRI}. \textbf{MICCAI}, 11, 510--517.
+  \item \textbf{Avants, B.}; Anderson, C.; Grossman, M.; Gee, J. C. (2007). \textit{Spatiotemporal normalization for longitudinal analysis of gray matter atrophy in frontotemporal dementia}. \textbf{MICCAI}, 10, 303--310.
+  \item \textbf{Avants, B. B.}; Grossman, M.; Gee, J. C. (2006). \textit{Symmetric diffeomorphic image registration: Evaluating automated labeling of elderly and neurodegenerative cortex and frontal lobe}. \textbf{WBIR / LNCS}, 4057, 50--57.
+  \item \textbf{Avants, B. B.}; Epstein, C. L.; Gee, J. C. (2006). \textit{Geodesic image normalization and temporal parameterization in the space of diffeomorphisms}. \textbf{LNCS}, 4091, 9--16.
+  \item Song, Z.; Tustison, N.; \textbf{Avants, B.}; Gee, J. C. (2006). \textit{Integrated graph cuts for brain MRI segmentation}. \textbf{MICCAI}, 9, 831--838.
+  \item Tustison, N. J.; \textbf{Avants, B. B.}; Sundaram, T. A.; Duda, J. T.; Gee, J. C. (2006). \textit{A generalization of Free-Form Deformation image registration within the ITK finite element framework}. \textbf{WBIR / LNCS}, 4057, 238--246.
+  \item Yushkevich, P. A.; \textbf{Avants, B. B.}; Ng, L.; Hawrylycz, M.; Burstein, P. D.; Zhang, H.; Gee, J. C. (2006). \textit{3D mouse brain reconstruction from histology using a coarse-to-fine approach}. \textbf{WBIR / LNCS}, 4057, 230--237.
+  \item \textbf{Avants, B.}; Epstein, C.; Gee, J. (2005). \textit{Geodesic image interpolation: Parameterizing and interpolating spatiotemporal images}. \textbf{LNCS}, 3752, 247--258.
+  \item Cook, P.; Zhang, H.; \textbf{Avants, B.}; Yushkevich, P.; Alexander, D.; Gee, J.; Ciccarelli, O.; Thompson, A. (2005). \textit{An automated approach to connectivity-based partitioning of brain structures}. \textbf{MICCAI / LNCS}, 3749, 164--171.
+  \item \textbf{Avants, B.}; Gee, J. (2004). \textit{Symmetric geodesic shape averaging and shape interpolation}. \textbf{ECCV / LNCS}, 3117, 99--110.
+  \item \textbf{Avants, B.}; Gee, J. (2003). \textit{Formulation and evaluation of variational curve matching with prior constraints}. \textbf{WBIR / LNCS}, 2717, 21--30.
+  \item \textbf{Avants, B.}; Gee, J. (2003). \textit{Continuous curve matching with scale-space curvature and extrema-based scale selection}. \textbf{Scale Space / LNCS}, 2695, 798--813.
+  \item \textbf{Avants, B.}; Williams, J. (2000). \textit{An adaptive minimal path generation technique for vessel tracking in CTA/CE-MRA volume images}. \textbf{MICCAI / LNCS}, 1935, 707--716.
+}
 \end{enumerate}
 
-\section{Selected Conference Publications}
+\section{BOOK CHAPTERS}
 \begin{enumerate}
-\item Hutchison, R. M.; Chiao, P. \& \textbf{Avants}, B. B.;
-'Decomposing the interdependence of brain anatomy, connectivity, and perfusion' (2017), Annual Meeting of the Organization for Human Brain Mapping, Vancouver, Canada, June 25 - 29.
-
-\item Pustina, D; Coslett, B.; Schwartz, M. F.; \& \textbf{Avants}, B. B.;
-'A supervised framework for lesion segmentation and automated VLSM analyses in left hemispheric stroke' (2015), Academy of Aphasia 53rd Annual Meeting, Tucson, USA, 18 Oct - 20 Oct.
-
-\item Kandel, B. M.; Wang, D. J. J.; Gee, J. C. \& \textbf{Avants}, B. B. (2014), \textit{Single-subject structural networks with closed-form rotation invariant matching mprove power in developmental studies of the cortex}, Med Image Comput Comput Assist Interv 17(Pt 3), 137--144.
-
-\item Xie, L.; Pluta, J.; Wang, H.; Das, S. R.; Mancuso, L.; Kliot, D.; \textbf{Avants}, B. B.; Ding, S.-L.; Wolk, D. A. \& Yushkevich, P. A. (2014), \textit{Automatic clustering and thickness measurement of anatomical variants of the human perirhinal cortex}, Med Image Comput Comput Assist Interv 17(Pt 3), 81--88.
-
-\item Duda, J. T., Detre, J. A., Kim, J., Gee, J. C. and \textbf{Avants}, B. B.
-'Fusing functional signals by sparse canonical correlation analysis
-improves network reproducibility.'  {\em MICCAI}, Vol. 16(Pt 3), pp. 635-642, (2013)
-
-\item P. Dhillon, B. M. Kandel, D. Wolk, J. C. Gee \&  B. \textbf{Avants},
-"Prior-based Eigenanatomy for Classification of Autism Spectrum Disorder",
-{\em PRNI}, (2013)
-
-\item B. M. Kandel, D. Wolk, J. C. Gee \&  B. \textbf{Avants},
-"Predicting Cognitive Data From Medical Images Using Sparse Linear Regression ",
-{\em Inf. Process. Med. Imaging}
-, (2013)
-
-\item B. \textbf{Avants}, P. Dhillon, B. M. Kandel, P. A. Cook, C. T. McMillan, M. Grossman \&  J. C. Gee,
-"Eigenanatomy improves detection power for longitudinal cortical change.",
-{\em Med Image Comput Comput Assist Interv}, 15, 206-213 (2012)
-\item P. A. Cook, B. B. \textbf{Avants}, C. T. McMillan, J. Powers, J. C. Gee \&  M. Grossman,
-"Multimodal neuroimaging reveals gray and white matter associations with verbal fluency in frontotemporal degeneration",
-{\em DEMENTIA AND GERIATRIC COGNITIVE DISORDERS}, 33, 154-155 (2012)
-\item B. \textbf{Avants}, P. A. Cook, C. McMillan, M. Grossman, N. J. Tustison, Y. Zheng \&  J. C. Gee,
-"Sparse unbiased analysis of anatomical variance in longitudinal imaging.",
-{\em Med Image Comput Comput Assist Interv}, 13, 324-331 (2010)
-\item H. Wang, S. Das, J. Pluta, C. Craige, M. Altinay, B. \textbf{Avants}, M. Weiner, S. Mueller \&  P. Yushkevich,
-"Standing on the shoulders of giants: improving medical image segmentation via bias correction.",
-{\em Med Image Comput Comput Assist Interv}, 13, 105-112 (2010)
-\item H. Sun, B. B. \textbf{Avants}, A. F. Frangi, F. Sukno, J. C. Geel \&  P. A. Yushkevich,
-"Cardiac medial modeling and time-course heart wall thickness analysis.",
-{\em Med Image Comput Comput Assist Interv}, 11, 766-773 (2008)
-\item P. A. Yushkevich, B. B. \textbf{Avants}, J. Pluta, D. Minkoff, J. A. Detre, M. Grossman \&  J. C. Gee,
-"Shape-based alignment of hippocampal subfields: evaluation in postmortem MRI.",
-{\em Med Image Comput Comput Assist Interv}, 11, 510-517 (2008)
-\item B. \textbf{Avants}, C. Anderson, M. Grossman \&  J. C. Gee,
-"Spatiotemporal normalization for longitudinal analysis of gray matter atrophy in frontotemporal dementia.",
-{\em Med Image Comput Comput Assist Interv}, 10, 303-310 (2007)
-\item B. B. \textbf{Avants}, M. Grossman \&  J. C. Gee,
-"Symmetric diffeomorphic image registration: Evaluating automated labeling of elderly and neurodegenerative cortex and frontal lobe",
-, 4057, 50-57 (2006)
-\item B. B. \textbf{Avants}, C. L. Epstein \&  J. C. Gee,
-"Geodesic image normalization and temporal parameterization in the space of diffeomorphisms",
-, 4091, 9-16 (2006)
-\item Z. Song, N. Tustison, B. \textbf{Avants} \&  J. C. Gee,
-"Integrated graph cuts for brain MRI segmentation",
-, 4191, 831-838 (2006)
-\item Z. Song, N. Tustison, B. \textbf{Avants} \&  J. C. Gee,
-"Integrated graph cuts for brain MRI segmentation.",
-{\em Med Image Comput Comput Assist Interv}, 9, 831-838 (2006)
-\item N. J. Tustison, B. B. \textbf{Avants}, T. A. Sundaram, J. T. Duda \&  J. C. Gee,
-"A generalization of Free-Form Deformation image registration within the ITK finite element framework",
-, 4057, 238-246 (2006)
-\item P. A. Yushkevich, B. B. \textbf{Avants}, L. Ng, M. Hawrylycz, P. D. Burstein, H. Zhang \&  J. C. Gee,
-"3D mouse brain reconstruction from histology using a coarse-to-fine approach",
-, 4057, 230-237 (2006)
-\item B. \textbf{Avants}, C. Epstein \&  J. Gee,
-"Geodesic image interpolation: Parameterizing and interpolating spatiotemporal images",
-, 3752, 247-258 (2005)
-\item P. Cook, H. Zhang, B. \textbf{Avants}, P. Yushkevich, D. Alexander, J. Gee, O. Ciccarelli \&  A. Thompson,
-"An automated approach to connectivity-based partitioning of brain structures",
-, 3749, 164-171 (2005)
-\item T. Sundaram, B. \textbf{Avants} \&  J. Gee,
-"Towards a dynamic model of pulmonary parenchymal deformation: Evaluation of methods for temporal reparameterization of lung data",
-, 3750, 328-335 (2005)
-\item T. A. Sundaram, B. B. \textbf{Avants} \&  J. C. Gee,
-"Towards a dynamic model of pulmonary parenchymal deformation: evaluation of methods for temporal reparameterization of lung data.",
-{\em Med Image Comput Comput Assist Interv}, 8, 328-335 (2005)
-\item B. \textbf{Avants} \&  J. Gee,
-"Symmetric geodesic shape averaging and shape interpolation",
-, 3117, 99-110 (2004)
-\item T. Sundaram, B. \textbf{Avants} \&  J. Gee,
-"A dynamic model of average lung deformation using capacity-based reparameterization and shape averaging of lung MR images",
-, 3217, 1000-1007 (2004)
-\item B. \textbf{Avants} \&  J. Gee,
-"Formulation and evaluation of variational curve matching with prior constraints",
-, 2717, 21-30 (2003)
-\item B. \textbf{Avants} \&  J. Gee,
-"The shape operator for differential analysis of images", , 2732, 101-113 (2003)
-\item B. \textbf{Avants} \&  J. Gee,
-"Continuous curve matching with scale-space curvature and extrema-based scale selection",
-, 2695, 798-813 (2003)
-\item B. \textbf{Avants} \&  J. Williams,
-"An adaptive minimal path generation technique for vessel tracking in
-CTA/CE-MRA volume images", 1935, 707-716 (2000)
+{\footnotesize
+  \item \textbf{Avants, B. B.}; Tustison, N. J. (2022). \textit{Mapping the Spatial Distribution of Lesions in Stroke: Effect of Diffeomorphic Registration Strategy in the ATLAS Dataset}. In \textbf{Lesion-to-Symptom Mapping: Principles and Tools} (pp. 79--94). Springer.
+  \item \textbf{Avants, B.} (2018). \textit{Relating high-dimensional structural networks to resting functional connectivity with sparse canonical correlation analysis for neuroimaging}. In \textbf{Springer Protocols on Brain Morphometry}.
+  \item Cullen, N.; \textbf{Avants, B.} (2018). \textit{Deep learning for brain segmentation}. In \textbf{Springer Protocols on Brain Morphometry}.
+  \item Gee, J. C.; Zhang, H.; Dubb, A.; \textbf{Avants, B.}; Yushkevich, P.; Duda, J. T. (2005). \textit{Anatomy-based visualizations of diffusion tensor images of brain white matter}. In \textbf{Visualization and Processing of Tensor Fields}. Springer.
+  \item \textbf{Avants, B.}; Gee, J. C. (2004). \textit{Nonrigid Registration Chapter}. In \textbf{Insight Into Images: Principles and Practice for Segmentation, Registration and Image Analysis}. A. K. Peters Ltd., Natick, MA.
+}
 \end{enumerate}
-
-\section{Book Chapters}
-\begin{enumerate}
-\item \textbf{Avants}, B.: Relating high-dimensional structural networks to
-resting functional connectivity with sparse canonical correlation analysis
-for neuroimaging.  Springer Protocols on Brain Morphometry (2018).
-\item Cullen, N. \& \textbf{Avants}, B.: Deep learning for brain segmentation.  Springer Protocols on Brain Morphometry (2018).
-\item \textbf{Avants}, B., Williams, J.: An adaptive minimal path generation technique for vessel tracking in CTA/CE-MRA volume images. in Book Page: 707-716, 2000.
-\item Insight Into Images: Theory for Segmentation, Registration and Image Analysis :
-Insight Into Images Principles and Practice for Segmentation, Registration and Image Analysis: Theory. Nonrigid Registration Chapter. A. K. Peters Ltd., Natick, MA, 2004.
-\item Gee, J. C., Zhang, H., Dubb, A., \textbf{Avants}, B., Yushkevich, P., Duda, J. T.: Anatomy-based visualizations of diffusion tensor images of brain white matter. Visualization and Processing of Tensor Fields. Springer, 2005.
-\end{enumerate}
-
-%\nocite{Hopkins2013,Kim2013,McMillan2013,McMillan2013a,Weber2013,Badea2012,Das2012,Datta2012,Ghosh2012,Gross2012,Hanson2012,Hanson2012a,Hurst2012,Jain2012,Libon2012,Loyet2012,Rohlfing2012,Tustison2012,Ashtari2011,Avants2011a,Avants2011,Boller2011,Das2011,Morgan2011,Murphy2011,Schoenemann2011,Tustison2011a,Tustison2011,Tustison2011b,Wang2011,Ash2010,Avants2010,Avants2010a,Farag2010,Grossman2010,Gunawardena2010,Hanson2010,Kim2010,Klein2010,Rao2010,Schoenemann2010,Tustison2010,Wang2010,Yushkevich2010a,Yushkevich2010,Ash2009,Avants2009,Bonner2009,Das2009,Das2009a,Klein2009,Massimo2009,Pluta2009,Schoenemann2009,Tustison2009,Yushkevich2009,Avants2008,Avants2008a,Grossman2008,Grossman2008a,Kim2008,Massimo2008,Schoenemann2008,Schoenemann2008a,Simon2008,Simon2008a,Aguirre2007,Avants2007a,Avants2007,Fan2007,Ng2007,Rao2007,Schoenemann2007,Schoenemann2007a,Zhang2007,Zhang2007a,Avants2006,Avants2005a,Avants2005,Avants2004b,Avants2004,Schoenemann2004,Dubb2003,Avants1999}
-% \nocite{*}
-%\printbibliography
-
-% \bibliographystylearticles{apacite}
-% \bibliographyarticles{../avantsCV}
-%\section{Conference Publications}
-%\nocite{Dhillon2013,kandel_ipmi_2013,Avants2012,Cook2012,Avants2010b,Wang2010a,Sun2008,Yushkevich2008,Avants2006b,Avants2006a,Song2006,Song2006a,Tustison2006,Yushkevich2006,Avants2005b,Cook2005,Sundaram2005a,Sundaram2005,Avants2004a,Sundaram2004,Avants2003,Avants2003b,Avants2003a,Avants2000}
-% \bibliographystyleconferences{apacite}
-% \bibliographyconferences{../avantsCV}
-% \bibliographystyle{nosort}
-% \bibliography{../avantsCV}
-
-%----------------------------------------------------------------------------------------
-%	COVER LETTER
-%----------------------------------------------------------------------------------------
-\begin{comment}
-% To remove the cover letter, comment out this entire block
-
-\clearpage
-
-\recipient{HR Department}{Corporation\\123 Pleasant Lane\\12345 City, State} % Letter recipient
-\date{\today} % Letter date
-\opening{Dear Sir or Madam,} % Opening greeting
-\closing{Sincerely yours,} % Closing phrase
-\enclosure[Attached]{curriculum vit\ae{}} % List of enclosed documents
-
-\makelettertitle % Print letter title
-
-\lipsum[1-3] % Dummy text
-
-\makeletterclosing % Print letter signature
-\end{comment}
-%----------------------------------------------------------------------------------------
 
 \end{document}
