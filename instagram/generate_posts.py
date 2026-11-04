@@ -19,7 +19,7 @@ POSTS = [
         "badge": "PINNED · VISUAL CV",
         "title": "BRIAN B. AVANTS, Ph.D.",
         "subtitle": "AI & Machine Learning Executive\nComputational Anatomy Pioneer",
-        "metric": "57,000+ Citations · h-index: 71",
+        "metric": "57,500+ Citations · h-index: 71",
         "footer": "Founder, Cingulate LLC · Creator of ANTsX · stnava.github.io",
         "gradient": ("#0f172a", "#1d4ed8"),
         "accent": "#60a5fa",
@@ -34,7 +34,7 @@ POSTS = [
             "For 20+ years, my focus has been translating rigorous mathematical foundations "
             "(diffeomorphisms, manifold optimization, multi-view representation learning) into "
             "open-source software and clinical trial biomarkers.\n\n"
-            "🔹 57,000+ Citations · h-index: 71 · 180+ Peer-Reviewed Papers\n"
+            "🔹 57,500+ Citations · h-index: 71 · 180+ Peer-Reviewed Papers\n"
             "🔹 Co-Creator of the ANTsX Ecosystem (ANTs, ANTsPy, ANTsR, ANTsPyNet, ANTsPyMM)\n"
             "🔹 6x #1 Ranked in International Medical Imaging Benchmarks (Klein, EMPIRE10, BRATS, SATA)\n"
             "🔹 Founder & Principal @ Cingulate LLC (Portsmouth, NH)\n\n"

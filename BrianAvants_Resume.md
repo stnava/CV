@@ -5,15 +5,15 @@
 - **Location:** Cingulate LLC, 145 High Street, Portsmouth, NH, USA
 - **Phone:** +1 (415) 508-4437 | **Email:** [antsx@antsx.com](mailto:antsx@antsx.com) | **Website:** [stnava.github.io](https://stnava.github.io)
 - **GitHub:** [github.com/stnava](https://github.com/stnava) · [github.com/ANTsX](https://github.com/ANTsX) | **LinkedIn:** [linkedin.com/in/brian-avants](https://www.linkedin.com/in/brian-avants)
-- **Google Scholar:** [57,000+ Citations · h-index: 71 · i10-index: 165](https://scholar.google.com/citations?user=t4kkowgAAAAJ&hl=en) | **ORCID:** [0000-0002-4212-3362](https://orcid.org/0000-0002-4212-3362)
+- **Google Scholar:** [57,500+ Citations · h-index: 71 · i10-index: 166](https://scholar.google.com/citations?user=t4kkowgAAAAJ&hl=en) | **ORCID:** [0000-0002-4212-3362](https://orcid.org/0000-0002-4212-3362)
 
 ---
 
 ## EXECUTIVE PROFILE
 
-Entrepreneurial AI/ML executive, principal data scientist, and computational imaging pioneer with 20+ years of experience translating mathematical foundations into global open-source software and regulatory-grade clinical trial biomarkers. Co-creator and lead architect of the **ANTsX ecosystem** (`ANTs`, `ANTsPy`, `ANTsR`, `ANTsPyNet`, `ANTsPyMM`)—the international gold standard for medical image registration and morphometry (**57,000+ citations, h-index 71**). Proven track record building and leading high-performing machine learning teams across biotech (**Biogen**), global clinical trial CROs (**Invicro**), venture consulting (**Cingulate LLC**), and academic/defense research (**UPenn, UVA, Brown ICERM**).
+Entrepreneurial AI/ML executive, principal data scientist, and computational imaging pioneer with 20+ years of experience translating mathematical foundations into global open-source software and regulatory-grade clinical trial biomarkers. Co-creator and lead architect of the **ANTsX ecosystem** (`ANTs`, `ANTsPy`, `ANTsR`, `ANTsPyNet`, `ANTsPyMM`)—the international gold standard for medical image registration and morphometry (**57,500+ citations, h-index 71**). Author of four papers each cited more than 6,000 times (`SyN`, `N4ITK`, BRATS, and the ANTs registration evaluation). Proven track record building and leading high-performing machine learning teams across biotech (**Biogen**), global clinical trial CROs (**Invicro**), venture consulting (**Cingulate LLC**), and academic/defense research (**UPenn, UVA, Brown ICERM**).
 
-| **57,000+ Citations** | **h-index: 71 / i10: 165** | **#1 Ranked Benchmarks** | **Phase I–III AI Leadership** |
+| **57,500+ Citations** | **h-index: 71 / i10: 166** | **#1 Ranked Benchmarks** | **Phase I–III AI Leadership** |
 | :---: | :---: | :---: | :---: |
 | Top-cited medical imaging creator | 180+ peer-reviewed publications | Klein, EMPIRE10, BRATS, SATA | Aduhelm (*Nature* cover), PPMI, UKBB |
 
@@ -59,7 +59,7 @@ Entrepreneurial AI/ML executive, principal data scientist, and computational ima
 - Invited visiting scientist for the semester program *"Model and Dimension Reduction in Uncertain and Dynamic Systems"*; established the mathematical foundations for similarity-driven multi-view embeddings (`SiMLR`).
 
 ### **Assistant Professor of Radiology (2012–2016) · Research Associate (2008–2012) · Postdoctoral Fellow (2006–2008)** | University of Pennsylvania (PICSL) — *Philadelphia, PA* *(2006 – 2016)*
-- Invented **Symmetric Diffeomorphic Image Registration (`SyN`)** (*Med. Image Anal.* 2008; 6,500+ citations) and co-developed **N4ITK** bias correction (*IEEE TMI* 2010; 7,000+ citations), **Atropos** segmentation, **Eigenanatomy**, and **SCCAN**.
+- Invented **Symmetric Diffeomorphic Image Registration (`SyN`)** (*Med. Image Anal.* 2008; 7,700+ citations) and co-developed **N4ITK** bias correction (*IEEE TMI* 2010; 8,400+ citations), **Atropos** segmentation, **Eigenanatomy**, and **SCCAN**.
 - Principal Investigator on NIH Big Data to Knowledge (BD2K) K01 Career Development Award (*Imaging Genomics of Pediatric Executive Function*); Image Analysis Lead on IARPA KRNS; Registration Architecture Lead for the NLM **Insight ToolKit (ITKv4)** redesign.
 
 ---
@@ -72,6 +72,8 @@ Entrepreneurial AI/ML executive, principal data scientist, and computational ima
 - **ANTsR & subtyper:** *Creator & Lead Designer (2012–Present)* — Statistical imaging, multivariate sparse canonical correlation (`SCCAN`), `SiMLR`, and longitudinal disease subtyping/staging packages in R.
 - **NSA-Flow (`nsa_flow`):** *Creator (2025–Present)* — PyTorch matrix optimization package implementing Non-Negative Stiefel Approximating Flow for orthogonalish, sparse, interpretable representation learning ([github.com/stnava/nsa_flow](https://github.com/stnava/nsa_flow)).
 - **Insight ToolKit (ITKv4):** *Registration Development Lead (2002–Present)* — Led the NLM-funded architectural overhaul of deformable image registration, metrics, and transforms for the global ITK medical imaging standard.
+
+*Reach (Nov 2026): ANTsX GitHub organization 2,900+ stars / 700+ forks; `ANTsPy` 30,000+ PyPI downloads per month; core dependency of fMRIPrep, QSIPrep, Nipype, Clinica, and TemplateFlow.*
 
 ---
 
