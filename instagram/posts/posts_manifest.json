@@ -1,0 +1,151 @@
+{
+  "account_recommendations": [
+    "@antsx.ai",
+    "@cingulate.ai",
+    "@brianavants.ai",
+    "@diffeomorphic"
+  ],
+  "public_gh_pages_base_url": "https://stnava.github.io/CV/instagram/",
+  "posts": [
+    {
+      "id": "post_01_visual_cv",
+      "pinned": true,
+      "title": "BRIAN B. AVANTS, Ph.D.",
+      "svg": "posts/post_01_visual_cv.svg",
+      "png": "posts/post_01_visual_cv.png",
+      "caption": "Brian B. Avants, Ph.D. \u2014 Visual Executive CV \ud83e\udde0\u26a1\n\nFor 20+ years, my focus has been translating rigorous mathematical foundations (diffeomorphisms, manifold optimization, multi-view representation learning) into open-source software and clinical trial biomarkers.\n\n\ud83d\udd39 57,000+ Citations \u00b7 h-index: 71 \u00b7 180+ Peer-Reviewed Papers\n\ud83d\udd39 Co-Creator of the ANTsX Ecosystem (ANTs, ANTsPy, ANTsR, ANTsPyNet, ANTsPyMM)\n\ud83d\udd39 6x #1 Ranked in International Medical Imaging Benchmarks (Klein, EMPIRE10, BRATS, SATA)\n\ud83d\udd39 Founder & Principal @ Cingulate LLC (Portsmouth, NH)\n\nFull interactive CV & Resume at link in bio (stnava.github.io/CV).\n\n#Neuroimaging #MachineLearning #ComputationalAnatomy #ANTsX #MedicalAI #Biomarkers #PyTorch #DataScience"
+    },
+    {
+      "id": "post_02_nature_cover",
+      "pinned": true,
+      "title": "BEHIND THE NATURE COVER",
+      "svg": "posts/post_02_nature_cover.svg",
+      "png": "posts/post_02_nature_cover.png",
+      "caption": "How rigorous reference-region math and quantitative PET analytics helped shape a landmark Nature cover story (Sevigny et al., Nature 2016; Chiao et al., J Nucl Med 2018).\n\nDuring my time leading Translational & Advanced Analytics (Biomarkers) at Biogen, we demonstrated how reference/target region selection in Amyloid PET SUVR directly impacts longitudinal treatment effect detection in Alzheimer's disease clinical trials.\n\n#Alzheimers #ClinicalTrials #AmyloidPET #Neuroimaging #Biotech #Biomarkers #NatureJournal #ANTsX"
+    },
+    {
+      "id": "post_03_antsx_ecosystem",
+      "pinned": true,
+      "title": "THE ANTsX ECOSYSTEM",
+      "svg": "posts/post_03_antsx_ecosystem.svg",
+      "png": "posts/post_03_antsx_ecosystem.png",
+      "caption": "The ANTsX Ecosystem: 18+ years of open-source medical image registration, morphometry, and deep learning (Tustison et al., Scientific Reports 2021 & 2024).\n\nFrom foundational C++ diffeomorphisms (SyN) and bias correction (N4ITK) to pre-trained PyTorch/TensorFlow networks in ANTsPyNet and automated multi-modal trial QC in ANTsPyMM.\n\nExplore the code: github.com/ANTsX\n\n#OpenSource #ANTsX #ANTsPy #MedicalImaging #DeepLearning #Neuroscience #Python #RStats #ITK"
+    },
+    {
+      "id": "post_04_nsa_flow",
+      "pinned": false,
+      "title": "NSA-FLOW",
+      "svg": "posts/post_04_nsa_flow.svg",
+      "png": "posts/post_04_nsa_flow.png",
+      "caption": "Introducing NSA-Flow (Non-Negative Stiefel Approximating Flow): Orthogonalish Matrix Optimization for Interpretable Embeddings (arXiv:2511.06425).\n\nHigh-dimensional biomedical data (MRI, genomics, multi-omics) demands latent features that are both sparse and non-redundant. NSA-Flow operates as a smooth flow near the Stiefel manifold with proximal updates\u2014delivering interpretable representations that generalize across cohorts.\n\nCode: github.com/stnava/nsa_flow\n\n#PyTorch #MachineLearning #ManifoldLearning #MatrixFactorization #InterpretableAI #Genomics #Neuroimaging"
+    },
+    {
+      "id": "post_05_simlr",
+      "pinned": false,
+      "title": "SiMLR MULTI-VIEW AI",
+      "svg": "posts/post_05_simlr.svg",
+      "png": "posts/post_05_simlr.png",
+      "caption": "How do you fuse structural MRI, functional connectivity, diffusion tensors, and genetics when every modality has thousands of dimensions?\n\nDeveloped during my Visiting Scholar fellowship at Brown University's ICERM and published in Nature Computational Science (Avants, Tustison & Stone, 2021), SiMLR projects multi-modal biomedical data into joint, biologically interpretable low-dimensional spaces.\n\n#NatureComputationalScience #MultiModalAI #BrainMapping #DataScience #Mathematics #ICERM #ANTsX"
+    },
+    {
+      "id": "post_06_blast_tbi",
+      "pinned": false,
+      "title": "MAPPING INVISIBLE WOUNDS",
+      "svg": "posts/post_06_blast_tbi.svg",
+      "png": "posts/post_06_blast_tbi.png",
+      "caption": "Quantifying the neurological effects of repetitive low-level blast overpressure in career breachers and Special Operations personnel (Stone, Avants, Tustison et al., Journal of Neurotrauma 2020, 2022, 2024).\n\nBy combining multi-view machine learning (SiMLR) with TSPO PET neuroinflammation imaging and the Normative Neuroimaging Library, we can detect subtle, network-level brain changes invisible to conventional clinical reads.\n\n#TraumaticBrainInjury #Neurotrauma #Neuroimaging #PETImaging #MilitaryHealth #Biomarkers #UVA"
+    },
+    {
+      "id": "post_07_biobank_scale",
+      "pinned": false,
+      "title": "49,000+ BRAINS MAPPED",
+      "svg": "posts/post_07_biobank_scale.svg",
+      "png": "posts/post_07_biobank_scale.png",
+      "caption": "Scaling precision neuroimaging from single-subject diffeomorphisms to 49,000+ individuals (Scientific Reports 2024; Nature Medicine 2024; ICLR 2023; Patterns 2023).\n\nStandardized, reproducible Image Derived Phenotypes (IDPs) and longitudinal manifold embeddings allow us to chart brain aging trajectories and subtype Parkinson's & Alzheimer's progression years before symptom onset.\n\n#UKBiobank #PPMI #Parkinsons #Alzheimers #PrecisionMedicine #ICLR #NatureMedicine #BigData"
+    },
+    {
+      "id": "post_08_syn_n4",
+      "pinned": false,
+      "title": "SyN & N4ITK",
+      "svg": "posts/post_08_syn_n4.svg",
+      "png": "posts/post_08_syn_n4.png",
+      "caption": "Why physical coordinate invariance and diffeomorphic symmetry still matter in the era of deep learning.\n\nWhen we introduced SyN (Avants et al., Medical Image Analysis 2008) and N4ITK (Tustison, Avants et al., IEEE TMI 2010), our goal was garantizar invertible, symmetric, physically grounded mappings across anatomy. In 2026, those same principles power Deep Computational Anatomy via Latent-Aligned Multiview Normalizing Flows.\n\n#Diffeomorphisms #ComputationalAnatomy #IEEE #MedicalImageAnalysis #ComputerVision #Math"
+    },
+    {
+      "id": "post_09_cingulate_llc",
+      "pinned": false,
+      "title": "CINGULATE LLC",
+      "svg": "posts/post_09_cingulate_llc.svg",
+      "png": "posts/post_09_cingulate_llc.png",
+      "caption": "Through Cingulate LLC (Portsmouth, NH), I partner with biotech, pharmaceutical, defense, and academic teams to design high-sensitivity imaging biomarkers, automated multi-modal QC pipelines, and interpretable AI architectures.\n\n\ud83d\udce9 Reach out at antsx@antsx.com or explore my updated Executive Resume & CV at stnava.github.io/CV.\n\n#CingulateLLC #BiotechConsulting #PharmaAI #ClinicalTrials #PortsmouthNH #Neuroimaging #AIExecutive"
+    }
+  ],
+  "auto_detected_recent_bib_entries": [
+    {
+      "key": "Tustison2024UKBB",
+      "year": 2024,
+      "title": "{ANTsX",
+      "venue": "Scientific Reports"
+    },
+    {
+      "key": "Stone2024SpecialOps",
+      "year": 2024,
+      "title": "Neurological effects of repeated blast exposure in Special Operations personnel",
+      "venue": "Journal of Neurotrauma"
+    },
+    {
+      "key": "Tustison2024NNL",
+      "year": 2024,
+      "title": "Normative Neuroimaging Library: Designing a Comprehensive and Demographically Diverse Dataset of Healthy Controls to Support Traumatic Brain Injury Diagnostic and Therapeutic Development",
+      "venue": "Journal of Neurotrauma"
+    },
+    {
+      "key": "Yang2024BrainAging",
+      "year": 2024,
+      "title": "Brain aging patterns in a large and diverse cohort of 49,482 individuals",
+      "venue": "Nature Medicine"
+    },
+    {
+      "key": "Dennis2024LIMBIC",
+      "year": 2024,
+      "title": "Brain volume changes following blast-related mild {TBI",
+      "venue": "medRxiv"
+    },
+    {
+      "key": "Polfus2024PD",
+      "year": 2024,
+      "title": "Genetic and brain imaging phenotype joint prediction of longitudinal {Parkinson's",
+      "venue": "European Journal of Human Genetics"
+    },
+    {
+      "key": "Avants2024PPMI",
+      "year": 2024,
+      "title": "Magnetic Resonance Imaging Data Phenotypes for the {Parkinson's",
+      "venue": "medRxiv"
+    },
+    {
+      "key": "Avants2025NSAFlow",
+      "year": 2025,
+      "title": "{Non-Negative Stiefel Approximating Flow",
+      "venue": "arXiv preprint arXiv:2511.06425"
+    },
+    {
+      "key": "Avants2025Multiview",
+      "year": 2025,
+      "title": "Joint representations from multi-view {MRI",
+      "venue": "medRxiv"
+    },
+    {
+      "key": "Theodorou2026MRI2PET",
+      "year": 2026,
+      "title": "Realistic {PET",
+      "venue": "iScience"
+    },
+    {
+      "key": "Tustison2026NormalizingFlows",
+      "year": 2026,
+      "title": "Deep Computational Anatomy via Latent-Aligned Multiview Normalizing Flows",
+      "venue": "bioRxiv / PubMed"
+    }
+  ]
+}

@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brian B. Avants, Ph.D. — AI & Machine Learning Executive | ANTsX Creator | Founder, Cingulate LLC</title>
+  <meta name="description" content="Executive Portfolio, Resume, and Curriculum Vitae of Brian B. Avants, Ph.D. — Founder of Cingulate LLC, Co-Creator of ANTsX, Senior AI/ML Leader in Biomedical Imaging & Clinical Trials." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-page: #f8fafc;
+      --bg-card: #ffffff;
+      --bg-subtle: #f1f5f9;
+      --bg-accent-soft: #eff6ff;
+      --bg-hero: linear-gradient(135deg, #0f172a 0%, #1e293b 55%, #1d4ed8 100%);
+      --text-primary: #0f172a;
+      --text-secondary: #334155;
+      --text-muted: #64748b;
+      --accent: #1d4ed8;
+      --accent-hover: #1e40af;
+      --accent-light: #3b82f6;
+      --emerald: #059669;
+      --amber: #d97706;
+      --purple: #7c3aed;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+      --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.12);
+      --radius: 12px;
+    }
+
+    [data-theme="dark"] {
+      --bg-page: #0b0f19;
+      --bg-card: #111827;
+      --bg-subtle: #1e293b;
+      --bg-accent-soft: rgba(59, 130, 246, 0.12);
+      --bg-hero: linear-gradient(135deg, #030712 0%, #0f172a 60%, #1e3a8a 100%);
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --accent: #60a5fa;
+      --accent-hover: #93c5fd;
+      --accent-light: #3b82f6;
+      --border: #1e293b;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    a:hover {
+      color: var(--accent-hover);
+      text-decoration: underline;
+    }
+
+    /* Sticky Top Navigation */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.65rem 1.5rem;
+      color: #fff;
+    }
+    .topbar-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+    .brand-badge {
+      background: #2563eb;
+      color: #fff;
+      font-size: 0.72rem;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 0.15rem 0.5rem;
+      border-radius: 99px;
+      font-weight: 600;
+    }
+    .nav-tabs {
+      display: flex;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+    }
+    .nav-tab {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: #cbd5e1;
+      padding: 0.4rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .nav-tab:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+    .nav-tab.active {
+      background: #2563eb;
+      border-color: #3b82f6;
+      color: #fff;
+    }
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.4rem 0.75rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      text-decoration: none;
+    }
+    .btn-action:hover {
+      background: rgba(255, 255, 255, 0.18);
+      color: #fff;
+      text-decoration: none;
+    }
+    .btn-primary-dl {
+      background: #10b981;
+      border-color: #059669;
+      color: #fff;
+    }
+    .btn-primary-dl:hover {
+      background: #059669;
+    }
+
+    /* Hero Banner */
+    .hero {
+      background: var(--bg-hero);
+      color: #fff;
+      padding: 3rem 1.5rem 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: center;
+    }
+    .hero-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+    }
+    .hero-subtitle {
+      font-size: 1.12rem;
+      font-weight: 500;
+      color: #93c5fd;
+      margin-bottom: 1rem;
+    }
+    .hero-bio {
+      font-size: 0.95rem;
+      color: #e2e8f0;
+      max-width: 820px;
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+    }
+    .contact-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-bottom: 1.25rem;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #f8fafc;
+      padding: 0.32rem 0.75rem;
+      border-radius: 99px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .chip:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      text-decoration: none;
+    }
+    .download-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.5rem;
+    }
+    .dl-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(147, 197, 253, 0.35);
+      color: #e0f2fe;
+      padding: 0.42rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+    .dl-pill:hover {
+      background: #2563eb;
+      border-color: #60a5fa;
+      color: #fff;
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    /* KPI Metrics Strip */
+    .kpi-grid {
+      max-width: 1180px;
+      margin: -1.5rem auto 2rem;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      position: relative;
+      z-index: 10;
+    }
+    .kpi-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.25rem;
+      box-shadow: var(--shadow-md);
+      border-top: 3px solid var(--accent);
+    }
+    .kpi-value {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    .kpi-label {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-top: 0.2rem;
+    }
+    .kpi-sub {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1180px;
+      margin: 0 auto 4rem;
+      padding: 0 1.5rem;
+    }
+
+    /* Section Styling */
+    .section-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.35rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      text-transform: uppercase;
+    }
+    .section-title span.accent-bar {
+      display: inline-block;
+      width: 6px;
+      height: 20px;
+      background: var(--accent);
+      border-radius: 3px;
+    }
+    .section-badge {
+      font-size: 0.75rem;
+      font-family: 'JetBrains Mono', monospace;
+      background: var(--bg-accent-soft);
+      color: var(--accent);
+      padding: 0.2rem 0.65rem;
+      border-radius: 99px;
+      font-weight: 600;
+    }
+
+    /* Competencies Grid */
+    .comp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 1.15rem;
+    }
+    .comp-box {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.15rem;
+    }
+    .comp-box h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .comp-box p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.65rem;
+    }
+    .tag {
+      font-size: 0.73rem;
+      font-family: 'JetBrains Mono', monospace;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      padding: 0.15rem 0.5rem;
+      border-radius: 6px;
+      font-weight: 500;
+    }
+
+    /* Experience Timeline */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1.35rem;
+    }
+    .role-item {
+      border-left: 3px solid var(--accent);
+      padding-left: 1.15rem;
+      position: relative;
+    }
+    .role-item::before {
+      content: "";
+      position: absolute;
+      left: -6.5px;
+      top: 4px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--bg-card);
+    }
+    .role-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .role-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .role-date {
+      font-size: 0.8rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--bg-accent-soft);
+      padding: 0.15rem 0.55rem;
+      border-radius: 6px;
+    }
+    .role-org {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 0.45rem;
+    }
+    .role-bullets {
+      list-style: disc;
+      margin-left: 1.15rem;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+    }
+    .role-bullets li {
+      margin-bottom: 0.3rem;
+    }
+
+    /* Software Product Cards */
+    .sw-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.15rem;
+    }
+    .sw-card {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .sw-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .sw-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.45rem;
+    }
+    .sw-name {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+    .sw-role {
+      font-size: 0.72rem;
+      font-family: 'JetBrains Mono', monospace;
+      background: var(--bg-accent-soft);
+      color: var(--accent);
+      padding: 0.15rem 0.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .sw-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.75rem;
+    }
+
+    /* Two-column tables for Grants / Awards / Lectures */
+    .cv-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .cv-row {
+      display: grid;
+      grid-template-columns: 135px 1fr;
+      gap: 1rem;
+      font-size: 0.88rem;
+      padding-bottom: 0.65rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .cv-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .cv-year {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+    .cv-detail {
+      color: var(--text-secondary);
+    }
+    .cv-detail strong {
+      color: var(--text-primary);
+    }
+
+    /* Publications Explorer */
+    .pub-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .pub-search {
+      flex: 1;
+      min-width: 240px;
+      padding: 0.55rem 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg-subtle);
+      color: var(--text-primary);
+      font-size: 0.88rem;
+      font-family: inherit;
+    }
+    .filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .filter-pill {
+      padding: 0.35rem 0.75rem;
+      border-radius: 99px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      background: var(--bg-subtle);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .filter-pill.active, .filter-pill:hover {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .pub-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+    .pub-item {
+      padding: 0.75rem 1rem;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .pub-item .pub-year-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 0.15rem 0.5rem;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    .cv-only {
+      display: block;
+    }
+    body.mode-resume .cv-only {
+      display: none !important;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 768px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+      .hero-title {
+        font-size: 1.9rem;
+      }
+      .cv-row {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+      }
+    }
+
+    @media print {
+      .topbar, .download-bar, .pub-controls {
+        display: none !important;
+      }
+      body {
+        background: #fff;
+        color: #000;
+      }
+      .hero {
+        background: #fff !important;
+        color: #000 !important;
+        padding: 1rem 0;
+        border-bottom: 2px solid #000;
+      }
+      .hero-subtitle, .hero-bio, .chip {
+        color: #111 !important;
+        border-color: #ccc !important;
+      }
+      .section-card, .kpi-card, .comp-box, .sw-card, .pub-item {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+        break-inside: avoid;
+      }
+      .kpi-grid {
+        margin-top: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Sticky Navigation -->
+  <nav class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span>BRIAN B. AVANTS, Ph.D.</span>
+        <span class="brand-badge">CINGULATE LLC · ANTsX</span>
+      </div>
+      <div class="nav-tabs" role="tablist">
+        <button class="nav-tab active" onclick="setViewMode('full', this)">Full Executive CV</button>
+        <button class="nav-tab" onclick="setViewMode('resume', this)">Concise Executive Resume</button>
+        <a class="nav-tab" href="resume.html">2-Page Print Resume View</a>
+        <a class="nav-tab" href="instagram_cv_concept.html">📸 Instagram Visual CV</a>
+      </div>
+      <div class="topbar-actions">
+        <a class="btn-action btn-primary-dl" href="BrianAvants_Resume.pdf" target="_blank">⬇ Resume PDF</a>
+        <a class="btn-action" href="src/BrianAvants_CV.pdf" target="_blank">⬇ Full CV PDF</a>
+        <button class="btn-action" onclick="toggleTheme()" title="Toggle Light/Dark Theme">◐ Theme</button>
+        <button class="btn-action" onclick="window.print()">⎙ Print</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div>
+        <h1 class="hero-title">Brian Beaumont Avants, Ph.D.</h1>
+        <div class="hero-subtitle">AI &amp; Machine Learning Executive &middot; Computational Anatomy Pioneer &middot; Founder, Cingulate LLC</div>
+        <p class="hero-bio">
+          Entrepreneurial AI/ML executive, principal data scientist, and computational imaging leader with 20+ years of experience translating mathematical foundations into global open-source software and regulatory-grade clinical trial biomarkers. Co-creator and lead architect of the <strong>ANTsX ecosystem</strong> (<code>ANTs</code>, <code>ANTsPy</code>, <code>ANTsR</code>, <code>ANTsPyNet</code>, <code>ANTsPyMM</code>)—the international standard for medical image registration and morphometry (<strong>57,500+ citations, h-index 71</strong>). Author of four papers each cited more than 6,000 times (<code>SyN</code>, <code>N4ITK</code>, BRATS, and the ANTs registration evaluation). Proven executive leadership across biotech (<strong>Biogen</strong>), clinical trial CROs (<strong>Invicro</strong>), venture consulting (<strong>Cingulate LLC</strong>), and academic/defense research (<strong>UPenn, UVA, Brown ICERM</strong>).
+        </p>
+        <div class="contact-chips">
+          <span class="chip">📍 Cingulate LLC, 145 High St, Portsmouth, NH</span>
+          <a class="chip" href="tel:+14155084437">📞 +1 (415) 508-4437</a>
+          <a class="chip" href="mailto:antsx@antsx.com">✉️ antsx@antsx.com</a>
+          <a class="chip" href="https://github.com/stnava" target="_blank">💻 github.com/stnava</a>
+          <a class="chip" href="https://github.com/ANTsX" target="_blank">⚡ github.com/ANTsX</a>
+          <a class="chip" href="https://www.linkedin.com/in/brian-avants" target="_blank">🔗 LinkedIn</a>
+          <a class="chip" href="https://scholar.google.com/citations?user=t4kkowgAAAAJ&hl=en" target="_blank">🎓 Google Scholar (h-index: 71)</a>
+          <a class="chip" href="https://orcid.org/0000-0002-4212-3362" target="_blank">🆔 ORCID: 0000-0002-4212-3362</a>
+        </div>
+        <div class="download-bar">
+          <a class="dl-pill" href="BrianAvants_Resume.pdf" target="_blank">📄 Executive Resume (PDF)</a>
+          <a class="dl-pill" href="src/BrianAvants_CV.pdf" target="_blank">📘 Comprehensive CV (PDF)</a>
+          <a class="dl-pill" href="BrianAvants_Resume.docx">📝 Executive Resume (DOCX)</a>
+          <a class="dl-pill" href="BrianAvants_CV.docx">📝 Comprehensive CV (DOCX)</a>
+          <a class="dl-pill" href="BrianAvants_Resume.md" target="_blank">⌨️ Resume (Markdown)</a>
+          <a class="dl-pill" href="BrianAvants_CV.md" target="_blank">⌨️ CV (Markdown)</a>
+          <a class="dl-pill" href="avantsCV.bib" target="_blank">📚 BibTeX (avantsCV.bib)</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- KPI Highlights -->
+  <section class="kpi-grid" aria-label="Key Impact Metrics">
+    <div class="kpi-card">
+      <div class="kpi-value">57,500+</div>
+      <div class="kpi-label">Total Citations</div>
+      <div class="kpi-sub">h-index: 71 &middot; i10-index: 166 (Google Scholar)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-value">ANTsX &amp; ITKv4</div>
+      <div class="kpi-label">Global Open-Source Standard</div>
+      <div class="kpi-sub">2,900+ GitHub stars &middot; 30,000+ ANTsPy downloads/month &middot; SyN, N4ITK, SiMLR, NSA-Flow</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-value">6&times; #1 Rank</div>
+      <div class="kpi-label">International Benchmarks</div>
+      <div class="kpi-sub">Klein Brain, EMPIRE10 Lung, BRATS, SATA, STACOM</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-value">Phase I&ndash;III</div>
+      <div class="kpi-label">Biotech &amp; CRO AI Executive</div>
+      <div class="kpi-sub">Biogen (Aduhelm Nature Cover) &middot; Invicro &middot; Cingulate</div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+
+    <!-- Core Competencies -->
+    <section class="section-card">
+      <div class="section-header">
+        <h2 class="section-title"><span class="accent-bar"></span>Core Competencies &amp; Strategic Capabilities</h2>
+        <span class="section-badge">EXECUTIVE &amp; TECHNICAL PILLARS</span>
+      </div>
+      <div class="comp-grid">
+        <div class="comp-box">
+          <h3>AI, Representation Learning &amp; Math</h3>
+          <p>Multi-View Representation Learning (<code>SiMLR</code>), Non-Negative Stiefel Approximating Flow (<code>NSA-Flow</code>), Deep Computational Anatomy, Normalizing Flows, 3D Concurrent Super-Resolution, Disease Subtyping &amp; Staging (<code>subtyper</code>, Aligned-UMAP), Multimodal Learning with Missing Modalities.</p>
+          <div class="tag-list">
+            <span class="tag">PyTorch</span><span class="tag">NSA-Flow</span><span class="tag">SiMLR</span><span class="tag">Normalizing Flows</span><span class="tag">Aligned-UMAP</span><span class="tag">SCCAN</span>
+          </div>
+        </div>
+        <div class="comp-box">
+          <h3>Biotech, Pharma &amp; Clinical Trials</h3>
+          <p>Quantitative Imaging Biomarkers (Structural MRI, Amyloid/Tau/TSPO PET, DTI, rs-fMRI, ASL, CT), Phase I&ndash;III Endpoint Strategy, Patient Stratification, Regulatory Analytics, Translational Neuroscience (Alzheimer's, Parkinson's, FTD, ALS, TBI / Blast Overpressure).</p>
+          <div class="tag-list">
+            <span class="tag">Phase I-III Trials</span><span class="tag">Amyloid/Tau PET</span><span class="tag">UK Biobank</span><span class="tag">PPMI</span><span class="tag">ADNI</span><span class="tag">LIMBIC-CENC</span>
+          </div>
+        </div>
+        <div class="comp-box">
+          <h3>Software Architecture &amp; Engineering</h3>
+          <p>Creator and architect of globally deployed open-source medical imaging and data science platforms. High-performance C++ numerical optimization, Python/R statistical bindings, automated quality control, and cloud/HPC clinical pipelines.</p>
+          <div class="tag-list">
+            <span class="tag">C++</span><span class="tag">Python</span><span class="tag">R</span><span class="tag">TensorFlow/Keras</span><span class="tag">ITKv4</span><span class="tag">CMake</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Entrepreneurial & Industry Experience -->
+    <section class="section-card">
+      <div class="section-header">
+        <h2 class="section-title"><span class="accent-bar"></span>Entrepreneurial, Executive &amp; Industry Leadership</h2>
+        <span class="section-badge">BIOTECH &middot; CRO &middot; VENTURE CONSULTING</span>
+      </div>
+      <div class="timeline">
+        <div class="role-item">
+          <div class="role-top">
+            <div class="role-title">Founder &amp; Principal Consultant</div>
+            <span class="role-date">2018 &ndash; Present</span>
+          </div>
+          <div class="role-org">Cingulate LLC &mdash; Portsmouth, NH</div>
+          <ul class="role-bullets">
+            <li>Founded and lead a specialized AI, computational anatomy, and quantitative biomarker consultancy delivering machine learning architecture and clinical trial analytics for biotechnology, pharmaceutical, defense (DoD/CDMRP), and academic clients.</li>
+            <li>Created <strong>NSA-Flow</strong> (<em>Non-Negative Stiefel Approximating Flow</em>, PyTorch) and <strong>SiMLR</strong> (<em>Similarity-driven Multi-view Linear Reconstruction</em>, <em>Nature Computational Science</em> 2021) for interpretable, sparse multi-omics and multi-modal neuroimaging representation learning.</li>
+            <li>Lead quantitative phenotyping and normative neuroimaging library development across major population and disease cohorts, including the <strong>UK Biobank</strong> (<em>N</em> &gt; 40,000), <strong>Parkinson's Progression Markers Initiative (PPMI)</strong>, and <strong>LIMBIC-CENC</strong>.</li>
+          </ul>
+        </div>
+
+        <div class="role-item">
+          <div class="role-top">
+            <div class="role-title">Senior Director of Machine Learning</div>
+            <span class="role-date">2018 &ndash; 2024</span>
+          </div>
+          <div class="role-org">Invicro (a Konica Minolta Company) &mdash; Boston, MA</div>
+          <ul class="role-bullets">
+            <li>Directed enterprise Machine Learning strategy and clinical trial software engineering across neurodegenerative, neuro-oncology, pulmonary, and multi-species therapeutic pipelines for a leading global imaging CRO.</li>
+            <li>Architected and deployed <strong>ANTsPyMM</strong> and automated deep learning quality control, tissue/lesion segmentation, and concurrent 3D super-resolution pipelines to accelerate biomarker readouts in multi-center clinical trials.</li>
+            <li>Led multi-institutional AI collaborations (with Michael J. Fox Foundation, NIH/NIA, and pharma sponsors) on multimodal patient representation learning with missing modalities (<em>ICLR</em> 2023) and longitudinal Parkinson's disease subtyping (<em>Patterns</em> 2023, <em>EJHG</em> 2024).</li>
+          </ul>
+        </div>
+
+        <div class="role-item">
+          <div class="role-top">
+            <div class="role-title">Associate Director, Translational &amp; Advanced Analytics (Biomarkers)</div>
+            <span class="role-date">2016 &ndash; 2018</span>
+          </div>
+          <div class="role-org">Biogen &mdash; Cambridge, MA</div>
+          <ul class="role-bullets">
+            <li>Served as lead integrative imaging data scientist for the <strong>Aducanumab (Aduhelm)</strong> clinical trial program (Phase 1b PRIME and Phase 3 ENGAGE/EMERGE), driving quantitative biomarker evaluation and patient stratification in Alzheimer's disease.</li>
+            <li>Conducted confirmatory amyloid PET SUVR reference/target region optimization and generated the primary visualization featured on the <strong>cover of <em>Nature</em></strong> (Sevigny et al., 2016; Chiao et al., <em>J. Nucl. Med.</em> 2018).</li>
+            <li>Pioneered longitudinal resting-state fMRI network biomarker analytics in amyloid-beta positive subjects (<em>Neurobiology of Aging</em> 2018) and launched <strong>ANTsPy</strong> to unify deep learning with diffeomorphic registration.</li>
+          </ul>
+        </div>
+
+        <div class="role-item">
+          <div class="role-top">
+            <div class="role-title">Algorithm Developer, Imaging Department</div>
+            <span class="role-date">1999 &ndash; 2000</span>
+          </div>
+          <div class="role-org">Siemens Corporate Research &mdash; Princeton, NJ</div>
+          <ul class="role-bullets">
+            <li>Developed adaptive minimal-path vessel tracking and 3D segmentation algorithms for CTA and CE-MRA volumetric clinical imaging systems.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Academic Appointments -->
+    <section class="section-card">
+      <div class="section-header">
+        <h2 class="section-title"><span class="accent-bar"></span>Academic &amp; Research Appointments</h2>
+        <span class="section-badge">UVA &middot; BROWN ICERM &middot; UPENN PICSL</span>
+      </div>
+      <div class="timeline">
+        <div class="role-item">
+          <div class="role-top">
+            <div class="role-title">Visiting Associate Professor of Radiology and Medical Imaging</div>
+            <span class="role-date">2018 &ndash; Present</span>
+          </div>
+          <div class="role-org">University of Virginia School of Medicine &mdash; Charlottesville, VA</div>
+          <ul class="role-bullets">
+            <li>Co-lead multi-view machine learning and neuroimaging biomarker studies investigating neuroinflammation (TSPO PET), brain volume change, and functional/structural connectivity in military Special Operations personnel and breachers exposed to repetitive blast overpressure (<em>Journal of Neurotrauma</em> 2020, 2022, 2024).</li>
+            <li>Co-architect of the <strong>Normative Neuroimaging Library</strong> (<em>J. Neurotrauma</em> 2024) and <strong>Deep Computational Anatomy via Latent-Aligned Multiview Normalizing Flows</strong> (2026).</li>
+          </ul>
+        </div>
+
+        <div class="role-item">
+          <div class="role-top">
+            <div class="role-title">Visiting Scholar, Institute for Computational and Experimental Research in Mathematics (ICERM)</div>
+            <span class="role-date">Spring 2020</span>
+          </div>
+          <div class="role-org">Brown University &mdash; Providence, RI</div>
+          <ul class="role-bullets">
+            <li>Invited visiting scientist for the semester program <em>"Model and Dimension Reduction in Uncertain and Dynamic Systems"</em>; established the mathematical foundations for similarity-driven multi-view embeddings (<code>SiMLR</code>).</li>
+          </ul>
+        </div>
+
+        <div class="role-item">
+          <div class="role-top">
+            <div class="role-title">Assistant Professor of Radiology (2012&ndash;2016) &middot; Research Associate (2008&ndash;2012) &middot; Postdoctoral Fellow (2006&ndash;2008)</div>
+            <span class="role-date">2006 &ndash; 2016</span>
+          </div>
+          <div class="role-org">University of Pennsylvania Perelman School of Medicine (PICSL) &mdash; Philadelphia, PA</div>
+          <ul class="role-bullets">
+            <li>Invented <strong>Symmetric Diffeomorphic Image Registration (<code>SyN</code>)</strong> (<em>Med. Image Anal.</em> 2008; 7,700+ citations) and co-developed <strong>N4ITK</strong> bias correction (<em>IEEE TMI</em> 2010; 8,400+ citations), <strong>Atropos</strong> multivariate segmentation, <strong>Eigenanatomy</strong>, and <strong>SCCAN</strong>.</li>
+            <li>Principal Investigator on NIH Big Data to Knowledge (BD2K) K01 Career Development Award (<em>Imaging Genomics of Pediatric Executive Function</em>); Image Analysis Lead on IARPA KRNS; Registration Architecture Lead for the NLM <strong>Insight ToolKit (ITKv4)</strong> redesign.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flagship Software Products -->
+    <section class="section-card">
+      <div class="section-header">
+        <h2 class="section-title"><span class="accent-bar"></span>Flagship Software Products &amp; Open-Source Ecosystem</h2>
+        <span class="section-badge">GLOBAL BIOMEDICAL INFRASTRUCTURE</span>
+      </div>
+      <div class="sw-grid">
+        <div class="sw-card">
+          <div>
+            <div class="sw-header">
+              <div class="sw-name"><a href="https://github.com/ANTsX/ANTs" target="_blank">ANTs (C++ Core)</a></div>
+              <span class="sw-role">Creator &amp; Lead Architect</span>
+            </div>
+            <p class="sw-desc">Advanced Normalization Tools: Premier C++ library for diffeomorphic image registration (<code>SyN</code>), bias field correction (<code>N4</code>), multivariate tissue segmentation (<code>Atropos</code>), and cortical thickness (<code>DiReCT</code>).</p>
+          </div>
+          <div class="tag-list"><span class="tag">C++</span><span class="tag">SyN</span><span class="tag">N4ITK</span><span class="tag">Atropos</span></div>
+        </div>
+
+        <div class="sw-card">
+          <div>
+            <div class="sw-header">
+              <div class="sw-name"><a href="https://github.com/ANTsX/ANTsPy" target="_blank">ANTsPy &amp; ANTsPyNet</a></div>
+              <span class="sw-role">Co-Creator &amp; Architect</span>
+            </div>
+            <p class="sw-desc">Python and deep learning toolkit providing pre-trained 2D/3D neural networks for brain extraction, Deep Atropos, HippMapp3r, brain age estimation, lesion segmentation, and 3D super-resolution.</p>
+          </div>
+          <div class="tag-list"><span class="tag">Python</span><span class="tag">Keras/TensorFlow</span><span class="tag">PyTorch</span><span class="tag">3D CNNs</span></div>
+        </div>
+
+        <div class="sw-card">
+          <div>
+            <div class="sw-header">
+              <div class="sw-name"><a href="https://github.com/ANTsX/ANTsPyMM" target="_blank">ANTsPyMM</a></div>
+              <span class="sw-role">Lead Architect</span>
+            </div>
+            <p class="sw-desc">Production multi-modal neuroimaging pipeline processing T1w, FLAIR, rs-fMRI, DTI, and neuromelanin scans into standardized Image Derived Phenotypes (IDPs) with automated quality control.</p>
+          </div>
+          <div class="tag-list"><span class="tag">Clinical Trials</span><span class="tag">Multi-Modal</span><span class="tag">Automated QC</span></div>
+        </div>
+
+        <div class="sw-card">
+          <div>
+            <div class="sw-header">
+              <div class="sw-name"><a href="https://github.com/stnava/nsa_flow" target="_blank">NSA-Flow (nsa_flow)</a></div>
+              <span class="sw-role">Creator (2025)</span>
+            </div>
+            <p class="sw-desc">PyTorch matrix estimation and manifold optimization framework implementing Non-Negative Stiefel Approximating Flow for sparse, orthogonalish, interpretable embeddings across imaging and genomics.</p>
+          </div>
+          <div class="tag-list"><span class="tag">PyTorch</span><span class="tag">Stiefel Manifold</span><span class="tag">Interpretable ML</span></div>
+        </div>
+
+        <div class="sw-card">
+          <div>
+            <div class="sw-header">
+              <div class="sw-name"><a href="https://github.com/ANTsX/ANTsR" target="_blank">ANTsR, SiMLR &amp; subtyper</a></div>
+              <span class="sw-role">Creator &amp; Lead Designer</span>
+            </div>
+            <p class="sw-desc">R statistical imaging ecosystem featuring Similarity-driven Multi-view Linear Reconstruction (<code>SiMLR</code>), Sparse Canonical Correlation Analysis (<code>SCCAN</code>), and longitudinal disease staging (<code>subtyper</code>).</p>
+          </div>
+          <div class="tag-list"><span class="tag">R / C++</span><span class="tag">SiMLR</span><span class="tag">Disease Subtyping</span></div>
+        </div>
+
+        <div class="sw-card">
+          <div>
+            <div class="sw-header">
+              <div class="sw-name"><a href="https://itk.org" target="_blank">Insight ToolKit (ITKv4)</a></div>
+              <span class="sw-role">Registration Lead</span>
+            </div>
+            <p class="sw-desc">Led the NLM-sponsored architectural refactoring of deformable image registration, similarity metrics, and composite transforms for ITKv4, alongside co-founding <strong>Neuroconductor</strong>.</p>
+          </div>
+          <div class="tag-list"><span class="tag">ITKv4</span><span class="tag">NLM/NIH</span><span class="tag">Neuroconductor</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Awards -->
+    <section class="section-card">
+      <div class="section-header">
+        <h2 class="section-title"><span class="accent-bar"></span>Education &amp; International Benchmark Honors</h2>
+        <span class="section-badge">ACADEMIC &amp; COMPETITION DISTINCTIONS</span>
+      </div>
+      <div class="cv-list">
+        <div class="cv-row">
+          <div class="cv-year">2006 &ndash; 2008</div>
+          <div class="cv-detail"><strong>Postdoctoral Fellowship in Radiology</strong> &mdash; University of Pennsylvania, Philadelphia, PA</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-year">2005</div>
+          <div class="cv-detail"><strong>Ph.D. in Bioengineering</strong> &mdash; University of Pennsylvania, Philadelphia, PA &middot; <em>Dissertation: Diffeomorphometry for Computational Anatomy</em></div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-year">2002 / 2003</div>
+          <div class="cv-detail"><strong>M.S. in Computer Science</strong> &mdash; University of Pennsylvania, Philadelphia, PA</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-year">1998</div>
+          <div class="cv-detail"><strong>B.A. in Physics and Literature</strong> &mdash; New College of Florida, Sarasota, FL &middot; <em>With High Honors &middot; National Merit Scholar (1994) &middot; Humana Scholar (1995)</em></div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-year">2014</div>
+          <div class="cv-detail"><strong>Best Paper Award</strong> (with Nicholas J. Tustison) at the STACOM 2014 Challenge, MICCAI.</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-year">2013</div>
+          <div class="cv-detail"><strong>1st Place, BRATS 2013 Brain Tumor Segmentation Challenge</strong> (<code>ANTsR</code>) &amp; <strong>1st Place, SATA Segmentation Challenge</strong> (<code>ANTs</code>), MICCAI, Nagoya, Japan.</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-year">2012 &ndash; 2013</div>
+          <div class="cv-detail"><strong>"Standard Setting" Registration Benchmark</strong> for MICCAI 2013 Multi-Atlas Challenge; all top finishers in MICCAI 2012 multi-atlas segmentation used <code>ANTs</code>.</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-year">2010</div>
+          <div class="cv-detail"><strong>1st Overall, EMPIRE10 International Lung CT Registration Challenge</strong> (<em>IEEE Transactions on Medical Imaging</em>, 2011).</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-year">2009</div>
+          <div class="cv-detail"><strong>1st Rank, Klein International Brain MRI Registration Evaluation</strong> across 14 nonlinear deformation algorithms (<em>NeuroImage</em>, 2009).</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-year">2003 &amp; 2007</div>
+          <div class="cv-detail"><strong>MICCAI Young Investigator Award</strong> (2007, General Medical Computing) &amp; <strong>SPIE Medical Imaging Best Poster Award</strong> (2003).</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grants & Sponsored Research (CV Mode) -->
+    <section class="section-card cv-only">
+      <div class="section-header">
+        <h2 class="section-title"><span class="accent-bar"></span>Grants, Sponsored Research &amp; Consortium Leadership</h2>
+        <span class="section-badge">DOD/CDMRP &middot; NIH BD2K &middot; IARPA &middot; MJFF</span>
+      </div>
+      <div class="cv-list">
+        <div class="cv-row">
+          <div class="cv-year">2018 &ndash; Present</div>
+          <div class="cv-detail"><strong>DoD / CDMRP / LIMBIC-CENC Neurotrauma &amp; Blast Overpressure Research Programs</strong> (with James R. Stone, M.D., Ph.D. &amp; Nicholas J. Tustison, D.Sc., UVA): Multi-view neuroimaging biomarkers (<code>SiMLR</code>, <code>NSA-Flow</code>), TSPO PET neuroinflammation, and Normative Neuroimaging Library development in Special Operations personnel and combat breachers (Role: <strong>Co-Investigator / Lead ML Consultant</strong>).</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-year">2018 &ndash; 2024</div>
+          <div class="cv-detail"><strong>Parkinson's Progression Markers Initiative (PPMI) &amp; Multimodal Neurodegeneration Consortia</strong> (Invicro / Michael J. Fox Foundation / NIH CARD): Automated multi-modal MRI/PET phenotyping (<code>ANTsPyMM</code>), Aligned-UMAP longitudinal subtyping, and missing-modality representation learning (Role: <strong>Senior Director of ML / Co-Investigator</strong>).</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-year">2014 &ndash; 2019</div>
+          <div class="cv-detail"><strong>The Imaging Genomics of Pediatric Executive Function</strong>, NIH Big Data to Knowledge (BD2K) <strong>K01-ES025432-01</strong> (<strong>Avants, Brian, PI</strong>), $275,000/annual direct costs, 80% effort.</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-year">2015 &ndash; 2018</div>
+          <div class="cv-detail"><strong>Multimodal Brain Maturation Indices Modulating Psychopathology and Neurocognition</strong>, NIH <strong>R01-MH107235-01</strong> (Gur, Ruben, PI), $275,000/annual direct costs (Role: <strong>Collaborator</strong>).</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-year">2013 &ndash; 2018</div>
+          <div class="cv-detail"><strong>Neuroscience Neuroimaging Center</strong>, NIH <strong>P30-NS045839-07</strong> (Detre, John, PI), $499,727/annual direct costs (Role: <strong>Collaborator / Technical Core Lead</strong>).</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-year">2014</div>
+          <div class="cv-detail"><strong>Knowledge Representation in Neural Systems (KRNS)</strong>, IARPA-BAA-12-05, 50% effort (Role: <strong>Image Analysis Lead</strong>).</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-year">2012 &ndash; 2013</div>
+          <div class="cv-detail"><strong>Age, Hearing Loss, and Sentence Comprehension: Neural Correlates</strong>, NIA/NIH <strong>5-R01-AG038490-05</strong> (Grossman, Murray, PI), $291,978/annual direct costs (Role: <strong>Co-PI</strong>).</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-year">2011 &ndash; 2015</div>
+          <div class="cv-detail"><strong>Continued Development and Maintenance of ITK-SNAP 3D Image Segmentation Software</strong>, NIH <strong>R01-EB014346-01</strong> (Yushkevich, Paul A., PI), $350,824/annual direct costs (Role: <strong>Collaborator</strong>).</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-year">2010 &ndash; 2015</div>
+          <div class="cv-detail"><strong>TDP-43 Proteinopathies in ALS-Dementia</strong>, NIH <strong>P01-AG032953-02</strong> (Lee, Virginia / Grossman, Murray, PI), $729,272/annual direct costs (Role: <strong>Collaborator</strong>).</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-year">2010 &ndash; 2013</div>
+          <div class="cv-detail"><strong>Fundamental Refactoring of Deformable Image Registration in ITK with Distributed Computing and GPU Acceleration</strong>, NLM/NIH <strong>HHSN276201000492P</strong> (Gee, James C., PI), $472,861/annual direct costs (Role: <strong>Co-PI &amp; Architecture Lead</strong>).</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-year">2004 &ndash; 2012</div>
+          <div class="cv-detail"><strong>Additional NIH R01/P50/Pilot Awards:</strong> Longitudinal Multi-Modal Neuroimaging of TBI Recovery (<strong>Avants, PI</strong>, 2011&ndash;2012); Pediatric Template of Brain Perfusion (NIMH R01, <strong>Co-PI</strong>); Advanced Neuroimage Registration Methods (NIH, <strong>Co-PI</strong>); Shape Optimizing Diffeomorphisms for Computational Biology (NIH R01-EB006266); Surface-Based Cortical Analysis in ITK (NLM, <strong>Co-PI</strong>).</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mentorship, Service & Media (CV Mode) -->
+    <section class="section-card cv-only">
+      <div class="section-header">
+        <h2 class="section-title"><span class="accent-bar"></span>Mentorship, Editorial Service, Tutorials &amp; Media</h2>
+        <span class="section-badge">LEADERSHIP &amp; COMMUNITY IMPACT</span>
+      </div>
+      <div class="cv-list">
+        <div class="cv-row">
+          <div class="cv-year">Mentorship</div>
+          <div class="cv-detail"><strong>Ph.D., Postdoc &amp; Industry Advising:</strong> Mentored ML scientists and interns at Invicro, Biogen, and Cingulate LLC (including Nicholas Cullen, co-creator of <code>ANTsPy</code>); Faculty Advisor to Dr. Dorian Pustina (CHDI Foundation); Ph.D. Advisor/Co-Advisor to Dr. Benjamin Kandel (UPenn Bioengineering), Dr. Paramveer Dhillon (UPenn CS &rarr; MIT/U. Michigan), and Dr. Efstathios Gennatas (UPenn Neuroscience &rarr; UCSF).</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-year">Editorial &amp; Panels</div>
+          <div class="cv-detail"><strong>Topic Editor:</strong> <em>NeuroImage</em> (Brain Parcellation, 2017) &amp; <em>Frontiers in Neuroinformatics</em> (ITK, 2015). <strong>Advisory Panels:</strong> Cohen Veterans Bioscience Brain Injury Biomarker Strategy Panel (2019); ACR Head Injury Institute IT Committee; INCF Registration &amp; Atlasing Task Force; Alzheimer's Association Grant Reviewer.</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-year">Media &amp; Covers</div>
+          <div class="cv-detail"><strong><em>Nature</em> Cover Visualization (2016):</strong> Confirmatory amyloid PET analysis &amp; Figure 1 / cover image for the landmark Aducanumab PRIME study (<em>Nature</em> 537, 50&ndash;56). Featured in <strong>CNN Health</strong> (2013), <strong>The Washington Post</strong> (2012), <strong>Daily Mail UK</strong> (2012), and <strong>Penn Medicine News</strong> (2012).</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-year">Tutorials &amp; Talks</div>
+          <div class="cv-detail"><strong>Selected Workshops &amp; Keynotes:</strong> ICERM Brown University (2019, 2020), Dartmouth Haxby Lab (2018), Seattle Children's/UW (2017), Yale (2017), Duke (2017), AD/PD Vienna (2017), MD Anderson (2016), Park City Mathematics Institute (2016), USC ENIGMA (2015), McGill/MNI (2015), ISMRM (2015), Princeton (2014), HRL Labs (2014), MICCAI (2006, 2011, 2013), NIH/NLM, Stanford, Columbia, UCLA, UCSF, and Chinese Academy of Sciences.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Publications Explorer -->
+    <section class="section-card">
+      <div class="section-header">
+        <h2 class="section-title"><span class="accent-bar"></span>Publications Explorer (1999 &ndash; 2026)</h2>
+        <span class="section-badge" id="pub-count-badge">SHOWING SELECTED &amp; RECENT WORKS</span>
+      </div>
+
+      <div class="pub-controls">
+        <input type="text" id="pub-search" class="pub-search" placeholder="Search by keyword, author, journal, or year (e.g. NSA-Flow, SiMLR, Blast, Nature, 2024)..." oninput="filterPubs()" />
+        <div class="filter-pills">
+          <button class="filter-pill active" onclick="setPubFilter('all', this)">All Listed</button>
+          <button class="filter-pill" onclick="setPubFilter('recent', this)">2020&ndash;2026 Recent</button>
+          <button class="filter-pill" onclick="setPubFilter('ml', this)">AI / Representation Learning</button>
+          <button class="filter-pill" onclick="setPubFilter('ants', this)">ANTsX &amp; Registration</button>
+          <button class="filter-pill" onclick="setPubFilter('clinical', this)">Neurodegeneration &amp; Trials</button>
+          <button class="filter-pill" onclick="setPubFilter('tbi', this)">Blast &amp; TBI</button>
+        </div>
+      </div>
+
+      <ul class="pub-list" id="pub-list">
+        <li class="pub-item" data-year="2026" data-tags="recent ml ants">
+          <div><strong>Tustison, N. J., Avants, B. B., Cook, P. A., Gee, J. C., &amp; Stone, J. R.</strong> (2026). <em>Deep Computational Anatomy via Latent-Aligned Multiview Normalizing Flows</em>. <strong>bioRxiv / PubMed</strong> (PMID: 42146611).</div>
+          <span class="pub-year-badge">2026</span>
+        </li>
+        <li class="pub-item" data-year="2026" data-tags="recent clinical">
+          <div><strong>Pustina, D., Bogale, H., Das, S., Avants, B., Sathe, S., Sampaio, C., &amp; Wood, A.</strong> (2026). <em>Geometric properties of caudate and putamen mark the progression of Huntington's disease</em>. <strong>Imaging Neuroscience</strong>, 4, IMAG.a.1351.</div>
+          <span class="pub-year-badge">2026</span>
+        </li>
+        <li class="pub-item" data-year="2026" data-tags="recent ml clinical">
+          <div><strong>Theodorou, B., Dadu, A., Avants, B., Nalls, M., Sun, J., &amp; Faghri, F.</strong> (2026). <em>Realistic PET image synthesis from MRI for automated inference of brain atrophy and Alzheimer's</em>. <strong>iScience</strong>, 29(5), 115747.</div>
+          <span class="pub-year-badge">2026</span>
+        </li>
+        <li class="pub-item" data-year="2025" data-tags="recent ml">
+          <div><strong>Avants, B. B., et al.</strong> (2025). <em>Non-Negative Stiefel Approximating Flow: Orthogonalish Matrix Optimization for Interpretable Embeddings</em>. <strong>arXiv</strong>:2511.06425.</div>
+          <span class="pub-year-badge">2025</span>
+        </li>
+        <li class="pub-item" data-year="2025" data-tags="recent ml ants">
+          <div><strong>Avants, B. B., Tustison, N. J., &amp; Stone, J. R.</strong> (2025). <em>Joint representations from multi-view MRI-based learning support cognitive and functional performance domains</em>. <strong>medRxiv</strong>.</div>
+          <span class="pub-year-badge">2025</span>
+        </li>
+        <li class="pub-item" data-year="2024" data-tags="recent ants ml">
+          <div><strong>Tustison, N. J., Yassa, M. A., Rizvi, B., Cook, P. A., Holbrook, A. J., Sathishkumar, M. T., Tustison, M. G., Gee, J. C., Stone, J. R., &amp; Avants, B. B.</strong> (2024). <em>ANTsX neuroimaging-derived structural phenotypes of UK Biobank</em>. <strong>Scientific Reports</strong>, 14(1), 8848.</div>
+          <span class="pub-year-badge">2024</span>
+        </li>
+        <li class="pub-item" data-year="2024" data-tags="recent tbi ml">
+          <div><strong>Stone, J. R., Avants, B. B., Tustison, N. J., Gill, J., Wilde, E. A., Neumann, K. D., Gladney, L. A., Kilgore, M. O., Bowling, F., &amp; Wilson, C. M.</strong> (2024). <em>Neurological effects of repeated blast exposure in Special Operations personnel</em>. <strong>Journal of Neurotrauma</strong>, 41(7&ndash;8), 942&ndash;956.</div>
+          <span class="pub-year-badge">2024</span>
+        </li>
+        <li class="pub-item" data-year="2024" data-tags="recent tbi ants">
+          <div><strong>Tustison, N., Avants, B., Whitlow, C. T., Lancashire, L., Bhatt, S. D., &amp; Haas, M.</strong> (2024). <em>Normative Neuroimaging Library: Designing a Comprehensive and Demographically Diverse Dataset of Healthy Controls to Support Traumatic Brain Injury Diagnostic and Therapeutic Development</em>. <strong>Journal of Neurotrauma</strong>, 41(23&ndash;24), 2497&ndash;2512.</div>
+          <span class="pub-year-badge">2024</span>
+        </li>
+        <li class="pub-item" data-year="2024" data-tags="recent ml clinical">
+          <div><strong>Yang, Z., Wen, J., Erus, G., Avants, B. B., et al.</strong> (2024). <em>Brain aging patterns in a large and diverse cohort of 49,482 individuals</em>. <strong>Nature Medicine</strong>, 30, 3015&ndash;3026.</div>
+          <span class="pub-year-badge">2024</span>
+        </li>
+        <li class="pub-item" data-year="2024" data-tags="recent clinical ants">
+          <div><strong>Avants, B. B., Fonville, L., Hampton, O., Reardon, A., Stenger, A., Wang, X., Tustison, N. J., Stone, J. R., Cook, P. A., Marebwa, B., &amp; Chahine, L. M.</strong> (2024). <em>Magnetic Resonance Imaging Data Phenotypes for the Parkinson's Progression Markers Initiative</em>. <strong>medRxiv</strong>.</div>
+          <span class="pub-year-badge">2024</span>
+        </li>
+        <li class="pub-item" data-year="2024" data-tags="recent tbi">
+          <div><strong>Dennis, E. L., Rowland, J., Esopenko, C., Tustison, N., Newsome, M., Avants, B., Gill, J., Hinds, S., Kenney, K., &amp; Lindsey, H.</strong> (2024). <em>Brain volume changes following blast-related mild TBI in service members and veterans: a LIMBIC-CENC study</em>. <strong>medRxiv</strong>, 2024.02.27.24303460.</div>
+          <span class="pub-year-badge">2024</span>
+        </li>
+        <li class="pub-item" data-year="2024" data-tags="recent clinical ml">
+          <div><strong>Polfus, L., Shirazi, H. M., Reardon, A., Varga, M., Tchourbanov, A., Gosselin, T., Dadu, A., Avants, B., Faghri, F., Nalls, M., &amp; Hesterman, J.</strong> (2024). <em>Genetic and brain imaging phenotype joint prediction of longitudinal Parkinson's Disease subtypes</em>. <strong>European Journal of Human Genetics</strong>, 32, 653.</div>
+          <span class="pub-year-badge">2024</span>
+        </li>
+        <li class="pub-item" data-year="2023" data-tags="recent ml clinical">
+          <div><strong>Wu, Z., Dadu, A., Tustison, N., Avants, B., Nalls, M., Sun, J., &amp; Faghri, F.</strong> (2023). <em>Multimodal Patient Representation Learning with Missing Modalities and Labels</em>. <strong>The Twelfth International Conference on Learning Representations (ICLR)</strong>.</div>
+          <span class="pub-year-badge">2023</span>
+        </li>
+        <li class="pub-item" data-year="2023" data-tags="recent ml clinical">
+          <div><strong>Dadu, A., Satone, V. K., Kaur, R., Koretsky, M. J., Iwaki, H., Qi, Y. A., Ramos, D. M., Avants, B., Hesterman, J., &amp; Gunn, R.</strong> (2023). <em>Application of Aligned-UMAP to longitudinal biomedical studies</em>. <strong>Patterns</strong> (Cell Press), 4(6), 100741.</div>
+          <span class="pub-year-badge">2023</span>
+        </li>
+        <li class="pub-item" data-year="2023" data-tags="recent ml ants clinical">
+          <div><strong>Avants, B., Tustison, N. J., McMillan, C. T., Gosselin, T., Gunn, R., &amp; Hesterman, J.</strong> (2023). <em>Concurrent 3D super resolution on intensity and segmentation maps improves detection of structural effects in neurodegenerative disease</em>. <strong>medRxiv</strong>, 2023.02.02.23285376.</div>
+          <span class="pub-year-badge">2023</span>
+        </li>
+        <li class="pub-item" data-year="2022" data-tags="recent ml">
+          <div><strong>Elhamod, M., Diamond, K. M., Maga, A. M., Bakis, Y., Bart Jr, H. L., Mabee, P., Dahdul, W., Leipzig, J., Greenberg, J., &amp; Avants, B.</strong> (2022). <em>Hierarchy-guided neural network for species classification</em>. <strong>Methods in Ecology and Evolution</strong>, 13(3), 642&ndash;652.</div>
+          <span class="pub-year-badge">2022</span>
+        </li>
+        <li class="pub-item" data-year="2022" data-tags="recent ants clinical">
+          <div><strong>Avants, B. B., &amp; Tustison, N. J.</strong> (2022). <em>Mapping the Spatial Distribution of Lesions in Stroke: Effect of Diffeomorphic Registration Strategy in the ATLAS Dataset</em>. In <strong>Lesion-to-Symptom Mapping: Principles and Tools</strong> (pp. 79&ndash;94). Springer.</div>
+          <span class="pub-year-badge">2022</span>
+        </li>
+        <li class="pub-item" data-year="2022" data-tags="recent tbi">
+          <div><strong>Stone, J., Avants, B., Tustison, N., Gill, J., Wilde, E., Neumann, K., Gladney, L., Kilgore, M., Modica, L. T., &amp; Bowling, F.</strong> (2022). <em>Increased Neuroinflammation in special operators with a history of blast overpressure exposure</em>. <strong>Journal of Neurotrauma</strong>, 39(11&ndash;12), A27&ndash;A28.</div>
+          <span class="pub-year-badge">2022</span>
+        </li>
+        <li class="pub-item" data-year="2021" data-tags="recent ml ants">
+          <div><strong>Avants, B. B., Tustison, N. J., &amp; Stone, J. R.</strong> (2021). <em>Similarity-driven multi-view embeddings from high-dimensional biomedical data</em>. <strong>Nature Computational Science</strong>, 1(2), 143&ndash;152.</div>
+          <span class="pub-year-badge">2021</span>
+        </li>
+        <li class="pub-item" data-year="2021" data-tags="recent ants ml">
+          <div><strong>Tustison, N. J., Cook, P. A., Holbrook, A. J., Johnson, H. J., Muschelli, J., Devenyi, G. A., Duda, J. T., Das, S. R., Cullen, N. C., Gillen, D. L., Yassa, M. A., Stone, J. R., Gee, J. C., &amp; Avants, B. B.</strong> (2021). <em>The ANTsX ecosystem for quantitative biological and medical imaging</em>. <strong>Scientific Reports</strong>, 11(1), 9068.</div>
+          <span class="pub-year-badge">2021</span>
+        </li>
+        <li class="pub-item" data-year="2021" data-tags="recent ants ml">
+          <div><strong>Tustison, N. J., Altes, T. A., Qing, K., He, M., Miller, G. W., Avants, B. B., Shim, Y. M., Gee, J. C., Mugler III, J. P., &amp; Mata, J. F.</strong> (2021). <em>Image-versus histogram-based considerations in semantic segmentation of pulmonary hyperpolarized gas images</em>. <strong>Magnetic Resonance in Medicine</strong>, 86(5), 2822&ndash;2836.</div>
+          <span class="pub-year-badge">2021</span>
+        </li>
+        <li class="pub-item" data-year="2020" data-tags="recent tbi ml">
+          <div><strong>Stone, J. R., Avants, B. B., Tustison, N. J., Wassermann, E. M., Gill, J., Polejaeva, E., Dell, K. C., Carr, W., Yarnell, A. M., &amp; LoPresti, M. L.</strong> (2020). <em>Functional and structural neuroimaging correlates of repetitive low-level blast exposure in career breachers</em>. <strong>Journal of Neurotrauma</strong>, 37(23), 2468&ndash;2481.</div>
+          <span class="pub-year-badge">2020</span>
+        </li>
+        <li class="pub-item" data-year="2019" data-tags="ants clinical">
+          <div><strong>Tustison, N. J., Holbrook, A. J., Avants, B. B., Roberts, J. M., Cook, P. A., Reagh, Z. M., Duda, J. T., Stone, J. R., Gillen, D. L., &amp; Yassa, M. A.</strong> (2019). <em>Longitudinal Mapping of Cortical Thickness Measurements: An ANTs Longitudinal Cortical Thickness Pipeline</em>. <strong>NeuroImage</strong>, 199, 523&ndash;536.</div>
+          <span class="pub-year-badge">2019</span>
+        </li>
+        <li class="pub-item" data-year="2018" data-tags="clinical">
+          <div><strong>Avants, B. B., Hutchison, R. M., Mikulskis, A., Salinas-Valenzuela, C., Hargreaves, R., Beaver, J., Chiao, P., &amp; ADNI</strong> (2018). <em>Amyloid beta&ndash;positive subjects exhibit longitudinal network-specific reductions in spontaneous brain activity</em>. <strong>Neurobiology of Aging</strong>, 74, 191&ndash;201.</div>
+          <span class="pub-year-badge">2018</span>
+        </li>
+        <li class="pub-item" data-year="2018" data-tags="clinical">
+          <div><strong>Chiao, P., Bedell, B. J., Avants, B. B., Zijdenbos, A. P., Grand'Maison, M., O'Neill, P., O'Gorman, J., Chen, T., &amp; Koeppe, R.</strong> (2018). <em>Impact of Reference/Target Region Selection on Amyloid PET Standard Uptake Value Ratios in the Phase 1b PRIME Study of Aducanumab</em>. <strong>Journal of Nuclear Medicine</strong>, 60(1), 100&ndash;106.</div>
+          <span class="pub-year-badge">2018</span>
+        </li>
+        <li class="pub-item" data-year="2018" data-tags="ants">
+          <div><strong>Muschelli, J., Fortin, J. P., Gherman, A., Avants, B. B., Whitcher, B., Caffo, B., &amp; Crainiceanu, C.</strong> (2018). <em>Neuroconductor: An R platform for medical imaging analysis</em>. <strong>Biostatistics</strong>, 20(2), 218&ndash;239.</div>
+          <span class="pub-year-badge">2018</span>
+        </li>
+        <li class="pub-item" data-year="2017" data-tags="ants clinical">
+          <div><strong>Gennatas, E. D., Avants, B. B., Wolf, D. H., Satterthwaite, T. D., Ruparel, K., Ciric, R., Hakonarson, H., Gur, R. E., &amp; Gur, R. C.</strong> (2017). <em>Age-related effects and sex differences in gray matter density, volume, mass, and cortical thickness from childhood to young adulthood</em>. <strong>Journal of Neuroscience</strong>, 37(20), 5065&ndash;5073.</div>
+          <span class="pub-year-badge">2017</span>
+        </li>
+        <li class="pub-item" data-year="2016" data-tags="ants">
+          <div><strong>Legant, W. R., Shao, L., Grimm, J. B., Brown, T. A., Milkie, D. E., Avants, B. B., Lavis, L. D., &amp; Betzig, E.</strong> (2016). <em>High-density three-dimensional localization microscopy across large volumes</em>. <strong>Nature Methods</strong>, 13(4), 359&ndash;365.</div>
+          <span class="pub-year-badge">2016</span>
+        </li>
+        <li class="pub-item" data-year="2015" data-tags="ml ants">
+          <div><strong>Kandel, B. M., Wang, D. J. J., Gee, J. C., &amp; Avants, B. B.</strong> (2015). <em>Eigenanatomy: sparse dimensionality reduction for multi-modal medical image analysis</em>. <strong>Methods</strong>, 73, 43&ndash;53.</div>
+          <span class="pub-year-badge">2015</span>
+        </li>
+        <li class="pub-item" data-year="2014" data-tags="ants">
+          <div><strong>Tustison, N. J., Cook, P. A., Klein, A., Song, G., Das, S. R., Duda, J. T., Kandel, B. M., van Strien, N., Stone, J. R., Gee, J. C., &amp; Avants, B. B.</strong> (2014). <em>Large-scale evaluation of ANTs and FreeSurfer cortical thickness measurements</em>. <strong>NeuroImage</strong>, 99, 166&ndash;179.</div>
+          <span class="pub-year-badge">2014</span>
+        </li>
+        <li class="pub-item" data-year="2014" data-tags="ants">
+          <div><strong>Avants, B. B., Tustison, N. J., Stauffer, M., Song, G., Wu, B., &amp; Gee, J. C.</strong> (2014). <em>The Insight ToolKit image registration framework</em>. <strong>Frontiers in Neuroinformatics</strong>, 8, 44.</div>
+          <span class="pub-year-badge">2014</span>
+        </li>
+        <li class="pub-item" data-year="2014" data-tags="ml clinical">
+          <div><strong>Avants, B. B., Libon, D. J., Rascovsky, K., Boller, A., McMillan, C. T., Massimo, L., Coslett, H. B., Chatterjee, A., Gross, R. G., &amp; Grossman, M.</strong> (2014). <em>Sparse canonical correlation analysis relates network-level atrophy to multivariate cognitive measures in a neurodegenerative population</em>. <strong>NeuroImage</strong>, 84, 698&ndash;711.</div>
+          <span class="pub-year-badge">2014</span>
+        </li>
+        <li class="pub-item" data-year="2011" data-tags="ants">
+          <div><strong>Avants, B. B., Tustison, N. J., Song, G., Cook, P. A., Klein, A., &amp; Gee, J. C.</strong> (2011). <em>A reproducible evaluation of ANTs similarity metric performance in brain image registration</em>. <strong>NeuroImage</strong>, 54(3), 2033&ndash;2044.</div>
+          <span class="pub-year-badge">2011</span>
+        </li>
+        <li class="pub-item" data-year="2011" data-tags="ants">
+          <div><strong>Avants, B. B., Tustison, N. J., Wu, J., Cook, P. A., &amp; Gee, J. C.</strong> (2011). <em>An Open Source Multivariate Framework for n-Tissue Segmentation with Evaluation on Public Data</em>. <strong>Neuroinformatics</strong>, 9(4), 381&ndash;400.</div>
+          <span class="pub-year-badge">2011</span>
+        </li>
+        <li class="pub-item" data-year="2010" data-tags="ants">
+          <div><strong>Tustison, N. J., Avants, B. B., Cook, P. A., Zheng, Y., Egan, A., Yushkevich, P. A., &amp; Gee, J. C.</strong> (2010). <em>N4ITK: Improved N3 bias correction</em>. <strong>IEEE Transactions on Medical Imaging</strong>, 29(6), 1310&ndash;1320.</div>
+          <span class="pub-year-badge">2010</span>
+        </li>
+        <li class="pub-item" data-year="2009" data-tags="ants">
+          <div><strong>Klein, A., Andersson, J., Ardekani, B. A., Ashburner, J., Avants, B., et al.</strong> (2009). <em>Evaluation of 14 nonlinear deformation algorithms applied to human brain MRI registration</em>. <strong>NeuroImage</strong>, 46(3), 786&ndash;802.</div>
+          <span class="pub-year-badge">2009</span>
+        </li>
+        <li class="pub-item" data-year="2009" data-tags="ants">
+          <div><strong>Das, S. R., Avants, B. B., Grossman, M., &amp; Gee, J. C.</strong> (2009). <em>Registration based cortical thickness measurement</em>. <strong>NeuroImage</strong>, 45(3), 867&ndash;879.</div>
+          <span class="pub-year-badge">2009</span>
+        </li>
+        <li class="pub-item" data-year="2008" data-tags="ants clinical">
+          <div><strong>Avants, B. B., Epstein, C. L., Grossman, M., &amp; Gee, J. C.</strong> (2008). <em>Symmetric diffeomorphic image registration with cross-correlation: Evaluating automated labeling of elderly and neurodegenerative brain</em>. <strong>Medical Image Analysis</strong>, 12(1), 26&ndash;41.</div>
+          <span class="pub-year-badge">2008</span>
+        </li>
+      </ul>
+      <p style="margin-top: 1rem; font-size: 0.84rem; color: var(--text-muted);">
+        Full numbered bibliography of 180+ peer-reviewed articles, conference proceedings, and book chapters is included in the <a href="src/BrianAvants_CV.pdf" target="_blank"><strong>Comprehensive CV PDF</strong></a> and <a href="https://scholar.google.com/citations?user=t4kkowgAAAAJ&hl=en" target="_blank"><strong>Google Scholar</strong></a>.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Brian B. Avants, Ph.D. &middot; Cingulate LLC (Portsmouth, NH) &middot; <a href="https://stnava.github.io">stnava.github.io</a> &middot; <a href="mailto:antsx@antsx.com">antsx@antsx.com</a></p>
+  </footer>
+
+  <script>
+    let currentPubFilter = 'all';
+
+    function setViewMode(mode, btn) {
+      document.querySelectorAll('.nav-tabs .nav-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      if (mode === 'resume') {
+        document.body.classList.add('mode-resume');
+      } else {
+        document.body.classList.remove('mode-resume');
+      }
+    }
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+    }
+
+    function setPubFilter(filter, btn) {
+      currentPubFilter = filter;
+      document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterPubs();
+    }
+
+    function filterPubs() {
+      const q = document.getElementById('pub-search').value.toLowerCase().trim();
+      const items = document.querySelectorAll('#pub-list .pub-item');
+      let shown = 0;
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const tags = (item.getAttribute('data-tags') || '').split(' ');
+        const matchTag = currentPubFilter === 'all' || tags.includes(currentPubFilter);
+        const matchQuery = !q || text.includes(q);
+        if (matchTag && matchQuery) {
+          item.style.display = 'flex';
+          shown++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+      document.getElementById('pub-count-badge').textContent = `SHOWING ${shown} SELECTED WORKS`;
+    }
+  </script>
+</body>
+</html>
